@@ -1,0 +1,29 @@
+.navigation{
+  font-size: 1.6rem;
+  font-weight: 2.8rem;
+  padding-left: 0;
+}
+.navigation__link{
+  text-align: center;
+  padding: 20px 10px;
+  list-style: none;
+  cursor: pointer;  
+}
+.navigation__icon{
+  width: 50px;
+  height: 50px;
+  border-radius: 19px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  &:hover{
+   background-color: $color-hovered;
+  }
+}
+
+.icon_home{
+  background-image: url(../../assets/image/icons/Home.svg);
+  background-size: cover;
+  width: 18px;
+  height: 19px; 
+}

@@ -1,0 +1,19 @@
+.button {
+  font-weight: 400;
+  font-size: 1.4rem;  
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  &_bordered{
+    border: 1px solid $color-button;
+    background-color: transparent;
+    color: $color-button;
+    &:hover{
+      border-color: $color-hovered;
+      background-color: $color-hovered;
+      color: $color-light;
+    }
+  }
+}

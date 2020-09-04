@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "id": "Sapranovich",
+      "role":"user",
+      "tasks": ["asdsad","asdas","asdasds"]
+    },
+    {
+      "id": "1",
+      "tasks": []
+    },
+    {
+      "id": "2",
+      "tasks": []
+    },
+    {
+      "id": "3",
+      "tasks": []
+    },
+    {
+      "id": "4",
+      "tasks": []
+    },
+    {
+      "id": "5",
+      "tasks": []
+    },
+    {
+      "id": "6",
+      "tasks": []
+    }
+  ],
+  "tasks": [
+    {
+      "tasks": []
+    },
+    {
+      "tasks": []
+    },
+    {
+      "tasks": []
+    },
+    {
+      "tasks": []
+    },
+    {
+      "tasks": []
+    },
+    {
+      "tasks": []
+    },
+    {
+      "tasks": []
+    }
+  ]
+
+}
