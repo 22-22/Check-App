@@ -8,6 +8,12 @@ const getAllUsers = () => {
   });
 };
 
+const getUsersByRole = ( role ) => {
+  return axios.get(`${BASE_URL}/users/?role=${role}`).then(({ data }) => {
+    return data;
+  });
+};
+
 const creatNewUser = (obj) => {
   axios.post(`${BASE_URL}/users`, obj)
     .then((resp) => {
@@ -18,14 +24,50 @@ const creatNewUser = (obj) => {
     });
 };
 
+// НАДО ПЕРЕБРАТЬ ВСЕ ЗАПРОСЫ И ПЕРЕПИСАТЬ АДЕКВАТНО
+
 const authentification = (gitHubId) => {
   return axios.get(`http://localhost:3001/users?q=${gitHubId}`)
     .then(resp => {
         console.log(resp.data)
+        return resp.data[0];
+    }).catch(error => {
+        console.log(error);
+    });
+}
+
+const fetchTasks = (status) => {
+  const path = status === null ? '/tasks' : `/tasks/?status=${status}`;
+  return axios.get(`http://localhost:3001${path}`)
+    .then(resp => {
+        return resp.data;
+    }).catch(error => {
+        console.log(error);
+    });
+}
+const fetchScores = (task) => {
+  const path = task === null ? '/scores' : `/scores/?task=${task}`;
+  return axios.get(`http://localhost:3001${path}`)
+    .then(resp => {
         return resp.data;
     }).catch(error => {
         console.log(error);
     });
 }
 
-export { getAllUsers, creatNewUser, authentification};
+
+const fetchSortAndFilterTasks = (status, sortBy, sortAs) => {
+  const path = status === null ? '' : `/?status=${status}`;
+  const pathSortBy = sortBy === null ? '' : `${status === null ? '?' : '&'}_sort=${sortBy}&_order=${sortAs}`;
+  console.log(`http://localhost:3001${path}${pathSortBy}`);
+  return axios.get(`http://localhost:3001/tasks${path}${pathSortBy}`)
+    .then(resp => {
+        return resp.data;
+    }).catch(error => {
+        console.log(error);
+    });
+}
+
+
+
+export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchSortAndFilterTasks};

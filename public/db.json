@@ -1,57 +1,253 @@
 {
   "users": [
     {
-      "id": "Sapranovich",
-      "role":"user",
-      "tasks": ["asdsad","asdas","asdasds"]
-    },
-    {
-      "id": "1",
+      "id": "user",
+      "role": "student",
+      "courses": {
+        "active": ["RSS React 2020 Q3"],
+        "completed": ["RS 2020 Q1"]
+      },
       "tasks": []
     },
     {
-      "id": "2",
-      "tasks": []
-    },
-    {
-      "id": "3",
-      "tasks": []
-    },
-    {
-      "id": "4",
-      "tasks": []
-    },
-    {
-      "id": "5",
-      "tasks": []
-    },
-    {
-      "id": "6",
-      "tasks": []
+      "id": "cardamo",
+      "role": "supervisor"
     }
   ],
+
   "tasks": [
     {
-      "tasks": []
+      "title": "Task 1",
+      "author": "cardamo",
+      "description": "this is the task description",
+      "date": 2,
+      "deadline": "",
+      "maxScore": 2002,
+      "status": "published",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "item 2",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ]
     },
     {
-      "tasks": []
+      "title": "Task 1",
+      "author": "cardamo",
+      "description": "this is the task description",
+      "date": 1,
+      "deadline": "",
+      "maxScore": 111200,
+      "status": "archived",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "item 2",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ]
     },
     {
-      "tasks": []
+      "title": "Task 1",
+      "author": "cardamo",
+      "description": "this is the task description",
+      "date": 3,
+      "deadline": "",
+      "maxScore": 2300,
+      "status": "archived",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "item 2",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "scores": [
+    {
+      "task": "songbird",
+      "user": "22-22",
+      "проверяющий": "11-11",
+      "score": 50,
+      "description": {
+        "items": {
+          "basic_p1": { "score": 20, "comment": "Well done!" },
+          "extra_p1": {
+            "score": 15,
+            "comment": "Some things are done, some are not"
+          },
+          "fines_p1": { "score": 0, "comment": "No ticket today" }
+        }
+      }
     },
     {
-      "tasks": []
+      "task": "songbird",
+      "user": "22-22",
+      "проверяющий": "11-11",
+      "score": 50,
+      "description": {
+        "items": {
+          "basic_p1": { "score": 20, "comment": "Well done!" },
+          "extra_p1": {
+            "score": 15,
+            "comment": "Some things are done, some are not"
+          },
+          "fines_p1": { "score": 0, "comment": "No ticket today" }
+        }
+      }
     },
     {
-      "tasks": []
+      "task": "songbird",
+      "user": "22-22",
+      "проверяющий": "11-11",
+      "score": 50,
+      "description": {
+        "items": {
+          "basic_p1": { "score": 20, "comment": "Well done!" },
+          "extra_p1": {
+            "score": 15,
+            "comment": "Some things are done, some are not"
+          },
+          "fines_p1": { "score": 0, "comment": "No ticket today" }
+        }
+      }
     },
     {
-      "tasks": []
-    },
+      "task": "songbird1",
+      "user": "22-22",
+      "проверяющий": "11-11",
+      "score": 50,
+      "description": {
+        "items": {
+          "basic_p1": { "score": 20, "comment": "Well done!" },
+          "extra_p1": {
+            "score": 15,
+            "comment": "Some things are done, some are not"
+          },
+          "fines_p1": { "score": 0, "comment": "No ticket today" }
+        }
+      }
+    }
+  ],
+
+  "reviewRequest": [
     {
-      "tasks": []
+      "id": "rev-req-1",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "author": "cardamo",
+      "task": "simple-task-v1",
+      "state": "PUBLISHED",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": {}
     }
   ]
-
 }

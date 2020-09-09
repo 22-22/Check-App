@@ -1,0 +1,41 @@
+.header {
+  background-color: $background-header;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 15px 0 17px 0;
+}
+.header__wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navigation {
+  font-size: 1.4rem;
+  font-weight: 1.6rem;
+  padding-left: 0;
+  display: flex;
+}
+.navigation__link {
+  text-align: center;
+  list-style: none;
+  cursor: pointer;
+  padding: 0 10px;
+}
+.navigation__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 19px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: $color-hovered;
+  }
+}
+
+.icon_home {
+  background-image: url(../../assets/image/icons/Home.svg);
+  background-size: cover;
+  width: 18px;
+  height: 19px;
+}

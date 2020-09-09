@@ -12,10 +12,6 @@ export const userLogout = () => ({
 
 export const fetchUser = (gitHubId) => (dispatch) => {
     authentification(gitHubId)
-    .then(data=>dispatch(setAuthentication(data)));
-    // dispatch(setAuthentication(data));
+      .then(data=>dispatch(setAuthentication(data)));
 };
-// export const setLoading = (state)=> ({
-//   type: 'SET_LOADING',
-//   payload: state
-// })
+

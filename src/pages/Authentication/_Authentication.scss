@@ -1,20 +1,26 @@
-.authentication {
-  width: 100vw;
-  height: 100vh;
-  background-image: url(../../assets/image/background/bg-authentication.jpg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: cover;
-}
-.authentication__content{
+// .authentication {
+//   width: 100vw;
+//   height: 100vh;
+//   background-image: url(../../assets/image/background/bg-authentication.jpg);
+//   background-repeat: no-repeat;
+//   background-position: bottom;
+//   background-size: cover;
+//   overflow: scroll;
+// }
+.authentication__wrapper{
   text-align: center;
   width: 100%;
   padding: 20px 0;
 }
+.authentication__content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 .authentication__form {
+  margin: auto;
   text-align: center;
-  width: 100%;
   padding: 20px 0;
   input {
     border: 1px solid $color-button;
@@ -29,6 +35,7 @@
     }
   }
 }
+
 
 .authentication__title {
   margin-bottom: 20px;
