@@ -19,10 +19,10 @@
     {
       "title": "Task 1",
       "author": "cardamo",
-      "description": "this is the task description",
-      "date": 2,
-      "deadline": "",
-      "maxScore": 2002,
+      "description": "this is the task 1 description",
+      "date": "2020.09.03 22:35",
+      "deadline": "2020.10.03 23:59",
+      "maxScore": 200,
       "status": "published",
       "items": [
         {
@@ -68,12 +68,63 @@
       ]
     },
     {
-      "title": "Task 1",
+      "title": "Task 2",
+      "author": "irinainina",
+      "description": "this is the task 2 description",
+      "date": "2020.09.08 12:15",
+      "deadline": "2020.10.25 23:59",
+      "maxScore": 150,
+      "status": "published",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "item 2",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Task 3",
       "author": "cardamo",
-      "description": "this is the task description",
-      "date": 1,
-      "deadline": "",
-      "maxScore": 111200,
+      "description": "this is the task 3 description",
+      "date": "2020.07.27 15:46",
+      "deadline": "2020.08.21 23:59",
+      "maxScore": 260,
       "status": "archived",
       "items": [
         {
@@ -119,13 +170,166 @@
       ]
     },
     {
-      "title": "Task 1",
+      "title": "Task 4",
+      "author": "davojta",
+      "description": "this is the task 4 description",
+      "date": "2020.09.07 14:37",
+      "deadline": "2020.09.28 23:59",
+      "maxScore": 320,
+      "status": "published",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "item 2",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Task 5",
       "author": "cardamo",
-      "description": "this is the task description",
-      "date": 3,
-      "deadline": "",
-      "maxScore": 2300,
+      "description": "this is the task 5 description",
+      "date": "2020.09.03 11:11",
+      "deadline": "2020.09.15 23:59",
+      "maxScore": 180,
+      "status": "draft",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "item 2",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Task 6",
+      "author": "irinainina",
+      "description": "this is the task 6 description",
+      "date": "2020.08.01 16:24",
+      "deadline": "2020.08.30 23:59",
+      "maxScore": 90,
       "status": "archived",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "item 2",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Task 7",
+      "author": "cardamo",
+      "description": "this is the task 7 description",
+      "date": "2020.09.04 09:07",
+      "deadline": "2020.11.08 23:59",
+      "maxScore": 250,
+      "status": "draft",
       "items": [
         {
           "category": "Basic scope",
