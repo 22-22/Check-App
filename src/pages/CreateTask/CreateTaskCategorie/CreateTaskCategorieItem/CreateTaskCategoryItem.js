@@ -30,24 +30,7 @@ export default function CreateTaskCategoryItem({
 
     }
 
-    function intInputHandler(value) {
-        setIntInputState(value)
-    }
 
-    function textAreaHandler(event) {
-        console.log('asdasd',event.target.value)
-        setTextAreaState(event.target.value)
-    }
-
-    function deleteButtonHandler() {
-        let items = createTaskState.items;
-        items[categoryIndex].categoryItems.splice(index,1);
-        setTaskState({
-            ...createTaskState,
-            items:items,
-        })
-        setEditPanelState(!editPanel);
-    }
 
     return (
         <React.Fragment>
@@ -56,14 +39,7 @@ export default function CreateTaskCategoryItem({
                     <p className={'category--item__description'}>{'• ' + categoryItem.description}</p>
                     <p  className={'category--item__score'}>{categoryItem.score}</p>
                 </div>
-                <Button onClick={buttonHandler}>{editPanel ? 'Save':'Change'}</Button>
             </div>
-            {editPanel &&
-            <div>
-                <InputNumber min={-1000} max={1000} defaultValue={0}  value={intInputState} onChange={(value) =>intInputHandler(value)}/>
-                <TextArea value = {textAreaState} onChange = {event => textAreaHandler(event)} />
-                <Button onClick={deleteButtonHandler}>Delete Item</Button>
-            </div>}
         </React.Fragment>
 
     )
