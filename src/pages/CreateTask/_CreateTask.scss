@@ -1,0 +1,50 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.main{
+  display: flex;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px 15px;
+
+  .main__task{
+    width: 50%;
+    padding: 10px;
+  }
+  .main__edit--panel{
+    padding: 10px;
+
+    .edit--panel__title{
+      text-align: center;
+    }
+    .edit--panel__head{
+      margin-top: 10px;
+      .edit--panel__header{
+        display: flex;
+      }
+    }
+
+    .edit--panel__button{
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    .edit--panel__content{
+      margin-top: 20px;
+    }
+  }
+
+  .main__title{
+    text-align: center;
+  }
+
+
+  .main__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+  }
+}
