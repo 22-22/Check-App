@@ -6,7 +6,6 @@ import { getScores } from '../../redux/actions/scores';
 import checkAuth from "../../utils/checkAuth";
 
 import ScoreReview from '../../components/ScoreReview/ScoreReview';
-import arrow from "../../assets/image/icons/Scores/arrow.png";
 import TableScore from "./table";
 
 
@@ -21,6 +20,7 @@ function Reviews({ history }) {
   React.useEffect(() => {
     !authentication && checkAuth(history, authentication, dispatch, "/scores");
     dispatch(getScores(taskName))
+    console.log(scores)
   }, [taskName]);
 
   return (

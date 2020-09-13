@@ -177,6 +177,7 @@
       "user": "22-22",
       "проверяющий": "11-11",
       "score": 50,
+      "date":"2020.09.11",
       "description": {
         "items": {
           "basic_p1": { "score": 20, "comment": "Well done!" },

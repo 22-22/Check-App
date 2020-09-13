@@ -12,47 +12,158 @@ import ScoreReview from '../../components/ScoreReview/ScoreReview';
 
 const data = [
     {
-      position: 1,
+      key: '1',
+      student: 'John Brown',
+      score: 32,
+      task: 'aew York',
+      date:"2020:09:13",
+      reviewer: 'John Brown',
+    },
+    {
+      key: '2',
+      student: 'Jim Green',
+      score: 42,
+      task: 'aondon',
+      date:"2020:09:13",
+      reviewer: 'My',
+    },
+    {
+      key: '3',
+      student: 'Not Expandable',
+      score: 29,
+      task: 'aiangsu',
+      date:"2020:09:13",
+      reviewer: 'expandable',
+    },
+    {
+      key: '4',
+      student: 'Joe Black',
+      score: 32,
+      task: 'aidney',
+      date:"2020:09:13",
+      reviewer: 'Joe Black',
+    },
+    {
+      key: '5',
+      student: 'Joe Black',
+      score: 32,
+      task: 'Sidney',
+      date:"2020:09:13",
+      reviewer: 'Joe Black',
+    },
+    {
+      key: '6',
+      student: 'Joe Black',
+      score: 32,
+      task: 'Sidney',
+      date:"2020:07:13",
+      reviewer: 'Joe Black',
+    },
+    {
+      key: '7',
       student: 'John Brown',
       score: 32,
       task: 'New York',
-      check: 'John Brown',
+      date:"2020:09:03",
+      reviewer: 'John Brown',
     },
     {
-      position: 2,
+      key: '8',
       student: 'Jim Green',
       score: 42,
       task: 'London',
-      check: 'My',
+      date:"2020:09:27",
+      reviewer: 'My',
     },
     {
-      position: 3,
+      key: '9',
       student: 'Not Expandable',
       score: 29,
       task: 'Jiangsu',
-      check: 'expandable',
+      date:"2020:09:25",
+      reviewer: 'expandable',
     },
     {
-      position: 4,
+      key: '10',
       student: 'Joe Black',
       score: 32,
       task: 'Sidney',
-      check: 'Joe Black',
+      date:"2020:04:20",
+      reviewer: 'Joe Black',
     },
     {
-      position: 4,
+      key: '11',
       student: 'Joe Black',
       score: 32,
       task: 'Sidney',
-      check: 'Joe Black',
+      date:"2018:03:13",
+      reviewer: 'Joe Black',
     },
     {
-      position: 4,
+      key: '12',
       student: 'Joe Black',
       score: 32,
       task: 'Sidney',
-      check: 'Joe Black',
+      date:"2019:09:13",
+      reviewer: 'Joe Black',
     },
+    {
+      key: '13',
+      student: 'John Brown',
+      score: 32,
+      task: 'New York',
+      date:"2020:03:13",
+      reviewer: 'John Brown',
+    },
+    {
+      key: '14',
+      student: 'Jim Green',
+      score: 42,
+      task: 'London',
+      date:"2020:05:13",
+      reviewer: 'My',
+    },
+    {
+      key: '15',
+      student: 'Jim Green',
+      score: 42,
+      task: 'London',
+      date:"2020:10:13",
+      reviewer: 'My',
+    },
+    {
+      key: '16',
+      student: 'Jim Green',
+      score: 42,
+      task: 'London',
+      date:"2020:09:23",
+      reviewer: 'My',
+    },
+    {
+      key: '17',
+      student: 'oim Green',
+      score: 12,
+      task: 'London',
+      date:"2020:09:12",
+      reviewer: 'dy',
+    },
+    {
+      key: '18',
+      student: 'qwem Green',
+      score: 32,
+      task: 'London',
+      date:"2020:09:14",
+      reviewer: 'ay',
+    },
+    {
+      key: '19',
+      student: 'sm Green',
+      score: 26,
+      task: 'London',
+      date:"2020:09:11",
+      reviewer: 'by',
+    },
+    
   ];
 class TableScore extends React.Component {
   state = {
@@ -125,26 +236,18 @@ class TableScore extends React.Component {
     this.setState({ searchText: '' });
   };
 
+  details = clearFilters => {
+    clearFilters();
+    this.setState({ searchText: '' });
+  };
   render() {
     const columns = [
-        {
-          title: '#',
-          dataIndex: 'position',
-          key: 'position',
-          sorter: {
-            compare: (a, b) => a.position - b.position,
-            // multiple: ,
-          },
-          width: '5%',
-          ...this.getColumnSearchProps('position'),
-        },
         {
           title: 'Task',
           dataIndex: 'task',
           key: 'task',
           sorter: {
-            compare: (a, b) => a.task - b.task,
-            // multiple: ,
+            compare:(a, b) => a.task.localeCompare(b.task),
           },
           width: '20%',
           ...this.getColumnSearchProps('task'),
@@ -153,21 +256,15 @@ class TableScore extends React.Component {
           title: 'Student',
           dataIndex: 'student',
           key: 'student',
-          sorter: {
-            compare: (a, b) => a.student - b.student,
-            // multiple: ,
-          },
+          sorter: (a, b) => a.student.localeCompare(b.student),
           width: '20%',
           ...this.getColumnSearchProps('student'),
         },
         {
-          title: 'Сheck',
-          dataIndex: 'check',
-          key: 'check',
-          sorter: {
-            compare: (a, b) => a.check - b.check,
-            // multiple: ,
-          },
+          title: 'Reviewer',
+          dataIndex: 'reviewer',
+          key: 'reviewer',
+          sorter: (a, b) => a.reviewer.localeCompare(b.reviewer),
           width: '20%',
           ...this.getColumnSearchProps('check'),
         },
@@ -177,107 +274,29 @@ class TableScore extends React.Component {
           key: 'score',
           sorter: {
             compare: (a, b) => a.score - b.score,
-            // multiple: ,
           },
-          width: '20%',
+          width: '5%',
           ...this.getColumnSearchProps('score'),
         },
         {
-          title: 'Description',
+          title: 'Date',
+          dataIndex: 'date',
+          key: 'date',
+          sorter: (a, b) => a.date.localeCompare(b.date),
+          width: '10%',
+          ...this.getColumnSearchProps('score'),
+        },
+        {
+          title: 'actions',
           dataIndex: '',
           key: 'x',
           width: '20%',
-          render: () => <a>More details</a>,
+          render: () => <a onClick={event => this.props.switchLevel()}>View details</a>,
         },
       ];
-    
-// function Scores({ history }) {
-  // const dispatch = useDispatch();
-  // const { authentication, infoUser } = useSelector(({ statesAccount }) => statesAccount);
-  // const { scores } = useSelector(({ scores }) => scores);
 
-  // const [searchText, setSearchText] = React.useState("");
-  // const [searchedColumn, setSearchedColumn] = React.useState("");
-
-  // const [taskName, setTaskName] = React.useState(null);
-
-
-  // React.useEffect(() => {
-  //   !authentication && checkAuth(history, authentication, dispatch, "/scores");
-  //   dispatch(getScores(taskName))
-  // }, [taskName]);
-
-  // function handleSearch(selectedKeys, confirm, dataIndex){
-  //   confirm();
-  //   setSearchText(selectedKeys[0]);
-  //   setSearchedColumn(dataIndex);
-  // };
-
-  // function handleReset(clearFilters) {
-  //   clearFilters();
-  //   setSearchText("");
-  // };
-  
-  // getColumnSearchProps = dataIndex => ({
-  //   filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
-  //     <div style={{ padding: 8 }}>
-  //       <Input
-  //         ref={node => {
-  //           this.searchInput = node;
-  //         }}
-  //         placeholder={`Search ${dataIndex}`}
-  //         value={selectedKeys[0]}
-  //         onChange={e => setSelectedKeys(e.target.value ? [e.target.value] : [])}
-  //         onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
-  //         style={{ width: 188, marginBottom: 8, display: 'block' }}
-  //       />
-  //       <Space>
-  //         <Button
-  //           type="primary"
-  //           onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
-  //           icon={<SearchOutlined />}
-  //           size="small"
-  //           style={{ width: 90 }}
-  //         >
-  //           Search
-  //         </Button>
-  //         <Button onClick={() => handleReset(clearFilters)} size="small" style={{ width: 90 }}>
-  //           Reset
-  //         </Button>
-  //       </Space>
-  //     </div>
-  //   ),
-  //   filterIcon: filtered => <SearchOutlined style={{ color: filtered ? '#1890ff' : undefined }} />,
-  //   onFilter: (value, record) =>
-  //     record[dataIndex]
-  //       ? record[dataIndex].toString().toLowerCase().includes(value.toLowerCase())
-  //       : '',
-  //   onFilterDropdownVisibleChange: visible => {
-  //     if (visible) {
-  //       setTimeout(() => this.searchInput.select(), 100);
-  //     }
-  //   },
-  //   render: text =>
-  //     searchedColumn === dataIndex ? (
-  //       <Highlighter
-  //         highlightStyle={{ backgroundColor: '#ffc069', padding: 0 }}
-  //         searchWords={[searchText]}
-  //         autoEscape
-  //         textToHighlight={text ? text.toString() : ''}
-  //       />
-  //     ) : (
-  //         text
-  //       ),
-  // });
   return (
-    <Table
-      columns={columns}
-      // expandable={{
-      //   expandedRowRender: record => <p style={{ margin: 0 }}>{record.description}</p>,
-      //   rowExpandable: record => record.name !== 'Not Expandable',
-      // }}
-      dataSource={data}
-    />
+    <Table columns={columns} dataSource={data} />
   );
 }
 }
