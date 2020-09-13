@@ -90,4 +90,4 @@ const creatNewUser = (gitHubId, role) => {
     });
 };
 
-export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchSortAndFilterTasks, fetchUserVerification };
+export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchSortAndFilterTasks, fetchUserVerification, sendTask };
