@@ -56,7 +56,11 @@ const fetchSortAndFilterTasks = (status, sortBy, sortAs) => {
     }).catch(error => {
         console.log(error);
     });
-}
+};
+
+const sendTask = (task) => {
+    return axios.post(`${BASE_URL}/tasks`,task).then((res) => console.log(res.data))
+};
 
 const fetchUserVerification = (gitHubId) => {
   return axios.get(`http://localhost:3001/users?id=${gitHubId}`)
