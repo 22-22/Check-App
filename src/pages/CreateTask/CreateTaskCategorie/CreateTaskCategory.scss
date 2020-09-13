@@ -9,3 +9,16 @@
     padding: 15px 10px;
   }
 }
+.category--edit{
+    .category--edit__buttons{
+      display: flex;
+    }
+  .category__content{
+    .category--edit__add--button{
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+  }
+
+}

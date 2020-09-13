@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Input} from "antd";
+import {Button, Input,Divider} from "antd";
 import CreateTaskCategoryItemEdit from "./CreateTaskCategorieItem/CreateTaskCategoryItemEdit";
 
 
@@ -9,6 +9,15 @@ export default function CreateTaskCategoryEdit({
    setTaskState,
    createTaskState
 }) {
+
+    function deleteButtonHandler() {
+        let items = createTaskState.items;
+        items.splice(index,1)
+        setTaskState({
+            ...createTaskState,
+            items:items,
+        })
+    }
 
     function inputHandler(event){
         let categoryItem = category;
@@ -25,9 +34,11 @@ export default function CreateTaskCategoryEdit({
         let items = createTaskState.items;
         items[index].categoryItems.push({
             description: 'category Item',
-            score: 0
-        })
-        console.log(items)
+            minScore: 0,
+            maxScore: 0,
+            checkByMentorOnly: false,
+        });
+        console.log(items);
         setTaskState({
             ...createTaskState,
             items:items
@@ -45,11 +56,17 @@ export default function CreateTaskCategoryEdit({
         />));
 
     return (
-        <div>
-            <Input onChange={event => inputHandler(event)} placeholder={'Category description'}/>
-            <div className={'category__button'}>
+        <div className={'category--edit'}>
+            <Divider />
+            <div className={'category--edit__buttons'}>
+                <Input onChange={event => inputHandler(event)} placeholder={'Category description'}/>
+                <Button onClick={deleteButtonHandler}>Delete</Button>
+            </div>
+            <div className={'category__content'}>
                 {items}
-                <Button onClick={buttonHandler}>Add Item</Button>
+                <div className={'category--edit__add--button'}>
+                    <Button onClick={buttonHandler}>Add Item</Button>
+                </div>
             </div>
         </div>
     )

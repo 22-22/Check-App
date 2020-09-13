@@ -12,8 +12,6 @@ export default function CreateTaskCategorie({
      createTaskState
 }){
 
-
-
     const items =  category.categoryItems.map((e,i) => (
         <CreateTaskCategoryItem
             key = {i}
@@ -24,7 +22,7 @@ export default function CreateTaskCategorie({
             createTaskState = { createTaskState }
     />));
 
-    const score = category.categoryItems.reduce((acc,cur) => acc + cur.score  ,0);
+    const score = category.categoryItems.reduce((acc,cur) => acc + cur.maxScore , 0);
 
     return (
         <div className={'category'}>

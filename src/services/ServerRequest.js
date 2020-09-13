@@ -66,8 +66,12 @@ const fetchSortAndFilterTasks = (status, sortBy, sortAs) => {
     }).catch(error => {
         console.log(error);
     });
-}
+};
+
+const sendTask = (task) => {
+    return axios.post(`${BASE_URL}/tasks`,task).then((res) => console.log(res.data))
+};
 
 
 
-export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchSortAndFilterTasks};
+export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchSortAndFilterTasks,sendTask};
