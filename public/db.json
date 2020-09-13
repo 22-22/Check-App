@@ -379,7 +379,7 @@
     {
       "task": "songbird",
       "user": "22-22",
-      "проверяющий": "11-11",
+      "reviewer": "11-11",
       "score": 50,
       "description": {
         "items": {
@@ -395,7 +395,7 @@
     {
       "task": "songbird",
       "user": "22-22",
-      "проверяющий": "11-11",
+      "reviewer": "11-11",
       "score": 50,
       "description": {
         "items": {
@@ -411,7 +411,7 @@
     {
       "task": "songbird",
       "user": "22-22",
-      "проверяющий": "11-11",
+      "reviewer": "11-11",
       "score": 50,
       "description": {
         "items": {
@@ -427,7 +427,7 @@
     {
       "task": "songbird1",
       "user": "22-22",
-      "проверяющий": "11-11",
+      "reviewer": "11-11",
       "score": 50,
       "description": {
         "items": {
@@ -442,16 +442,90 @@
     }
   ],
 
-  "reviewRequest": [
+  "reviewRequests": [
     {
       "id": "rev-req-1",
-      "crossCheckSessionId": "rss2020Q3react-xcheck",
-      "author": "cardamo",
+      "crossCheckSessionId": "no session",
+      "student": "cardamo",
       "task": "simple-task-v1",
-      "state": "PUBLISHED",
+      "sendingDate": "2020.09.12 12:12",
+      "state": "completed",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
-      "selfGrade": {}
+      "selfGrade": "150",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-2",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "22-22",
+      "task": "x-check app",
+      "sendingDate": "2020.09.14 14:14",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-3",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "arumirinka",
+      "task": "x-check app",
+      "sendingDate": "2020.09.15 15:15",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-4",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "IlyaShihutin",
+      "task": "x-check app",
+      "sendingDate": "2020.09.19 19:19",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-5",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "NastiaKoval",
+      "task": "x-check app",
+      "sendingDate": "2020.09.17 17:17",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-6",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "Sapranovich",
+      "task": "x-check app",
+      "sendingDate": "2020.09.20 18:18",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-7",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "vorobeychik",
+      "task": "x-check app",
+      "sendingDate": "2020.09.19 21:20",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
     }
   ]
 }

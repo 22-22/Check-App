@@ -55,6 +55,17 @@ const fetchScores = (task) => {
     });
 }
 
+const fetchReviewRequests = async (task) => {
+  const path = '/reviewRequests';
+  try {
+    const resp = await axios.get(`http://localhost:3001${path}`);
+    return resp.data;
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+
 
 const fetchSortAndFilterTasks = (status, sortBy, sortAs) => {
   const path = status === null ? '' : `/?status=${status}`;
@@ -70,4 +81,4 @@ const fetchSortAndFilterTasks = (status, sortBy, sortAs) => {
 
 
 
-export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchSortAndFilterTasks};
+export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchReviewRequests, fetchSortAndFilterTasks};
