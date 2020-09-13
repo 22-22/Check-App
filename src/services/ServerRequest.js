@@ -14,16 +14,6 @@ const getUsersByRole = ( role ) => {
   });
 };
 
-const creatNewUser = (obj) => {
-  axios.post(`${BASE_URL}/users`, obj)
-    .then((resp) => {
-      console.log(resp.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
-
 // НАДО ПЕРЕБРАТЬ ВСЕ ЗАПРОСЫ И ПЕРЕПИСАТЬ АДЕКВАТНО
 
 const authentification = (gitHubId) => {
@@ -68,6 +58,32 @@ const fetchSortAndFilterTasks = (status, sortBy, sortAs) => {
     });
 }
 
+const fetchUserVerification = (gitHubId) => {
+  return axios.get(`http://localhost:3001/users?id=${gitHubId}`)
+    .then(resp => {
+        return resp.data;
+    }).catch(error => {
+        console.log(error);
+    });
+}
 
+const creatNewUser = (gitHubId, role) => {
+  const startUserObj = {
+    "id": gitHubId,
+    "role": role,
+    "courses": {
+      "active": [],
+      "completed": []
+    },
+    "tasks": []
+  };
+  axios.post(`${BASE_URL}/users`, startUserObj)
+    .then((resp) => {
+      localStorage.setItem("gitHubUser", gitHubId);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
-export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchSortAndFilterTasks};
+export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchSortAndFilterTasks, fetchUserVerification };

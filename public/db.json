@@ -1,20 +1,15 @@
 {
   "users": [
     {
-      "id": "user",
+      "id": "Sapranovich",
       "role": "student",
       "courses": {
-        "active": ["RSS React 2020 Q3"],
-        "completed": ["RS 2020 Q1"]
+        "active": [],
+        "completed": []
       },
       "tasks": []
-    },
-    {
-      "id": "cardamo",
-      "role": "supervisor"
     }
   ],
-
   "tasks": [
     {
       "title": "Task 1",
@@ -170,7 +165,6 @@
       ]
     }
   ],
-
   "scores": [
     {
       "task": "songbird",
@@ -179,12 +173,18 @@
       "score": 50,
       "description": {
         "items": {
-          "basic_p1": { "score": 20, "comment": "Well done!" },
+          "basic_p1": {
+            "score": 20,
+            "comment": "Well done!"
+          },
           "extra_p1": {
             "score": 15,
             "comment": "Some things are done, some are not"
           },
-          "fines_p1": { "score": 0, "comment": "No ticket today" }
+          "fines_p1": {
+            "score": 0,
+            "comment": "No ticket today"
+          }
         }
       }
     },
@@ -195,12 +195,18 @@
       "score": 50,
       "description": {
         "items": {
-          "basic_p1": { "score": 20, "comment": "Well done!" },
+          "basic_p1": {
+            "score": 20,
+            "comment": "Well done!"
+          },
           "extra_p1": {
             "score": 15,
             "comment": "Some things are done, some are not"
           },
-          "fines_p1": { "score": 0, "comment": "No ticket today" }
+          "fines_p1": {
+            "score": 0,
+            "comment": "No ticket today"
+          }
         }
       }
     },
@@ -211,12 +217,18 @@
       "score": 50,
       "description": {
         "items": {
-          "basic_p1": { "score": 20, "comment": "Well done!" },
+          "basic_p1": {
+            "score": 20,
+            "comment": "Well done!"
+          },
           "extra_p1": {
             "score": 15,
             "comment": "Some things are done, some are not"
           },
-          "fines_p1": { "score": 0, "comment": "No ticket today" }
+          "fines_p1": {
+            "score": 0,
+            "comment": "No ticket today"
+          }
         }
       }
     },
@@ -227,17 +239,22 @@
       "score": 50,
       "description": {
         "items": {
-          "basic_p1": { "score": 20, "comment": "Well done!" },
+          "basic_p1": {
+            "score": 20,
+            "comment": "Well done!"
+          },
           "extra_p1": {
             "score": 15,
             "comment": "Some things are done, some are not"
           },
-          "fines_p1": { "score": 0, "comment": "No ticket today" }
+          "fines_p1": {
+            "score": 0,
+            "comment": "No ticket today"
+          }
         }
       }
     }
   ],
-
   "reviewRequest": [
     {
       "id": "rev-req-1",

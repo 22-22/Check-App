@@ -9,8 +9,7 @@
 // }
 .authentication__wrapper{
   text-align: center;
-  width: 100%;
-  padding: 20px 0;
+  padding: 40px 20px;
 }
 .authentication__content {
   display: flex;
@@ -21,19 +20,20 @@
 .authentication__form {
   margin: auto;
   text-align: center;
-  padding: 20px 0;
-  input {
-    border: 1px solid $color-button;
-    background-color: $color-light;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    font-size: 1.6rem;
-    &:focus {
-      border-color: $color-hovered;
-      outline: none;
-    }
-  }
+  padding: 20px 20px;
+  max-width: 370px;
+  // input {
+  //   border: 1px solid $color-button;
+  //   background-color: $color-light;
+  //   padding: 10px 20px;
+  //   border-radius: 5px;
+  //   margin-bottom: 20px;
+  //   font-size: 1.6rem;
+  //   &:focus {
+  //     border-color: $color-hovered;
+  //     outline: none;
+  //   }
+  // }
 }
 
 
