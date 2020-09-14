@@ -1,0 +1,24 @@
+.category{
+  .category__container{
+    padding: 10px 0;
+
+  }
+  .category__button{
+    display: flex;
+    justify-content: center;
+    padding: 15px 10px;
+  }
+}
+.category--edit{
+    .category--edit__buttons{
+      display: flex;
+    }
+  .category__content{
+    .category--edit__add--button{
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+  }
+
+}

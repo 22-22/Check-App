@@ -3,7 +3,7 @@
 @import './constants';
 
 // base
-// @import './base';
+@import './base';
 
 // pages
 @import '../pages/Loading/Loading';
@@ -14,6 +14,7 @@
 @import '../pages/CheckForm/CheckForm';
 @import '../pages/Scores/Scores';
 @import '../pages/Reviews/Reviews';
+
 
 // @import '../pages/Authentication/Authentication';
 // @import '../pages/UserAccount/UserAccount';
