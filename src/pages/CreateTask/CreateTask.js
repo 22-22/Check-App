@@ -84,13 +84,13 @@ export default function CreateTask({history}) {
 
     function saveTaskButtonHandler() {
         if(createTaskState.title === ''){
-           message.error('Введите название таски')
+           message.error('Enter task title')
         }else if(createTaskState.description === ''){
-            message.error('Введите описание таски')
+            message.error('Enter task description')
         }else if(createTaskState.date === ''){
-            message.error('Введите Дату')
+            message.error('Enter date')
         }else if(createTaskState.items.length === 0){
-            message.error('Создайте хоть 1 категорию')
+            message.error('Add at least one category')
         }else{
             sendTask(createTaskState)
         }
@@ -100,7 +100,7 @@ export default function CreateTask({history}) {
     return (
         <div className={'main'}>
             <div className={'main__edit--panel'}>
-                    <h1 className={'edit--panel__title'}> Edit panel</h1>
+                    <h1 className={'edit--panel__title'}>Edit panel</h1>
                     <Divider />
                     <div className={'edit--panel__head'}>
                         <div className={'edit--panel__header'}>
@@ -113,7 +113,7 @@ export default function CreateTask({history}) {
                         { itemsEdit}
                     </div>
                     <div className={'edit--panel__button'}>
-                        <Button type="primary" onClick={buttonHandler} class  Name={"main__category--button"} > Add Category </Button>
+                        <Button type="primary" onClick={buttonHandler} className={"main__category--button"} >Add Category</Button>
                     </div>
             </div>
             <div className={'main__task'}>
@@ -131,4 +131,3 @@ export default function CreateTask({history}) {
         </div>
     )
 }
-
