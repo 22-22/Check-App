@@ -4,14 +4,15 @@ import {Link} from 'react-router-dom';
 import { userLogout } from "../../redux/actions/authentication";
 
 
-function Header() {
+function Header({history}) {
   // const { role } = useSelector(({ authentication }) => authentication);
   const dispatch = useDispatch();
   const exitAccount = () => {
     dispatch(userLogout());
     localStorage.setItem("gitHubUser", "");
   };
-
+  React.useEffect(()=>{
+  },[])
   return (
     <div className="header">
       <div className="header__wrapper">

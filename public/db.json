@@ -1,21 +1,13 @@
 {
   "users": [
     {
-      "id": "user",
+      "id": "Sapranovich",
       "role": "student",
       "courses": {
-        "active": [
-          "RSS React 2020 Q3"
-        ],
-        "completed": [
-          "RS 2020 Q1"
-        ]
+        "active": [],
+        "completed": []
       },
       "tasks": []
-    },
-    {
-      "id": "cardamo",
-      "role": "supervisor"
     }
   ],
   "tasks": [
@@ -27,6 +19,7 @@
       "user": "22-22",
       "проверяющий": "11-11",
       "score": 50,
+      "date":"2020.09.11",
       "description": {
         "items": {
           "basic_p1": {
