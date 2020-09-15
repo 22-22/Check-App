@@ -16,9 +16,11 @@ function Scores({ history }) {
   React.useEffect(() => {
     !authentication && checkAuth(history, authentication, dispatch, "/scores");
     dispatch(getScores(taskName))
+    console.log(scores)
   }, [taskName]);
 
   return (
+    
     <div className="create-task">
         <h2 className="create-task__title">Scores</h2>
         {scores && scores.map((item, index)=> <ScoreReview key={index} description= {item.description}/>)}

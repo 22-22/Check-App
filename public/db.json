@@ -1,20 +1,15 @@
 {
   "users": [
     {
-      "id": "user",
+      "id": "Sapranovich",
       "role": "student",
       "courses": {
-        "active": ["RSS React 2020 Q3"],
-        "completed": ["RS 2020 Q1"]
+        "active": [],
+        "completed": []
       },
       "tasks": []
-    },
-    {
-      "id": "cardamo",
-      "role": "supervisor"
     }
   ],
-
   "tasks": [
     {
       "title": "Task 1",
@@ -26,46 +21,20 @@
       "status": "published",
       "items": [
         {
-          "category": "Basic scope",
+          "category": "Category",
           "categoryItems": [
             {
-              "description": "adsasdasd",
-              "minScore": 0,
-              "maxScore": 20
+              "description": "category Item",
+              "score": -100
             },
             {
-              "description": "item 2",
-              "minScore": 0,
-              "maxScore": 10
-            }
-          ]
-        },
-        {
-          "category": "Extra scope",
-          "categoryItems": [
-            {
-              "description": "adsasdasd",
-              "minScore": 0,
-              "maxScore": 20
-            }
-          ]
-        },
-        {
-          "category": "Fines",
-          "categoryItems": [
-            {
-              "description": "штраф за ошибки в консоли",
-              "minScore": -20,
-              "maxScore": 0
-            },
-            {
-              "description": "еще один штраф",
-              "minScore": -10,
-              "maxScore": 0
+              "description": "category Item",
+              "score": 200
             }
           ]
         }
-      ]
+      ],
+      "id": 1
     },
     {
       "title": "Task 2",
@@ -116,7 +85,8 @@
             }
           ]
         }
-      ]
+      ],
+      "id": 2
     },
     {
       "title": "Task 3",
@@ -128,46 +98,20 @@
       "status": "archived",
       "items": [
         {
-          "category": "Basic scope",
+          "category": "Category",
           "categoryItems": [
             {
-              "description": "adsasdasd",
-              "minScore": 0,
-              "maxScore": 20
+              "description": "category Item",
+              "score": 200
             },
             {
-              "description": "item 2",
-              "minScore": 0,
-              "maxScore": 10
-            }
-          ]
-        },
-        {
-          "category": "Extra scope",
-          "categoryItems": [
-            {
-              "description": "adsasdasd",
-              "minScore": 0,
-              "maxScore": 20
-            }
-          ]
-        },
-        {
-          "category": "Fines",
-          "categoryItems": [
-            {
-              "description": "штраф за ошибки в консоли",
-              "minScore": -20,
-              "maxScore": 0
-            },
-            {
-              "description": "еще один штраф",
-              "minScore": -10,
-              "maxScore": 0
+              "description": "category Item",
+              "score": -100
             }
           ]
         }
-      ]
+      ],
+      "id": 3
     },
     {
       "title": "Task 4",
@@ -218,7 +162,8 @@
             }
           ]
         }
-      ]
+      ],
+      "id": 4
     },
     {
       "title": "Task 5",
@@ -269,7 +214,8 @@
             }
           ]
         }
-      ]
+      ],
+      "id": 5
     },
     {
       "title": "Task 6",
@@ -281,46 +227,28 @@
       "status": "archived",
       "items": [
         {
-          "category": "Basic scope",
-          "categoryItems": [
-            {
-              "description": "adsasdasd",
-              "minScore": 0,
-              "maxScore": 20
-            },
-            {
-              "description": "item 2",
-              "minScore": 0,
-              "maxScore": 10
-            }
-          ]
+          "category": "Category",
+          "categoryItems": []
         },
         {
-          "category": "Extra scope",
+          "category": "Category",
           "categoryItems": [
             {
-              "description": "adsasdasd",
+              "description": "category Item",
               "minScore": 0,
-              "maxScore": 20
-            }
-          ]
-        },
-        {
-          "category": "Fines",
-          "categoryItems": [
-            {
-              "description": "штраф за ошибки в консоли",
-              "minScore": -20,
-              "maxScore": 0
+              "maxScore": 0,
+              "score": 200
             },
             {
-              "description": "еще один штраф",
-              "minScore": -10,
-              "maxScore": 0
+              "description": "category Item",
+              "minScore": 0,
+              "maxScore": 0,
+              "score": -100
             }
           ]
         }
-      ]
+      ],
+      "id": 6
     },
     {
       "title": "Task 7",
@@ -371,24 +299,31 @@
             }
           ]
         }
-      ]
+      ],
+      "id": 7
     }
   ],
-
   "scores": [
     {
       "task": "songbird",
       "user": "22-22",
       "reviewer": "11-11",
       "score": 50,
+      "date":"2020.09.11",
       "description": {
         "items": {
-          "basic_p1": { "score": 20, "comment": "Well done!" },
+          "basic_p1": {
+            "score": 20,
+            "comment": "Well done!"
+          },
           "extra_p1": {
             "score": 15,
             "comment": "Some things are done, some are not"
           },
-          "fines_p1": { "score": 0, "comment": "No ticket today" }
+          "fines_p1": {
+            "score": 0,
+            "comment": "No ticket today"
+          }
         }
       }
     },
@@ -399,12 +334,18 @@
       "score": 50,
       "description": {
         "items": {
-          "basic_p1": { "score": 20, "comment": "Well done!" },
+          "basic_p1": {
+            "score": 20,
+            "comment": "Well done!"
+          },
           "extra_p1": {
             "score": 15,
             "comment": "Some things are done, some are not"
           },
-          "fines_p1": { "score": 0, "comment": "No ticket today" }
+          "fines_p1": {
+            "score": 0,
+            "comment": "No ticket today"
+          }
         }
       }
     },
@@ -415,12 +356,18 @@
       "score": 50,
       "description": {
         "items": {
-          "basic_p1": { "score": 20, "comment": "Well done!" },
+          "basic_p1": {
+            "score": 20,
+            "comment": "Well done!"
+          },
           "extra_p1": {
             "score": 15,
             "comment": "Some things are done, some are not"
           },
-          "fines_p1": { "score": 0, "comment": "No ticket today" }
+          "fines_p1": {
+            "score": 0,
+            "comment": "No ticket today"
+          }
         }
       }
     },
@@ -431,17 +378,22 @@
       "score": 50,
       "description": {
         "items": {
-          "basic_p1": { "score": 20, "comment": "Well done!" },
+          "basic_p1": {
+            "score": 20,
+            "comment": "Well done!"
+          },
           "extra_p1": {
             "score": 15,
             "comment": "Some things are done, some are not"
           },
-          "fines_p1": { "score": 0, "comment": "No ticket today" }
+          "fines_p1": {
+            "score": 0,
+            "comment": "No ticket today"
+          }
         }
       }
     }
   ],
-
   "reviewRequests": [
     {
       "id": "rev-req-1",
