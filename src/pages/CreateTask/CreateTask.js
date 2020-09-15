@@ -12,9 +12,11 @@ import {sendTask} from "../../services/ServerRequest";
 export default function CreateTask({history}) {
     const dispatch = useDispatch();
     const { authentication, infoUser } = useSelector(({ statesAccount }) => statesAccount);
+    console.log('id',infoUser)
     let [createTaskState, setTaskState] = useState( {
         title: '',
-        author: `${infoUser.id}`,
+        status:'',
+        // author: `${infoUser.id}`,
         description: '',
         deadline:'',
         date:'',
@@ -81,10 +83,9 @@ export default function CreateTask({history}) {
             }])
         })
     }
-
-    function saveTaskButtonHandler() {
+    function check() {
         if(createTaskState.title === ''){
-           message.error('Введите название таски')
+            message.error('Введите название таски')
         }else if(createTaskState.description === ''){
             message.error('Введите описание таски')
         }else if(createTaskState.date === ''){
@@ -94,39 +95,48 @@ export default function CreateTask({history}) {
         }else{
             sendTask(createTaskState)
         }
+    }
+
+    function saveTaskButtonHandler() {
+        setTaskState({ ...createTaskState, status:'published'})
+        check()
 
     }
 
     return (
         <div className={'main'}>
-            <div className={'main__edit--panel'}>
-                    <h1 className={'edit--panel__title'}> Edit panel</h1>
-                    <Divider />
-                    <div className={'edit--panel__head'}>
-                        <div className={'edit--panel__header'}>
-                            <Input placeholder="Task name" allowClear onChange={(event) => inputHandler(event)}/>
-                            <RangePicker onChange = {datePickerHandler}/>
+            <div className={'main__content'}>
+                <div className={'main__edit--panel'}>
+                        <h1 className={'edit--panel__title'}> Edit panel</h1>
+                        <Divider />
+                        <div className={'edit--panel__head'}>
+                            <div className={'edit--panel__header'}>
+                                <Input placeholder="Task name" allowClear onChange={(event) => inputHandler(event)}/>
+                                <RangePicker onChange = {datePickerHandler}/>
+                            </div>
+                            <TextArea placeholder="Task description" onChange={event => textAreaHandler(event)}/>
                         </div>
-                        <TextArea placeholder="Task description" onChange={event => textAreaHandler(event)}/>
+                        <div className={'edit--panel__content'}>
+                            { itemsEdit}
+                        </div>
+                        <div className={'edit--panel__button'}>
+                            <Button type="primary" onClick={buttonHandler} class  Name={"main__category--button"} > Add Category </Button>
+                        </div>
+                </div>
+                <div className={'main__task'}>
+                    <h1 className={'main__title'}>{ createTaskState.title === '' ? 'Task title' : createTaskState.title }</h1>
+                    <Divider />
+                    <p>{ createTaskState.description === '' ? 'Task description' : createTaskState.description}</p>
+                    <p>{ createTaskState.date === '' ? 'Date: ':`Date: ${createTaskState.date} / ${createTaskState.deadline}`}</p>
+                    <div className={"main__container"}>
+                        { items }
                     </div>
-                    <div className={'edit--panel__content'}>
-                        { itemsEdit}
-                    </div>
-                    <div className={'edit--panel__button'}>
-                        <Button type="primary" onClick={buttonHandler} class  Name={"main__category--button"} > Add Category </Button>
-                    </div>
-            </div>
-            <div className={'main__task'}>
-                <h1 className={'main__title'}>{ createTaskState.title === '' ? 'Task title' : createTaskState.title }</h1>
-                <Divider />
-                <p>{ createTaskState.description === '' ? 'Task description' : createTaskState.description}</p>
-                <p>{ createTaskState.date === '' ? 'Date: ':`Date: ${createTaskState.date} / ${createTaskState.deadline}`}</p>
-                <div className={"main__container"}>
-                    { items }
                 </div>
             </div>
 
-           <Button onClick={saveTaskButtonHandler}>Save Task</Button>
+
+            <Button onClick={saveTaskButtonHandler}>Published</Button>
+            <Button onClick={() => ''}>Save as Draft</Button>
             <CreateTaskUpload/>
         </div>
     )

@@ -18,7 +18,7 @@ export default function CreateTaskUpload() {
     
     function handleChange(info) {
         let fileList = [...info.fileList];
-
+        console.log('lalalalal',info.fileList)
         // 1. Limit the number of uploaded files
         // Only to show two recent uploaded files, and old ones will be replaced by the new
         fileList = fileList.slice(-1);
