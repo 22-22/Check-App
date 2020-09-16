@@ -20,13 +20,14 @@ function Header({history}) {
         
           <nav className="header__navigation">
             <ul className="navigation">
-              <Link to= '/home'><li className="navigation__link">home</li></Link>
-              <Link to= '/create-task'><li className="navigation__link">create-task</li></Link>
-              <Link to= '/review-request'><li className="navigation__link">review-request</li></Link>
-              <Link to= '/tasks'><li className="navigation__link">tasks</li></Link>
-              <Link to= '/check-form'><li className="navigation__link">check-form</li></Link>
-              <Link to= '/scores'><li className="navigation__link">scores</li></Link>
-              <Link to= '/reviews'><li className="navigation__link">Reviews</li></Link>
+              <Link to= '/home'><li className="navigation__link">Home</li></Link>
+              <Link to= '/create-task'><li className="navigation__link">Add new task</li></Link>
+              <Link to= '/review-request'><li className="navigation__link">Request a review</li></Link>
+              <Link to= '/review-requests'><li className="navigation__link">Review requests</li></Link>
+              <Link to= '/tasks'><li className="navigation__link">Tasks</li></Link>
+              <Link to= '/check-form'><li className="navigation__link">Check-form</li></Link>
+              <Link to= '/scores'><li className="navigation__link">Reviews list</li></Link>
+              {/* <Link to= '/reviews'><li className="navigation__link">Reviews</li></Link> */}
             </ul>
           </nav>
           <Link to= '/authentication'><button onClick={exitAccount}>выйти из аккаунта</button></Link>

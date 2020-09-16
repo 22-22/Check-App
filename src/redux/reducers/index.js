@@ -4,6 +4,7 @@ import statesAccount from './authentication';
 import tasks from './tasks';
 import scores from './scores';
 import reviewRequest from './reviewRequest';
+import reviewRequests from './reviewRequests';
 
 
 const appReducer = combineReducers({
@@ -11,6 +12,7 @@ const appReducer = combineReducers({
   tasks,
   scores,
   reviewRequest,
+  reviewRequests,
 })
 
 const rootReducer = (state, action) => {
