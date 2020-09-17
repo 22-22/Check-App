@@ -49,3 +49,12 @@
     padding: 20px 0;
   }
 }
+
+@media (max-width: 768px) {
+  .main__content{
+    flex-direction: column;
+  }
+  .main__task{
+    width: 100%!important;
+  }
+}

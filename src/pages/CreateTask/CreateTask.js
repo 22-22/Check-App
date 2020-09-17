@@ -16,7 +16,6 @@ export default function CreateTask({history}) {
     let [createTaskState, setTaskState] = useState( {
         title: '',
         status:'',
-        // author: `${infoUser.id}`,
         description: '',
         deadline:'',
         date:'',
@@ -98,9 +97,14 @@ export default function CreateTask({history}) {
     }
 
     function saveTaskButtonHandler() {
-        setTaskState({ ...createTaskState, status:'published'})
+        setTaskState({ ...createTaskState, status:'published'});
         check()
 
+    }
+
+    function saveAsDraftButtonHandler() {
+        setTaskState({ ...createTaskState, status:'draft'});
+        check()
     }
 
     return (
@@ -136,8 +140,8 @@ export default function CreateTask({history}) {
 
 
             <Button onClick={saveTaskButtonHandler}>Published</Button>
-            <Button onClick={() => ''}>Save as Draft</Button>
-            <CreateTaskUpload/>
+            <Button onClick={saveAsDraftButtonHandler}>Save as Draft</Button>
+            <CreateTaskUpload setState = {setTaskState} />
         </div>
     )
 }

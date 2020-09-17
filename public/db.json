@@ -11,7 +11,28 @@
     }
   ],
   "tasks": [
-
+    {
+      "title": "zxczxc",
+      "status": "",
+      "description": "asdasd",
+      "deadline": "2020-10-28",
+      "date": "2020-09-10",
+      "score": "",
+      "items": [
+        {
+          "category": "Category",
+          "categoryItems": [
+            {
+              "description": "category Itemczxc",
+              "minScore": 0,
+              "maxScore": 20,
+              "checkByMentorOnly": false
+            }
+          ]
+        }
+      ],
+      "id": 2
+    }
   ],
   "scores": [
     {
@@ -19,7 +40,7 @@
       "user": "22-22",
       "проверяющий": "11-11",
       "score": 50,
-      "date":"2020.09.11",
+      "date": "2020.09.11",
       "description": {
         "items": {
           "basic_p1": {

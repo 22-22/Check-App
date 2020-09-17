@@ -1,49 +1,29 @@
-import React, {useState} from "react";
-import { Upload, Button } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
-import 'antd/dist/antd.css';
-import {func} from "prop-types";
+import React from "react";
+import { message} from 'antd';
+export default function CreateTaskUpload({setState}) {
 
-export default function CreateTaskUpload() {
-    let [uploadState,setUploadState] = useState({
-        fileList: [
-            {
-                uid: '-1',
-                name: 'xxx.png',
-                status: 'done',
-                url: 'http://www.baidu.com/xxx.png',
-            },
-        ],
-    });
-    
-    function handleChange(info) {
-        let fileList = [...info.fileList];
-        console.log('lalalalal',info.fileList)
-        // 1. Limit the number of uploaded files
-        // Only to show two recent uploaded files, and old ones will be replaced by the new
-        fileList = fileList.slice(-1);
-
-        // 2. Read from response and show file link
-        fileList = fileList.map(file => {
-            if (file.response) {
-                // Component will show file.url as link
-                file.url = file.response.url;
-            }
-            return file;
-        });
-        setUploadState({ fileList })
+    function checkObj(obj) {
+        console.log(obj)
+        if(obj.items === undefined){
+            message.error('обязательный парамет items')
+        }else if(!Array.isArray(obj.items)){
+            message.error('items должен быть массивом')
+        }else {
+            setState(obj)
+        }
     }
 
-
-    const props = {
-        accept:'.md',
-        onChange: handleChange,
-        multiple: false,
+    function handleFile(file) {
+        let reader = new FileReader();
+        reader.onload = function(file) {
+            // The file's text will be printed in console
+            let obj = JSON.parse(file.target.result);
+            checkObj(obj);
+            console.log(obj)
+            // localStorage.setItem('file',file.target.result)
+        };
+        reader.readAsText(file);
     };
-    console.log(uploadState.fileList)
-    return (
-        <Upload {...props} fileList={uploadState.fileList}>
-            <Button icon={<UploadOutlined />}>Upload</Button>
-        </Upload>
-    )
+
+    return (<input type="file" accept=".json" onChange={e => handleFile(e.target.files[0])} />)
 }

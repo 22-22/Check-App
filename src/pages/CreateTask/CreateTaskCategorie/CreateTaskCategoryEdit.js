@@ -59,7 +59,7 @@ export default function CreateTaskCategoryEdit({
         <div className={'category--edit'}>
             <Divider />
             <div className={'category--edit__buttons'}>
-                <Input onChange={event => inputHandler(event)} placeholder={'Category description'}/>
+                <Input onChange={event => inputHandler(event)} value={category.category} placeholder={'Category description'}/>
                 <Button onClick={deleteButtonHandler}>Delete</Button>
             </div>
             <div className={'category__content'}>
