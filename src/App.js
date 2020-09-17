@@ -8,6 +8,7 @@ import Authentication from "./pages/Authentication/Authentication";
 import HomePage from './pages/HomePage/HomePage';
 import CreateTask from './pages/CreateTask/CreateTask';
 import ReviewRequest from './pages/ReviewRequest/ReviewRequest';
+import ReviewRequests from "./pages/ReviewRequests/ReviewRequests";
 import Tasks from './pages/Tasks/Tasks';
 import CheckForm from './pages/CheckForm/CheckForm';
 import Scores from './pages/Scores/Scores';
@@ -24,9 +25,10 @@ function App() {
       {authentication && <Header />}
       <Switch>
         <Route path="/authentication" component={ Authentication } exact />
-        <Route path="/home" component={ HomePage} exact />
+        <Route path="/home" component={ HomePage } exact />
         <Route path="/create-task" component={ CreateTask } exact />
         <Route path="/review-request" component={ ReviewRequest } exact />
+        <Route path="/review-requests" component={ ReviewRequests } exact />
         <Route path="/tasks" component={ Tasks } exact />
         <Route path="/check-form" component={ CheckForm } exact />
         <Route path="/scores" component={ Scores } exact />
