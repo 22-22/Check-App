@@ -62,6 +62,10 @@ const sendTask = (task) => {
     return axios.post(`${BASE_URL}/tasks`,task).then((res) => console.log(res.data))
 };
 
+const sendReviewRequest = (reviewRequest) => {
+  return axios.post(`${BASE_URL}/reviewRequest`,reviewRequest).then((res) => console.log(res.data))
+};
+
 const fetchUserVerification = (gitHubId) => {
   return axios.get(`http://localhost:3001/users?id=${gitHubId}`)
     .then(resp => {
@@ -90,4 +94,4 @@ const creatNewUser = (gitHubId, role) => {
     });
 };
 
-export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchSortAndFilterTasks, fetchUserVerification, sendTask };
+export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchSortAndFilterTasks, fetchUserVerification, sendTask, sendReviewRequest };
