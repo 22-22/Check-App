@@ -34,7 +34,7 @@ const fetchTasks = (status) => {
     }).catch(error => {
         console.log(error);
     });
-}
+};
 const fetchScores = (task) => {
   const path = task === null ? '/scores' : `/scores/?task=${task}`;
   return axios.get(`http://localhost:3001${path}`)
@@ -73,6 +73,10 @@ const sendTask = (task) => {
     return axios.post(`${BASE_URL}/tasks`,task).then((res) => console.log(res.data))
 };
 
+const fetchTaskById = (id) => {
+   return axios.get(`${BASE_URL}/tasks`).then(res => res.data.find((e) => e.id === id))
+};
+
 const fetchUserVerification = (gitHubId) => {
   return axios.get(`http://localhost:3001/users?id=${gitHubId}`)
     .then(resp => {
@@ -101,4 +105,4 @@ const creatNewUser = (gitHubId, role) => {
     });
 };
 
-export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchReviewRequests, fetchSortAndFilterTasks, fetchUserVerification, sendTask };
+export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchReviewRequests, fetchSortAndFilterTasks, fetchUserVerification, sendTask , fetchTaskById};

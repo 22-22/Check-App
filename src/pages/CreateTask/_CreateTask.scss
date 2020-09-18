@@ -13,6 +13,10 @@
   .main__task{
     width: 50%;
     padding: 10px;
+
+    .main__title{
+      text-align: center;
+    }
   }
   .main__edit--panel{
     padding: 10px;
@@ -37,9 +41,7 @@
     }
   }
 
-  .main__title{
-    text-align: center;
-  }
+
 
 
   .main__container{

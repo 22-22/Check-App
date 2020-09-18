@@ -291,6 +291,28 @@
         }
       ],
       "id": 7
+    },
+    {
+      "title": "asx",
+      "status": "",
+      "description": "asxas",
+      "deadline": "2020-10-28",
+      "date": "2020-10-01",
+      "score": 20,
+      "items": [
+        {
+          "category": "Category",
+          "categoryItems": [
+            {
+              "description": "category Item",
+              "minScore": 0,
+              "maxScore": 200,
+              "checkByMentorOnly": false
+            }
+          ]
+        }
+      ],
+      "id": 8
     }
   ],
   "scores": [
