@@ -1,0 +1,33 @@
+.category--item{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  font-size: 18px;
+
+  .category--item__buttons{
+    display: flex;
+  }
+  .category--item__content{
+    display: flex;
+   .category--item__description{
+     padding: 0 5px;
+     word-break: break-word;
+   }
+  .category--item__score{
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+  }
+  }
+
+}
+
+
+.category--item__edit{
+  display: flex;
+  margin-top: 10px ;
+  flex-direction: column;
+  .edit--item__buttons{
+    display: flex;
+  }
+}

@@ -15,7 +15,7 @@ function Authentication({ history }) {
 
   React.useEffect(() => {
     checkAuth(history, authentication, dispatch, "/account");
-  }, [authentication, submitFlag]);
+  },  );
 
   const changeInput = (event) => {
     setGitHubId(event.target.value);

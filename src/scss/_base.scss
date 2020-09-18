@@ -2,8 +2,17 @@ html {
   font-size: 10px;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 body {
+margin: 0;
+padding: 0;
+font-size: 1.6rem;
 }
 h1 {
   font-size: 5rem;
@@ -11,9 +20,20 @@ h1 {
   padding: 0;
   margin: 0;
 }
-.app__content_change{
-  width: calc(100vw - 150px);
-  margin-left: 150px;
+// h3 {
+//   font-size: 5rem;
+//   font-weight: 400;
+// }
+
+// есть идея для разных личных кабинетов добавить свой background
+.app{
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../assets/image/background/bg-authentication.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  overflow: scroll;
 }
 .wrapper{
   max-width: 1280px;
@@ -21,4 +41,24 @@ h1 {
   padding: 0 20px;
 }
 
+//  ОБЩАЯ СТИЛИЗАЦИЯ КНОПОК
+.button {
+  font-weight: 400;
+  font-size: 1.4rem;  
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  &_bordered{
+    border: 1px solid $color-button;
+    background-color: transparent;
+    color: $color-button;
+    &:hover{
+      border-color: $color-hovered;
+      background-color: $color-hovered;
+      color: $color-light;
+    }
+  }
+}
 

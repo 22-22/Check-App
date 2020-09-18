@@ -1,20 +1,26 @@
-// libs
-@import 'libs/normalize';
 
-// abstract
-@import './abstract/constants';
-@import './abstract/mixins';
-@import './abstract/placeholders';
+@import './normalize';
+@import './constants';
 
 // base
-@import 'base';
+@import './base';
 
 // pages
-@import 'pages/authentication';
-@import 'pages/loading';
-@import 'pages/userAccount';
+@import '../pages/Loading/Loading';
+@import '../pages/HomePage/HomePage';
+@import '../pages/ReviewRequest/ReviewRequest';
+@import '../pages/Authentication/Authentication';
+@import '../pages/CreateTask/CreateTask';
+@import '../pages/CheckForm/CheckForm';
+@import '../pages/Scores/Scores';
+@import '../pages/Reviews/Reviews';
+
+
+// @import '../pages/Authentication/Authentication';
+// @import '../pages/UserAccount/UserAccount';
 
 //  components
-@import 'components/buttons';
-@import 'components/header';
-@import 'components/navigation';
+@import '../components/Header/Header';
+@import '../components/ScoreReview/ScoreReview';
+// @import '../components/Header/Header';
+// @import '../components/UserList/UserList';
