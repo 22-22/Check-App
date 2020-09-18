@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getActiveTasks } from '../../redux/actions/reviewRequest';
 import checkAuth from "../../utils/checkAuth";
 
-function ReviewRequest({ history }) {
+function ReviewRequest({ history, match }) {
   const [status, setStatus] = React.useState('published');
   const dispatch = useDispatch();
 
@@ -14,6 +14,8 @@ function ReviewRequest({ history }) {
     !authentication && checkAuth(history, authentication, dispatch, "/review-request");
     dispatch(getActiveTasks(status));
   }, [status]);
+  
+  console.log('task id is', match.params.id);
 
   return (
     <div className="create-task">
