@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from 'react-redux';
-import { Route, withRouter, Switch} from "react-router-dom";
+import { Route, withRouter, Switch } from "react-router-dom";
 
 import  Header  from "./components/Header/Header";
 // import Loading from './pages/Loading/Loading';
@@ -27,9 +27,12 @@ function App() {
         <Route path="/home" component={ HomePage } exact />
         <Route path="/create-task" component={ CreateTask } exact />
         <Route path="/review-request" component={ ReviewRequest } exact />
+        <Route path="/review-request/:id" component={ ReviewRequest } exact />
         <Route path="/review-requests" component={ ReviewRequests } exact />
         <Route path="/tasks" component={ Tasks } exact />
+//         <Route path="/tasks/:id" component={ Task } exact />
         <Route path="/check-form" component={ CheckForm } exact />
+        <Route path="/check-form/:id" component={ CheckForm } exact />
         <Route path="/scores" component={ Scores } exact />
         <Route path="/reviews" component={ Reviews } exact />
       </Switch>
