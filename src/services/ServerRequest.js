@@ -101,4 +101,33 @@ const creatNewUser = (gitHubId, role) => {
     });
 };
 
-export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchReviewRequests, fetchSortAndFilterTasks, fetchUserVerification, sendTask };
+
+const fetchTaskInfo = (title) => {
+  return axios.get(`${BASE_URL}/tasks`)
+  // return axios.get(`${BASE_URL}/tasks`) ???!!
+    .then(resp => resp.data)
+    .then(allTasks => allTasks.find(task => task.title === title))
+    .catch(err => console.log(err))
+}
+
+const addNewScore = (score) => {
+   axios.post(`${BASE_URL}/scores`, score)
+    .then((res) => console.log(res))
+    .catch(err => console.log(err))
+};
+
+
+// const addNewScore = (score) => {
+//   return axios.post(`${BASE_URL}/scores`, {
+//     // method: 'POST',
+//     headers: {
+//       // 'Accept': 'application/json',
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(score)
+//   })
+//       .then(response => console.log(response))
+//       .catch(err => console.log(err.message))
+// }
+
+export { fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchReviewRequests, fetchSortAndFilterTasks, fetchUserVerification, sendTask };
