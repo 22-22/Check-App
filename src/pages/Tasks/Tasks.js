@@ -51,7 +51,7 @@ function Tasks({ history }) {
        date: task.date,
        deadline: task.deadline,
        taskState: task.status,
-       actions: <><Tooltip title={`Edit task${i+1}`}><Button type="primary" shape="circle" icon={<EditOutlined />} /></Tooltip>
+       actions: <><Link to={`/create-task/${task.id}`}><Tooltip title={`Edit task${i+1}`}><Button type="primary" shape="circle" icon={<EditOutlined />} /></Tooltip></Link>
        <Tooltip title={`Archive task${i+1}`}><Button type="primary" shape="circle" icon={<FileZipOutlined />} /></Tooltip>
        <Tooltip title={`Delete task${i+1}`}><Button type="primary" shape="circle" icon={<DeleteOutlined />} /></Tooltip>
        <Link to={`/review-request/${task.id}`}><Tooltip title={`Submit task${i+1}`}><Button type="primary" shape="circle" icon={<CodeOutlined />} /></Tooltip></Link>
