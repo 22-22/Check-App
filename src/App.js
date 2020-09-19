@@ -27,6 +27,7 @@ function App() {
         <Route path="/authentication" component={ Authentication } exact />
         <Route path="/home" component={ HomePage } exact />
         <Route path="/create-task" component={ CreateTask } exact />
+        <Route path="/create-task/:id" component={ CreateTask } exact />
         <Route path="/review-request" component={ ReviewRequest } exact />
         <Route path="/review-request/:id" component={ ReviewRequest } exact />
         <Route path="/review-requests" component={ ReviewRequests } exact />
