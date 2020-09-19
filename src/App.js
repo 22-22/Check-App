@@ -23,6 +23,7 @@ function App() {
     <div className="app">
       {authentication && <Header />}
       <Switch>
+        <Route path="/" component={ HomePage } exact />
         <Route path="/authentication" component={ Authentication } exact />
         <Route path="/home" component={ HomePage } exact />
         <Route path="/create-task" component={ CreateTask } exact />
@@ -30,7 +31,7 @@ function App() {
         <Route path="/review-request/:id" component={ ReviewRequest } exact />
         <Route path="/review-requests" component={ ReviewRequests } exact />
         <Route path="/tasks" component={ Tasks } exact />
-//         <Route path="/tasks/:id" component={ Task } exact />
+        {/* <Route path="/tasks/:id" component={ Task } exact /> */}
         <Route path="/check-form" component={ CheckForm } exact />
         <Route path="/check-form/:id" component={ CheckForm } exact />
         <Route path="/scores" component={ Scores } exact />
