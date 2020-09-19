@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 
 import checkAuth from "../../utils/checkAuth";
 
-function CheckForm({ history }) {
+function CheckForm({ history, match }) {
   const dispatch = useDispatch();
   const { authentication } = useSelector(({ statesAccount }) => statesAccount);
 
   React.useEffect(() => {
     !authentication && checkAuth(history, authentication, dispatch, "/check-form");
   }, []);
+  
+  console.log('review request id is', match.params.id);
 
   return (
     <div className="account">
