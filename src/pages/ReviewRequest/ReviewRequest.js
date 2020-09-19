@@ -1,12 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getActiveTasks } from '../../redux/actions/reviewRequest';
+import { fetchTaskById } from '../../services/ServerRequest';
 import checkAuth from "../../utils/checkAuth";
 
 import "./_ReviewRequest.scss";
 import { Form, Input, Button, Select } from 'antd';
 
-import CheckForm from '../../components/CheckForm/CheckForm';
+import CheckForm from '../CheckForm/CheckForm'
 
 const { Option } = Select;
 
@@ -24,7 +25,7 @@ const tailLayout = {
 }
 
 
-function ReviewRequest({ history }, props) {
+function ReviewRequest({ history, match }) {
     const [status, setStatus] = React.useState("published");
     const dispatch = useDispatch();
 
@@ -36,10 +37,15 @@ function ReviewRequest({ history }, props) {
         !authentication && checkAuth(history, authentication, dispatch, "/review-request");
         dispatch(getActiveTasks(status));
     }, [status]);
-    const [task, setTask] = props.React.useState("");
+    const [task, setTask] = React.useState("");
     const [demo, setDemo] = React.useState("");
     const [PR, setPR] = React.useState("");
     const [revReqObj, setRevReqObj] = React.useState("");
+
+    if (match.params.id) {
+      fetchTaskById(match.params.id)
+        .then(tasks => setTask(tasks[0].title))
+    }
 
     const [form] = Form.useForm();
 
@@ -69,7 +75,7 @@ function ReviewRequest({ history }, props) {
               <Form {...layout} form={form} onFinish={onSubmit}>
                   <Form.Item name="task" value={task} label="Task:" rules={[{ required: true }]}>
                       <Select
-                      placeholder="select a task"
+                      placeholder={task ? task : "select a task"}
                       onChange={value => setTask(value)}
                       >
                           {activeTasks ? activeTasks.map(task => <Option value={task.title} key={task.title}>{task.title}</Option>) : ''}
