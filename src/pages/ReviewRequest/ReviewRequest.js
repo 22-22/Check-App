@@ -6,7 +6,7 @@ import checkAuth from "../../utils/checkAuth";
 import "./_ReviewRequest.scss";
 import { Form, Input, Button, Select } from 'antd';
 
-import CheckForm from '../CheckForm/CheckForm';
+import CheckForm from '../../components/CheckForm/CheckForm';
 
 const { Option } = Select;
 
@@ -24,7 +24,7 @@ const tailLayout = {
 }
 
 
-function ReviewRequest({ history }) {
+function ReviewRequest({ history }, props) {
     const [status, setStatus] = React.useState("published");
     const dispatch = useDispatch();
 
@@ -36,7 +36,7 @@ function ReviewRequest({ history }) {
         !authentication && checkAuth(history, authentication, dispatch, "/review-request");
         dispatch(getActiveTasks(status));
     }, [status]);
-    const [task, setTask] = React.useState("");
+    const [task, setTask] = props.React.useState("");
     const [demo, setDemo] = React.useState("");
     const [PR, setPR] = React.useState("");
     const [revReqObj, setRevReqObj] = React.useState("");
