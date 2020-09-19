@@ -35,6 +35,17 @@ const fetchTasks = (status) => {
         console.log(error);
     });
 }
+
+const fetchTask = (title) => {
+  const path = title === null ? '/tasks' : `/tasks/?title=${title}`;
+  return axios.get(`http://localhost:3001${path}`)
+    .then(resp => {
+        return resp.data;
+    }).catch(error => {
+        console.log(error);
+    });
+}
+
 const fetchScores = (task) => {
   const path = task === null ? '/scores' : `/scores/?task=${task}`;
   return axios.get(`http://localhost:3001${path}`)
@@ -101,4 +112,4 @@ const creatNewUser = (gitHubId, role) => {
     });
 };
 
-export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchReviewRequests, fetchSortAndFilterTasks, fetchUserVerification, sendTask };
+export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchTask, fetchScores, fetchReviewRequests, fetchSortAndFilterTasks, fetchUserVerification, sendTask };
