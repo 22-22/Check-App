@@ -9,7 +9,7 @@ import 'antd/dist/antd.css';
 import CreateTaskUpload from "./CreateTaskUpload/CreateTaskUpload";
 import {sendTask} from "../../services/ServerRequest";
 
-export default function CreateTask({history}) {
+export default function CreateTask({history, match}) {
     const dispatch = useDispatch();
     const { authentication, infoUser } = useSelector(({ statesAccount }) => statesAccount);
     let [createTaskState, setTaskState] = useState( {
@@ -21,7 +21,8 @@ export default function CreateTask({history}) {
         score:'',
         items:[]
     });
-
+    
+    console.log('I want to edit task with id', match.params.id);
 
     React.useEffect(() => {
       !authentication && checkAuth(history, authentication, dispatch, "/create-task");
