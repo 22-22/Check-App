@@ -20,11 +20,11 @@ function Reviews({ history }) {
   React.useEffect(() => {
     !authentication && checkAuth(history, authentication, dispatch, "/scores");
     dispatch(getScores(taskName))
-    console.log(scores)
+    
   }, [taskName]);
 
   return (
-    <TableScore />
+    <TableScore scores={scores}/>
   );
 }
 
