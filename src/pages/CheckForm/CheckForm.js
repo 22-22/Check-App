@@ -40,14 +40,17 @@ function CheckForm({ history }) {
 
   useEffect(() => {
     // fetchTaskInfo(revReqObj.task).then(task => setTask(task))
-    fetchTaskInfo(title).then(task => setTask(task))
-  }, [])
-
-  useEffect(() => {
-    task.items &&
-      task.items.forEach(item => score[item.category] = [])
-    setItemsNumber(countAllItems(task.items, role))
-  }, [task])
+    fetchTaskInfo(title).then(task => {
+      const filteredItems = task.items.map(item => {
+        const filtered = item.categoryItems.filter(item => 
+          (role === 'mentor') ? item : !item.checkByMentorOnly)
+        return {...item, categoryItems: filtered}
+      });
+      filteredItems.forEach(item => score[item.category] = []);
+      setTask({ ...task, items: filteredItems });
+      setItemsNumber(countAllItems(filteredItems));
+    })
+  }, [role])
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -90,6 +93,7 @@ function CheckForm({ history }) {
             }
             <Button className="checkform__btn-submit"
               onClick={handleFormSubmit}
+              // htmlType="submit"
               type="primary" size="large"
               icon={<SendOutlined />}
             >

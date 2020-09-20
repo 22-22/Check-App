@@ -2,7 +2,7 @@ export const countAllItems = (items, role) => {
   if (items) {
     return items.map(item => item.categoryItems)
       .flat()
-      .filter(item => (role === 'mentor') ? item : !item.checkByMentorOnly)
+      // .filter(item => (role === 'mentor') ? item : !item.checkByMentorOnly)
       .length;
   }
 }
