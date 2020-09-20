@@ -56,6 +56,15 @@ const fetchReviewRequests = async (task) => {
   }
 }
 
+const fetchReviewRequestsById = async (id) => {
+  try {
+    const resp = await axios.get(`${BASE_URL}/reviewRequests/?id=${id}`);
+    return resp.data;
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
 
 const fetchSortAndFilterTasks = (status, sortBy, sortAs) => {
   const path = status === null ? '' : `/?status=${status}`;
@@ -101,33 +110,16 @@ const creatNewUser = (gitHubId, role) => {
     });
 };
 
-
 const fetchTaskInfo = (title) => {
   return axios.get(`${BASE_URL}/tasks`)
-  // return axios.get(`${BASE_URL}/tasks`) ???!!
-    .then(resp => resp.data)
+    .then(resp =>  resp.data)
     .then(allTasks => allTasks.find(task => task.title === title))
     .catch(err => console.log(err))
 }
 
 const addNewScore = (score) => {
    axios.post(`${BASE_URL}/scores`, score)
-    .then((res) => console.log(res))
     .catch(err => console.log(err))
 };
 
-
-// const addNewScore = (score) => {
-//   return axios.post(`${BASE_URL}/scores`, {
-//     // method: 'POST',
-//     headers: {
-//       // 'Accept': 'application/json',
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(score)
-//   })
-//       .then(response => console.log(response))
-//       .catch(err => console.log(err.message))
-// }
-
-export { fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchReviewRequests, fetchSortAndFilterTasks, fetchUserVerification, sendTask };
+export { fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchReviewRequests, fetchReviewRequestsById, fetchSortAndFilterTasks, fetchUserVerification, sendTask };

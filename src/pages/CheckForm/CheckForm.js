@@ -4,27 +4,16 @@ import { CheckFormHeader } from './CheckFormHeader';
 import { CheckFormCategory } from './CheckFormCategory';
 import { countAllItems, countCheckedItems, countPoints } from '../../utils/checkForm'
 import checkAuth from "../../utils/checkAuth";
-import { fetchTaskInfo, addNewScore } from '../../services/ServerRequest';
+import {
+  fetchTaskInfo, addNewScore,
+  fetchReviewRequestsById, sendReviewRequest
+} from '../../services/ServerRequest';
 import { Button } from 'antd';
 import { SendOutlined } from '@ant-design/icons';
 
 import './_CheckForm.scss';
 
-const title = 'Songbird';
-
-// const revReqObj = {
-//   "id": 123,
-//   "crossCheckSessionId": null,
-//   "author": 22 - 22,
-//   "task": "Songbird",
-//   "state": "DRAFT",
-//   "demo": "demo",
-//   "PR": "PR",
-//   "selfGrade": {}
-// }
-
-// function CheckForm({ history, revReqObj, checkType }) {
-function CheckForm({ history }) {
+function CheckForm({ history, match, revReqObj, checkType }) {
   const dispatch = useDispatch();
   const { authentication } = useSelector(({ statesAccount }) => statesAccount);
   const role = useSelector(state => state.statesAccount.infoUser.role);
@@ -33,43 +22,55 @@ function CheckForm({ history }) {
   React.useEffect(() => {
     !authentication && checkAuth(history, authentication, dispatch, "/check-form");
   }, []);
-  
-  console.log('review request id is', match.params.id);
 
   const [itemsNumber, setItemsNumber] = useState(0);
   const [task, setTask] = useState({});
   const [score, setScore] = useState({});
+  const [selfCheck, setSelfCheck] = useState({});
 
   useEffect(() => {
-    // fetchTaskInfo(revReqObj.task).then(task => setTask(task))
-    fetchTaskInfo(title).then(task => {
-      const filteredItems = task.items.map(item => {
-        const filtered = item.categoryItems.filter(item => 
-          (role === 'mentor') ? item : !item.checkByMentorOnly)
-        return {...item, categoryItems: filtered}
-      });
-      filteredItems.forEach(item => score[item.category] = []);
-      setTask({ ...task, items: filteredItems });
-      setItemsNumber(countAllItems(filteredItems));
+    if (checkType === 'self') {
+      setSelfCheck(revReqObj)
+    } else {
+      fetchReviewRequestsById(match.params.id)
+        .then(data => setSelfCheck(data[0]))
+    }
+  }, [])
+
+  useEffect(() => {
+    fetchTaskInfo(selfCheck.task).then(task => {
+      if (task) {
+        const filteredItems = task.items.map(item => {
+          const filtered = item.categoryItems.filter(item =>
+            (role === 'mentor') ? item : !item.checkByMentorOnly)
+          return { ...item, categoryItems: filtered }
+        });
+        filteredItems.forEach(item => score[item.category] = []);
+        setTask({ ...task, items: filteredItems });
+        setItemsNumber(countAllItems(filteredItems));
+      }
     })
-  }, [role])
+  }, [selfCheck])
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (countCheckedItems(score) === itemsNumber) {
+      const date = new Date().toLocaleDateString()
+        .split('.').reverse().join('-');
+      const { task, student } = selfCheck;
       const checkInfo = {
+        task,
         user,
+        student,
         score: countPoints(score),
         id: new Date().getTime(),
-        date: new Date().toLocaleDateString(),
+        date,
+        time: new Date().toLocaleTimeString(),
         items: score,
       }
-
-      addNewScore(checkInfo);
-      console.log('inside', checkInfo)
-
-      // const selfCheckInfo = { ...revReqObj, selfGrade: score, status: "PUBLISHED" }
-      // checkType === "self" ? sendReviewRequest(totalScoreInfo) : addNewScore(checkInfo);
+      checkType === "self"
+        ? sendReviewRequest({ ...selfCheck, selfGrade: score, status: "PUBLISHED" })
+        : addNewScore(checkInfo);
     }
   }
 
@@ -95,7 +96,6 @@ function CheckForm({ history }) {
             }
             <Button className="checkform__btn-submit"
               onClick={handleFormSubmit}
-              // htmlType="submit"
               type="primary" size="large"
               icon={<SendOutlined />}
             >
