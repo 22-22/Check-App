@@ -33,6 +33,8 @@ function CheckForm({ history }) {
   React.useEffect(() => {
     !authentication && checkAuth(history, authentication, dispatch, "/check-form");
   }, []);
+  
+  console.log('review request id is', match.params.id);
 
   const [itemsNumber, setItemsNumber] = useState(0);
   const [task, setTask] = useState({});
