@@ -9,7 +9,7 @@ import 'antd/dist/antd.css';
 import CreateTaskUpload from "./CreateTaskUpload/CreateTaskUpload";
 import {fetchTaskById, sendTask} from "../../services/ServerRequest";
 
-export default function CreateTask({history,id}) {
+export default function CreateTask({history, match}) {
     const dispatch = useDispatch();
     const { authentication, infoUser } = useSelector(({ statesAccount }) => statesAccount);
     console.log('id',infoUser)
@@ -31,6 +31,7 @@ export default function CreateTask({history,id}) {
         items:[]
     });
 
+    console.log('I want to edit task with id', match.params.id);
 
 
     React.useEffect(() => {
