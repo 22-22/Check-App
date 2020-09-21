@@ -8,6 +8,15 @@
         "completed": []
       },
       "tasks": []
+    },
+    {
+      "id": "vorob",
+      "role": "student",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
     }
   ],
   "tasks": [
@@ -313,6 +322,52 @@
         }
       ],
       "id": 8
+    },
+    {
+      "title": "фывфыв",
+      "status": "",
+      "description": "фывфыв",
+      "deadline": "2020-10-14",
+      "date": "2020-09-08",
+      "score": "",
+      "items": [
+        {
+          "category": "Category",
+          "categoryItems": []
+        },
+        {
+          "category": "Category",
+          "categoryItems": []
+        }
+      ],
+      "id": 9
+    },
+    {
+      "title": "hate",
+      "status": "",
+      "author": "undefined",
+      "description": "asdasdasd",
+      "deadline": "2020-10-24",
+      "date": "2020-09-08",
+      "score": 20,
+      "items": [
+        {
+          "category": "Categoryasd",
+          "categoryItems": [
+            {
+              "description": "category Item",
+              "minScore": 0,
+              "maxScore": 200,
+              "checkByMentorOnly": false
+            }
+          ]
+        },
+        {
+          "category": "Categoryasdasd",
+          "categoryItems": []
+        }
+      ],
+      "id": 10
     }
   ],
   "scores": [

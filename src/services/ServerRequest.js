@@ -74,7 +74,7 @@ const sendTask = (task) => {
 };
 
 const fetchTaskById = (id) => {
-   return axios.get(`${BASE_URL}/tasks`).then(res => res.data.find((e) => e.id === id))
+   return axios.get(`${BASE_URL}/tasks/?id=${id}`).then(res => {console.log(res.data);return res.data})
 };
 
 const fetchUserVerification = (gitHubId) => {

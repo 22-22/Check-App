@@ -1,33 +1,35 @@
 import React, {useEffect, useState} from "react";
-import { Input, Divider, DatePicker,Space,Button,Modal, message,Typography} from 'antd';
+import { Divider, Button,Typography } from 'antd';
 import 'antd/dist/antd.css';
 import TaskViewCategory from "./TaskViewCategory/TaskViewCategory";
 import './TaskView.scss'
+import {fetchTaskById} from "../../services/ServerRequest";
+import {useDispatch, useSelector} from "react-redux";
+import checkAuth from "../../utils/checkAuth";
 
-export default function TaskView({}) {
+export default function TaskView({history, match}) {
 
-    const task =  {
-        "title": "asx",
-        "status": "",
-        "description": "asxas",
-        "deadline": "2020-10-28",
-        "date": "2020-10-01",
-        "score": 20,
-        "items": [
-            {
-                "category": "Category",
-                "categoryItems": [
-                    {
-                        "description": "category Item",
-                        "minScore": 0,
-                        "maxScore": 200,
-                        "checkByMentorOnly": false
-                    }
-                ]
-            }
-        ],
-        "id": 8
-    }
+    const dispatch = useDispatch();
+    const { authentication, infoUser } = useSelector(({ statesAccount }) => statesAccount);
+
+    let [task,setTaskState] = useState({
+        title: '',
+        status:'',
+        author:`${infoUser.id}`,
+        description: '',
+        deadline:'',
+        date:'',
+        score:'',
+        items:[]
+    });
+
+    useEffect(() => {
+        (async () => match.params.id ? setTaskState( ( (await fetchTaskById( match.params.id ))[0] ) ) : '')();
+    },[]);
+
+    React.useEffect(() => {
+        !authentication && checkAuth(history, authentication, dispatch, "/create-task");
+    }, []);
 
     const taskCategories = task.items.map((e, i) => (<TaskViewCategory
               key = {i}
@@ -70,7 +72,7 @@ export default function TaskView({}) {
                 </div>
             </div>
             <div className={'task__buttons'}>
-                { false ? buttonBlockOne : buttonBlockTwo}
+                { infoUser.role === 'student' ?  buttonBlockTwo : buttonBlockOne }
             </div>
         </div>
     )

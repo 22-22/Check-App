@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Input, Divider, DatePicker,Space,Button,message,Spin} from 'antd';
+import { Input, Divider, DatePicker,Button,message,Spin} from 'antd';
 import CreateTaskCategorie from "./CreateTaskCategorie/CreateTaskCategorie";
 import CreateTaskCategoryEdit from "./CreateTaskCategorie/CreateTaskCategoryEdit";
 import checkAuth from "../../utils/checkAuth";
@@ -12,18 +12,13 @@ import {fetchTaskById, sendTask} from "../../services/ServerRequest";
 export default function CreateTask({history, match}) {
     const dispatch = useDispatch();
     const { authentication, infoUser } = useSelector(({ statesAccount }) => statesAccount);
-    console.log('id',infoUser)
+    const id = match.params.id;
 
-    async function getTask(){
-        let task = await fetchTaskById(id);
-        // setTaskState(task);
-        setLoading(false)
-    }
-
-    let [loading,setLoading] = useState(!id === undefined);
+    let [loading,setLoading] = useState(id !== undefined);
     let [createTaskState, setTaskState] = useState( {
         title: '',
         status:'',
+        author:`${infoUser.id}`,
         description: '',
         deadline:'',
         date:'',
@@ -31,20 +26,18 @@ export default function CreateTask({history, match}) {
         items:[]
     });
 
-    console.log('I want to edit task with id', match.params.id);
-
+    useEffect(() => {
+        (async () => id ? setTaskState( ( (await fetchTaskById( id ))[0] ) ) : '')();
+        setLoading(false)
+    },[]);
 
     React.useEffect(() => {
       !authentication && checkAuth(history, authentication, dispatch, "/create-task");
     }, []);
 
-    useEffect(getTask,[]);
-
 
     const { TextArea } = Input;
     const { RangePicker } = DatePicker;
-
-
 
     const items = createTaskState.items.map((e, i) => (<CreateTaskCategorie
         key = {i}
@@ -70,8 +63,6 @@ export default function CreateTask({history, match}) {
         console.log(event.target.value )
         setTaskState({ ...createTaskState, description  : event.target.value })
     }
-
-
 
     function datePickerHandler(value) {
         if(value !== null){
@@ -129,10 +120,10 @@ export default function CreateTask({history, match}) {
                             <Divider />
                             <div className={'edit--panel__head'}>
                                 <div className={'edit--panel__header'}>
-                                    <Input placeholder="Task name" allowClear onChange={(event) => inputHandler(event)}/>
-                                    <RangePicker onChange = {datePickerHandler}/>
+                                    <Input placeholder="Task name" value={createTaskState.title} allowClear onChange={(event) => inputHandler(event)}/>
+                                    <RangePicker  onChange = {datePickerHandler}/>
                                 </div>
-                                <TextArea placeholder="Task description" onChange={event => textAreaHandler(event)}/>
+                                <TextArea placeholder="Task description" value={createTaskState.description} onChange={event => textAreaHandler(event)}/>
                             </div>
                             <div className={'edit--panel__content'}>
                                 { itemsEdit}

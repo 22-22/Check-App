@@ -1,0 +1,80 @@
+Arguments: 
+  D:\node.js\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add moment
+
+PATH: 
+  D:\Js tasks\Check-App\node_modules\.bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;D:\node.js\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Users\Lenov\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Lenov\AppData\Local\Programs\Python\Python38-32\;C:\Users\Lenov\AppData\Local\Microsoft\WindowsApps;C:\Users\Lenov\AppData\Local\GitHubDesktop\bin;C:\ProgramData\Lenov\GitHubDesktop\bin;C:\Users\Lenov\AppData\Roaming\npm;D:\Microsoft VS Code\bin;C:\Users\Lenov\AppData\Local\atom\bin;C:\Users\Lenov\AppData\Local\Microsoft\WindowsApps;;D:\PyCharm 2019.3.1\bin;;D:\WebStorm 2019.3.1\bin;;D:\IntelliJ IDEA Educational Edition 2019.3.1\bin;;C:\Users\Lenov\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.14.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@ant-design/icons/-/icons-4.2.2.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141375:19)
+      at Object.onceWrapper (events.js:299:28)
+      at ClientRequest.emit (events.js:210:5)
+      at TLSSocket.emitRequestTimeout (_http_client.js:690:9)
+      at Object.onceWrapper (events.js:299:28)
+      at TLSSocket.emit (events.js:210:5)
+      at TLSSocket.Socket._onTimeout (net.js:469:8)
+      at listOnTimeout (internal/timers.js:531:17)
+      at processTimers (internal/timers.js:475:7)
+
+npm manifest: 
+  {
+    "name": "check-app",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "@testing-library/jest-dom": "^4.2.4",
+      "@testing-library/react": "^9.3.2",
+      "@testing-library/user-event": "^7.1.2",
+      "antd": "^4.6.2",
+      "axios": "^0.20.0",
+      "json-server": "^0.16.1",
+      "md-2-json": "^1.0.6",
+      "node-sass": "^4.14.1",
+      "prop-types": "^15.7.2",
+      "react": "^16.13.1",
+      "react-dom": "^16.13.1",
+      "react-highlight-words": "^0.16.0",
+      "react-redux": "^7.2.1",
+      "react-router-dom": "^5.2.0",
+      "react-scripts": "3.4.3",
+      "redux": "^4.0.5",
+      "redux-thunk": "^2.3.0"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject",
+      "server": "npx  json-server --watch public/db.json --port=3001"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

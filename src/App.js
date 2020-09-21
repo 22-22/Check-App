@@ -33,12 +33,11 @@ function App() {
         <Route path="/review-request/:id" component={ ReviewRequest } exact />
         <Route path="/review-requests" component={ ReviewRequests } exact />
         <Route path="/tasks" component={ Tasks } exact />
-        {/* <Route path="/tasks/:id" component={ Task } exact /> */}
+        <Route path="/tasks/:id" component={ TaskView } exact />
         <Route path="/check-form" component={ CheckForm } exact />
         <Route path="/check-form/:id" component={ CheckForm } exact />
         <Route path="/scores" component={ Scores } exact />
         <Route path="/reviews" component={ Reviews } exact />
-        <Route path="/task-view" component={TaskView} exact/>
       </Switch>
     </div>
   );

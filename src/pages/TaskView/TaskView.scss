@@ -4,7 +4,8 @@
   padding: 10px 15px;
 
   .task__buttons{
-    //display: flex;
+    display: flex;
+    justify-content: center;
   }
   .task__description{
     font-size: 2rem;
