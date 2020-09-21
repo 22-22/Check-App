@@ -67,6 +67,15 @@ const fetchReviewRequests = async (task) => {
   }
 }
 
+const fetchReviewRequestsById = async (id) => {
+  try {
+    const resp = await axios.get(`${BASE_URL}/reviewRequests/?id=${id}`);
+    return resp.data;
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
 
 const fetchSortAndFilterTasks = (status, sortBy, sortAs) => {
   const path = status === null ? '' : `/?status=${status}`;
@@ -116,4 +125,16 @@ const creatNewUser = (gitHubId, role) => {
     });
 };
 
-export { getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchTaskById, fetchScores, fetchReviewRequests, fetchSortAndFilterTasks, fetchUserVerification, sendTask, sendReviewRequest };
+const fetchTaskInfo = (title) => {
+  return axios.get(`${BASE_URL}/tasks`)
+    .then(resp =>  resp.data)
+    .then(allTasks => allTasks.find(task => task.title === title))
+    .catch(err => console.log(err))
+}
+
+const addNewScore = (score) => {
+   axios.post(`${BASE_URL}/scores`, score)
+    .catch(err => console.log(err))
+};
+
+export { fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchTaskById, fetchScores, fetchReviewRequests, fetchReviewRequestsById, fetchSortAndFilterTasks, fetchUserVerification, sendTask, sendReviewRequest };

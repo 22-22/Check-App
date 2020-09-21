@@ -1,0 +1,93 @@
+.checkform__wrapper {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    font-size: 1.6rem;
+    padding: 2% 5% 1%;
+}
+
+.checkform__header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 20px 0;
+    padding: 10px 0;
+    border-bottom: 3px solid black;
+    .checkform__header-title {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        @media (max-width: 767px) {
+            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+        }
+    }
+    .checkform__header-stats {
+        font-size: 2rem;
+        font-weight: 500;
+        @media (max-width: 767px) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.checkform__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 10px;
+    @media (max-width: 767px) {
+        flex-direction: column;
+    }
+    .checkform__item-description {
+        margin: 0 10px;
+        width: 60%;
+        text-align: justify;
+        @media (max-width: 767px) {
+            margin: 10px 0;
+            width: 90%;
+            text-align: center;
+        }
+    }
+    .checkform__item-textarea {
+        width: 100%;
+        height: 80px;
+        padding: 3px 12px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+    }
+    .checkform__item-comment {
+        font-size: 1.2rem;
+        font-style: italic;
+    }
+    .checkform__item-points {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+}
+
+.checkform__category-title {
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid black;
+    margin: 0;
+    font-size: 2.5rem;
+    @media (max-width: 767px) {
+        text-align: center;
+    }
+}
+
+.checkform__info {
+    margin: 0 0 20px 0;
+}
+
+.checkform__items {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkform__btn-submit {
+    width: 40%;
+    margin: 20px auto 0;
+}
