@@ -17,6 +17,15 @@
         "completed": []
       },
       "tasks": []
+    },
+    {
+      "id": "22-22",
+      "role": "student",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
     }
   ],
   "tasks": [
@@ -44,6 +53,69 @@
         }
       ],
       "id": 1
+    },
+    {
+      "title": "Songbird",
+      "description": "Допускается: -другая тематика приложения (не птицы) -использование вместо изображений видео -замена названий и описаний птиц другими данными",
+      "deadline": "2020-10-14",
+      "date": "2020-09-23",
+      "score": 200,
+      "items": [
+        {
+          "category": "Вёрстка, дизайн, UI",
+          "categoryItems": [
+            {
+              "description": "минимальная ширина, при которой приложение отображается корректно – 320 рх",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": 200,
+              "checkByMentorOnly": "true"
+            },
+            {
+              "description": "внешний вид приложения полностью повторяет демо или является его улучшенной версией",
+              "minScore": 0,
+              "maxScore": 20,
+              "score": -100
+            }
+          ]
+        },
+        {
+          "category": "Аудиоплеер",
+          "categoryItems": [
+            {
+              "description": "есть аудиоплеер",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": 200
+            },
+            {
+              "description": "аудиоплеер кастомный, такой же, как в демо приложения, может отличаться по цвету",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": -100,
+              "checkByMentorOnly": "true"
+            },
+            {
+              "description": "у кастомного аудиоплеера есть регулятор громкости звука",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": -100
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "любой сбой/поломка приложения, связанная с действиями пользователя. Например, неправильный подсчёт баллов, нет перехода на следующую страницу, выводится неверная информация и т.д. Этот пункт не касается ошибок в консоли",
+              "minScore": -10,
+              "maxScore": 0,
+              "score": 200
+            }
+          ]
+        }
+      ],
+      "id": 22
     },
     {
       "title": "Task 2",
@@ -457,6 +529,38 @@
             "score": 0,
             "comment": "No ticket today"
           }
+        }
+      }
+    },
+    {
+      "task": "Task 7",
+      "user": "22-22",
+      "score": 19,
+      "id": 1,
+      "date": "17.09.2020",
+      "description": {
+        "items": {
+          "Basic scope": [
+            {
+              "score": "7"
+            },
+            {
+              "score": "4"
+            }
+          ],
+          "Extra scope": [
+            {
+              "score": "8"
+            }
+          ],
+          "Fines": [
+            {
+              "score": "0"
+            },
+            {
+              "score": "0"
+            }
+          ]
         }
       }
     }
