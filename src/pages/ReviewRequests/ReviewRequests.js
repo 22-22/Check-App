@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import 'antd/dist/antd.css';
 import { Table, Button, Tooltip } from 'antd';
-import { FileAddOutlined, OrderedListOutlined } from '@ant-design/icons';
+import { FileAddOutlined, CheckCircleOutlined } from '@ant-design/icons';
 
 function ReviewRequests({ history }) {
   const dispatch = useDispatch();
@@ -36,7 +36,7 @@ function ReviewRequests({ history }) {
        sendingDate: reviewRequest.sendingDate,
        crossCheckSessionId: reviewRequest.crossCheckSessionId,
        reviewRequestState: reviewRequest.state,
-       actions: <Link to='/check-form'><Tooltip title="Review this work"><Button type="primary" shape="circle" icon={<OrderedListOutlined />} /></Tooltip></Link>});
+       actions: <Link to={`/check-form/${reviewRequest.id}`}><Tooltip title="Review this work"><Button type="primary" shape="circle" icon={<CheckCircleOutlined />} /></Tooltip></Link>});
        tasksSet.add(reviewRequest.task);
        studentsSet.add(reviewRequest.student);
        statesSet.add(reviewRequest.state)});
