@@ -36,6 +36,16 @@ const fetchTasks = (status) => {
     });
 }
 
+const fetchTask = (title) => {
+  const path = title === null ? '/tasks' : `/tasks/?title=${title}`;
+  return axios.get(`http://localhost:3001${path}`)
+    .then(resp => {
+        return resp.data;
+    }).catch(error => {
+        console.log(error);
+    });
+}
+
 const fetchTaskById = (id) => {
   const path = id === null ? '/tasks' : `/tasks/?id=${id}`;
   return axios.get(`http://localhost:3001${path}`)
@@ -137,4 +147,4 @@ const addNewScore = (score) => {
     .catch(err => console.log(err))
 };
 
-export { fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchTaskById, fetchScores, fetchReviewRequests, fetchReviewRequestsById, fetchSortAndFilterTasks, fetchUserVerification, sendTask, sendReviewRequest };
+export { fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchTask, fetchTaskById, fetchScores, fetchReviewRequests, fetchReviewRequestsById, fetchSortAndFilterTasks, fetchUserVerification, sendTask, sendReviewRequest };
