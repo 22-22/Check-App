@@ -3,9 +3,10 @@ import { Divider, Button,Typography } from 'antd';
 import 'antd/dist/antd.css';
 import TaskViewCategory from "./TaskViewCategory/TaskViewCategory";
 import './TaskView.scss'
-import {fetchTaskById} from "../../services/ServerRequest";
+import {changeTask, fetchTaskById, sendTask} from "../../services/ServerRequest";
 import {useDispatch, useSelector} from "react-redux";
 import checkAuth from "../../utils/checkAuth";
+import { Link } from 'react-router-dom';
 
 export default function TaskView({history, match}) {
 
@@ -23,6 +24,8 @@ export default function TaskView({history, match}) {
         items:[]
     });
 
+    useEffect(() => {console.log(task); console.log(match.params.id)})
+
     useEffect(() => {
         (async () => match.params.id ? setTaskState( ( (await fetchTaskById( match.params.id ))[0] ) ) : '')();
     },[]);
@@ -37,25 +40,46 @@ export default function TaskView({history, match}) {
               index = {i}
     />));
 
+    function publishHandler() {
+        setTaskState({...task, status:'published'});
+
+    }
+
+    function archiveHandler() {
+        setTaskState({...task, status:'archive'});
+        console.log('я сработал')
+        console.log('iddd',task.id)
+        changeTask(task.id,task)
+    }
+
     const buttonBlockOne = [
-        <Button>
+        <Button onClick={publishHandler}>
             Опубликовать
         </Button>,
-        <Button>
-            Редактировать
-        </Button>,
-        <Button>
+        <Link to={`/create-task/${match.params.id}`}>
+            <Button>
+                Редактировать
+            </Button>
+        </Link>,
+        <Button onClick={archiveHandler}>
             Архивировать
-        </Button>
+        </Button>,
+        <Link to='/tasks'>
+            <Button>
+                Вернутся к списку задач
+            </Button>
+        </Link>
     ];
 
     const buttonBlockTwo = [
         <Button>
             Создать запрос на ревью
         </Button>,
-        <Button>
-            Вернутся к списку задач
-        </Button>
+        <Link to='/tasks'>
+            <Button>
+                Вернутся к списку задач
+            </Button>
+        </Link>
     ];
 
     return (
@@ -72,7 +96,7 @@ export default function TaskView({history, match}) {
                 </div>
             </div>
             <div className={'task__buttons'}>
-                { infoUser.role === 'student' ?  buttonBlockTwo : buttonBlockOne }
+                { infoUser.role !== 'student' ?  buttonBlockTwo : buttonBlockOne }
             </div>
         </div>
     )

@@ -5,29 +5,35 @@ import CreateTaskCategoryEdit from "./CreateTaskCategorie/CreateTaskCategoryEdit
 import checkAuth from "../../utils/checkAuth";
 import './_CreateTask.scss'
 import { useDispatch, useSelector } from "react-redux";
+import {Link} from "react-router-dom";
 import 'antd/dist/antd.css';
 import CreateTaskUpload from "./CreateTaskUpload/CreateTaskUpload";
-import {fetchTaskById, sendTask} from "../../services/ServerRequest";
+import {fetchTaskById, getTaskId, sendTask} from "../../services/ServerRequest";
 
 export default function CreateTask({history, match}) {
     const dispatch = useDispatch();
     const { authentication, infoUser } = useSelector(({ statesAccount }) => statesAccount);
     const id = match.params.id;
+    console.log(id)
 
     let [loading,setLoading] = useState(id !== undefined);
+    let [canSave,setCanSaveState] = useState(false)
     let [createTaskState, setTaskState] = useState( {
         title: '',
-        status:'',
+        status:'draft',
         author:`${infoUser.id}`,
         description: '',
         deadline:'',
         date:'',
         score:'',
-        items:[]
+        items:[],
+        id
     });
 
+    useEffect(() => console.log(createTaskState))
     useEffect(() => {
         (async () => id ? setTaskState( ( (await fetchTaskById( id ))[0] ) ) : '')();
+        (async () => setTaskState({...createTaskState,id: await getTaskId() + 1}))();
         setLoading(false)
     },[]);
 
@@ -96,20 +102,21 @@ export default function CreateTask({history, match}) {
         }else if(createTaskState.items.length === 0){
             message.error('Создайте хоть 1 категорию')
         }else{
-            sendTask(createTaskState)
+            message.success('Вы можете сохранить задание')
+            setCanSaveState(true)
         }
     }
 
     function saveTaskButtonHandler() {
-        setTaskState({ ...createTaskState, status:'published'});
-        check()
-
+       sendTask(createTaskState)
     }
 
-    function saveAsDraftButtonHandler() {
-        setTaskState({ ...createTaskState, status:'draft'});
-        check()
-    }
+    const saveButton = canSave ? (
+        <Link to={`/tasks/${createTaskState.id}`}>
+            <Button onClick={saveTaskButtonHandler}>Save</Button>
+        </Link>
+    ):<Button onClick={check}>Check</Button>
+
 
     return (
         <Spin spinning={loading} size={'large'}>
@@ -142,10 +149,7 @@ export default function CreateTask({history, match}) {
                         </div>
                     </div>
                 </div>
-
-
-                <Button onClick={saveTaskButtonHandler}>Published</Button>
-                <Button onClick={saveAsDraftButtonHandler}>Save as Draft</Button>
+                {saveButton}
                 <CreateTaskUpload setState = {setTaskState} />
             </div>
         </Spin>

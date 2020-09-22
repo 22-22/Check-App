@@ -7,7 +7,6 @@ import CreateTaskCategoryItem
 export default function TaskViewCategory({
     category,
 }) {
-    console.log(category)
     const categoryItems = category.categoryItems.map((e, i) => (<TaskViewCategoryItem
         categoryItem = {e}
         key = {i}

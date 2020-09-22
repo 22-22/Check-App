@@ -50,8 +50,18 @@ export default function CreateTaskCategoryItemEdit({
     }
     function markAsMentor() {
         let items = createTaskState.items;
-        console.log(categoryItem.checkByMentorOnly);
-        items[categoryIndex].categoryItems[index].checkByMentorOnly = !items[categoryIndex].categoryItems[index].checkByMentorOnly
+        let item = items[categoryIndex];
+        let paragraph = item.categoryItems[index];
+        paragraph.checkByMentorOnly = !paragraph.checkByMentorOnly;
+        item.categoryItems.splice(index,1,paragraph)
+        items.splice(categoryItem,1,item)
+        setTaskState(
+            {
+                ...createTaskState,
+                items
+
+            }
+        )
     }
 
 
