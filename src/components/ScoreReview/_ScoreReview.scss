@@ -1,0 +1,26 @@
+.score-review-subtitle {
+    text-align: center;
+}
+
+.score-review-category {
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+.score-review-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.score-review-marks {
+    font-size: 20px;
+    align-self: center;
+}
+.score-review-item-description-comment {
+    width: 90%;
+}
+
+.score-review-item-comment {
+    padding: 20px;
+    background: #F5F5F5;
+}
