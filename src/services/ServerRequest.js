@@ -66,10 +66,10 @@ const fetchScores = (task) => {
     });
 }
 
-const fetchReviewRequests = async (task) => {
+const fetchReviewRequests = async () => {
   const path = '/reviewRequests';
   try {
-    const resp = await axios.get(`http://localhost:3001${path}`);
+    const resp = await axios.get(`${BASE_URL}${path}`);
     return resp.data;
   }
   catch (error) {
@@ -87,16 +87,16 @@ const fetchReviewRequestsById = async (id) => {
   }
 }
 
-const fetchSortAndFilterTasks = (status, sortBy, sortAs) => {
+const fetchSortAndFilterTasks = async (status, sortBy, sortAs) => {
   const path = status === null ? '' : `/?status=${status}`;
   const pathSortBy = sortBy === null ? '' : `${status === null ? '?' : '&'}_sort=${sortBy}&_order=${sortAs}`;
-  console.log(`http://localhost:3001${path}${pathSortBy}`);
-  return axios.get(`http://localhost:3001/tasks${path}${pathSortBy}`)
-    .then(resp => {
-        return resp.data;
-    }).catch(error => {
-        console.log(error);
-    });
+  // console.log(`http://localhost:3001${path}${pathSortBy}`);
+  try {
+    const resp = await axios.get(`http://localhost:3001/tasks${path}${pathSortBy}`);
+    return resp.data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const sendTask = (task) => {
