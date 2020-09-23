@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import 'antd/dist/antd.css';
 import { Table, Button, Tooltip } from 'antd';
-import { FileAddOutlined, EditOutlined, DeleteOutlined, FileZipOutlined, DownloadOutlined } from '@ant-design/icons';
+import { FileAddOutlined, EditOutlined, DeleteOutlined, FileZipOutlined, DownloadOutlined, CodeOutlined } from '@ant-design/icons';
 
 function Tasks({ history }) {
   const [status, setStatus] = React.useState(null);
@@ -20,16 +20,6 @@ function Tasks({ history }) {
     ({ statesAccount }) => statesAccount
   );
   const { tasks } = useSelector(({ tasks }) => tasks);
-
-  // const handleSort = (sortBy, sortAs) => {
-  //   setSortBy(sortBy);
-  //   setSortAs(sortAs);
-  // };
-  // const handleStatus = (status) => {
-  //   setSortBy(null);
-  //   setSortAs(null);
-  //   setStatus(status);
-  // };
 
   React.useEffect(() => {
     !authentication && checkAuth(history, authentication, dispatch, "/tasks");
@@ -50,19 +40,22 @@ function Tasks({ history }) {
       taskTitle = task.title;
       tasksData.push(
         {key: i+1,
-        task: task.title,
+        task: <Link to={`/tasks/${task.id}`}>{task.title}</Link>,
         author: task.author,
         maxScore: task.maxScore,
         editDate: task.editDate,
         date: task.date,
         deadline: task.deadline,
         taskState: task.status,
-        actions: <><Tooltip title={`Edit ${taskTitle}`}><Button type="primary" shape="circle" icon={<EditOutlined />} /></Tooltip>
+        actions: <><Link to={`/create-task/${task.id}`}><Tooltip title={`Edit ${taskTitle}`}><Button type="primary" shape="circle" icon={<EditOutlined />} /></Tooltip></Link>
           <a href={`data: ${taskFile}`} download={`${taskTitle}.json`}><Tooltip title={`Export ${taskTitle}`}><Button type="primary" shape="circle" icon={<DownloadOutlined />} /></Tooltip></a>
           { task.status !== 'archived' ? (
             <Tooltip title={`Archive ${taskTitle}`}><Button type="primary" shape="circle" icon={<FileZipOutlined />} /></Tooltip>
           ) : null }
           <Tooltip title={`Delete ${taskTitle}`}><Button type="primary" shape="circle" icon={<DeleteOutlined />} /></Tooltip>
+          { task.status === 'published' ? (
+            <Link to={`/review-request/${task.id}`}><Tooltip title={`Submit task${i+1}`}><Button type="primary" shape="circle" icon={<CodeOutlined />} /></Tooltip></Link>
+          ) : null }
           </>}
       );
       authorSet.add(task.author);
@@ -76,7 +69,7 @@ function Tasks({ history }) {
       title: 'Task',
       dataIndex: 'task',
       defaultSortOrder: 'ascend',
-      sorter: (a, b) => a.task.localeCompare(b.task),
+      sorter: (a, b) => a.task.props.children.localeCompare(b.task.props.children),
     },
     {
       title: 'Author',
