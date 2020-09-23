@@ -8,9 +8,9 @@ export default function CreateTaskUpload({setState}) {
     function checkObj(obj) {
         console.log(obj)
         if(obj.items === undefined){
-            message.error('обязательный парамет items')
+            message.error('required parameter items')
         }else if(!Array.isArray(obj.items)){
-            message.error('items должен быть массивом')
+            message.error('items must be an array')
         }else {
             setState(obj)
         }
