@@ -27,14 +27,14 @@ export default function CreateTask({history, match}) {
         date:'',
         score:'',
         items:[],
-        id
+        id: Number(id),
     });
 
     let taskFile = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(createTaskState));
     // useEffect(() => console.log(createTaskState))
     useEffect(() => {
         (async () => id ? setTaskState( ( (await fetchTaskById( id ))[0] ) ) : '')();
-        (async () => id ? '' : setTaskState({...createTaskState,id: `${await getTaskId() + 1}`}) )();
+        (async () => id ? '' : setTaskState({...createTaskState,id: await getTaskId() + 1}) )();
         setLoading(false)
     },[]);
 
@@ -96,15 +96,15 @@ export default function CreateTask({history, match}) {
     }
     function check() {
         if(createTaskState.title === ''){
-            message.error('Введите название таски')
+            message.error('Enter task title')
         }else if(createTaskState.description === ''){
-            message.error('Введите описание таски')
+            message.error('Enter task description')
         }else if(createTaskState.date === ''){
-            message.error('Введите Дату')
+            message.error('Enter date')
         }else if(createTaskState.items.length === 0){
-            message.error('Создайте хоть 1 категорию')
+            message.error('Add at least one category')
         }else{
-            message.success('Вы можете сохранить задание')
+            message.success('You can save your task')
             setCanSaveState(true)
         }
     }

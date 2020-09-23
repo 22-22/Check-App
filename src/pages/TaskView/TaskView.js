@@ -53,19 +53,19 @@ export default function TaskView({history, match}) {
 
     const buttonBlockOne = [
         <Button onClick={publishHandler}>
-            Опубликовать
+            Publish
         </Button>,
         <Link to={`/create-task/${match.params.id}`}>
             <Button>
-                Редактировать
+                Edit
             </Button>
         </Link>,
         <Button onClick={archiveHandler}>
-            Архивировать
+            Archive
         </Button>,
         <Link to='/tasks'>
             <Button>
-                Вернутся к списку задач
+                Back to the tasks
             </Button>
         </Link>
     ];

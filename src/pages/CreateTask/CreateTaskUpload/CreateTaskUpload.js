@@ -19,11 +19,9 @@ export default function CreateTaskUpload({setState}) {
     function handleFile(file) {
         let reader = new FileReader();
         reader.onload = function(file) {
-            // The file's text will be printed in console
             let obj = JSON.parse(file.target.result);
             checkObj(obj);
             console.log(obj)
-            // localStorage.setItem('file',file.target.result)
         };
         reader.readAsText(file);
     };
