@@ -18,6 +18,13 @@
       text-align: center;
     }
   }
+  .main__buttons-container{
+    display: flex;
+    align-items: center;
+    max-width: 130px;
+    justify-content: space-around;
+    margin: 20px auto;
+  }
   .main__edit--panel{
     padding: 10px;
 
@@ -58,5 +65,8 @@
   }
   .main__task{
     width: 100%!important;
+  }
+  .main__buttons-container{
+    margin: 0 auto;
   }
 }

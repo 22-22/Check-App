@@ -1,5 +1,8 @@
 import React from "react";
-import { message} from 'antd';
+import { message,Button,Tooltip} from 'antd';
+import './CreateTaskUpload.scss'
+import { DownloadOutlined } from '@ant-design/icons';
+
 export default function CreateTaskUpload({setState}) {
 
     function checkObj(obj) {
@@ -25,5 +28,11 @@ export default function CreateTaskUpload({setState}) {
         reader.readAsText(file);
     };
 
-    return (<input type="file" accept=".json" onChange={e => handleFile(e.target.files[0])} />)
+    return (
+        <Tooltip title={'Import'}>
+            <Button type="primary" shape="circle" size={'large'} icon={<DownloadOutlined  rotate = {180}/>}>
+              <input type="file" accept=".json"  className={'upload'} onChange={e => handleFile(e.target.files[0])}/>
+            </Button>
+        </Tooltip>
+    )
 }

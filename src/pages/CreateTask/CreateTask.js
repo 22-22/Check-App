@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Input, Divider, DatePicker,Button,message,Spin} from 'antd';
+import { Input, Divider, DatePicker,Button,message,Spin,Tooltip} from 'antd';
 import CreateTaskCategorie from "./CreateTaskCategorie/CreateTaskCategorie";
 import CreateTaskCategoryEdit from "./CreateTaskCategorie/CreateTaskCategoryEdit";
 import checkAuth from "../../utils/checkAuth";
@@ -9,12 +9,12 @@ import {Link} from "react-router-dom";
 import 'antd/dist/antd.css';
 import CreateTaskUpload from "./CreateTaskUpload/CreateTaskUpload";
 import {fetchTaskById, getTaskId, sendTask} from "../../services/ServerRequest";
+import { DownloadOutlined ,CheckOutlined,SaveOutlined} from '@ant-design/icons';
 
 export default function CreateTask({history, match}) {
     const dispatch = useDispatch();
     const { authentication, infoUser } = useSelector(({ statesAccount }) => statesAccount);
-    const id = match.params.id;
-    console.log(id)
+    const id = match.params.id
 
     let [loading,setLoading] = useState(id !== undefined);
     let [canSave,setCanSaveState] = useState(false)
@@ -30,7 +30,8 @@ export default function CreateTask({history, match}) {
         id
     });
 
-    useEffect(() => console.log(createTaskState))
+    let taskFile = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(createTaskState));
+    // useEffect(() => console.log(createTaskState))
     useEffect(() => {
         (async () => id ? setTaskState( ( (await fetchTaskById( id ))[0] ) ) : '')();
         (async () => id ? '' : setTaskState({...createTaskState,id: `${await getTaskId() + 1}`}) )();
@@ -71,12 +72,13 @@ export default function CreateTask({history, match}) {
     }
 
     function datePickerHandler(value) {
+        console.log(value)
         if(value !== null){
             const [date, deadLine] = value;
             setTaskState( {
                 ...createTaskState,
-                deadline: deadLine.format('YYYY-MM-DD'),
-                date: date.format('YYYY-MM-DD'),
+                deadline: deadLine.format('YYYY-MM-DD HH:MM'),
+                date: date.format('YYYY-MM-DD HH:MM'),
             })
         }
     }
@@ -112,10 +114,15 @@ export default function CreateTask({history, match}) {
     }
 
     const saveButton = canSave ? (
+
         <Link to={`/tasks/${createTaskState.id}`}>
-            <Button onClick={saveTaskButtonHandler}>Save</Button>
+            <Tooltip title={'Save your task '}>
+                <Button onClick={saveTaskButtonHandler} shape={'circle'} size={'large'} type={'primary'}  icon = {<SaveOutlined />}/>
+            </Tooltip>
         </Link>
-    ):<Button onClick={check}>Check</Button>
+    ):( <Tooltip title={'Check your task'}>
+             <Button onClick={check} shape={'circle'} size={'large'} type={'primary'} icon={<CheckOutlined />} />
+        </Tooltip>);
 
 
     return (
@@ -128,7 +135,7 @@ export default function CreateTask({history, match}) {
                             <div className={'edit--panel__head'}>
                                 <div className={'edit--panel__header'}>
                                     <Input placeholder="Task name" value={createTaskState.title} allowClear onChange={(event) => inputHandler(event)}/>
-                                    <RangePicker  onChange = {datePickerHandler}/>
+                                    <RangePicker  showTime={{ format: 'HH:mm' }} format="YYYY-MM-DD HH:mm" onChange = {datePickerHandler}/>
                                 </div>
                                 <TextArea placeholder="Task description" value={createTaskState.description} onChange={event => textAreaHandler(event)}/>
                             </div>
@@ -142,15 +149,23 @@ export default function CreateTask({history, match}) {
                     <div className={'main__task'}>
                         <h1 className={'main__title'}>{ createTaskState.title === '' ? 'Task title' : createTaskState.title }</h1>
                         <Divider />
-                        <p>{ createTaskState.description === '' ? 'Task description' : createTaskState.description}</p>
+                        <p>{`Total points: ${createTaskState.score}`}</p>
                         <p>{ createTaskState.date === '' ? 'Date: ':`Date: ${createTaskState.date} / ${createTaskState.deadline}`}</p>
+                        <p>{ createTaskState.description === '' ? 'Task description' : createTaskState.description}</p>
                         <div className={"main__container"}>
                             { items }
                         </div>
                     </div>
                 </div>
-                {saveButton}
-                <CreateTaskUpload setState = {setTaskState} />
+                <div className={'main__buttons-container'}>
+                    {saveButton}
+                    <CreateTaskUpload setState = {setTaskState} />
+                    <a href={`data: ${taskFile}`} download={`${createTaskState.title}.json`}>
+                        <Tooltip title={`Export ${createTaskState.title}`}>
+                            <Button type="primary" shape="circle" icon={<DownloadOutlined />} size={'large'}/>
+                        </Tooltip>
+                    </a>
+                </div>
             </div>
         </Spin>
     )
