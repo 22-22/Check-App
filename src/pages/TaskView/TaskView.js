@@ -47,7 +47,6 @@ export default function TaskView({history, match}) {
 
     function archiveHandler() {
         setTaskState({...task, status:'archive'});
-        console.log('я сработал')
         console.log('iddd',task.id)
         changeTask(task.id,task)
     }

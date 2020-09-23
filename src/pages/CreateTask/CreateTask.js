@@ -33,7 +33,7 @@ export default function CreateTask({history, match}) {
     useEffect(() => console.log(createTaskState))
     useEffect(() => {
         (async () => id ? setTaskState( ( (await fetchTaskById( id ))[0] ) ) : '')();
-        (async () => setTaskState({...createTaskState,id: await getTaskId() + 1}))();
+        (async () => id ? '' : setTaskState({...createTaskState,id: `${await getTaskId() + 1}`}) )();
         setLoading(false)
     },[]);
 
