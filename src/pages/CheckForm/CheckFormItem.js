@@ -16,15 +16,18 @@ export const CheckFormItem = ({ categoryName, item, score, setScore, itemIdx, ro
         }
         setScore({ ...score, [categoryName]: newCategoryArray });
     }
+
     const countHalfValue = () => {
         const { minScore, maxScore } = item;
         const biggerValue = Math.abs(maxScore) > Math.abs(minScore) ? maxScore : minScore;
         return Math.round(biggerValue / 2);
     }
 
-    // const required = currentCategory[itemIdx] &&
-    //     currentSelfCheckItem.score !== currentCategory[itemIdx].score
-    //     ? true : false
+    const required = currentCategory[itemIdx]
+        && selfCheck.selfGradeDetails[categoryName]
+        && selfCheck.selfGradeDetails[categoryName][itemIdx].score !== currentCategory[itemIdx].score
+        || categoryName === customCategory
+        ? true : false
 
     return (
         <>{
@@ -58,9 +61,10 @@ export const CheckFormItem = ({ categoryName, item, score, setScore, itemIdx, ro
                     </div>
                     <div className="checkform__item-description">
                         <p>{item.description}</p>
-                        <textarea
-                            name="comment"
+                        <TextArea
                             className="checkform__item-textarea"
+                            required={required}
+                            name="comment"
                             value={!currentCategory[itemIdx]
                                 ? "" : currentCategory[itemIdx].comment}
                             onChange={(e) => updateScore(e.target.value, e.target.name)}

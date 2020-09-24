@@ -10,11 +10,10 @@ import {
   fetchReviewRequestsById, sendReviewRequest
 } from '../../services/ServerRequest';
 
-import { Button, Input, InputNumber, Tooltip } from 'antd';
+import { Button, Tooltip, Form } from 'antd';
 import { SendOutlined } from '@ant-design/icons';
 import './_CheckForm.scss';
 
-const { TextArea } = Input;
 const customCategory = 'Cross-checker extra';
 
 function CheckForm({ history, match, revReqObj, checkType }) {
@@ -65,7 +64,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
   }, [task])
 
   const handleFormSubmit = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     if (countCheckedItems(score) === itemsNumber) {
       const date = new Date().toLocaleDateString()
         .split('.').reverse().join('-');
@@ -134,21 +133,22 @@ function CheckForm({ history, match, revReqObj, checkType }) {
             <p className="checkform__info">
               {task.description}
             </p>
-            <form className="checkform__items">
+            <Form className="checkform__items"
+              onFinish={handleFormSubmit}>
               {task.items &&
                 task.items.map((category, idx) => (
                   <CheckFormCategory
                     role={role} key={idx} category={category}
-                    customCategory={customCategory} score={score} 
+                    customCategory={customCategory} score={score}
                     setScore={setScore} selfCheck={selfCheck}
                   />
                 ))
               }
               <div className="checkform__btns">
                 <Button className="checkform__btns-submit"
-                  onClick={handleFormSubmit}
                   type="primary" size="large"
                   icon={<SendOutlined />}
+                  htmlType="submit"
                 >
                   SEND
             </Button>
@@ -159,11 +159,11 @@ function CheckForm({ history, match, revReqObj, checkType }) {
             </Button>
                 </Tooltip>
               </div>
-            </form>
+            </Form>
           </main>
-          {/* <p className="checkform__comment">
+          <p className="checkform__comment">
             * Comment is required when your mark differs from the self-check.
-            </p> */}
+            </p>
         </div>
       }
     </div>
