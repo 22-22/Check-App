@@ -26,6 +26,15 @@
         "completed": []
       },
       "tasks": []
+    },
+    {
+      "id": "sadman",
+      "role": "student",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
     }
   ],
   "tasks": [
@@ -391,7 +400,6 @@
       "id": 7
     }
   ],
-
   "scores": [
     {
       "task": "songbird",

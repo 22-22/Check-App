@@ -6,170 +6,37 @@ import { Table, Button, Input, Space } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
 import { getScores } from '../../redux/actions/scores';
-import checkAuth from "../../utils/checkAuth";
+import Loading from "../Loading/Loading"
 
 import ScoreReview from '../../components/ScoreReview/ScoreReview';
 
-const data = [
-    {
-      key: '1',
-      student: 'John Brown',
-      score: 32,
-      task: 'aew York',
-      date:"2020:09:13",
-      reviewer: 'John Brown',
-    },
-    {
-      key: '2',
-      student: 'Jim Green',
-      score: 42,
-      task: 'aondon',
-      date:"2020:09:13",
-      reviewer: 'My',
-    },
-    {
-      key: '3',
-      student: 'Not Expandable',
-      score: 29,
-      task: 'aiangsu',
-      date:"2020:09:13",
-      reviewer: 'expandable',
-    },
-    {
-      key: '4',
-      student: 'Joe Black',
-      score: 32,
-      task: 'aidney',
-      date:"2020:09:13",
-      reviewer: 'Joe Black',
-    },
-    {
-      key: '5',
-      student: 'Joe Black',
-      score: 32,
-      task: 'Sidney',
-      date:"2020:09:13",
-      reviewer: 'Joe Black',
-    },
-    {
-      key: '6',
-      student: 'Joe Black',
-      score: 32,
-      task: 'Sidney',
-      date:"2020:07:13",
-      reviewer: 'Joe Black',
-    },
-    {
-      key: '7',
-      student: 'John Brown',
-      score: 32,
-      task: 'New York',
-      date:"2020:09:03",
-      reviewer: 'John Brown',
-    },
-    {
-      key: '8',
-      student: 'Jim Green',
-      score: 42,
-      task: 'London',
-      date:"2020:09:27",
-      reviewer: 'My',
-    },
-    {
-      key: '9',
-      student: 'Not Expandable',
-      score: 29,
-      task: 'Jiangsu',
-      date:"2020:09:25",
-      reviewer: 'expandable',
-    },
-    {
-      key: '10',
-      student: 'Joe Black',
-      score: 32,
-      task: 'Sidney',
-      date:"2020:04:20",
-      reviewer: 'Joe Black',
-    },
-    {
-      key: '11',
-      student: 'Joe Black',
-      score: 32,
-      task: 'Sidney',
-      date:"2018:03:13",
-      reviewer: 'Joe Black',
-    },
-    {
-      key: '12',
-      student: 'Joe Black',
-      score: 32,
-      task: 'Sidney',
-      date:"2019:09:13",
-      reviewer: 'Joe Black',
-    },
-    {
-      key: '13',
-      student: 'John Brown',
-      score: 32,
-      task: 'New York',
-      date:"2020:03:13",
-      reviewer: 'John Brown',
-    },
-    {
-      key: '14',
-      student: 'Jim Green',
-      score: 42,
-      task: 'London',
-      date:"2020:05:13",
-      reviewer: 'My',
-    },
-    {
-      key: '15',
-      student: 'Jim Green',
-      score: 42,
-      task: 'London',
-      date:"2020:10:13",
-      reviewer: 'My',
-    },
-    {
-      key: '16',
-      student: 'Jim Green',
-      score: 42,
-      task: 'London',
-      date:"2020:09:23",
-      reviewer: 'My',
-    },
-    {
-      key: '17',
-      student: 'oim Green',
-      score: 12,
-      task: 'London',
-      date:"2020:09:12",
-      reviewer: 'dy',
-    },
-    {
-      key: '18',
-      student: 'qwem Green',
-      score: 32,
-      task: 'London',
-      date:"2020:09:14",
-      reviewer: 'ay',
-    },
-    {
-      key: '19',
-      student: 'sm Green',
-      score: 26,
-      task: 'London',
-      date:"2020:09:11",
-      reviewer: 'by',
-    },
-    
-  ];
+const data = [];
 class TableScore extends React.Component {
+
+
   state = {
     searchText: '',
     searchedColumn: '',
   };
+
+
+  static getDerivedStateFromProps(props, state) {
+
+    if (props.scores != undefined || props.scores != null) {
+      props.scores.map((el, index) =>
+        data.push({
+          student: el.user ? el.user : "",
+          score: el.score ? el.score : "",
+          task: el.task ? el.task : "",
+          date: el.sendingDate ? el.sendingDate : "",
+          reviewer: el.student ? el.student : "",
+          key: index,
+          actions: index,
+        })
+      )
+    }
+    return null
+  }
 
   getColumnSearchProps = dataIndex => ({
     filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
@@ -219,8 +86,8 @@ class TableScore extends React.Component {
           textToHighlight={text ? text.toString() : ''}
         />
       ) : (
-        text
-      ),
+          text
+        ),
   });
 
   handleSearch = (selectedKeys, confirm, dataIndex) => {
@@ -240,65 +107,73 @@ class TableScore extends React.Component {
     clearFilters();
     this.setState({ searchText: '' });
   };
-  render() {
-    const columns = [
-        {
-          title: 'Task',
-          dataIndex: 'task',
-          key: 'task',
-          sorter: {
-            compare:(a, b) => a.task.localeCompare(b.task),
-          },
-          width: '20%',
-          ...this.getColumnSearchProps('task'),
-        },
-        {
-          title: 'Student',
-          dataIndex: 'student',
-          key: 'student',
-          sorter: (a, b) => a.student.localeCompare(b.student),
-          width: '20%',
-          ...this.getColumnSearchProps('student'),
-        },
-        {
-          title: 'Reviewer',
-          dataIndex: 'reviewer',
-          key: 'reviewer',
-          sorter: (a, b) => a.reviewer.localeCompare(b.reviewer),
-          width: '20%',
-          ...this.getColumnSearchProps('check'),
-        },
-        {
-          title: 'Score',
-          dataIndex: 'score',
-          key: 'score',
-          sorter: {
-            compare: (a, b) => a.score - b.score,
-          },
-          width: '5%',
-          ...this.getColumnSearchProps('score'),
-        },
-        {
-          title: 'Date',
-          dataIndex: 'date',
-          key: 'date',
-          sorter: (a, b) => a.date.localeCompare(b.date),
-          width: '10%',
-          ...this.getColumnSearchProps('score'),
-        },
-        {
-          title: 'actions',
-          dataIndex: '',
-          key: 'x',
-          width: '20%',
-          render: () => <a onClick={event => this.props.switchLevel()}>View details</a>,
-        },
-      ];
 
-  return (
-    <Table columns={columns} dataSource={data} />
-  );
-}
+  render() {
+
+    const columns = [
+      {
+        title: 'Task',
+        dataIndex: 'task',
+        key: 'task',
+        sorter: {
+          compare: (a, b) => a.task.localeCompare(b.task),
+        },
+        width: '20%',
+        ...this.getColumnSearchProps('task'),
+      },
+      {
+        title: 'Student',
+        dataIndex: 'student',
+        key: 'student',
+        sorter: (a, b) => a.student.localeCompare(b.student),
+        width: '20%',
+        ...this.getColumnSearchProps('student'),
+      },
+      {
+        title: 'Reviewer',
+        dataIndex: 'reviewer',
+        key: 'reviewer',
+        sorter: (a, b) => a.reviewer.localeCompare(b.reviewer),
+        width: '20%',
+        ...this.getColumnSearchProps('check'),
+      },
+      {
+        title: 'Score',
+        dataIndex: 'score',
+        key: 'score',
+        sorter: {
+          compare: (a, b) => a.score - b.score,
+        },
+        width: '5%',
+        ...this.getColumnSearchProps('score'),
+      },
+      {
+        title: 'Date',
+        dataIndex: 'date',
+        key: 'date',
+        sorter: (a, b) => a.date.localeCompare(b.date),
+        width: '10%',
+        ...this.getColumnSearchProps('date'),
+      },
+      {
+        title: 'actions',
+        dataIndex: "actions",
+        key: "actions",
+        width: '20%',
+        render: (text) =>
+          data.length >= 1 ? (
+            <ScoreReview description={this.props.scores[text]} />
+          ) : null,
+      },
+    ]
+
+    if (data.length === 0) {
+      return (<Loading />);
+    }
+    else {
+      return (<Table columns={columns} dataSource={data} />);
+    }
+  }
 }
 
 export default TableScore;
