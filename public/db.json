@@ -30,14 +30,54 @@
       "status": "published",
       "items": [
         {
-          "category": "Category",
+          "category": "Вёрстка, дизайн, UI",
           "categoryItems": [
             {
-              "description": "category Item",
-              "score": -100
+              "description": "минимальная ширина, при которой приложение отображается корректно – 320 рх",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": 200,
+              "checkByMentorOnly": "true"
             },
             {
-              "description": "category Item",
+              "description": "внешний вид приложения полностью повторяет демо или является его улучшенной версией",
+              "minScore": 0,
+              "maxScore": 20,
+              "score": -100
+            }
+          ]
+        },
+        {
+          "category": "Аудиоплеер",
+          "categoryItems": [
+            {
+              "description": "есть аудиоплеер",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": 200
+            },
+            {
+              "description": "аудиоплеер кастомный, такой же, как в демо приложения, может отличаться по цвету",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": -100,
+              "checkByMentorOnly": "true"
+            },
+            {
+              "description": "у кастомного аудиоплеера есть регулятор громкости звука",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": -100
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "любой сбой/поломка приложения, связанная с действиями пользователя. Например, неправильный подсчёт баллов, нет перехода на следующую страницу, выводится неверная информация и т.д. Этот пункт не касается ошибок в консоли",
+              "minScore": -10,
+              "maxScore": 0,
               "score": 200
             }
           ]
@@ -46,7 +86,7 @@
       "id": 1
     },
     {
-      "title": "Songbird",
+      "title": "simple-task-v1",
       "description": "Допускается: -другая тематика приложения (не птицы) -использование вместо изображений видео -замена названий и описаний птиц другими данными",
       "deadline": "2020-10-14",
       "date": "2020-09-23",
@@ -500,18 +540,6 @@
   ],
   "reviewRequests": [
     {
-      "id": "rev-req-1",
-      "crossCheckSessionId": "no session",
-      "student": "cardamo",
-      "task": "simple-task-v1",
-      "sendingDate": "2020.09.12 12:12",
-      "state": "completed",
-      "demo": "link_to_demo",
-      "PR": "link_to_PR",
-      "selfGrade": "150",
-      "selfGradeDetails": {}
-    },
-    {
       "id": "rev-req-2",
       "crossCheckSessionId": "rss2020Q3react-xcheck",
       "student": "22-22",
@@ -582,6 +610,39 @@
       "PR": "link_to_PR",
       "selfGrade": "600",
       "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-1600866083229",
+      "crossCheckSessionId": null,
+      "student": "22-22",
+      "task": "Task 1",
+      "state": "DRAFT",
+      "demo": "netlify-jdhfjdhf",
+      "PR": "github-fdhfk",
+      "selfGrade": 12,
+      "status": "published",
+      "selfGradeDetails": {
+        "Вёрстка, дизайн, UI": [
+          {
+            "score": "7",
+            "comment": "amejziiiing"
+          }
+        ],
+        "Аудиоплеер": [
+          {
+            "score": "0"
+          },
+          {
+            "score": "5"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0"
+          }
+        ]
+      },
+      "sendingDate": "2020-09-23 16:02:54"
     }
   ]
 }

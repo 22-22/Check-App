@@ -1,5 +1,5 @@
 .checkform__wrapper {
-    max-width: 1200px;
+    max-width: 1300px;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -40,8 +40,8 @@
         flex-direction: column;
     }
     .checkform__item-description {
-        margin: 0 10px;
-        width: 60%;
+        margin: 0 5%;
+        width: 50%;
         text-align: justify;
         @media (max-width: 767px) {
             margin: 10px 0;
@@ -58,13 +58,10 @@
         border-radius: 4px;
         background-color: #f8f8f8;
     }
-    .checkform__item-comment {
-        font-size: 1.2rem;
-        font-style: italic;
-    }
+    
     .checkform__item-points {
-        font-size: 2rem;
-        font-weight: 400;
+        font-size: 1.8rem;
+        font-weight: 600;
     }
 }
 
@@ -87,7 +84,52 @@
     flex-direction: column;
 }
 
-.checkform__btn-submit {
-    width: 40%;
-    margin: 20px auto 0;
+.checkform__btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 30px 0;
+
+}
+.checkform__btns-submit {
+    width: 30%;
+    margin: 0 10px 0 0;
+}
+
+.checkform__item-scores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkform__scores-input {
+    margin: 0 16px;
+}
+
+.ant-radio-group {
+    display: flex;
+    padding: 8% 0 0 0;
+    @media (max-width: 1000px) {
+        flex-direction: column;
+    }
+    @media (max-width: 767px) {
+        flex-direction: row;
+    }
+}
+
+.radioStyle {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+}
+
+.checkform__notification {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.checkform__comment, .checkform__item-self--comment {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: rgb(80, 78, 78);
 }

@@ -104,7 +104,7 @@ const sendTask = (task) => {
 };
 
 const sendReviewRequest = (reviewRequest) => {
-  return axios.post(`${BASE_URL}/reviewRequest`,reviewRequest).then((res) => console.log(res.data))
+  return axios.post(`${BASE_URL}/reviewRequests`,reviewRequest).then((res) => console.log(res.data))
 };
 
 const fetchUserVerification = (gitHubId) => {

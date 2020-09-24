@@ -53,7 +53,7 @@ function ReviewRequest({ history, match }) {
       setRevReqObj({
         "id": `rev-req-${new Date().getTime()}`,
         "crossCheckSessionId": null,
-        "author": `${infoUser.id}`,
+        "student": `${infoUser.id}`,
         "task": task,
         "state": "DRAFT",
         "demo": demo,

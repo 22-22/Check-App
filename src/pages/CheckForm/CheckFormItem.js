@@ -1,11 +1,13 @@
 import React from 'react';
-import { Slider, InputNumber, Row, Col } from 'antd';
+import { Slider, InputNumber, Row, Col, Radio, Input } from 'antd';
+const { TextArea } = Input;
 
-export const CheckFormItem = ({ categoryName, item, score, setScore, itemIdx, role }) => {
+export const CheckFormItem = ({ categoryName, item, score, setScore, itemIdx, role, selfCheck, customCategory }) => {
     const currentCategory = score[categoryName];
 
-    const updateScore = (value, name = 'score') => {
-        const valueChecked = (name === 'score' && typeof value !== 'number') ? "" : value;
+    const updateScore = (value, name) => {
+        const valueChecked = (name === 'score' && typeof value !== 'number')
+            ? "" : value;
         const newCategoryArray = score[categoryName].slice();
         if (newCategoryArray[itemIdx]) {
             newCategoryArray[itemIdx][name] = valueChecked.toString();
@@ -14,6 +16,15 @@ export const CheckFormItem = ({ categoryName, item, score, setScore, itemIdx, ro
         }
         setScore({ ...score, [categoryName]: newCategoryArray });
     }
+    const countHalfValue = () => {
+        const { minScore, maxScore } = item;
+        const biggerValue = Math.abs(maxScore) > Math.abs(minScore) ? maxScore : minScore;
+        return Math.round(biggerValue / 2);
+    }
+
+    // const required = currentCategory[itemIdx] &&
+    //     currentSelfCheckItem.score !== currentCategory[itemIdx].score
+    //     ? true : false
 
     return (
         <>{
@@ -22,48 +33,87 @@ export const CheckFormItem = ({ categoryName, item, score, setScore, itemIdx, ro
             ) && (
                 <div className="checkform__item">
                     <div>
-                        <div className="checkform__item-points">
-                            Points: {item.maxScore}
+                        <div>
+                            Max points:
+                            <span className="checkform__item-points">
+                                &nbsp;{item.maxScore}
+                            </span>
                         </div>
+                        {selfCheck.selfGradeDetails[categoryName] && (
+                            <div>
+                                Self-check:
+                                <span className="checkform__item-points">
+                                    &nbsp;{selfCheck.selfGradeDetails[categoryName][itemIdx].score}
+                                </span>
+                            </div>
+                        )}
+                        {categoryName === customCategory && (
+                            <div>
+                                Min points:
+                                <span className="checkform__item-points">
+                                    &nbsp;{item.minScore}
+                                </span>
+                            </div>
+                        )}
                     </div>
                     <div className="checkform__item-description">
                         <p>{item.description}</p>
                         <textarea
                             name="comment"
                             className="checkform__item-textarea"
-                            value={(currentCategory === undefined
-                                || currentCategory[itemIdx] === undefined)
+                            value={!currentCategory[itemIdx]
                                 ? "" : currentCategory[itemIdx].comment}
                             onChange={(e) => updateScore(e.target.value, e.target.name)}
-                        ></textarea>
-                        {item.checkByMentorOnly &&
-                            <p className="checkform__item-comment">Checked by mentor only.</p>
+                        />
+                        {selfCheck.selfGradeDetails[categoryName] &&
+                            selfCheck.selfGradeDetails[categoryName][itemIdx].comment &&
+                            (<p className="checkform__item-self--comment">
+                                Student's comment:&nbsp;
+                                {selfCheck.selfGradeDetails[categoryName][itemIdx].comment}
+                            </p>)
                         }
                     </div>
-                    <Row>
-                        <Col span={12}>
-                            <Slider
-                                min={item.minScore}
-                                max={item.maxScore}
-                                onChange={(value) => updateScore(value)}
-                                value={(currentCategory === undefined
-                                    || currentCategory[itemIdx] === undefined)
-                                    ? "" : currentCategory[itemIdx].score}
-                            />
-                        </Col>
-                        <Col span={4}>
-                            <InputNumber
-                                required
-                                min={item.minScore}
-                                max={item.maxScore}
-                                style={{ margin: '0 16px' }}
-                                onChange={(value) => updateScore(value)}
-                                value={(currentCategory === undefined
-                                    || currentCategory[itemIdx] === undefined)
-                                    ? "" : currentCategory[itemIdx].score}
-                            />
-                        </Col>
-                    </Row>
+                    <div className="checkform__item-scores">
+                        <Row>
+                            <Col span={12}>
+                                <Slider
+                                    min={item.minScore}
+                                    max={item.maxScore}
+                                    onChange={(value) => updateScore(value, 'score')}
+                                    value={!currentCategory[itemIdx]
+                                        ? "" : currentCategory[itemIdx].score}
+                                />
+                            </Col>
+                            <Col span={4}>
+                                <InputNumber
+                                    className="checkform__scores-input"
+                                    min={item.minScore}
+                                    max={item.maxScore}
+                                    onChange={(value) => updateScore(value, 'score')}
+                                    value={!currentCategory[itemIdx]
+                                        ? "" : currentCategory[itemIdx].score}
+                                />
+                            </Col>
+                        </Row>
+                        {
+                            categoryName !== customCategory && (
+                                <Radio.Group name="score"
+                                    onChange={(e) => updateScore(e.target.value, e.target.name)}
+                                    value={!currentCategory[itemIdx]
+                                        ? "" : +currentCategory[itemIdx].score}
+                                >
+                                    <Radio className="radioStyle" value={item.minScore}>
+                                        Не выполнено
+                                </Radio>
+                                    <Radio className="radioStyle" value={countHalfValue()}>
+                                        Частично
+                                </Radio>
+                                    <Radio className="radioStyle" value={item.maxScore}>
+                                        Полностью
+                                </Radio>
+                                </Radio.Group>
+                            )}
+                    </div>
                 </div>
             )
         }
