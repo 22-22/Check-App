@@ -1,49 +1,36 @@
-import React, {useState} from "react";
-import { Upload, Button } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
-import 'antd/dist/antd.css';
-import {func} from "prop-types";
+import React from "react";
+import { message,Button,Tooltip} from 'antd';
+import './CreateTaskUpload.scss'
+import { DownloadOutlined } from '@ant-design/icons';
 
-export default function CreateTaskUpload() {
-    let [uploadState,setUploadState] = useState({
-        fileList: [
-            {
-                uid: '-1',
-                name: 'xxx.png',
-                status: 'done',
-                url: 'http://www.baidu.com/xxx.png',
-            },
-        ],
-    });
-    
-    function handleChange(info) {
-        let fileList = [...info.fileList];
+export default function CreateTaskUpload({setState}) {
 
-        // 1. Limit the number of uploaded files
-        // Only to show two recent uploaded files, and old ones will be replaced by the new
-        fileList = fileList.slice(-1);
-
-        // 2. Read from response and show file link
-        fileList = fileList.map(file => {
-            if (file.response) {
-                // Component will show file.url as link
-                file.url = file.response.url;
-            }
-            return file;
-        });
-        setUploadState({ fileList })
+    function checkObj(obj) {
+        console.log(obj)
+        if(obj.items === undefined){
+            message.error('required parameter items')
+        }else if(!Array.isArray(obj.items)){
+            message.error('items must be an array')
+        }else {
+            setState(obj)
+        }
     }
 
-
-    const props = {
-        accept:'.md',
-        onChange: handleChange,
-        multiple: false,
+    function handleFile(file) {
+        let reader = new FileReader();
+        reader.onload = function(file) {
+            let obj = JSON.parse(file.target.result);
+            checkObj(obj);
+            console.log(obj)
+        };
+        reader.readAsText(file);
     };
-    console.log(uploadState.fileList)
+
     return (
-        <Upload {...props} fileList={uploadState.fileList}>
-            <Button icon={<UploadOutlined />}>Upload</Button>
-        </Upload>
+        <Tooltip title={'Import'}>
+            <Button type="primary" shape="circle" size={'large'} icon={<DownloadOutlined  rotate = {180}/>}>
+              <input type="file" accept=".json"  className={'upload'} onChange={e => handleFile(e.target.files[0])}/>
+            </Button>
+        </Tooltip>
     )
 }

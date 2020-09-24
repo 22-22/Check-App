@@ -1,0 +1,28 @@
+.task {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px 15px;
+
+  .task__buttons{
+    display: flex;
+    justify-content: center;
+  }
+  .task__description{
+    font-size: 2rem;
+  }
+  .task__date{
+    font-size: 2rem;
+  }
+  .main__content {
+    display: flex;
+  }
+
+  .main__task {
+
+    padding: 10px;
+
+    .main__title {
+      text-align: center;
+    }
+  }
+}

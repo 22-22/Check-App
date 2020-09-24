@@ -103,6 +103,15 @@ const sendTask = (task) => {
     return axios.post(`${BASE_URL}/tasks`,task).then((res) => console.log(res.data))
 };
 
+const getTaskId = () => {
+    return axios.get(`${BASE_URL}/tasks`).then(res => res.data.length)
+}
+
+const changeTask = (id,task) => {
+    return axios.put(`${BASE_URL}/tasks/?id=${id}`,task).then(res => console.log(res))
+};
+
+
 const sendReviewRequest = (reviewRequest) => {
   return axios.post(`${BASE_URL}/reviewRequest`,reviewRequest).then((res) => console.log(res.data))
 };
@@ -147,4 +156,4 @@ const addNewScore = (score) => {
     .catch(err => console.log(err))
 };
 
-export { fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchTask, fetchTaskById, fetchScores, fetchReviewRequests, fetchReviewRequestsById, fetchSortAndFilterTasks, fetchUserVerification, sendTask, sendReviewRequest };
+export { fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchReviewRequests, fetchReviewRequestsById, fetchSortAndFilterTasks, fetchUserVerification, sendTask,fetchTaskById,getTaskId,changeTask,sendReviewRequest ,fetchTask};

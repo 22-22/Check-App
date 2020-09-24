@@ -58,7 +58,7 @@ export default function CreateTaskCategoryItemEdit({
     return (
         <div className={'category--item__edit'}>
             <div className={'edit--item__buttons'}>
-                <InputNumber min={-1000} max={1000} defaultValue={0}   onChange={(value) =>intInputHandler(value)}/>
+                <InputNumber min={-1000} max={1000} defaultValue={0}  value={categoryItem.maxScore === 0 ? categoryItem.minScore : categoryItem.maxScore } onChange={(value) =>intInputHandler(value)}/>
                 <Button  onClick={markAsMentor} type = {categoryItem.checkByMentorOnly ? "primary":''} > Mark as mentor </Button>
                 <Button onClick={deleteButtonHandler}>Delete Item</Button>
             </div>

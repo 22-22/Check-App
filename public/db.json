@@ -10,6 +10,15 @@
       "tasks": []
     },
     {
+      "id": "vorob",
+      "role": "student",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
+    },
+    {
       "id": "22-22",
       "role": "student",
       "courses": {
@@ -382,6 +391,7 @@
       "id": 7
     }
   ],
+  ],
   "scores": [
     {
       "task": "songbird",
@@ -503,6 +513,16 @@
           ]
         }
       }
+    },
+    {
+      "task": "simple-task-v1",
+      "user": "vorob",
+      "student": "cardamo",
+      "score": 0,
+      "id": 1600841303568,
+      "date": "2020-09-23",
+      "time": "09:08:23",
+      "items": {}
     }
   ],
   "reviewRequests": [

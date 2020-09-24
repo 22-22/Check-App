@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Input,Divider} from "antd";
+import {Button, Input,Divider,Tooltip} from "antd";
 import CreateTaskCategoryItemEdit from "./CreateTaskCategorieItem/CreateTaskCategoryItemEdit";
 
 
@@ -59,8 +59,10 @@ export default function CreateTaskCategoryEdit({
         <div className={'category--edit'}>
             <Divider />
             <div className={'category--edit__buttons'}>
-                <Input onChange={event => inputHandler(event)} placeholder={'Category description'}/>
-                <Button onClick={deleteButtonHandler}>Delete</Button>
+                <Input onChange={event => inputHandler(event)} value={category.category} placeholder={'Category description'}/>
+                <Tooltip title={`Delete ${category.category}`}>
+                    <Button onClick={deleteButtonHandler}>Delete</Button>
+                </Tooltip>
             </div>
             <div className={'category__content'}>
                 {items}
