@@ -167,12 +167,7 @@ class TableScore extends React.Component {
       },
     ]
 
-    if (data.length === 0) {
-      return (<Loading />);
-    }
-    else {
       return (<Table columns={columns} dataSource={data} />);
-    }
   }
 }
 
