@@ -1,0 +1,702 @@
+{
+  "users": [
+    {
+      "id": "Sapranovich",
+      "role": "student",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
+    },
+    {
+      "id": "vorob",
+      "role": "student",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
+    },
+    {
+      "id": "22-22",
+      "role": "student",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Task 1",
+      "author": "cardamo",
+      "description": "this is the task 1 description",
+      "editDate": "2020.09.03 22:35",
+      "date": "2020.09.04 10:00",
+      "deadline": "2020.10.03 23:59",
+      "maxScore": 200,
+      "status": "published",
+      "items": [
+        {
+          "category": "Вёрстка, дизайн, UI",
+          "categoryItems": [
+            {
+              "description": "минимальная ширина, при которой приложение отображается корректно – 320 рх",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": 200,
+              "checkByMentorOnly": "true"
+            },
+            {
+              "description": "внешний вид приложения полностью повторяет демо или является его улучшенной версией",
+              "minScore": 0,
+              "maxScore": 20,
+              "score": -100
+            }
+          ]
+        },
+        {
+          "category": "Аудиоплеер",
+          "categoryItems": [
+            {
+              "description": "есть аудиоплеер",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": 200
+            },
+            {
+              "description": "аудиоплеер кастомный, такой же, как в демо приложения, может отличаться по цвету",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": -100,
+              "checkByMentorOnly": "true"
+            },
+            {
+              "description": "у кастомного аудиоплеера есть регулятор громкости звука",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": -100
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "любой сбой/поломка приложения, связанная с действиями пользователя. Например, неправильный подсчёт баллов, нет перехода на следующую страницу, выводится неверная информация и т.д. Этот пункт не касается ошибок в консоли",
+              "minScore": -10,
+              "maxScore": 0,
+              "score": 200
+            }
+          ]
+        }
+      ],
+      "id": 1
+    },
+    {
+      "title": "simple-task-v1",
+      "description": "Допускается: -другая тематика приложения (не птицы) -использование вместо изображений видео -замена названий и описаний птиц другими данными",
+      "deadline": "2020-10-14",
+      "date": "2020-09-23",
+      "score": 200,
+      "items": [
+        {
+          "category": "Вёрстка, дизайн, UI",
+          "categoryItems": [
+            {
+              "description": "минимальная ширина, при которой приложение отображается корректно – 320 рх",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": 200,
+              "checkByMentorOnly": "true"
+            },
+            {
+              "description": "внешний вид приложения полностью повторяет демо или является его улучшенной версией",
+              "minScore": 0,
+              "maxScore": 20,
+              "score": -100
+            }
+          ]
+        },
+        {
+          "category": "Аудиоплеер",
+          "categoryItems": [
+            {
+              "description": "есть аудиоплеер",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": 200
+            },
+            {
+              "description": "аудиоплеер кастомный, такой же, как в демо приложения, может отличаться по цвету",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": -100,
+              "checkByMentorOnly": "true"
+            },
+            {
+              "description": "у кастомного аудиоплеера есть регулятор громкости звука",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": -100
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "любой сбой/поломка приложения, связанная с действиями пользователя. Например, неправильный подсчёт баллов, нет перехода на следующую страницу, выводится неверная информация и т.д. Этот пункт не касается ошибок в консоли",
+              "minScore": -10,
+              "maxScore": 0,
+              "score": 200
+            }
+          ]
+        }
+      ],
+      "id": 22
+    },
+    {
+      "title": "Task 2",
+      "author": "irinainina",
+      "description": "this is the task 2 description",
+      "editDate": "2020.09.08 12:15",
+      "date": "2020.09.15 12:00",
+      "deadline": "2020.10.25 23:59",
+      "maxScore": 150,
+      "status": "published",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "item 2",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ],
+      "id": 2
+    },
+    {
+      "title": "Task 3",
+      "author": "cardamo",
+      "description": "this is the task 3 description",
+      "editDate": "2020.07.27 15:46",
+      "date": "2020.07.30 12:00",
+      "deadline": "2020.08.21 23:59",
+      "maxScore": 260,
+      "status": "archived",
+      "items": [
+        {
+          "category": "Category",
+          "categoryItems": [
+            {
+              "description": "category Item",
+              "score": 200
+            },
+            {
+              "description": "category Item",
+              "score": -100
+            }
+          ]
+        }
+      ],
+      "id": 3
+    },
+    {
+      "title": "Task 4",
+      "author": "davojta",
+      "description": "this is the task 4 description",
+      "editDate": "2020.09.07 14:37",
+      "date": "2020.09.08 10:00",
+      "deadline": "2020.09.28 23:59",
+      "maxScore": 320,
+      "status": "published",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "item 2",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ],
+      "id": 4
+    },
+    {
+      "title": "Task 5",
+      "author": "cardamo",
+      "description": "this is the task 5 description",
+      "editDate": "2020.09.02 11:11",
+      "date": "2020.09.03 10:00",
+      "deadline": "2020.09.15 23:59",
+      "maxScore": 180,
+      "status": "draft",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "item 2",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ],
+      "id": 5
+    },
+    {
+      "title": "Task 6",
+      "author": "irinainina",
+      "description": "this is the task 6 description",
+      "editDate": "2020.08.01 16:24",
+      "date": "2020.08.03 10:00",
+      "deadline": "2020.08.30 23:59",
+      "maxScore": 90,
+      "status": "archived",
+      "items": [
+        {
+          "category": "Category",
+          "categoryItems": []
+        },
+        {
+          "category": "Category",
+          "categoryItems": [
+            {
+              "description": "category Item",
+              "minScore": 0,
+              "maxScore": 0,
+              "score": 200
+            },
+            {
+              "description": "category Item",
+              "minScore": 0,
+              "maxScore": 0,
+              "score": -100
+            }
+          ]
+        }
+      ],
+      "id": 6
+    },
+    {
+      "title": "Task 7",
+      "author": "cardamo",
+      "description": "this is the task 7 description",
+      "editDate": "2020.09.04 09:07",
+      "date": "2020.10.05 09:00",
+      "deadline": "2020.11.08 23:59",
+      "maxScore": 250,
+      "status": "draft",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "item 2",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ],
+      "id": 7
+    },
+    {
+      "title": "x-check app",
+      "author": "davojta",
+      "description": "this is the task 4 description",
+      "editDate": "2020.09.07 14:37",
+      "date": "2020.09.08 10:00",
+      "deadline": "2020.09.28 23:59",
+      "maxScore": 320,
+      "status": "published",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "красивые цвета, оттенки, фон",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "верстка, адаптив",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "очень очень красивые цвета, удачное сочетание",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "цвета неподходящие",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "и между собой не сочетаются",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ],
+      "id": 4
+    }
+  ],
+  "scores": [
+    {
+      "task": "Task 1",
+      "reviewer": "22-22",
+      "student": "Sapranovich",
+      "score": 25,
+      "id": 1601030575848,
+      "sendingDate": "2020-09-25 13:42:55",
+      "items": {
+        "Вёрстка, дизайн, UI": [
+          {
+            "score": "20",
+            "comment": "It's even better that you think."
+          }
+        ],
+        "Аудиоплеер": [
+          {
+            "score": "0",
+            "comment": "Next time, next time."
+          },
+          {
+            "score": "5"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0",
+            "comment": "No mistakes."
+          }
+        ]
+      }
+    },
+    {
+      "task": "x-check app",
+      "reviewer": "Sapranovich",
+      "student": "22-22",
+      "score": 103,
+      "id": 1601033407786,
+      "sendingDate": "2020-09-25 14:30:07",
+      "items": {
+        "Basic scope": [
+          {
+            "score": "20"
+          },
+          {
+            "score": "10",
+            "comment": "да ладно, отличный адаптив)"
+          }
+        ],
+        "Extra scope": [
+          {
+            "score": "20"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          }
+        ],
+        "Cross-checker extra": [
+          {
+            "comment": "цвета и правда потрясающие!",
+            "score": "53"
+          }
+        ]
+      }
+    }
+  ],
+  "reviewRequests": [
+    {
+      "id": "rev-req-2",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "22-22",
+      "task": "x-check app",
+      "sendingDate": "2020.09.14 14:14",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-3",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "arumirinka",
+      "task": "x-check app",
+      "sendingDate": "2020.09.15 15:15",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-4",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "IlyaShihutin",
+      "task": "x-check app",
+      "sendingDate": "2020.09.19 19:19",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-5",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "NastiaKoval",
+      "task": "x-check app",
+      "sendingDate": "2020.09.17 17:17",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-6",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "Sapranovich",
+      "task": "x-check app",
+      "sendingDate": "2020.09.20 18:18",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-7",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "vorobeychik",
+      "task": "x-check app",
+      "sendingDate": "2020.09.19 21:20",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-1600866083229",
+      "crossCheckSessionId": null,
+      "student": "22-22",
+      "task": "Task 1",
+      "state": "DRAFT",
+      "demo": "netlify-jdhfjdhf",
+      "PR": "github-fdhfk",
+      "selfGrade": 12,
+      "status": "published",
+      "selfGradeDetails": {
+        "Вёрстка, дизайн, UI": [
+          {
+            "score": "7",
+            "comment": "amejziiiing"
+          }
+        ],
+        "Аудиоплеер": [
+          {
+            "score": "0"
+          },
+          {
+            "score": "5"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0"
+          }
+        ]
+      },
+      "sendingDate": "2020-09-23 16:02:54"
+    },
+    {
+      "id": "rev-req-1601032845865",
+      "crossCheckSessionId": null,
+      "student": "Sapranovich",
+      "task": "x-check app",
+      "state": "published",
+      "demo": "demooo",
+      "PR": "prprprp",
+      "selfGrade": 45,
+      "selfGradeDetails": {
+        "Basic scope": [
+          {
+            "score": "20"
+          },
+          {
+            "score": "5",
+            "comment": "адаптив как обычно, эх"
+          }
+        ],
+        "Extra scope": [
+          {
+            "score": "20",
+            "comment": "цвета самые лучше "
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0",
+            "comment": ""
+          },
+          {
+            "score": "0"
+          }
+        ]
+      },
+      "sendingDate": "2020-09-25 14:21:44"
+    }
+  ]
+}
