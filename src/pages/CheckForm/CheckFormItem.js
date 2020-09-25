@@ -2,7 +2,7 @@ import React from 'react';
 import { Slider, InputNumber, Row, Col, Radio, Input } from 'antd';
 const { TextArea } = Input;
 
-export const CheckFormItem = ({ categoryName, item, score, setScore, itemIdx, role, selfCheck, customCategory }) => {
+export const CheckFormItem = ({ categoryName, item, score, setScore, itemIdx, role, selfCheck, customCategory, checkType }) => {
     const currentCategory = score[categoryName];
 
     const updateScore = (value, name) => {
@@ -23,7 +23,9 @@ export const CheckFormItem = ({ categoryName, item, score, setScore, itemIdx, ro
         return Math.round(biggerValue / 2);
     }
 
-    const required = currentCategory[itemIdx]
+    const required = 
+    checkType !== 'self' && 
+        currentCategory[itemIdx]
         && selfCheck.selfGradeDetails[categoryName]
         && selfCheck.selfGradeDetails[categoryName][itemIdx].score !== currentCategory[itemIdx].score
         || categoryName === customCategory
@@ -42,14 +44,16 @@ export const CheckFormItem = ({ categoryName, item, score, setScore, itemIdx, ro
                                 &nbsp;{item.maxScore}
                             </span>
                         </div>
-                        {selfCheck.selfGradeDetails[categoryName] && (
-                            <div>
-                                Self-check:
-                                <span className="checkform__item-points">
-                                    &nbsp;{selfCheck.selfGradeDetails[categoryName][itemIdx].score}
-                                </span>
-                            </div>
-                        )}
+                        {
+                            checkType !== 'self' &&
+                            selfCheck.selfGradeDetails[categoryName] && (
+                                <div>
+                                    Self-check:
+                                    <span className="checkform__item-points">
+                                        &nbsp;{selfCheck.selfGradeDetails[categoryName][itemIdx].score}
+                                    </span>
+                                </div>
+                            )}
                         {categoryName === customCategory && (
                             <div>
                                 Min points:
@@ -69,7 +73,9 @@ export const CheckFormItem = ({ categoryName, item, score, setScore, itemIdx, ro
                                 ? "" : currentCategory[itemIdx].comment}
                             onChange={(e) => updateScore(e.target.value, e.target.name)}
                         />
-                        {selfCheck.selfGradeDetails[categoryName] &&
+                        {
+                        checkType !== 'self' &&
+                            selfCheck.selfGradeDetails[categoryName] &&
                             selfCheck.selfGradeDetails[categoryName][itemIdx].comment &&
                             (<p className="checkform__item-self--comment">
                                 Student's comment:&nbsp;

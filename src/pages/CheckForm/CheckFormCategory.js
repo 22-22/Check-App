@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckFormItem } from './CheckFormItem';
 
-export const CheckFormCategory = ({ category, score, setScore, role, selfCheck, customCategory }) => {
+export const CheckFormCategory = ({ category, score, setScore, role, selfCheck, customCategory, checkType }) => {
     return (
         <>
             {<div className="checkform__category">
@@ -12,7 +12,8 @@ export const CheckFormCategory = ({ category, score, setScore, role, selfCheck, 
                         categoryName={category.category}
                         score={score} setScore={setScore}
                         role={role} selfCheck={selfCheck}
-                        customCategory={customCategory} 
+                        customCategory={customCategory}
+                        checkType={checkType}
                     />
                 )}
             </div>}

@@ -429,140 +429,130 @@
         }
       ],
       "id": 7
-    }
-  ],
-
-  "scores": [
-    {
-      "task": "songbird",
-      "user": "22-22",
-      "reviewer": "11-11",
-      "score": 50,
-      "date": "2020.09.11",
-      "description": {
-        "items": {
-          "basic_p1": {
-            "score": 20,
-            "comment": "Well done!"
-          },
-          "extra_p1": {
-            "score": 15,
-            "comment": "Some things are done, some are not"
-          },
-          "fines_p1": {
-            "score": 0,
-            "comment": "No ticket today"
-          }
-        }
-      }
     },
     {
-      "task": "songbird",
-      "user": "22-22",
-      "reviewer": "11-11",
-      "score": 50,
-      "description": {
-        "items": {
-          "basic_p1": {
-            "score": 20,
-            "comment": "Well done!"
-          },
-          "extra_p1": {
-            "score": 15,
-            "comment": "Some things are done, some are not"
-          },
-          "fines_p1": {
-            "score": 0,
-            "comment": "No ticket today"
-          }
-        }
-      }
-    },
-    {
-      "task": "songbird",
-      "user": "22-22",
-      "reviewer": "11-11",
-      "score": 50,
-      "description": {
-        "items": {
-          "basic_p1": {
-            "score": 20,
-            "comment": "Well done!"
-          },
-          "extra_p1": {
-            "score": 15,
-            "comment": "Some things are done, some are not"
-          },
-          "fines_p1": {
-            "score": 0,
-            "comment": "No ticket today"
-          }
-        }
-      }
-    },
-    {
-      "task": "songbird1",
-      "user": "22-22",
-      "reviewer": "11-11",
-      "score": 50,
-      "description": {
-        "items": {
-          "basic_p1": {
-            "score": 20,
-            "comment": "Well done!"
-          },
-          "extra_p1": {
-            "score": 15,
-            "comment": "Some things are done, some are not"
-          },
-          "fines_p1": {
-            "score": 0,
-            "comment": "No ticket today"
-          }
-        }
-      }
-    },
-    {
-      "task": "Task 7",
-      "user": "22-22",
-      "score": 19,
-      "id": 1,
-      "date": "17.09.2020",
-      "description": {
-        "items": {
-          "Basic scope": [
+      "title": "x-check app",
+      "author": "davojta",
+      "description": "this is the task 4 description",
+      "editDate": "2020.09.07 14:37",
+      "date": "2020.09.08 10:00",
+      "deadline": "2020.09.28 23:59",
+      "maxScore": 320,
+      "status": "published",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
             {
-              "score": "7"
+              "description": "красивые цвета, оттенки, фон",
+              "minScore": 0,
+              "maxScore": 20
             },
             {
-              "score": "4"
+              "description": "верстка, адаптив",
+              "minScore": 0,
+              "maxScore": 10
             }
-          ],
-          "Extra scope": [
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
             {
-              "score": "8"
+              "description": "очень очень красивые цвета, удачное сочетание",
+              "minScore": 0,
+              "maxScore": 20
             }
-          ],
-          "Fines": [
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
             {
-              "score": "0"
+              "description": "цвета неподходящие",
+              "minScore": -20,
+              "maxScore": 0
             },
             {
-              "score": "0"
+              "description": "и между собой не сочетаются",
+              "minScore": -10,
+              "maxScore": 0
             }
           ]
         }
+      ],
+      "id": 4
+    }
+  ],
+  "scores": [
+    {
+      "task": "Task 1",
+      "reviewer": "22-22",
+      "student": "Sapranovich",
+      "score": 25,
+      "id": 1601030575848,
+      "sendingDate": "2020-09-25 13:42:55",
+      "items": {
+        "Вёрстка, дизайн, UI": [
+          {
+            "score": "20",
+            "comment": "It's even better that you think."
+          }
+        ],
+        "Аудиоплеер": [
+          {
+            "score": "0",
+            "comment": "Next time, next time."
+          },
+          {
+            "score": "5"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0",
+            "comment": "No mistakes."
+          }
+        ]
       }
     },
     {
-      "task": "simple-task-v1",
-      "user": "vorob",
-      "student": "cardamo",
-      "score": 0,
-      "id": 1600841303568,
-      "date": "2020-09-23",
-      "time": "09:08:23",
-      "items": {}
+      "task": "x-check app",
+      "reviewer": "Sapranovich",
+      "student": "22-22",
+      "score": 103,
+      "id": 1601033407786,
+      "sendingDate": "2020-09-25 14:30:07",
+      "items": {
+        "Basic scope": [
+          {
+            "score": "20"
+          },
+          {
+            "score": "10",
+            "comment": "да ладно, отличный адаптив)"
+          }
+        ],
+        "Extra scope": [
+          {
+            "score": "20"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          }
+        ],
+        "Cross-checker extra": [
+          {
+            "comment": "цвета и правда потрясающие!",
+            "score": "53"
+          }
+        ]
+      }
     }
   ],
   "reviewRequests": [
@@ -670,6 +660,43 @@
         ]
       },
       "sendingDate": "2020-09-23 16:02:54"
+    },
+    {
+      "id": "rev-req-1601032845865",
+      "crossCheckSessionId": null,
+      "student": "Sapranovich",
+      "task": "x-check app",
+      "state": "published",
+      "demo": "demooo",
+      "PR": "prprprp",
+      "selfGrade": 45,
+      "selfGradeDetails": {
+        "Basic scope": [
+          {
+            "score": "20"
+          },
+          {
+            "score": "5",
+            "comment": "адаптив как обычно, эх"
+          }
+        ],
+        "Extra scope": [
+          {
+            "score": "20",
+            "comment": "цвета самые лучше "
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0",
+            "comment": ""
+          },
+          {
+            "score": "0"
+          }
+        ]
+      },
+      "sendingDate": "2020-09-25 14:21:44"
     }
   ]
 }

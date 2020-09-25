@@ -35,6 +35,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
     if (checkType === 'self') {
       setSelfCheck(revReqObj)
     } else if (match.params.id) {
+      // checkType = 'others'
       fetchReviewRequestsById(match.params.id)
         .then(data => setSelfCheck(data[0]))
     } else {
@@ -82,8 +83,10 @@ function CheckForm({ history, match, revReqObj, checkType }) {
 
       const checkInfo = {
         task,
-        user,
-        student,
+        // user,
+        // student,
+        reviewer: student,
+        student: user,
         score: totalScore,
         id: new Date().getTime(),
         sendingDate: `${date} ${time}`,
@@ -103,7 +106,9 @@ function CheckForm({ history, match, revReqObj, checkType }) {
           ...task.items, {
             category: customCategory,
             categoryItems: [{
-              description: 'Pick one thing you really like or dislike about this work and add your positive or negative mark. Max or min value is a total score divided by the number of all points to check',
+              description: `Pick one thing you really like or dislike 
+              about this work and add your positive or negative mark. 
+              Max or min value is a total score divided by the number of all points to check`,
               minScore: Math.round(-task.maxScore / (itemsNumber + 1)),
               maxScore: Math.round(task.maxScore / (itemsNumber + 1)),
               checkByMentorOnly: false
@@ -141,6 +146,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
                     role={role} key={idx} category={category}
                     customCategory={customCategory} score={score}
                     setScore={setScore} selfCheck={selfCheck}
+                    checkType={checkType}
                   />
                 ))
               }
