@@ -53,3 +53,40 @@
     }
   }
 }
+
+
+
+
+
+
+@keyframes test_btn {
+  0% {
+    box-shadow: 0 0 20px #00000080;
+  }
+  50% {
+    box-shadow: 0 0 0px #00000080;
+  }
+  100% {
+    box-shadow: 0 0 20px #00000080;
+  }
+
+}
+
+.test_btn {
+  -webkit-animation: test_btn 2s linear infinite;
+  animation: test_btn 2s linear infinite;
+}
+@-webkit-keyframes test_btn {
+  0% {  box-shadow: 0 0 0px #00000080; }
+  25% {  box-shadow: 0 0 20px #00000080; }
+  50% {  box-shadow: 0 0 0px #00000080;}
+  75% {  box-shadow: 0 0 20px #00000080;}
+  100% {  box-shadow: 0 0 0px #00000080; }
+}
+@keyframes test_btn {
+  0% {  box-shadow: 0 0 0px #00000080; }
+  25% {  box-shadow: 0 0 20px #00000080; }
+  50% {  box-shadow: 0 0 0px #00000080;}
+  75% {  box-shadow: 0 0 20px #00000080;}
+  100% {  box-shadow: 0 0 0px #00000080; }
+}

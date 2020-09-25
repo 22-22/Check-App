@@ -25,7 +25,7 @@ function Header({history}) {
               <Link to= '/review-request'><li className="navigation__link">review-request</li></Link>
               <Link to= '/tasks'><li className="navigation__link">tasks</li></Link>
               <Link to= '/check-form'><li className="navigation__link">check-form</li></Link>
-              <Link to= '/scores'><li className="navigation__link">scores</li></Link>
+              <Link to= '/scores'><li className="navigation__link"> проверить task</li></Link>
               <Link to= '/reviews'><li className="navigation__link">Reviews</li></Link>
             </ul>
           </nav>

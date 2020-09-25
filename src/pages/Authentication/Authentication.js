@@ -32,8 +32,7 @@ function Authentication({ history }) {
     checkAuth(history, authentication, dispatch, "/home");
   };
   const createNewUser = () => {
-    creatNewUser(gitHubId, roleUser);
-    checkAuth(history, authentication, dispatch, "/home");
+    creatNewUser(gitHubId, roleUser).then(ok => checkAuth(history, authentication, dispatch, "/home"))
   };
   const cancelModal = () => {
     setVisibleModal(!visibleModal);
@@ -45,7 +44,7 @@ function Authentication({ history }) {
       res.length ? authUser() : setVisibleModal(!visibleModal)
     );
   };
-
+  
   return (
     !authentication && (
       <div className="authentication">
@@ -99,7 +98,7 @@ function Authentication({ history }) {
               <Radio value="student">Student</Radio>
             </Radio.Group>
           </Modal>
-        </div>
+      </div>
       </div>
     )
   );

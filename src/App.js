@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { Route, withRouter, Switch} from "react-router-dom";
 
 import  Header  from "./components/Header/Header";
+import GitHubAuth from './pages/GitHubAuth/GitHubAuth';
+import Callback from './pages/Callback/Callback';
 // import Loading from './pages/Loading/Loading';
 import Authentication from "./pages/Authentication/Authentication";
 import HomePage from './pages/HomePage/HomePage';
@@ -22,6 +24,8 @@ function App() {
     <div className="app">
       {authentication && <Header />}
       <Switch>
+        {/* <Route path="/" component={ GitHubAuth } /> */}
+        {/* <Route path="/callback" component={ Callback } /> */}
         <Route path="/authentication" component={ Authentication } exact />
         <Route path="/home" component={ HomePage} exact />
         <Route path="/create-task" component={ CreateTask } exact />

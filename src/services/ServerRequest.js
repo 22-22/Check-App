@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://ilya-ilay-cool-project.herokuapp.com";
 
 const getAllUsers = () => {
   axios.get(`${BASE_URL}/users`).then(({ data }) => {
@@ -17,7 +17,7 @@ const getUsersByRole = ( role ) => {
 // НАДО ПЕРЕБРАТЬ ВСЕ ЗАПРОСЫ И ПЕРЕПИСАТЬ АДЕКВАТНО
 
 const authentification = (gitHubId) => {
-  return axios.get(`http://localhost:3001/users?q=${gitHubId}`)
+  return axios.get(`${BASE_URL}/users?q=${gitHubId}`)
     .then(resp => {
         console.log(resp.data)
         return resp.data[0];
@@ -28,7 +28,7 @@ const authentification = (gitHubId) => {
 
 const fetchTasks = (status) => {
   const path = status === null ? '/tasks' : `/tasks/?status=${status}`;
-  return axios.get(`http://localhost:3001${path}`)
+  return axios.get(`${BASE_URL}${path}`)
     .then(resp => {
         return resp.data;
     }).catch(error => {
@@ -37,7 +37,7 @@ const fetchTasks = (status) => {
 }
 const fetchScores = (task) => {
   const path = task === null ? '/scores' : `/scores/?task=${task}`;
-  return axios.get(`http://localhost:3001${path}`)
+  return axios.get(`${BASE_URL}${path}`)
     .then(resp => {
         return resp.data;
     }).catch(error => {
@@ -49,8 +49,8 @@ const fetchScores = (task) => {
 const fetchSortAndFilterTasks = (status, sortBy, sortAs) => {
   const path = status === null ? '' : `/?status=${status}`;
   const pathSortBy = sortBy === null ? '' : `${status === null ? '?' : '&'}_sort=${sortBy}&_order=${sortAs}`;
-  console.log(`http://localhost:3001${path}${pathSortBy}`);
-  return axios.get(`http://localhost:3001/tasks${path}${pathSortBy}`)
+  console.log(`${BASE_URL}${path}${pathSortBy}`);
+  return axios.get(`${BASE_URL}/tasks${path}${pathSortBy}`)
     .then(resp => {
         return resp.data;
     }).catch(error => {
@@ -63,8 +63,9 @@ const sendTask = (task) => {
 };
 
 const fetchUserVerification = (gitHubId) => {
-  return axios.get(`http://localhost:3001/users?id=${gitHubId}`)
+  return axios.get(`${BASE_URL}/users?id=${gitHubId}`)
     .then(resp => {
+      console.log(resp.data)
         return resp.data;
     }).catch(error => {
         console.log(error);
@@ -81,7 +82,7 @@ const creatNewUser = (gitHubId, role) => {
     },
     "tasks": []
   };
-  axios.post(`${BASE_URL}/users`, startUserObj)
+  return axios.post(`${BASE_URL}/users`, startUserObj)
     .then((resp) => {
       localStorage.setItem("gitHubUser", gitHubId);
     })

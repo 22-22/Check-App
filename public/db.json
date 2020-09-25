@@ -62,6 +62,7 @@
       "description": "asdasd",
       "deadline": "2020-10-14",
       "date": "2020-09-23",
+      "status": "",
       "score": 200,
       "items": [
         {
@@ -87,6 +88,107 @@
         }
       ],
       "id": 11
+    },
+    {
+      "title": "vvsdfd",
+      "author": "undefined",
+      "description": "fsdfsdf",
+      "deadline": "2020-10-24",
+      "date": "2020-09-08",
+      "score": 0,
+      "items": [
+        {
+          "category": "asdfsadf",
+          "categoryItems": [
+            {
+              "description": "category Itemaasd",
+              "minScore": 0,
+              "maxScore": 0,
+              "checkByMentorOnly": false
+            }
+          ]
+        },
+        {
+          "category": "asfasfd",
+          "categoryItems": [
+            {
+              "description": "category Itemasdfasdf",
+              "minScore": 0,
+              "maxScore": 0,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "category Itemasdgsdfasdggfxhgfcbvxbfcf",
+              "minScore": 0,
+              "maxScore": 0,
+              "checkByMentorOnly": false
+            }
+          ]
+        }
+      ],
+      "id": 12
+    },
+    {
+      "title": "fsefse",
+      "author": "undefined",
+      "description": "sdfsdfsd",
+      "deadline": "2020-09-30",
+      "date": "2020-09-10",
+      "score": 0,
+      "items": [
+        {
+          "category": "sfsdf",
+          "categoryItems": [
+            {
+              "description": "category Itemsdfsd",
+              "minScore": 0,
+              "maxScore": 0,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "category Itemfs",
+              "minScore": 0,
+              "maxScore": 0,
+              "checkByMentorOnly": false
+            }
+          ]
+        },
+        {
+          "category": "Category",
+          "categoryItems": []
+        }
+      ],
+      "id": 13
+    },
+    {
+      "title": "fsdfsd",
+      "author": "Sapranovich",
+      "description": "sdfsdfasd",
+      "deadline": "2020-10-15",
+      "date": "2020-09-13",
+      "score": "",
+      "items": [
+        {
+          "category": "asdfas",
+          "categoryItems": []
+        },
+        {
+          "category": "fsadf",
+          "categoryItems": [
+            {
+              "description": "category Itemfфавфы",
+              "minScore": 0,
+              "maxScore": 0,
+              "checkByMentorOnly": false
+            }
+          ]
+        },
+        {
+          "category": "Category",
+          "categoryItems": []
+        }
+      ],
+      "id": 14
     }
   ],
   "scores": [
@@ -95,7 +197,7 @@
       "user": "22-22",
       "проверяющий": "11-11",
       "score": 50,
-      "date":"2020.09.11",
+      "date": "2020.09.11",
       "description": {
         "items": {
           "basic_p1": {
