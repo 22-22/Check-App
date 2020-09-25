@@ -402,139 +402,96 @@
   ],
   "scores": [
     {
-      "task": "songbird",
-      "user": "22-22",
-      "reviewer": "11-11",
-      "score": 50,
-      "date": "2020.09.11",
-      "description": {
-        "items": {
-          "basic_p1": {
-            "score": 20,
-            "comment": "Well done!"
-          },
-          "extra_p1": {
-            "score": 15,
-            "comment": "Some things are done, some are not"
-          },
-          "fines_p1": {
-            "score": 0,
-            "comment": "No ticket today"
-          }
-        }
-      }
-    },
-    {
-      "task": "songbird",
-      "user": "22-22",
-      "reviewer": "11-11",
-      "score": 50,
-      "date":"2020.09.11",
-      "description": {
-        "items": {
-          "basic_p1": {
-            "score": 20,
-            "comment": "Well done!"
-          },
-          "extra_p1": {
-            "score": 15,
-            "comment": "Some things are done, some are not"
-          },
-          "fines_p1": {
-            "score": 0,
-            "comment": "No ticket today"
-          }
-        }
-      }
-    },
-    {
-      "task": "songbird",
-      "user": "22-22",
-      "reviewer": "11-11",
-      "score": 50,
-      "date":"2020.09.11",
-      "description": {
-        "items": {
-          "basic_p1": {
-            "score": 20,
-            "comment": "Well done!"
-          },
-          "extra_p1": {
-            "score": 15,
-            "comment": "Some things are done, some are not"
-          },
-          "fines_p1": {
-            "score": 0,
-            "comment": "No ticket today"
-          }
-        }
-      }
-    },
-    {
       "task": "songbird1",
-      "user": "22-22",
+      "student": "22-22",
       "reviewer": "11-11",
       "score": 50,
-      "date":"2020.09.11",
-      "description": {
-        "items": {
-          "basic_p1": {
-            "score": 20,
-            "comment": "Well done!"
-          },
-          "extra_p1": {
-            "score": 15,
-            "comment": "Some things are done, some are not"
-          },
-          "fines_p1": {
-            "score": 0,
-            "comment": "No ticket today"
+      "id": 1600841303548,
+      "sendingDate": "2020-10-25 9:26:47",
+      "items": {
+        "Вёрстка, дизайн, UI": [
+          {
+            "score": "13",
+            "comment": "Great job !!!"
           }
-        }
+        ],
+        "Аудиоплеер": [
+          {
+            "score": "0"
+          },
+          {
+            "score": "10",
+            "comment": "amazing!!"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0"
+          }
+        ]
       }
     },
     {
-      "task": "Task 7",
-      "user": "22-22",
-      "score": 19,
-      "id": 1,
-      "date": "17.09.2020",
-      "description": {
-        "items": {
-          "Basic scope": [
-            {
-              "score": "7"
-            },
-            {
-              "score": "4"
-            }
-          ],
-          "Extra scope": [
-            {
-              "score": "8"
-            }
-          ],
-          "Fines": [
-            {
-              "score": "0"
-            },
-            {
-              "score": "0"
-            }
-          ]
-        }
+      "task": "Task 1",
+      "student": "Sapranovich",
+      "reviewer": "22-22",
+      "score": 23,
+      "id": 1601018807041,
+      "sendingDate": "2020-09-25 10:26:47",
+      "items": {
+        "Вёрстка, дизайн, UI": [
+          {
+            "score": "13",
+            "comment": "Great job !!!"
+          }
+        ],
+        "Аудиоплеер": [
+          {
+            "score": "0"
+          },
+          {
+            "score": "10",
+            "comment": "amazing!!"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0"
+          }
+        ]
       }
     },
     {
       "task": "simple-task-v1",
-      "user": "vorob",
-      "student": "cardamo",
+      "student": "vorob",
+      "reviewer": "cardamo",
       "score": 0,
       "id": 1600841303568,
-      "date": "2020-09-23",
-      "time": "09:08:23",
-      "items": {}
+      "sendingDate": "2020-09-25 9:26:47",
+      "items": {
+        "Вёрстка, дизайн, UI": [
+          {
+            "score": "13",
+            "comment": "Great job !!!"
+          }
+        ],
+        "Аудиоплеер": [
+          {
+            "score": "0"
+          },
+          {
+            "score": "10",
+            "comment": "amazing!!"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0"
+          }
+        ]
+      }
     }
+    
   ],
   "reviewRequests": [
     {

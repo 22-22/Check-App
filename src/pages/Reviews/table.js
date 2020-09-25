@@ -10,7 +10,7 @@ import Loading from "../Loading/Loading"
 
 import ScoreReview from '../../components/ScoreReview/ScoreReview';
 
-const data = [];
+let data = [];
 class TableScore extends React.Component {
 
 
@@ -21,21 +21,21 @@ class TableScore extends React.Component {
 
 
   static getDerivedStateFromProps(props, state) {
-
-    if (props.scores != undefined || props.scores != null) {
+    data=[];
+    if (props.scores != null) {
       props.scores.map((el, index) =>
         data.push({
-          student: el.user ? el.user : "",
+          student: el.student ? el.student : "",
           score: el.score ? el.score : "",
           task: el.task ? el.task : "",
           date: el.sendingDate ? el.sendingDate : "",
-          reviewer: el.student ? el.student : "",
+          reviewer: el.reviewer ? el.reviewer : "",
           key: index,
           actions: index,
         })
-      )
+      ) 
     }
-    return null
+    return null;
   }
 
   getColumnSearchProps = dataIndex => ({
@@ -166,8 +166,13 @@ class TableScore extends React.Component {
           ) : null,
       },
     ]
-
+    if (this.props.scores === null) {
+      return (<h1>pid</h1>)
+    }
+    else {
       return (<Table columns={columns} dataSource={data} />);
+    }
+
   }
 }
 
