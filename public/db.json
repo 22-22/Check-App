@@ -8,15 +8,36 @@
         "completed": []
       },
       "tasks": []
+    },
+    {
+      "id": "vorob",
+      "role": "student",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
+    },
+    {
+      "id": "22-22",
+      "role": "student",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
     }
   ],
   "tasks": [
     {
-      "title": "Songbirdddds",
-      "description": "asdadasd",
-      "deadline": "2020-10-13",
-      "startDate": "2020-09-16",
-      "score": 200,
+      "title": "Task 1",
+      "author": "cardamo",
+      "description": "this is the task 1 description",
+      "editDate": "2020.09.03 22:35",
+      "date": "2020.09.04 10:00",
+      "deadline": "2020.10.03 23:59",
+      "maxScore": 200,
+      "status": "published",
       "items": [
         {
           "category": "Category",
@@ -32,38 +53,265 @@
           ]
         }
       ],
-      "id": 9
+      "id": 1
     },
     {
-      "title": "asdasd",
-      "description": "hate",
-      "deadline": "2020-10-14",
-      "date": "2020-09-15",
-      "score": 200,
-      "items": [
-        {
-          "category": "Category",
-          "categoryItems": [
-            {
-              "description": "category Item",
-              "score": 200
-            },
-            {
-              "description": "category Item",
-              "score": -100
-            }
-          ]
-        }
-      ],
-      "id": 10
-    },
-    {
-      "title": "sad",
-      "description": "asdasd",
+      "title": "Songbird",
+      "description": "Допускается: -другая тематика приложения (не птицы) -использование вместо изображений видео -замена названий и описаний птиц другими данными",
       "deadline": "2020-10-14",
       "date": "2020-09-23",
-      "status": "",
       "score": 200,
+      "items": [
+        {
+          "category": "Вёрстка, дизайн, UI",
+          "categoryItems": [
+            {
+              "description": "минимальная ширина, при которой приложение отображается корректно – 320 рх",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": 200,
+              "checkByMentorOnly": "true"
+            },
+            {
+              "description": "внешний вид приложения полностью повторяет демо или является его улучшенной версией",
+              "minScore": 0,
+              "maxScore": 20,
+              "score": -100
+            }
+          ]
+        },
+        {
+          "category": "Аудиоплеер",
+          "categoryItems": [
+            {
+              "description": "есть аудиоплеер",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": 200
+            },
+            {
+              "description": "аудиоплеер кастомный, такой же, как в демо приложения, может отличаться по цвету",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": -100,
+              "checkByMentorOnly": "true"
+            },
+            {
+              "description": "у кастомного аудиоплеера есть регулятор громкости звука",
+              "minScore": 0,
+              "maxScore": 10,
+              "score": -100
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "любой сбой/поломка приложения, связанная с действиями пользователя. Например, неправильный подсчёт баллов, нет перехода на следующую страницу, выводится неверная информация и т.д. Этот пункт не касается ошибок в консоли",
+              "minScore": -10,
+              "maxScore": 0,
+              "score": 200
+            }
+          ]
+        }
+      ],
+      "id": 22
+    },
+    {
+      "title": "Task 2",
+      "author": "irinainina",
+      "description": "this is the task 2 description",
+      "editDate": "2020.09.08 12:15",
+      "date": "2020.09.15 12:00",
+      "deadline": "2020.10.25 23:59",
+      "maxScore": 150,
+      "status": "published",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "item 2",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ],
+      "id": 2
+    },
+    {
+      "title": "Task 3",
+      "author": "cardamo",
+      "description": "this is the task 3 description",
+      "editDate": "2020.07.27 15:46",
+      "date": "2020.07.30 12:00",
+      "deadline": "2020.08.21 23:59",
+      "maxScore": 260,
+      "status": "archived",
+      "items": [
+        {
+          "category": "Category",
+          "categoryItems": [
+            {
+              "description": "category Item",
+              "score": 200
+            },
+            {
+              "description": "category Item",
+              "score": -100
+            }
+          ]
+        }
+      ],
+      "id": 3
+    },
+    {
+      "title": "Task 4",
+      "author": "davojta",
+      "description": "this is the task 4 description",
+      "editDate": "2020.09.07 14:37",
+      "date": "2020.09.08 10:00",
+      "deadline": "2020.09.28 23:59",
+      "maxScore": 320,
+      "status": "published",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "item 2",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ],
+      "id": 4
+    },
+    {
+      "title": "Task 5",
+      "author": "cardamo",
+      "description": "this is the task 5 description",
+      "editDate": "2020.09.02 11:11",
+      "date": "2020.09.03 10:00",
+      "deadline": "2020.09.15 23:59",
+      "maxScore": 180,
+      "status": "draft",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            },
+            {
+              "description": "item 2",
+              "minScore": 0,
+              "maxScore": 10
+            }
+          ]
+        },
+        {
+          "category": "Extra scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
+              "minScore": 0,
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
+            },
+            {
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
+            }
+          ]
+        }
+      ],
+      "id": 5
+    },
+    {
+      "title": "Task 6",
+      "author": "irinainina",
+      "description": "this is the task 6 description",
+      "editDate": "2020.08.01 16:24",
+      "date": "2020.08.03 10:00",
+      "deadline": "2020.08.30 23:59",
+      "maxScore": 90,
+      "status": "archived",
       "items": [
         {
           "category": "Category",
@@ -87,115 +335,68 @@
           ]
         }
       ],
-      "id": 11
+      "id": 6
     },
     {
-      "title": "vvsdfd",
-      "author": "undefined",
-      "description": "fsdfsdf",
-      "deadline": "2020-10-24",
-      "date": "2020-09-08",
-      "score": 0,
+      "title": "Task 7",
+      "author": "cardamo",
+      "description": "this is the task 7 description",
+      "editDate": "2020.09.04 09:07",
+      "date": "2020.10.05 09:00",
+      "deadline": "2020.11.08 23:59",
+      "maxScore": 250,
+      "status": "draft",
       "items": [
         {
-          "category": "asdfsadf",
+          "category": "Basic scope",
           "categoryItems": [
             {
-              "description": "category Itemaasd",
+              "description": "adsasdasd",
               "minScore": 0,
-              "maxScore": 0,
-              "checkByMentorOnly": false
-            }
-          ]
-        },
-        {
-          "category": "asfasfd",
-          "categoryItems": [
-            {
-              "description": "category Itemasdfasdf",
-              "minScore": 0,
-              "maxScore": 0,
-              "checkByMentorOnly": false
+              "maxScore": 20
             },
             {
-              "description": "category Itemasdgsdfasdggfxhgfcbvxbfcf",
+              "description": "item 2",
               "minScore": 0,
-              "maxScore": 0,
-              "checkByMentorOnly": false
+              "maxScore": 10
             }
           ]
-        }
-      ],
-      "id": 12
-    },
-    {
-      "title": "fsefse",
-      "author": "undefined",
-      "description": "sdfsdfsd",
-      "deadline": "2020-09-30",
-      "date": "2020-09-10",
-      "score": 0,
-      "items": [
+        },
         {
-          "category": "sfsdf",
+          "category": "Extra scope",
           "categoryItems": [
             {
-              "description": "category Itemsdfsd",
+              "description": "adsasdasd",
               "minScore": 0,
-              "maxScore": 0,
-              "checkByMentorOnly": false
+              "maxScore": 20
+            }
+          ]
+        },
+        {
+          "category": "Fines",
+          "categoryItems": [
+            {
+              "description": "штраф за ошибки в консоли",
+              "minScore": -20,
+              "maxScore": 0
             },
             {
-              "description": "category Itemfs",
-              "minScore": 0,
-              "maxScore": 0,
-              "checkByMentorOnly": false
+              "description": "еще один штраф",
+              "minScore": -10,
+              "maxScore": 0
             }
           ]
-        },
-        {
-          "category": "Category",
-          "categoryItems": []
         }
       ],
-      "id": 13
-    },
-    {
-      "title": "fsdfsd",
-      "author": "Sapranovich",
-      "description": "sdfsdfasd",
-      "deadline": "2020-10-15",
-      "date": "2020-09-13",
-      "score": "",
-      "items": [
-        {
-          "category": "asdfas",
-          "categoryItems": []
-        },
-        {
-          "category": "fsadf",
-          "categoryItems": [
-            {
-              "description": "category Itemfфавфы",
-              "minScore": 0,
-              "maxScore": 0,
-              "checkByMentorOnly": false
-            }
-          ]
-        },
-        {
-          "category": "Category",
-          "categoryItems": []
-        }
-      ],
-      "id": 14
+      "id": 7
     }
   ],
+
   "scores": [
     {
       "task": "songbird",
       "user": "22-22",
-      "проверяющий": "11-11",
+      "reviewer": "11-11",
       "score": 50,
       "date": "2020.09.11",
       "description": {
@@ -218,7 +419,7 @@
     {
       "task": "songbird",
       "user": "22-22",
-      "проверяющий": "11-11",
+      "reviewer": "11-11",
       "score": 50,
       "description": {
         "items": {
@@ -240,7 +441,7 @@
     {
       "task": "songbird",
       "user": "22-22",
-      "проверяющий": "11-11",
+      "reviewer": "11-11",
       "score": 50,
       "description": {
         "items": {
@@ -262,7 +463,7 @@
     {
       "task": "songbird1",
       "user": "22-22",
-      "проверяющий": "11-11",
+      "reviewer": "11-11",
       "score": 50,
       "description": {
         "items": {
@@ -280,18 +481,134 @@
           }
         }
       }
+    },
+    {
+      "task": "Task 7",
+      "user": "22-22",
+      "score": 19,
+      "id": 1,
+      "date": "17.09.2020",
+      "description": {
+        "items": {
+          "Basic scope": [
+            {
+              "score": "7"
+            },
+            {
+              "score": "4"
+            }
+          ],
+          "Extra scope": [
+            {
+              "score": "8"
+            }
+          ],
+          "Fines": [
+            {
+              "score": "0"
+            },
+            {
+              "score": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "simple-task-v1",
+      "user": "vorob",
+      "student": "cardamo",
+      "score": 0,
+      "id": 1600841303568,
+      "date": "2020-09-23",
+      "time": "09:08:23",
+      "items": {}
     }
   ],
-  "reviewRequest": [
+  "reviewRequests": [
     {
       "id": "rev-req-1",
-      "crossCheckSessionId": "rss2020Q3react-xcheck",
-      "author": "cardamo",
+      "crossCheckSessionId": "no session",
+      "student": "cardamo",
       "task": "simple-task-v1",
-      "state": "PUBLISHED",
+      "sendingDate": "2020.09.12 12:12",
+      "state": "completed",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
-      "selfGrade": {}
+      "selfGrade": "150",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-2",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "22-22",
+      "task": "x-check app",
+      "sendingDate": "2020.09.14 14:14",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-3",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "arumirinka",
+      "task": "x-check app",
+      "sendingDate": "2020.09.15 15:15",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-4",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "IlyaShihutin",
+      "task": "x-check app",
+      "sendingDate": "2020.09.19 19:19",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-5",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "NastiaKoval",
+      "task": "x-check app",
+      "sendingDate": "2020.09.17 17:17",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-6",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "Sapranovich",
+      "task": "x-check app",
+      "sendingDate": "2020.09.20 18:18",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
+    },
+    {
+      "id": "rev-req-7",
+      "crossCheckSessionId": "rss2020Q3react-xcheck",
+      "student": "vorobeychik",
+      "task": "x-check app",
+      "sendingDate": "2020.09.19 21:20",
+      "state": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "600",
+      "selfGradeDetails": {}
     }
   ]
 }
