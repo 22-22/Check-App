@@ -487,8 +487,8 @@
   "scores": [
     {
       "task": "Task 1",
-      "reviewer": "22-22",
-      "student": "Sapranovich",
+      "student": "22-22",
+      "reviewer": "Sapranovich",
       "score": 25,
       "id": 1601030575848,
       "sendingDate": "2020-09-25 13:42:55",
@@ -518,8 +518,8 @@
     },
     {
       "task": "x-check app",
-      "reviewer": "Sapranovich",
-      "student": "22-22",
+      "student": "Sapranovich",
+      "reviewer": "22-22",
       "score": 103,
       "id": 1601033407786,
       "sendingDate": "2020-09-25 14:30:07",
