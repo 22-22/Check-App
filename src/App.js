@@ -13,10 +13,11 @@ import Tasks from './pages/Tasks/Tasks';
 import CheckForm from './pages/CheckForm/CheckForm';
 import Scores from './pages/Scores/Scores';
 import Reviews from './pages/Reviews/Reviews';
+import TaskView from "./pages/TaskView/TaskView";
 // import UserAccount from './pages/UserAccount/UserAccount';
 // import Account from './pages/Account/Account';
 
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import 'antd/dist/antd.css';
 function App() {
   const { authentication } = useSelector(({ statesAccount }) => statesAccount);
   return (
@@ -32,7 +33,7 @@ function App() {
         <Route path="/review-request/:id" component={ ReviewRequest } exact />
         <Route path="/review-requests" component={ ReviewRequests } exact />
         <Route path="/tasks" component={ Tasks } exact />
-        {/* <Route path="/tasks/:id" component={ Task } exact /> */}
+        <Route path="/tasks/:id" component={ TaskView } exact />
         <Route path="/check-form" component={ CheckForm } exact />
         <Route path="/check-form/:id" component={ CheckForm } exact />
         <Route path="/scores" component={ Scores } exact />

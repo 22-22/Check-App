@@ -10,6 +10,15 @@
       "tasks": []
     },
     {
+      "id": "vorob",
+      "role": "student",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
+    },
+    {
       "id": "22-22",
       "role": "student",
       "courses": {
@@ -24,7 +33,8 @@
       "title": "Task 1",
       "author": "cardamo",
       "description": "this is the task 1 description",
-      "date": "2020.09.03 22:35",
+      "editDate": "2020.09.03 22:35",
+      "date": "2020.09.04 10:00",
       "deadline": "2020.10.03 23:59",
       "maxScore": 200,
       "status": "published",
@@ -152,7 +162,8 @@
       "title": "Task 2",
       "author": "irinainina",
       "description": "this is the task 2 description",
-      "date": "2020.09.08 12:15",
+      "editDate": "2020.09.08 12:15",
+      "date": "2020.09.15 12:00",
       "deadline": "2020.10.25 23:59",
       "maxScore": 150,
       "status": "published",
@@ -204,7 +215,8 @@
       "title": "Task 3",
       "author": "cardamo",
       "description": "this is the task 3 description",
-      "date": "2020.07.27 15:46",
+      "editDate": "2020.07.27 15:46",
+      "date": "2020.07.30 12:00",
       "deadline": "2020.08.21 23:59",
       "maxScore": 260,
       "status": "archived",
@@ -229,7 +241,8 @@
       "title": "Task 4",
       "author": "davojta",
       "description": "this is the task 4 description",
-      "date": "2020.09.07 14:37",
+      "editDate": "2020.09.07 14:37",
+      "date": "2020.09.08 10:00",
       "deadline": "2020.09.28 23:59",
       "maxScore": 320,
       "status": "published",
@@ -281,7 +294,8 @@
       "title": "Task 5",
       "author": "cardamo",
       "description": "this is the task 5 description",
-      "date": "2020.09.03 11:11",
+      "editDate": "2020.09.02 11:11",
+      "date": "2020.09.03 10:00",
       "deadline": "2020.09.15 23:59",
       "maxScore": 180,
       "status": "draft",
@@ -333,7 +347,8 @@
       "title": "Task 6",
       "author": "irinainina",
       "description": "this is the task 6 description",
-      "date": "2020.08.01 16:24",
+      "editDate": "2020.08.01 16:24",
+      "date": "2020.08.03 10:00",
       "deadline": "2020.08.30 23:59",
       "maxScore": 90,
       "status": "archived",
@@ -366,7 +381,8 @@
       "title": "Task 7",
       "author": "cardamo",
       "description": "this is the task 7 description",
-      "date": "2020.09.04 09:07",
+      "editDate": "2020.09.04 09:07",
+      "date": "2020.10.05 09:00",
       "deadline": "2020.11.08 23:59",
       "maxScore": 250,
       "status": "draft",
@@ -415,6 +431,7 @@
       "id": 7
     }
   ],
+
   "scores": [
     {
       "task": "songbird",
@@ -536,6 +553,16 @@
           ]
         }
       }
+    },
+    {
+      "task": "simple-task-v1",
+      "user": "vorob",
+      "student": "cardamo",
+      "score": 0,
+      "id": 1600841303568,
+      "date": "2020-09-23",
+      "time": "09:08:23",
+      "items": {}
     }
   ],
   "reviewRequests": [
