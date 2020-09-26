@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { CheckFormHeader } from './CheckFormHeader';
 import { CheckFormCategory } from './CheckFormCategory';
-import { countAllItems, countCheckedItems, countPoints } from '../../utils/checkForm'
+import {
+  countAllItems, countCheckedItems,
+  countPoints, getTime, getDate
+} from '../../utils/checkForm'
 import checkAuth from "../../utils/checkAuth";
 import {
-  fetchTaskInfo, addNewScore,
-  fetchReviewRequestsById, sendReviewRequest
+  fetchTaskInfo, addNewScore, fetchReviewRequestsById,
+  sendReviewRequest, fetchAllScores, updateScore, updateReviewRequest
 } from '../../services/ServerRequest';
 
 import { Button, Tooltip, Form } from 'antd';
@@ -21,6 +24,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
   const { authentication } = useSelector(({ statesAccount }) => statesAccount);
   const role = useSelector(state => state.statesAccount.infoUser.role);
   const user = useSelector(state => state.statesAccount.infoUser.id);
+  const draft = match && match.params && match.params.status || '';
 
   React.useEffect(() => {
     !authentication && checkAuth(history, authentication, dispatch, "/check-form");
@@ -30,16 +34,31 @@ function CheckForm({ history, match, revReqObj, checkType }) {
   const [task, setTask] = useState({});
   const [score, setScore] = useState({});
   const [selfCheck, setSelfCheck] = useState({});
+  const [draftScore, setDraftScore] = useState({});
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     if (checkType === 'self') {
       setSelfCheck(revReqObj)
     } else if (match.params.id) {
-      // checkType = 'others'
       fetchReviewRequestsById(match.params.id)
-        .then(data => setSelfCheck(data[0]))
-    } else {
+        .then(data => {
+          setSelfCheck(data[0])
+          setScore(data[0].selfGradeDetails);
+        })
+    }
+    else {
       setSelfCheck(null)
+    }
+
+    if (draft === 'checkDraft') {
+      fetchAllScores()
+        .then(allScores => {
+          const currentScore = allScores
+            .find(score => score.revReqId === match.params.id);
+          setDraftScore(currentScore);
+          setScore(currentScore.items);
+        })
     }
   }, [])
 
@@ -52,9 +71,11 @@ function CheckForm({ history, match, revReqObj, checkType }) {
               (role === 'mentor') ? item : !item.checkByMentorOnly)
             return { ...item, categoryItems: filtered }
           });
-          filteredItems.forEach(item => setScore(prevState => {
-            return { ...prevState, [item.category]: [] }
-          }));
+          if (checkType === 'self' || !draft) {
+            filteredItems.forEach(item => setScore(prevState => {
+              return { ...prevState, [item.category]: [] }
+            }));
+          }
           setTask({ ...task, items: filteredItems });
         }
       })
@@ -64,42 +85,54 @@ function CheckForm({ history, match, revReqObj, checkType }) {
     setItemsNumber(countAllItems(task.items));
   }, [task])
 
-  const handleFormSubmit = (event) => {
-    // event.preventDefault();
+  const handleFormSubmit = (e) => {
     if (countCheckedItems(score) === itemsNumber) {
-      const date = new Date().toLocaleDateString()
-        .split('.').reverse().join('-');
-      const time = new Date().toLocaleTimeString();
+      const date = getDate();
+      const time = getTime();
       const { task, student } = selfCheck;
       const totalScore = countPoints(score);
 
-      const selfCheckInfo = {
+      const selfCheckNew = {
         ...selfCheck,
         selfGrade: totalScore,
-        state: "published",
+        status: 'published',
         selfGradeDetails: score,
         sendingDate: `${date} ${time}`,
       }
 
-      const checkInfo = {
+      const checkNew = {
         task,
-        // user,
-        // student,
-        reviewer: student,
-        student: user,
+        reviewer: user,
+        student,
         score: totalScore,
         id: new Date().getTime(),
         sendingDate: `${date} ${time}`,
         items: score,
+        status: 'published',
       }
 
-      checkType === "self"
-        ? sendReviewRequest(selfCheckInfo)
-        : addNewScore(checkInfo);
+      const checkWithDraft = {
+        score: totalScore,
+        sendingDate: `${date} ${time}`,
+        items: score,
+        status: 'published',
+      }
+
+      if (draft === 'selfCheckDraft') {
+        updateReviewRequest(selfCheck.id, selfCheck, selfCheckNew);
+        setSubmitted(true);
+      } else if (draft === 'checkDraft') {
+        updateScore(draftScore.id, draftScore, checkWithDraft);
+        setSubmitted(true);
+      } else if (checkType === 'self') {
+        sendReviewRequest(selfCheckNew)
+      } else {
+        addNewScore(checkNew)
+      }
     }
   }
 
-  const addExtraCheckPoint = () => {
+  const handleExtraCheckPoint = () => {
     if (!task.items.find(item => item.category === customCategory)) {
       setTask({
         ...task, items: [
@@ -116,9 +149,58 @@ function CheckForm({ history, match, revReqObj, checkType }) {
           }
         ]
       });
-      setScore(prevState => {
+      setScore((prevState) => {
         return { ...prevState, [customCategory]: [] }
       })
+    } else {
+      setTask((prevTask) => {
+        const newTask = { ...prevTask };
+        newTask.items.pop();
+        return newTask;
+      })
+      setScore((prevScore) => {
+        const newScore = { ...prevScore };
+        delete newScore[customCategory];
+        return newScore;
+      })
+    }
+  }
+
+  const handleDraft = () => {
+    const date = getDate();
+    const time = getTime();
+    const { id, task, student } = selfCheck;
+    const selfCheckNew = {
+      ...selfCheck,
+      status: 'selfCheckDraft',
+      selfGradeDetails: score,
+      sendingDate: `${date} ${time}`,
+    }
+
+    const checkNew = {
+      status: 'checkDraft',
+      revReqId: id,
+      id: new Date().getTime(),
+      task,
+      reviewer: user,
+      student,
+      items: score,
+      sendingDate: `${date} ${time}`
+    }
+
+    if (checkType === 'self' || draft === 'selfCheckDraft') {
+      sendReviewRequest(selfCheckNew)
+    } else {
+      addNewScore(checkNew);
+      setSubmitted(true);
+    }
+  }
+
+  if (submitted) {
+    if (draft) {
+      return <Redirect to="/drafts" />
+    } else {
+      return <Redirect to="/review-requests" />
     }
   }
 
@@ -147,22 +229,31 @@ function CheckForm({ history, match, revReqObj, checkType }) {
                     customCategory={customCategory} score={score}
                     setScore={setScore} selfCheck={selfCheck}
                     checkType={checkType}
+                    draft={draft}
                   />
                 ))
               }
               <div className="checkform__btns">
+                <Button className="checkform__btns-extra"
+                  onClick={handleDraft}
+                >
+                  SAVE AS DRAFT
+            </Button>
                 <Button className="checkform__btns-submit"
                   type="primary" size="large"
                   icon={<SendOutlined />}
-                  htmlType="submit"
+                  // htmlType="submit"
                 >
                   SEND
             </Button>
-                <Tooltip title="Add one extra positive or negative mark.">
+                <Tooltip title="You can add one extra positive or negative mark.">
                   <Button className="checkform__btns-extra"
-                    onClick={addExtraCheckPoint}>
-                    ADD EXTRA CHECKPOINT
-            </Button>
+                    onClick={handleExtraCheckPoint}>
+                    {task.items &&
+                      task.items.find(item => item.category === customCategory) ?
+                      'DELETE EXTRA CHECKPOINT' : 'ADD EXTRA CHECKPOINT'
+                    }
+                  </Button>
                 </Tooltip>
               </div>
             </Form>
@@ -175,4 +266,5 @@ function CheckForm({ history, match, revReqObj, checkType }) {
     </div>
   );
 }
+
 export default CheckForm;

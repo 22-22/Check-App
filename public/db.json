@@ -519,18 +519,18 @@
     {
       "task": "x-check app",
       "reviewer": "Sapranovich",
-      "student": "22-22",
-      "score": 103,
-      "id": 1601033407786,
-      "sendingDate": "2020-09-25 14:30:07",
+      "student": "Sapranovich",
+      "score": 44,
+      "checkId": 1601030575849,
+      "sendingDate": "2020-09-26 15:28:25",
       "items": {
         "Basic scope": [
           {
             "score": "20"
           },
           {
-            "score": "10",
-            "comment": "да ладно, отличный адаптив)"
+            "comment": "jhjhjhjhjhjhj",
+            "score": "4"
           }
         ],
         "Extra scope": [
@@ -545,14 +545,326 @@
           {
             "score": "0"
           }
-        ],
-        "Cross-checker extra": [
+        ]
+      },
+      "status": "published",
+      "id": 1601030575850
+    },
+    {
+      "task": "x-check app",
+      "reviewer": "Sapranovich",
+      "student": "Sapranovich",
+      "score": 40,
+      "id": 1601124190123,
+      "sendingDate": "2020-09-26 15:43:10",
+      "items": {
+        "Basic scope": [
           {
-            "comment": "цвета и правда потрясающие!",
-            "score": "53"
+            "score": "15",
+            "comment": "ррр"
+          },
+          {
+            "score": "5"
+          }
+        ],
+        "Extra scope": [
+          {
+            "score": "20"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
           }
         ]
-      }
+      },
+      "status": "published"
+    },
+    {
+      "task": "x-check app",
+      "reviewer": "Sapranovich",
+      "student": "Sapranovich",
+      "score": 45,
+      "id": 1601124493403,
+      "sendingDate": "2020-09-26 15:48:13",
+      "items": {
+        "Basic scope": [
+          {
+            "score": "20"
+          },
+          {
+            "score": "5"
+          }
+        ],
+        "Extra scope": [
+          {
+            "score": "20"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          }
+        ]
+      },
+      "status": "published"
+    },
+    {
+      "task": "x-check app",
+      "reviewer": "Sapranovich",
+      "student": "Sapranovich",
+      "score": 45,
+      "id": 1601124587429,
+      "sendingDate": "2020-09-26 15:49:47",
+      "items": {
+        "Basic scope": [
+          {
+            "score": "20"
+          },
+          {
+            "score": "5"
+          }
+        ],
+        "Extra scope": [
+          {
+            "score": "20"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          }
+        ]
+      },
+      "status": "published"
+    },
+    {
+      "task": "x-check app",
+      "reviewer": "Sapranovich",
+      "student": "Sapranovich",
+      "score": 45,
+      "id": 1601124797080,
+      "sendingDate": "2020-09-26 15:53:17",
+      "items": {
+        "Basic scope": [
+          {
+            "score": "20"
+          },
+          {
+            "score": "5"
+          }
+        ],
+        "Extra scope": [
+          {
+            "score": "20"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          }
+        ]
+      },
+      "status": "published"
+    },
+    {
+      "status": "published",
+      "revReqId": "rev-req-1601032845865",
+      "id": 1601128334036,
+      "task": "x-check app",
+      "reviewer": "Sapranovich",
+      "student": "Sapranovich",
+      "items": {
+        "Basic scope": [
+          {
+            "score": "0",
+            "comment": "jjj"
+          },
+          {
+            "score": "5"
+          }
+        ],
+        "Extra scope": [
+          {
+            "score": "20"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          }
+        ]
+      },
+      "sendingDate": "2020-09-26 16:59:59",
+      "score": 25
+    },
+    {
+      "status": "published",
+      "revReqId": "rev-req-1601116568450",
+      "id": 1601128590677,
+      "task": "x-check app",
+      "reviewer": "Sapranovich",
+      "student": "Sapranovich",
+      "items": {
+        "Basic scope": [
+          {
+            "score": "10"
+          },
+          {
+            "score": "4"
+          }
+        ],
+        "Extra scope": [
+          {
+            "score": "8"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "0",
+            "comment": "jjj"
+          },
+          {
+            "score": "0",
+            "comment": "ok"
+          }
+        ]
+      },
+      "sendingDate": "2020-09-26 17:02:45",
+      "score": 22
+    },
+    {
+      "status": "checkDraft",
+      "revReqId": "rev-req-1601032845865",
+      "id": 1601128720288,
+      "task": "x-check app",
+      "reviewer": "Sapranovich",
+      "student": "Sapranovich",
+      "items": {
+        "Basic scope": [
+          {
+            "score": "14"
+          }
+        ],
+        "Extra scope": [],
+        "Fines": []
+      },
+      "sendingDate": "2020-09-26 16:58:40"
+    },
+    {
+      "status": "checkDraft",
+      "revReqId": "rev-req-1601032845865",
+      "id": 1601130025628,
+      "task": "x-check app",
+      "reviewer": "22-22",
+      "student": "Sapranovich",
+      "items": {
+        "Basic scope": [
+          {
+            "score": "0"
+          }
+        ],
+        "Extra scope": [],
+        "Fines": []
+      },
+      "sendingDate": "2020-09-26 17:20:25"
+    },
+    {
+      "status": "checkDraft",
+      "revReqId": "rev-req-1601032845865",
+      "id": 1601132006027,
+      "task": "x-check app",
+      "reviewer": "22-22",
+      "student": "Sapranovich",
+      "items": {
+        "Basic scope": [],
+        "Extra scope": [],
+        "Fines": []
+      },
+      "sendingDate": "2020-09-26 17:53:26"
+    },
+    {
+      "status": "checkDraft",
+      "revReqId": "rev-req-1601032845865",
+      "id": 1601132143029,
+      "task": "x-check app",
+      "reviewer": "22-22",
+      "student": "Sapranovich",
+      "items": {
+        "Basic scope": [],
+        "Extra scope": [],
+        "Fines": []
+      },
+      "sendingDate": "2020-09-26 17:55:43"
+    },
+    {
+      "status": "checkDraft",
+      "revReqId": "rev-req-1601032845865",
+      "id": 1601133176794,
+      "task": "x-check app",
+      "reviewer": "22-22",
+      "student": "Sapranovich",
+      "items": {
+        "Basic scope": [],
+        "Extra scope": [
+          {
+            "score": "7"
+          }
+        ],
+        "Fines": []
+      },
+      "sendingDate": "2020-09-26 18:12:56"
+    },
+    {
+      "status": "checkDraft",
+      "revReqId": "rev-req-1601032845865",
+      "id": 1601134348733,
+      "task": "x-check app",
+      "reviewer": "Sapranovich",
+      "student": "Sapranovich",
+      "items": {
+        "Basic scope": [
+          {
+            "score": "9"
+          }
+        ],
+        "Extra scope": [],
+        "Fines": []
+      },
+      "sendingDate": "2020-09-26 18:32:28"
+    },
+    {
+      "status": "checkDraft",
+      "revReqId": "rev-req-1601032845865",
+      "id": 1601134517511,
+      "task": "x-check app",
+      "reviewer": "Sapranovich",
+      "student": "Sapranovich",
+      "items": {
+        "Basic scope": [
+          {
+            "score": "12"
+          }
+        ],
+        "Extra scope": [],
+        "Fines": []
+      },
+      "sendingDate": "2020-09-26 18:35:17"
     }
   ],
   "reviewRequests": [
@@ -629,39 +941,6 @@
       "selfGradeDetails": {}
     },
     {
-      "id": "rev-req-1600866083229",
-      "crossCheckSessionId": null,
-      "student": "22-22",
-      "task": "Task 1",
-      "state": "DRAFT",
-      "demo": "netlify-jdhfjdhf",
-      "PR": "github-fdhfk",
-      "selfGrade": 12,
-      "status": "published",
-      "selfGradeDetails": {
-        "Вёрстка, дизайн, UI": [
-          {
-            "score": "7",
-            "comment": "amejziiiing"
-          }
-        ],
-        "Аудиоплеер": [
-          {
-            "score": "0"
-          },
-          {
-            "score": "5"
-          }
-        ],
-        "Fines": [
-          {
-            "score": "0"
-          }
-        ]
-      },
-      "sendingDate": "2020-09-23 16:02:54"
-    },
-    {
       "id": "rev-req-1601032845865",
       "crossCheckSessionId": null,
       "student": "Sapranovich",
@@ -697,6 +976,318 @@
         ]
       },
       "sendingDate": "2020-09-25 14:21:44"
+    },
+    {
+      "id": "rev-req-1601116568450",
+      "crossCheckSessionId": null,
+      "student": "Sapranovich",
+      "task": "x-check app",
+      "status": "published",
+      "demo": "j",
+      "PR": "h",
+      "selfGrade": 13,
+      "selfGradeDetails": {
+        "Basic scope": [
+          {
+            "score": "10"
+          },
+          {
+            "score": "4"
+          }
+        ],
+        "Extra scope": [
+          {
+            "comment": "NOW!!1",
+            "score": "8"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "-7"
+          },
+          {
+            "score": "-2"
+          }
+        ]
+      },
+      "sendingDate": "2020-09-26 13:50:38"
+    },
+    {
+      "id": "rev-req-1601120512545",
+      "crossCheckSessionId": null,
+      "student": "Sapranovich",
+      "task": "Task 2",
+      "status": "published",
+      "demo": "о",
+      "PR": "о",
+      "selfGrade": 14,
+      "selfGradeDetails": {
+        "Basic scope": [
+          {
+            "score": "10"
+          },
+          {
+            "score": "7"
+          }
+        ],
+        "Extra scope": [
+          {
+            "score": "10"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "-9"
+          },
+          {
+            "score": "-4"
+          }
+        ]
+      },
+      "sendingDate": "2020-09-26 14:42:16"
+    },
+    {
+      "id": "rev-req-1601124143130",
+      "crossCheckSessionId": null,
+      "student": "Sapranovich",
+      "task": "Task 2",
+      "status": "published",
+      "demo": "о",
+      "PR": "л",
+      "selfGrade": 14,
+      "selfGradeDetails": {
+        "Basic scope": [
+          {
+            "score": "12"
+          },
+          {
+            "score": "7",
+            "comment": "ррр"
+          }
+        ],
+        "Extra scope": [
+          {
+            "score": "8"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "-9"
+          },
+          {
+            "score": "-4"
+          }
+        ]
+      },
+      "sendingDate": "2020-09-26 15:42:35"
+    },
+    {
+      "id": "rev-req-1601127103140",
+      "crossCheckSessionId": null,
+      "student": "Sapranovich",
+      "task": "x-check app",
+      "status": "published",
+      "demo": "f",
+      "PR": "f",
+      "selfGrade": 11,
+      "selfGradeDetails": {
+        "Basic scope": [
+          {
+            "score": "13"
+          },
+          {
+            "score": "6"
+          }
+        ],
+        "Extra scope": [
+          {
+            "score": "8"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "-11"
+          },
+          {
+            "score": "-5"
+          }
+        ]
+      },
+      "sendingDate": "2020-09-26 16:32:51"
+    },
+    {
+      "id": "rev-req-1601128752751",
+      "crossCheckSessionId": null,
+      "student": "Sapranovich",
+      "task": "Task 2",
+      "status": "selfCheckDraft",
+      "demo": "jj",
+      "PR": "j",
+      "selfGrade": {},
+      "selfGradeDetails": {
+        "Basic scope": [],
+        "Extra scope": [],
+        "Fines": [
+          {
+            "score": "-8"
+          }
+        ]
+      },
+      "sendingDate": "2020-09-26 16:59:22"
+    },
+    {
+      "id": "rev-req-1601129150375",
+      "crossCheckSessionId": null,
+      "student": "22-22",
+      "task": "x-check app",
+      "status": "published",
+      "demo": "о",
+      "PR": "ллллл",
+      "selfGrade": 7,
+      "selfGradeDetails": {
+        "Basic scope": [
+          {
+            "score": "10"
+          },
+          {
+            "score": "7"
+          }
+        ],
+        "Extra scope": [
+          {
+            "score": "8"
+          }
+        ],
+        "Fines": [
+          {
+            "score": "-14"
+          },
+          {
+            "score": "-4"
+          }
+        ]
+      },
+      "sendingDate": "2020-09-26 17:06:35"
+    },
+    {
+      "id": "rev-req-1601133779324",
+      "crossCheckSessionId": null,
+      "student": "22-22",
+      "task": "Task 2",
+      "status": "selfCheckDraft",
+      "demo": "j",
+      "PR": "j",
+      "selfGrade": {},
+      "selfGradeDetails": {
+        "Basic scope": [
+          {
+            "score": "11"
+          }
+        ],
+        "Extra scope": [],
+        "Fines": []
+      },
+      "sendingDate": "2020-09-26 18:23:03"
+    },
+    {
+      "id": "rev-req-1601134135407",
+      "crossCheckSessionId": null,
+      "student": "Sapranovich",
+      "task": "Task 2",
+      "status": "selfCheckDraft",
+      "demo": "j",
+      "PR": "j",
+      "selfGrade": {},
+      "selfGradeDetails": {
+        "Basic scope": [
+          {
+            "score": "11"
+          }
+        ],
+        "Extra scope": [],
+        "Fines": []
+      },
+      "sendingDate": "2020-09-26 18:29:00"
+    },
+    {
+      "id": "rev-req-1601134371835",
+      "crossCheckSessionId": null,
+      "student": "Sapranovich",
+      "task": "Task 2",
+      "status": "selfCheckDraft",
+      "demo": "j",
+      "PR": "j",
+      "selfGrade": {},
+      "selfGradeDetails": {
+        "Basic scope": [
+          {
+            "score": "5"
+          }
+        ],
+        "Extra scope": [],
+        "Fines": []
+      },
+      "sendingDate": "2020-09-26 18:32:57"
+    },
+    {
+      "id": "rev-req-1601134544252",
+      "crossCheckSessionId": null,
+      "student": "Sapranovich",
+      "task": "Task 2",
+      "status": "selfCheckDraft",
+      "demo": "j",
+      "PR": "j",
+      "selfGrade": {},
+      "selfGradeDetails": {
+        "Basic scope": [
+          {
+            "score": "13"
+          }
+        ],
+        "Extra scope": [],
+        "Fines": []
+      },
+      "sendingDate": "2020-09-26 18:35:50"
+    },
+    {
+      "id": "rev-req-1601135126749",
+      "crossCheckSessionId": null,
+      "student": "Sapranovich",
+      "task": "Task 2",
+      "status": "selfCheckDraft",
+      "demo": "j",
+      "PR": "j",
+      "selfGrade": {},
+      "selfGradeDetails": {
+        "Basic scope": [],
+        "Extra scope": [],
+        "Fines": [
+          {
+            "score": "-10"
+          }
+        ]
+      },
+      "sendingDate": "2020-09-26 18:45:33"
+    },
+    {
+      "id": "rev-req-1601136681015",
+      "crossCheckSessionId": null,
+      "student": "22-22",
+      "task": "Task 1",
+      "status": "selfCheckDraft",
+      "demo": "j",
+      "PR": "j",
+      "selfGrade": {},
+      "selfGradeDetails": {
+        "Вёрстка, дизайн, UI": [
+          {
+            "score": "6"
+          }
+        ],
+        "Аудиоплеер": [],
+        "Fines": []
+      },
+      "sendingDate": "2020-09-26 19:11:25"
     }
   ]
 }
