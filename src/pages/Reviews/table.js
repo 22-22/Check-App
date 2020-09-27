@@ -24,6 +24,7 @@ class TableScore extends React.Component {
     data=[];
     if (props.scores != null) {
       props.scores.map((el, index) =>
+      el.status === "published"?
         data.push({
           student: el.student ? el.student : "",
           score: el.score ? el.score : "",
@@ -32,7 +33,7 @@ class TableScore extends React.Component {
           reviewer: el.reviewer ? el.reviewer : "",
           key: index,
           actions: index,
-        })
+        }):""
       ) 
     }
     return null;
