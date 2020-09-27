@@ -19,10 +19,10 @@ const getUsersByRole = ( role ) => {
 const authentification = (gitHubId) => {
   return axios.get(`http://localhost:3001/users?q=${gitHubId}`)
     .then(resp => {
-        console.log(resp.data)
-        return resp.data[0];
+      console.log(resp.data)
+      return resp.data[0];
     }).catch(error => {
-        console.log(error);
+      console.log(error);
     });
 }
 
@@ -30,9 +30,9 @@ const fetchTasks = (status) => {
   const path = status === null ? '/tasks' : `/tasks/?status=${status}`;
   return axios.get(`http://localhost:3001${path}`)
     .then(resp => {
-        return resp.data;
+      return resp.data;
     }).catch(error => {
-        console.log(error);
+      console.log(error);
     });
 }
 
@@ -40,9 +40,9 @@ const fetchTask = (title) => {
   const path = title === null ? '/tasks' : `/tasks/?title=${title}`;
   return axios.get(`http://localhost:3001${path}`)
     .then(resp => {
-        return resp.data;
+      return resp.data;
     }).catch(error => {
-        console.log(error);
+      console.log(error);
     });
 }
 
@@ -50,9 +50,9 @@ const fetchTaskById = (id) => {
   const path = id === null ? '/tasks' : `/tasks/?id=${id}`;
   return axios.get(`http://localhost:3001${path}`)
     .then(resp => {
-        return resp.data;
+      return resp.data;
     }).catch(error => {
-        console.log(error);
+      console.log(error);
     });
 }
 
@@ -60,16 +60,22 @@ const fetchScores = (task) => {
   const path = task === null ? '/scores' : `/scores/?task=${task}`;
   return axios.get(`http://localhost:3001${path}`)
     .then(resp => {
-        return resp.data;
+      return resp.data;
     }).catch(error => {
         console.log(error);
     });
 }
 
-const fetchReviewRequests = async (task) => {
+const fetchAllScores = () => {
+  return axios.get(`${BASE_URL}/scores`)
+    .then(resp => resp.data)
+    .catch(error => console.log(error));
+}
+
+const fetchReviewRequests = async () => {
   const path = '/reviewRequests';
   try {
-    const resp = await axios.get(`http://localhost:3001${path}`);
+    const resp = await axios.get(`${BASE_URL}${path}`);
     return resp.data;
   }
   catch (error) {
@@ -87,16 +93,16 @@ const fetchReviewRequestsById = async (id) => {
   }
 }
 
-const fetchSortAndFilterTasks = (status, sortBy, sortAs) => {
+const fetchSortAndFilterTasks = async (status, sortBy, sortAs) => {
   const path = status === null ? '' : `/?status=${status}`;
   const pathSortBy = sortBy === null ? '' : `${status === null ? '?' : '&'}_sort=${sortBy}&_order=${sortAs}`;
-  console.log(`http://localhost:3001${path}${pathSortBy}`);
-  return axios.get(`http://localhost:3001/tasks${path}${pathSortBy}`)
-    .then(resp => {
-        return resp.data;
-    }).catch(error => {
-        console.log(error);
-    });
+  // console.log(`http://localhost:3001${path}${pathSortBy}`);
+  try {
+    const resp = await axios.get(`http://localhost:3001/tasks${path}${pathSortBy}`);
+    return resp.data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const sendTask = (task) => {
@@ -108,7 +114,7 @@ const checkId = (id) => {
 };
 
 const getTaskId = () => {
-    return axios.get(`${BASE_URL}/tasks`).then(res => res.data.length)
+  return axios.get(`${BASE_URL}/tasks`).then(res => res.data.length)
 }
 
 const changeTask = (id,task,change) => {
@@ -117,15 +123,15 @@ const changeTask = (id,task,change) => {
 
 
 const sendReviewRequest = (reviewRequest) => {
-  return axios.post(`${BASE_URL}/reviewRequest`,reviewRequest).then((res) => console.log(res.data))
+  return axios.post(`${BASE_URL}/reviewRequests`,reviewRequest).then((res) => console.log(res.data))
 };
 
 const fetchUserVerification = (gitHubId) => {
   return axios.get(`http://localhost:3001/users?id=${gitHubId}`)
     .then(resp => {
-        return resp.data;
+      return resp.data;
     }).catch(error => {
-        console.log(error);
+      console.log(error);
     });
 }
 
@@ -156,8 +162,20 @@ const fetchTaskInfo = (title) => {
 }
 
 const addNewScore = (score) => {
-   axios.post(`${BASE_URL}/scores`, score)
+  return axios.post(`${BASE_URL}/scores`, score)
     .catch(err => console.log(err))
 };
 
-export { fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchReviewRequests, fetchReviewRequestsById, fetchSortAndFilterTasks, fetchUserVerification, sendTask,fetchTaskById,getTaskId,changeTask,sendReviewRequest ,fetchTask,checkId};
+const updateScore = (id, task, change) => {
+  return axios.put(`${BASE_URL}/scores/${id}`, { ...task, ...change })
+    .then((res) => console.log(res.data))
+    .catch(err => console.log(err))
+}
+
+const updateReviewRequest = (id, task, change) => {
+  return axios.put(`${BASE_URL}/reviewRequests/${id}`, { ...task, ...change })
+    .then((res) => console.log(res.data))
+    .catch(err => console.log(err))
+}
+
+export { updateScore, updateReviewRequest, fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchAllScores, fetchReviewRequests, fetchReviewRequestsById, fetchSortAndFilterTasks, fetchUserVerification, sendTask, fetchTaskById, getTaskId, changeTask, sendReviewRequest, fetchTask б,checkId};
