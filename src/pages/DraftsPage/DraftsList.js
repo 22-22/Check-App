@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Tooltip, Table } from 'antd';
-import { CheckCircleOutlined } from '@ant-design/icons';
+import { EditOutlined } from '@ant-design/icons';
 
 function DraftsList({ draftsList, type }) {
     let tasksSet = new Set();
@@ -22,7 +22,7 @@ function DraftsList({ draftsList, type }) {
                     <Link to={`/check-form/${pathId}/${draft.status}`}>
                         <Tooltip title="Return to review">
                             <Button type="primary" shape="circle"
-                                icon={<CheckCircleOutlined />}
+                                icon={<EditOutlined />}
                             />
                         </Tooltip>
                     </Link>,

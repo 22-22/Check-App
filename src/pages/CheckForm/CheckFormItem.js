@@ -122,13 +122,13 @@ export const CheckFormItem = ({
                                         ? "" : +currentCategory[itemIdx].score}
                                 >
                                     <Radio className="radioStyle" value={item.minScore}>
-                                        Не выполнено
+                                        Not done
                                 </Radio>
                                     <Radio className="radioStyle" value={countHalfValue()}>
-                                        Частично
+                                        Done partially
                                 </Radio>
                                     <Radio className="radioStyle" value={item.maxScore}>
-                                        Полностью
+                                        Done
                                 </Radio>
                                 </Radio.Group>
                             )}

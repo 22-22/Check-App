@@ -36,20 +36,25 @@ function DraftsPage({ history }) {
 
   return (
     <div className="account">
-      <section className="drafts-list">
-        <h2>Other students' review drafts</h2>
-        {
-          checkDraftsList &&
-          <DraftsList draftsList={checkDraftsList} type="check" />
-        }
-      </section>
-      <section className="drafts-list">
-        <h2>Self check drafts</h2>
-        {
-          selfCheckDraftsList &&
-          <DraftsList draftsList={selfCheckDraftsList} type="selfCheck" />
-        }
-      </section>
+      <div className="drafts">
+        <h2 className="drafts__title">DRAFTS</h2>
+        <p className="drafts__info">If you started to review your task or the work other student,
+        you can save it as a draft and go back to your review on this page.</p>
+        <section>
+          <h2>Other students' review drafts</h2>
+          {
+            checkDraftsList &&
+            <DraftsList draftsList={checkDraftsList} type="check" />
+          }
+        </section>
+        <section>
+          <h2>Self check drafts</h2>
+          {
+            selfCheckDraftsList &&
+            <DraftsList draftsList={selfCheckDraftsList} type="selfCheck" />
+          }
+        </section>
+      </div>
     </div >
   );
 }
