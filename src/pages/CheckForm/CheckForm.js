@@ -85,7 +85,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
     setItemsNumber(countAllItems(task.items));
   }, [task])
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = () => {
     if (countCheckedItems(score) === itemsNumber) {
       const date = getDate();
       const time = getTime();
@@ -242,7 +242,6 @@ function CheckForm({ history, match, revReqObj, checkType }) {
                 <Button className="checkform__btns-submit"
                   type="primary" size="large"
                   icon={<SendOutlined />}
-                  // htmlType="submit"
                 >
                   SEND
             </Button>

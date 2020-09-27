@@ -15,7 +15,9 @@ function DraftsPage({ history }) {
 
   useEffect(() => {
     !authentication && checkAuth(history, authentication, dispatch, '/drafts');
+  }, []);
 
+  useEffect(() => {
     fetchAllScores()
       .then(allScores => {
         const checkDrafts = allScores
@@ -30,7 +32,7 @@ function DraftsPage({ history }) {
           .filter(request => request.status === 'selfCheckDraft');
         setSelfCheckDraftsList(selfCheckDrafts)
       })
-  }, []);
+  }, [user]);
 
   return (
     <div className="account">

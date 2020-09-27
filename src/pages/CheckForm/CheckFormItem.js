@@ -27,11 +27,12 @@ export const CheckFormItem = ({
     }
 
     const required =
-        checkType !== 'self' && 
-        draft !== 'selfCheckDraft' &&
-            currentCategory[itemIdx]
+        checkType !== 'self'
+            && draft !== 'selfCheckDraft'
+            && currentCategory[itemIdx]
             && selfCheck.selfGradeDetails[categoryName]
-            && selfCheck.selfGradeDetails[categoryName][itemIdx].score !== currentCategory[itemIdx].score
+            && selfCheck.selfGradeDetails[categoryName][itemIdx].score
+            !== currentCategory[itemIdx].score
             || categoryName === customCategory
             ? true : false
 
@@ -49,7 +50,7 @@ export const CheckFormItem = ({
                             </span>
                         </div>
                         {
-                            checkType !== 'self' && 
+                            checkType !== 'self' &&
                             draft !== 'selfCheckDraft' &&
                             selfCheck.selfGradeDetails[categoryName] &&
                             selfCheck.selfGradeDetails[categoryName][itemIdx] && (
@@ -80,7 +81,7 @@ export const CheckFormItem = ({
                             onChange={(e) => updateScore(e.target.value, e.target.name)}
                         />
                         {
-                            checkType !== 'self' && 
+                            checkType !== 'self' &&
                             draft !== 'selfCheckDraft' &&
                             selfCheck.selfGradeDetails[categoryName] &&
                             selfCheck.selfGradeDetails[categoryName][itemIdx] &&

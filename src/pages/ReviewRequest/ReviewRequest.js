@@ -55,7 +55,7 @@ function ReviewRequest({ history, match }) {
         "crossCheckSessionId": null,
         "student": `${infoUser.id}`,
         "task": task,
-        "state": "DRAFT",
+        "status": "draft",
         "demo": demo,
         "PR": PR,
         "selfGrade": {}
