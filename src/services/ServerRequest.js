@@ -19,10 +19,10 @@ const getUsersByRole = ( role ) => {
 const authentification = (gitHubId) => {
   return axios.get(`http://localhost:3001/users?q=${gitHubId}`)
     .then(resp => {
-        console.log(resp.data)
-        return resp.data[0];
+      console.log(resp.data)
+      return resp.data[0];
     }).catch(error => {
-        console.log(error);
+      console.log(error);
     });
 }
 
@@ -30,9 +30,9 @@ const fetchTasks = (status) => {
   const path = status === null ? '/tasks' : `/tasks/?status=${status}`;
   return axios.get(`http://localhost:3001${path}`)
     .then(resp => {
-        return resp.data;
+      return resp.data;
     }).catch(error => {
-        console.log(error);
+      console.log(error);
     });
 }
 
@@ -40,9 +40,9 @@ const fetchTask = (title) => {
   const path = title === null ? '/tasks' : `/tasks/?title=${title}`;
   return axios.get(`http://localhost:3001${path}`)
     .then(resp => {
-        return resp.data;
+      return resp.data;
     }).catch(error => {
-        console.log(error);
+      console.log(error);
     });
 }
 
@@ -50,9 +50,9 @@ const fetchTaskById = (id) => {
   const path = id === null ? '/tasks' : `/tasks/?id=${id}`;
   return axios.get(`http://localhost:3001${path}`)
     .then(resp => {
-        return resp.data;
+      return resp.data;
     }).catch(error => {
-        console.log(error);
+      console.log(error);
     });
 }
 
@@ -60,10 +60,16 @@ const fetchScores = (task) => {
   const path = task === null ? '/scores' : `/scores/?task=${task}`;
   return axios.get(`http://localhost:3001${path}`)
     .then(resp => {
-        return resp.data;
+      return resp.data;
     }).catch(error => {
-        console.log(error);
+      console.log(error);
     });
+}
+
+const fetchAllScores = () => {
+  return axios.get(`${BASE_URL}/scores`)
+    .then(resp => resp.data)
+    .catch(error => console.log(error));
 }
 
 const fetchReviewRequests = async () => {
@@ -104,24 +110,24 @@ const sendTask = (task) => {
 };
 
 const getTaskId = () => {
-    return axios.get(`${BASE_URL}/tasks`).then(res => res.data.length)
+  return axios.get(`${BASE_URL}/tasks`).then(res => res.data.length)
 }
 
 const changeTask = (id,task) => {
-    return axios.put(`${BASE_URL}/tasks/?id=${id}`,task).then(res => console.log(res))
+  return axios.put(`${BASE_URL}/tasks/?id=${id}`,task).then(res => console.log(res))
 };
 
 
 const sendReviewRequest = (reviewRequest) => {
-  return axios.post(`${BASE_URL}/reviewRequest`,reviewRequest).then((res) => console.log(res.data))
+  return axios.post(`${BASE_URL}/reviewRequests`,reviewRequest).then((res) => console.log(res.data))
 };
 
 const fetchUserVerification = (gitHubId) => {
   return axios.get(`http://localhost:3001/users?id=${gitHubId}`)
     .then(resp => {
-        return resp.data;
+      return resp.data;
     }).catch(error => {
-        console.log(error);
+      console.log(error);
     });
 }
 
@@ -152,8 +158,20 @@ const fetchTaskInfo = (title) => {
 }
 
 const addNewScore = (score) => {
-   axios.post(`${BASE_URL}/scores`, score)
+  return axios.post(`${BASE_URL}/scores`, score)
     .catch(err => console.log(err))
 };
 
-export { fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchReviewRequests, fetchReviewRequestsById, fetchSortAndFilterTasks, fetchUserVerification, sendTask,fetchTaskById,getTaskId,changeTask,sendReviewRequest ,fetchTask};
+const updateScore = (id, task, change) => {
+  return axios.put(`${BASE_URL}/scores/${id}`, { ...task, ...change })
+    .then((res) => console.log(res.data))
+    .catch(err => console.log(err))
+}
+
+const updateReviewRequest = (id, task, change) => {
+  return axios.put(`${BASE_URL}/reviewRequests/${id}`, { ...task, ...change })
+    .then((res) => console.log(res.data))
+    .catch(err => console.log(err))
+}
+
+export { updateScore, updateReviewRequest, fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchAllScores, fetchReviewRequests, fetchReviewRequestsById, fetchSortAndFilterTasks, fetchUserVerification, sendTask, fetchTaskById, getTaskId, changeTask, sendReviewRequest, fetchTask };

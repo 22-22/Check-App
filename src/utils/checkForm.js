@@ -25,3 +25,12 @@ export const countPoints = (score) => {
       .reduce((acc, val) => acc + val, 0);
   }
 }
+
+export const getDate = () => {
+  return new Date().toLocaleDateString()
+    .split('.').reverse().join('-');
+}
+
+export const getTime = () => {
+  return new Date().toLocaleTimeString();
+}
