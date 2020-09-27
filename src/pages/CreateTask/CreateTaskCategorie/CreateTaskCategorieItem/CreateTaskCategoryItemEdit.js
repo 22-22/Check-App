@@ -13,9 +13,7 @@ export default function CreateTaskCategoryItemEdit({
 
     function intInputHandler(value) {
         let items = createTaskState.items;
-        let score = createTaskState.items.
-        reduce((acc,cur) => cur.categoryItems.
-        reduce((acum,item) => item.maxScore + acum,0) + acc,0);
+
         if(value > 0){
             items[categoryIndex].categoryItems[index].maxScore = value;
             items[categoryIndex].categoryItems[index].minScore = 0;
@@ -23,6 +21,9 @@ export default function CreateTaskCategoryItemEdit({
             items[categoryIndex].categoryItems[index].maxScore = 0;
             items[categoryIndex].categoryItems[index].minScore = value;
         }
+        let score = createTaskState.items.
+        reduce((acc,cur) => cur.categoryItems.
+        reduce((acum,item) => item.maxScore + acum,0) + acc,0);
 
         setTaskState({
             ...createTaskState,

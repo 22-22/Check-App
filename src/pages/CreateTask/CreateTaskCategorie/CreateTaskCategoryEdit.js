@@ -12,7 +12,7 @@ export default function CreateTaskCategoryEdit({
 
     function deleteButtonHandler() {
         let items = createTaskState.items;
-        items.splice(index,1)
+        items.splice(index,1);
         setTaskState({
             ...createTaskState,
             items:items,
@@ -22,7 +22,7 @@ export default function CreateTaskCategoryEdit({
     function inputHandler(event){
         let categoryItem = category;
         let items = createTaskState.items;
-        categoryItem.category = event.target.value;
+        categoryItem = {...categoryItem ,  category:event.target.value};
         items.splice(index,1, categoryItem);
         setTaskState({
             ...createTaskState,

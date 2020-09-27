@@ -8,19 +8,21 @@ import { useDispatch, useSelector } from "react-redux";
 import {Link} from "react-router-dom";
 import 'antd/dist/antd.css';
 import CreateTaskUpload from "./CreateTaskUpload/CreateTaskUpload";
-import {fetchTaskById, getTaskId, sendTask} from "../../services/ServerRequest";
+import {changeTask, checkId, fetchTaskById, getTaskId, sendTask} from "../../services/ServerRequest";
 import { DownloadOutlined ,CheckOutlined,SaveOutlined} from '@ant-design/icons';
 
 export default function CreateTask({history, match}) {
     const dispatch = useDispatch();
     const { authentication, infoUser } = useSelector(({ statesAccount }) => statesAccount);
-    const id = match.params.id
+    const id = match.params.id;
+    const date = new Date()
 
     let [loading,setLoading] = useState(id !== undefined);
     let [canSave,setCanSaveState] = useState(false)
     let [createTaskState, setTaskState] = useState( {
         title: '',
         status:'draft',
+        editDate:`${date.toLocaleDateString()} ${date.toLocaleTimeString().slice(0,5)}`,
         author:`${infoUser.id}`,
         description: '',
         deadline:'',
@@ -31,7 +33,7 @@ export default function CreateTask({history, match}) {
     });
 
     let taskFile = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(createTaskState));
-    // useEffect(() => console.log(createTaskState))
+
     useEffect(() => {
         (async () => id ? setTaskState( ( (await fetchTaskById( id ))[0] ) ) : '')();
         (async () => id ? '' : setTaskState({...createTaskState,id: await getTaskId() + 1}) )();
@@ -109,8 +111,9 @@ export default function CreateTask({history, match}) {
         }
     }
 
-    function saveTaskButtonHandler() {
-       sendTask(createTaskState)
+    async function saveTaskButtonHandler() {
+       let alreadyCreated = await checkId(createTaskState.id)
+       alreadyCreated ? changeTask(createTaskState.id,createTaskState,{editDate: `${date.toLocaleDateString()} ${date.toLocaleTimeString().slice(0, 5)}`})  :  sendTask(createTaskState)
     }
 
     const saveButton = canSave ? (
@@ -149,9 +152,9 @@ export default function CreateTask({history, match}) {
                     <div className={'main__task'}>
                         <h1 className={'main__title'}>{ createTaskState.title === '' ? 'Task title' : createTaskState.title }</h1>
                         <Divider />
-                        <p>{`Total points: ${createTaskState.score}`}</p>
-                        <p>{ createTaskState.date === '' ? 'Date: ':`Date: ${createTaskState.date} / ${createTaskState.deadline}`}</p>
-                        <p>{ createTaskState.description === '' ? 'Task description' : createTaskState.description}</p>
+                        <p className={'main__points'}>{`Total points: ${createTaskState.score}`}</p>
+                        <p className={'main__date'}>{ createTaskState.date === '' ? 'Date: ':`Date: ${createTaskState.date} / ${createTaskState.deadline}`}</p>
+                        <p className={'main__description'}>{ createTaskState.description === '' ? 'Task description' : createTaskState.description}</p>
                         <div className={"main__container"}>
                             { items }
                         </div>
@@ -159,8 +162,8 @@ export default function CreateTask({history, match}) {
                 </div>
                 <div className={'main__buttons-container'}>
                     {saveButton}
-                    <CreateTaskUpload setState = {setTaskState} />
-                    <a href={`data: ${taskFile}`} download={`${createTaskState.title}.json`}>
+                    <CreateTaskUpload setState = {setTaskState} state = {createTaskState} />
+                    <a href={`data: ${taskFile}`} download={`${createTaskState.title === '' ? 'task' : createTaskState.title}.json`}>
                         <Tooltip title={`Export ${createTaskState.title}`}>
                             <Button type="primary" shape="circle" icon={<DownloadOutlined />} size={'large'}/>
                         </Tooltip>

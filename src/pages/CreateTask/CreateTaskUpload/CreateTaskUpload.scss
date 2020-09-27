@@ -1,5 +1,9 @@
 .upload{
   opacity: 0;
-  width: 0;
-  height: 0;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: -1px;
+  bottom: -2px!important;
+  cursor: pointer;
 }

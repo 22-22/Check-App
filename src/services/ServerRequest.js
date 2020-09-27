@@ -60,7 +60,7 @@ const fetchScores = (task) => {
     .then(resp => {
       return resp.data;
     }).catch(error => {
-      console.log(error);
+        console.log(error);
     });
 }
 
@@ -104,12 +104,16 @@ const sendTask = (task) => {
     return axios.post(`${BASE_URL}/tasks`,task).then((res) => console.log(res.data))
 };
 
+const checkId = (id) => {
+    return axios.get(`${BASE_URL}/tasks`).then((res) => res.data.some((e) => e.id === id ))
+};
+
 const getTaskId = () => {
   return axios.get(`${BASE_URL}/tasks`).then(res => res.data.length)
 }
 
-const changeTask = (id,task) => {
-  return axios.put(`${BASE_URL}/tasks/?id=${id}`,task).then(res => console.log(res))
+const changeTask = (id,task,change) => {
+    return axios.put(`${BASE_URL}/tasks/${id}`,{...task,...change})
 };
 
 
@@ -175,7 +179,7 @@ const updateReviewRequest = (id, task, change) => {
 }
 
 export {
-  fetchTaskInfo, 
+  fetchTaskInfo,
   addNewScore,
   getAllUsers,
   creatNewUser,
@@ -196,5 +200,6 @@ export {
   fetchTask,
   changeTaskStatus,
   updateScore,
-  updateReviewRequest
+  updateReviewRequest,
+  checkId
 };

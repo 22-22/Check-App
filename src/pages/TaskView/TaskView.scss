@@ -5,7 +5,12 @@
 
   .task__buttons{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    max-width: 210px;
+    margin: 0 auto;
+  }
+  .task__points{
+    font-size: 2rem;
   }
   .task__description{
     font-size: 2rem;
