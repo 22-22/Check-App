@@ -2,11 +2,22 @@
   max-width: 1120px;
   margin: 0 auto;
   padding: 10px 15px;
-
+  .task__button{
+    display: flex;
+    justify-content: space-around;
+    max-width: 90px;
+    margin: 0 auto;
+  }
   .task__buttons{
     display: flex;
     justify-content: space-around;
-    max-width: 210px;
+    max-width: 255px;
+    margin: 0 auto;
+  }
+  .task__buttons--draft{
+    display: flex;
+    justify-content: space-around;
+    max-width: 220px;
     margin: 0 auto;
   }
   .task__points{
