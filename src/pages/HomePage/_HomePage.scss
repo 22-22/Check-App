@@ -1,46 +1,46 @@
-.account__wrapper{
-  margin-left: 100px;
-  color: $color-button;
-}
-.account__header{
-  border: solid 1px grey;
-}
-.account__content{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.account__content-left{
-  width: calc(100% - 400px);
-  min-width: 370px;
-}
-.account__notifications{
-  height: 65vh;
-  overflow: scroll;
-  min-width: 370px;
-}
-.account__stats{
-  min-width: 370px;
-}
-.account__content-right{
-  width: 370px;
-  height: calc(100vh - 15px);
-  padding: 10px;
-  overflow: scroll;
-  text-align: center;
-}
-.account__title{
-  font-size: 2rem;
-  margin: 10px 0;
-  text-transform: capitalize;
-}
-.account__subtitle{
-  font-size: 1.4rem;
-}
+// .account__wrapper{
+//   margin-left: 100px;
+//   color: $color-button;
+// }
+// .account__header{
+//   border: solid 1px grey;
+// }
+// .account__content{
+//   display: flex;
+//   justify-content: space-around;
+//   flex-wrap: wrap;
+//   width: 100%;
+// }
+// .account__content-left{
+//   width: calc(100% - 400px);
+//   min-width: 370px;
+// }
+// .account__notifications{
+//   height: 65vh;
+//   overflow: scroll;
+//   min-width: 370px;
+// }
+// .account__stats{
+//   min-width: 370px;
+// }
+// .account__content-right{
+//   width: 370px;
+//   height: calc(100vh - 15px);
+//   padding: 10px;
+//   overflow: scroll;
+//   text-align: center;
+// }
+// .account__title{
+//   font-size: 2rem;
+//   margin: 10px 0;
+//   text-transform: capitalize;
+// }
+// .account__subtitle{
+//   font-size: 1.4rem;
+// }
 
 
-// стили карт с заданиями 
+// // стили карт с заданиями 
 .card{
   border: 1px solid $color-button;
   background-color: rgba($color-light, 1);
@@ -68,9 +68,102 @@
 
 }
 
-// notification
+// // notification
 
-.notification__item{
+// .notification__item{
+//   border: 1px solid $color-button;
+//   background-color: rgba($color-light, 1);
+//   padding: 10px;
+//   margin: 5px 0;
+//   border-radius: 5px;
+//   font-size: 1.6rem;
+//   text-align: left;
+// }
+// .notification__title{
+//   font-size: 2rem;
+//   margin: 0 0 5px ;
+//   text-transform: capitalize;
+// }
+// .notification__subtitle{
+//   font-size: 1.4rem;
+//   a{
+//     text-decoration: none;
+//   }
+// }
+// .notification__description{
+//   margin: 10px 0 0;
+// }
+// .notification__date-info{
+
+// }
+
+// // stats account 
+
+// .stats{
+//   border: 1px solid $color-button;
+//   background-color: rgba($color-light, 1);
+//   padding: 10px;
+//   margin: 5px 0;
+//   border-radius: 5px;
+//   font-size: 1.6rem;
+//   text-align: left;
+//   text-align: center;
+// }
+// .stats__title{
+//   font-size: 3rem;
+//   margin: 0 0 5px ;
+//   text-transform: capitalize;
+// }
+// .stats__subtitle{
+//   font-size: 1.4rem;
+// }
+// .stats__description{
+//   display: flex;
+//   justify-content: center;
+// }
+
+
+
+// .site-layout-content {
+//   background: #fff;
+//   padding: 24px;
+//   min-height: 280px;
+// }
+// #components-layout-demo-top .logo {
+//   width: 120px;
+//   height: 31px;
+//   background: rgba(211, 35, 35, 0.2);
+//   margin: 16px 24px 16px 0;
+//   float: left;
+// }
+
+
+.account__content{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 50px 0 30px;
+}
+
+.account__navigation,
+.account__info,
+.account__active-tasks,
+.account__ads-list{
+ width: 370px;
+ box-shadow: 0 0 10px rgba(0,0,0,0.5);
+ background-color: rgba(0,0,0,0.1);
+ margin: 20px 0;
+}
+
+.account__navigation{
+  padding: 0;
+}
+.navigation{
+  margin: 0;
+  padding: 0;
+}
+.navigation__link{
   border: 1px solid $color-button;
   background-color: rgba($color-light, 1);
   padding: 10px;
@@ -78,49 +171,86 @@
   border-radius: 5px;
   font-size: 1.6rem;
   text-align: left;
-}
-.notification__title{
-  font-size: 2rem;
-  margin: 0 0 5px ;
-  text-transform: capitalize;
-}
-.notification__subtitle{
-  font-size: 1.4rem;
-  a{
-    text-decoration: none;
+  padding: 10px 20px; 
+  margin: 0;
+  list-style: none;
+  border:solid 1px transparent;
+  transition: all 0.2s ease-in-out;
+  &:hover{
+    font-weight: 700;
+    border:solid 1px;
   }
 }
-.notification__description{
-  margin: 10px 0 0;
+
+.account__info{
+padding: 10px 20px;
 }
-.notification__date-info{
-
+.account__info-title{
+  text-align: center;
+  font-size: 20px;
 }
-
-// stats account 
-
-.stats{
-  border: 1px solid $color-button;
-  background-color: rgba($color-light, 1);
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
-  font-size: 1.6rem;
-  text-align: left;
+.account__info-content{
+  display: flex;
+  justify-content: space-around;
+}
+.score{
+  padding: 10px 5px;
   text-align: center;
 }
-.stats__title{
-  font-size: 3rem;
-  margin: 0 0 5px ;
-  text-transform: capitalize;
+.tasks-stats{
+  padding: 10px 5px;
+  text-align: center;
 }
-.stats__subtitle{
-  font-size: 1.4rem;
+
+.score__title,
+.tasks-stats__title,
+.account-status__title{
+  font-size: 18px;
+  opacity: 0.9;
 }
-.stats__description{
-  display: flex;
-  justify-content: center;
+.account-status__value{
+  font-size: 24px;
+  font-weight: 500;
 }
+
+.account__active-tasks{
+  padding: 10px 20px;
+}
+// <div className="account__info">
+//           <h3 className="account__info-title">Your stats</h3>
+//           <div className="account__info-content">
+//             <div className="score">
+//               <h4 className="score__title">Score Points</h4>
+//               <span className="score__value"></span>
+//             </div>
+//             <div className="tasks-stats">
+//               <h4 className="tasks-stats__title">Completed Tasks</h4>
+//               <span className="tasks-stats__value"></span>
+//             </div>
+//           </div>
+//           <div className="account-status">
+//           <h4 className="account-status__title">Status</h4>
+//           <span className="account-status__value">
+            
+//           </span>
+//           </div>
+//         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .score{
 
@@ -134,19 +264,4 @@
 }
 .progress__value{
 
-}
-
-
-
-.site-layout-content {
-  background: #fff;
-  padding: 24px;
-  min-height: 280px;
-}
-#components-layout-demo-top .logo {
-  width: 120px;
-  height: 31px;
-  background: rgba(211, 35, 35, 0.2);
-  margin: 16px 24px 16px 0;
-  float: left;
 }

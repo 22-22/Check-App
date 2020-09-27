@@ -30,7 +30,7 @@ function App() {
         {/* <Route path="/callback" component={ Callback } /> */}
         <Route path="/" component={ HomePage } exact />
         <Route path="/authentication" component={ Authentication } exact />
-        <Route path="/home" component={ HomePage } exact />
+        {/* <Route path="/home" component={ HomePage } exact /> */}
         <Route path="/create-task" component={ CreateTask } exact />
         <Route path="/create-task/:id" component={ CreateTask } exact />
         <Route path="/review-request" component={ ReviewRequest } exact />

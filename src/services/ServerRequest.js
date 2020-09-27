@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = "https://ilya-ilay-cool-project.herokuapp.com";
-
+// const BASE_URL = "https://ilya-ilay-cool-project.herokuapp.com";
+const BASE_URL = "http://localhost:3001";
 const getAllUsers = () => {
   axios.get(`${BASE_URL}/users`).then(({ data }) => {
     console.log(data);
@@ -140,6 +140,7 @@ const creatNewUser = (gitHubId, role) => {
   const startUserObj = {
     "id": gitHubId,
     "role": role,
+    "status": "active",
     "courses": {
       "active": [],
       "completed": []
