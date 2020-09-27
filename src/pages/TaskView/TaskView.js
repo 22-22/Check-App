@@ -43,17 +43,17 @@ export default function TaskView({history, match}) {
     />));
 
     function publishHandler() {
-        changeTask(task.id,task,{ status:'published',})
+        changeTask(task.id,task,{ status:'published'})
     }
 
     function archiveHandler() {
-        changeTask(task.id,task,{ status:'archive'})
+        changeTask(task.id,task,{ status:'archived'})
     }
     function draftHandler() {
         changeTask(task.id,task,{ status:'draft'})
     }
     function deleteHandler() {
-        changeTask(task.id,task,{ status:'delete'})
+        changeTask(task.id,task,{ status:'deleted'})
     }
 
     const buttonBlockOne =  () =>  {

@@ -45,17 +45,7 @@ export default function CreateTaskUpload({setState,state}) {
     function handleFile(file) {
         let reader = new FileReader();
         reader.onload = function(file) {
-            console.log(file)
-            console.log(file.target.result)
             let obj = JSON.parse(file.target.result);
-           // let a = String(file.target.result)
-           //      .split('**')
-           //      .filter((e) => e.length > 10)
-           //      .map((e) => e.split('*').filter((e) => e.length > 8).map((el) => {
-           //         let [desc, score] =  el.split('+')
-           //          return [desc, (score)]
-           //      }))
-           // console.log(a)
             if (obj.taskName !== undefined){ convertToStandart(obj) }else{  checkObj(obj)}
 
         };

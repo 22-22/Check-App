@@ -113,7 +113,7 @@ const getTaskId = () => {
 }
 
 const changeTask = (id,task,change) => {
-    return axios.put(`${BASE_URL}/tasks/${id}`,{...task,...change}).then(res => console.log(res))
+    return axios.put(`${BASE_URL}/tasks/${id}`,{...task,...change})
 };
 
 

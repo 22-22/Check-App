@@ -33,7 +33,7 @@ export default function CreateTask({history, match}) {
     });
 
     let taskFile = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(createTaskState));
-    // useEffect(() => console.log(createTaskState))
+
     useEffect(() => {
         (async () => id ? setTaskState( ( (await fetchTaskById( id ))[0] ) ) : '')();
         (async () => id ? '' : setTaskState({...createTaskState,id: await getTaskId() + 1}) )();
@@ -79,8 +79,8 @@ export default function CreateTask({history, match}) {
             const [date, deadLine] = value;
             setTaskState( {
                 ...createTaskState,
-                deadline: deadLine.format('YYYY.MM.DD HH:MM'),
-                date: date.format('YYYY.MM.DD HH:MM'),
+                deadline: deadLine.format('YYYY-MM-DD HH:MM'),
+                date: date.format('YYYY-MM-DD HH:MM'),
             })
         }
     }
