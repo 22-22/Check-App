@@ -28,6 +28,7 @@ function Header({history}) {
               <Link to= '/scores'><li className="navigation__link">Reviews list</li></Link>
               <Link to= '/drafts'><li className="navigation__link">Drafts</li></Link>
               {/* <Link to= '/reviews'><li className="navigation__link">Reviews</li></Link> */}
+              <Link to= '/reviews'><li className="navigation__link">Reviews</li></Link>
             </ul>
           </nav>
           <Link to= '/authentication'><button onClick={exitAccount}>выйти из аккаунта</button></Link>
