@@ -38,7 +38,7 @@ function ScoreReview( props ) {
             </Button>,
           ]}
         >
-          <p className="score-review-subtitle">student: {props.description.user}, reviewer: {props.description.reviewer}</p>
+          <p className="score-review-subtitle">student: {props.description.student}, reviewer: {props.description.reviewer}</p>
           {items ? items.map((categoryObj, categoryI) =><ScoreReviewCategory categoryObj={categoryObj} marks={props.description.items} key={categoryI} /> ) : ""}
         </Modal>
       </>

@@ -123,9 +123,11 @@ export default function TaskView({history, match}) {
     };
 
     const buttonBlockTwo = [
-        <Button>
-            Создать запрос на ревью
-        </Button>,
+        <Link to={`/review-request/${match.params.id}`}>
+            <Button>
+                Request a review
+            </Button>
+        </Link>,
         <Link to='/tasks'>
             <Link to='/tasks'>
                 <Tooltip title={'Back to the tasks'}>
@@ -151,7 +153,7 @@ export default function TaskView({history, match}) {
                 </div>
             </div>
             <div className={'task__buttons'}>
-                { infoUser.role !== 'student' ?  buttonBlockTwo : buttonBlockOne() }
+                { infoUser.role === 'admin' ? buttonBlockOne() : buttonBlockTwo }
             </div>
         </div>
         </Spin>

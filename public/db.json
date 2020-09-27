@@ -1,6 +1,33 @@
 {
   "users": [
     {
+      "id": "user",
+      "role": "student",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
+    },
+    {
+      "id": "mentor",
+      "role": "mentor",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
+    },
+    {
+      "id": "admin",
+      "role": "admin",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
+    },
+    {
       "id": "Sapranovich",
       "role": "student",
       "courses": {
@@ -51,11 +78,11 @@
       "title": "Task 1",
       "author": "cardamo",
       "description": "this is the task 1 description",
-      "editDate": "27.09.2020 17:25",
-      "date": "2020.09.04 10:00",
-      "deadline": "2020.10.03 23:59",
-      "maxScore": 200,
-      "status": "archive",
+      "editDate": "2020-09-03 22:35",
+      "date": "2020-09-04 10:00",
+      "deadline": "2020-10-03 23:59",
+      "score": 200,
+      "status": "published",
       "items": [
         {
           "category": "Вёрстка, дизайн, UI",
@@ -114,10 +141,13 @@
       "id": 1
     },
     {
-      "title": "simple-task-v1",
+      "title": "Songbird",
+      "author": "irinainina",
+      "status": "archived",
       "description": "Допускается: -другая тематика приложения (не птицы) -использование вместо изображений видео -замена названий и описаний птиц другими данными",
-      "deadline": "2020-10-14",
-      "date": "2020-09-23",
+      "editDate": "2020-09-12 22:35",
+      "date": "2020-09-23 10:00",
+      "deadline": "2020-10-14 23:59",
       "score": 200,
       "items": [
         {
@@ -181,10 +211,10 @@
       "title": "Task 2",
       "author": "irinainina",
       "description": "this is the task 2 description",
-      "editDate": "2020.09.08 12:15",
-      "date": "2020.09.15 12:00",
-      "deadline": "2020.10.25 23:59",
-      "maxScore": 150,
+      "editDate": "2020-09-08 12:15",
+      "date": "2020-09-15 12:00",
+      "deadline": "2020-10-25 23:59",
+      "score": 150,
       "status": "published",
       "items": [
         {
@@ -234,17 +264,43 @@
       "title": "Task 3",
       "author": "cardamo",
       "description": "this is the task 3 description",
-      "editDate": "2020.07.27 15:46",
-      "date": "2020.07.30 12:00",
-      "deadline": "2020.08.21 23:59",
-      "maxScore": 260,
-      "status": "archive",
+      "editDate": "2020-07-27 15:46",
+      "date": "2020-07-30 12:00",
+      "deadline": "2020-08-21 23:59",
+      "score": 260,
+      "status": "archived",
       "items": [
         {
           "category": "Category",
           "categoryItems": [
             {
               "description": "category Item",
+              "score": 200
+            },
+            {
+              "description": "category Item",
+              "score": -100
+            }
+          ]
+        }
+      ],
+      "id": 3
+    },
+    {
+      "title": "Task 4",
+      "author": "davojta",
+      "description": "this is the task 4 description",
+      "editDate": "2020-09-07 14:37",
+      "date": "2020-09-08 10:00",
+      "deadline": "2020-09-28 23:59",
+      "score": 320,
+      "status": "published",
+      "items": [
+        {
+          "category": "Basic scope",
+          "categoryItems": [
+            {
+              "description": "adsasdasd",
               "minScore": 0,
               "maxScore": 20
             },
@@ -288,10 +344,10 @@
       "title": "Task 5",
       "author": "cardamo",
       "description": "this is the task 5 description",
-      "editDate": "2020.09.02 11:11",
-      "date": "2020.09.03 10:00",
-      "deadline": "2020.09.15 23:59",
-      "maxScore": 180,
+      "editDate": "2020-09-02 11:11",
+      "date": "2020-09-03 10:00",
+      "deadline": "2020-09-15 23:59",
+      "score": 180,
       "status": "draft",
       "items": [
         {
@@ -341,11 +397,11 @@
       "title": "Task 6",
       "author": "irinainina",
       "description": "this is the task 6 description",
-      "editDate": "2020.08.01 16:24",
-      "date": "2020.08.03 10:00",
-      "deadline": "2020.08.30 23:59",
-      "maxScore": 90,
-      "status": "archived",
+      "editDate": "2020-08-01 16:24",
+      "date": "2020-08-03 10:00",
+      "deadline": "2020-08-30 23:59",
+      "score": 90,
+      "status": "deleted",
       "items": [
         {
           "category": "Category",
@@ -375,10 +431,10 @@
       "title": "Task 7",
       "author": "cardamo",
       "description": "this is the task 7 description",
-      "editDate": "2020.09.04 09:07",
-      "date": "2020.10.05 09:00",
-      "deadline": "2020.11.08 23:59",
-      "maxScore": 250,
+      "editDate": "2020-09-04 09:07",
+      "date": "2020-10-05 09:00",
+      "deadline": "2020-11-08 23:59",
+      "score": 250,
       "status": "draft",
       "items": [
         {
@@ -426,12 +482,12 @@
     },
     {
       "title": "x-check app",
-      "author": "davojta",
-      "description": "this is the task 4 description",
-      "editDate": "2020.09.07 14:37",
-      "date": "2020.09.08 10:00",
-      "deadline": "2020.09.28 23:59",
-      "maxScore": 320,
+      "author": "cardamo",
+      "description": "this is the x-check app description",
+      "editDate": "2020-09-05 09:07",
+      "date": "2020-10-03 09:00",
+      "deadline": "2020-11-01 23:59",
+      "score": 250,
       "status": "published",
       "items": [
         {
@@ -463,19 +519,43 @@
           "category": "Fines",
           "categoryItems": [
             {
-              "description": "цвета неподходящие",
+              "description": "штраф за ошибки в консоли",
               "minScore": -20,
               "maxScore": 0
             },
             {
-              "description": "и между собой не сочетаются",
+              "description": "и цвета между собой не сочетаются",
               "minScore": -10,
               "maxScore": 0
             }
           ]
         }
       ],
-      "id": 4
+      "id": 8
+    },
+    {
+      "title": "Test task",
+      "status": "draft",
+      "author": "admin",
+      "description": "Task desc",
+      "deadline": "2020-10-10 12:10",
+      "date": "2020-09-29 12:09",
+      "editDate": "2020-09-15 10:08",
+      "score": 11,
+      "items": [
+        {
+          "category": "Category1",
+          "categoryItems": [
+            {
+              "description": "category Item1",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            }
+          ]
+        }
+      ],
+      "id": 10
     }
   ],
   "scores": [
@@ -720,22 +800,23 @@
             "score": "10"
           },
           {
-            "score": "4"
+
+            "score": "10",
+            "comment": "everything is fine"
           }
         ],
         "Extra scope": [
           {
-            "score": "8"
+            "score": "13"
           }
         ],
         "Fines": [
           {
-            "score": "0",
-            "comment": "jjj"
+            "score": "0"
           },
           {
-            "score": "0",
-            "comment": "ok"
+            "score": "-2",
+            "comment": "fine2"
           }
         ]
       },
@@ -860,15 +941,28 @@
       },
       "sendingDate": "2020-09-26 18:35:17"
     }
+    
   ],
   "reviewRequests": [
+    {
+      "id": "rev-req-1",
+      "crossCheckSessionId": "no session",
+      "student": "cardamo",
+      "task": "simple-task-v1",
+      "sendingDate": "2020-09-12 12:12",
+      "status": "completed",
+      "demo": "link_to_demo",
+      "PR": "link_to_PR",
+      "selfGrade": "150",
+      "selfGradeDetails": {}
+    },
     {
       "id": "rev-req-2",
       "crossCheckSessionId": "rss2020Q3react-xcheck",
       "student": "22-22",
       "task": "x-check app",
-      "sendingDate": "2020.09.14 14:14",
-      "state": "published",
+      "sendingDate": "2020-09-14 14:14",
+      "status": "published",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
       "selfGrade": "600",
@@ -879,8 +973,8 @@
       "crossCheckSessionId": "rss2020Q3react-xcheck",
       "student": "arumirinka",
       "task": "x-check app",
-      "sendingDate": "2020.09.15 15:15",
-      "state": "published",
+      "sendingDate": "2020-09-15 15:15",
+      "status": "published",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
       "selfGrade": "600",
@@ -891,8 +985,8 @@
       "crossCheckSessionId": "rss2020Q3react-xcheck",
       "student": "IlyaShihutin",
       "task": "x-check app",
-      "sendingDate": "2020.09.19 19:19",
-      "state": "published",
+      "sendingDate": "2020-09-19 19:19",
+      "status": "published",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
       "selfGrade": "600",
@@ -903,8 +997,8 @@
       "crossCheckSessionId": "rss2020Q3react-xcheck",
       "student": "NastiaKoval",
       "task": "x-check app",
-      "sendingDate": "2020.09.17 17:17",
-      "state": "published",
+      "sendingDate": "2020-09-17 17:17",
+      "status": "published",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
       "selfGrade": "600",
@@ -915,8 +1009,8 @@
       "crossCheckSessionId": "rss2020Q3react-xcheck",
       "student": "Sapranovich",
       "task": "x-check app",
-      "sendingDate": "2020.09.20 18:18",
-      "state": "published",
+      "sendingDate": "2020-09-20 18:18",
+      "status": "published",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
       "selfGrade": "600",
@@ -927,8 +1021,8 @@
       "crossCheckSessionId": "rss2020Q3react-xcheck",
       "student": "vorobeychik",
       "task": "x-check app",
-      "sendingDate": "2020.09.19 21:20",
-      "state": "published",
+      "sendingDate": "2020-09-19 21:20",
+      "status": "published",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
       "selfGrade": "600",
