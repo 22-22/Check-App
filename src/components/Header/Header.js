@@ -29,7 +29,7 @@ function Header({history}) {
               ) : null }
               <Link to='/review-request'><li className="navigation__link">Cross-check: submit</li></Link>
               <Link to='/review-requests'><li className="navigation__link">Cross-check: review</li></Link>
-              {/* <Link to='/check-form'><li className="navigation__link">Check-form</li></Link> */}
+              <Link to= '/drafts'><li className="navigation__link">Drafts</li></Link>
               <Link to='/reviews'><li className="navigation__link">Reviews list</li></Link>
             </ul>
           </nav>

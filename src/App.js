@@ -13,6 +13,7 @@ import Tasks from './pages/Tasks/Tasks';
 import CheckForm from './pages/CheckForm/CheckForm';
 import Reviews from './pages/Reviews/Reviews';
 import TaskView from "./pages/TaskView/TaskView";
+import DraftsPage from "./pages/DraftsPage/DraftsPage";
 // import UserAccount from './pages/UserAccount/UserAccount';
 // import Account from './pages/Account/Account';
 
@@ -34,9 +35,11 @@ function App() {
           <Route path="/review-requests" component={ ReviewRequests } exact />
           <Route path="/tasks" component={ Tasks } exact />
           <Route path="/tasks/:id" component={ TaskView } exact />
-          {/* <Route path="/check-form" component={ CheckForm } exact /> */}
-          <Route path="/check-form/:id" component={ CheckForm } exact />
+          {/* <Route path="/check-form" component={ CheckForm } exact />
+          <Route path="/check-form/:id" component={ CheckForm } exact /> */}
+          <Route path="/check-form/:id?/:status?" component={ CheckForm } exact />
           <Route path="/reviews" component={ Reviews } exact />
+          <Route path="/drafts" component={ DraftsPage } exact />
         </Switch>
       </div>
     </div>
