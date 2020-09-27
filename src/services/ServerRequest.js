@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://cool-project21.herokuapp.com";
 
 const getAllUsers = () => {
   axios.get(`${BASE_URL}/users`).then(({ data }) => {
