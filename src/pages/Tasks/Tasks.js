@@ -51,7 +51,7 @@ function Tasks({ history }) {
               ) : null }
               <Tooltip title={`Delete ${taskTitle}`}><Button type="primary" shape="circle" icon={<DeleteOutlined />} onClick={() => changeTaskStatus("deleted", task.id)} /></Tooltip>
               { task.status === 'published' ? (
-                <Link to={`/review-request/${task.id}`}><Tooltip title={`Submit task${taskTitle}`}><Button type="primary" shape="circle" icon={<CodeOutlined />} /></Tooltip></Link>
+                <Link to={`/review-request/${task.id}`}><Tooltip title={`Submit ${taskTitle}`}><Button type="primary" shape="circle" icon={<CodeOutlined />} /></Tooltip></Link>
               ) : null }
             </>
           });
@@ -67,7 +67,7 @@ function Tasks({ history }) {
             date: task.date ? task.date : "",
             deadline: task.deadline ? task.deadline : "",
             taskState: task.status ? task.status : "",
-            actions: <Link to={`/review-request/${task.id}`}><Tooltip title={`Submit task${taskTitle}`}><Button type="primary" shape="circle" icon={<CodeOutlined />} /></Tooltip></Link>
+            actions: <Link to={`/review-request/${task.id}`}><Tooltip title={`Submit ${taskTitle}`}><Button type="primary" shape="circle" icon={<CodeOutlined />} /></Tooltip></Link>
           });
           authorSet.add(task.author);
           statesSet.add(task.status)

@@ -156,7 +156,7 @@ class TableScore extends React.Component {
         ...this.getColumnSearchProps('date'),
       },
       {
-        title: 'actions',
+        title: 'Actions',
         dataIndex: "actions",
         key: "actions",
         width: '20%',
@@ -167,7 +167,7 @@ class TableScore extends React.Component {
       },
     ]
     if (this.props.scores === null) {
-      return (<h1>pid</h1>)
+      return (<p>no data</p>)
     }
     else {
       return (<Table columns={columns} dataSource={data} />);

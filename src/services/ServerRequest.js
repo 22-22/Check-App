@@ -85,18 +85,6 @@ const fetchReviewRequestsById = async (id) => {
   }
 }
 
-// const fetchSortAndFilterTasks = async (status, sortBy, sortAs) => {
-//   const path = status === null ? '' : `/?status=${status}`;
-//   const pathSortBy = sortBy === null ? '' : `${status === null ? '?' : '&'}_sort=${sortBy}&_order=${sortAs}`;
-//   // console.log(`${BASE_URL}${path}${pathSortBy}`);
-//   try {
-//     const resp = await axios.get(`${BASE_URL}/tasks${path}${pathSortBy}`);
-//     return resp.data;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
 const fetchAllTasks = async () => {
   try {
     const resp = await axios.get(`${BASE_URL}/tasks`);
@@ -179,7 +167,6 @@ export {
   fetchScores,
   fetchReviewRequests,
   fetchReviewRequestsById,
-  // fetchSortAndFilterTasks,
   fetchAllTasks,
   fetchUserVerification,
   sendTask,
