@@ -26,7 +26,7 @@ export default function CreateTaskCategorie({
 
     return (
         <div className={'category'}>
-            <Divider>{ `${category.category} +${score}` }</Divider>
+            <Divider style={ {'font-size':'2rem'} }>{ `${category.category} +${score}` }</Divider>
 
             <div className={'category__container'}>
                 { items }

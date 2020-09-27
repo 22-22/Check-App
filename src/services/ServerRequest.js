@@ -103,12 +103,16 @@ const sendTask = (task) => {
     return axios.post(`${BASE_URL}/tasks`,task).then((res) => console.log(res.data))
 };
 
+const checkId = (id) => {
+    return axios.get(`${BASE_URL}/tasks`).then((res) => res.data.some((e) => e.id === id ))
+};
+
 const getTaskId = () => {
     return axios.get(`${BASE_URL}/tasks`).then(res => res.data.length)
 }
 
-const changeTask = (id,task) => {
-    return axios.put(`${BASE_URL}/tasks/?id=${id}`,task).then(res => console.log(res))
+const changeTask = (id,task,change) => {
+    return axios.put(`${BASE_URL}/tasks/${id}`,{...task,...change}).then(res => console.log(res))
 };
 
 
@@ -156,4 +160,4 @@ const addNewScore = (score) => {
     .catch(err => console.log(err))
 };
 
-export { fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchReviewRequests, fetchReviewRequestsById, fetchSortAndFilterTasks, fetchUserVerification, sendTask,fetchTaskById,getTaskId,changeTask,sendReviewRequest ,fetchTask};
+export { fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchReviewRequests, fetchReviewRequestsById, fetchSortAndFilterTasks, fetchUserVerification, sendTask,fetchTaskById,getTaskId,changeTask,sendReviewRequest ,fetchTask,checkId};

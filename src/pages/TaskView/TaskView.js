@@ -41,14 +41,11 @@ export default function TaskView({history, match}) {
     />));
 
     function publishHandler() {
-        setTaskState({...task, status:'published'});
-
+        changeTask(task.id,task,{ status:'published',})
     }
 
     function archiveHandler() {
-        setTaskState({...task, status:'archive'});
-        console.log('iddd',task.id)
-        changeTask(task.id,task)
+        changeTask(task.id,task,{ status:'archive'})
     }
 
     const buttonBlockOne = [
@@ -88,7 +85,7 @@ export default function TaskView({history, match}) {
                     <h1 className={'main__title'}>{ task.title }</h1>
                 </Typography.Title>
                 <Divider />
-                <p>{`Total points: ${task.score}`}</p>
+                <p className={'task__points'}>{`Total points: ${task.score}`}</p>
                 <p className={'task__description'}>{ task.description}</p>
                 <p className={'task__date'}>{ `Date: ${task.date} / ${task.deadline}`}</p>
                 <div className={"main__container"}>
