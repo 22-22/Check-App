@@ -110,7 +110,7 @@ export default function TaskView({history, match}) {
                 </a>
             </div>);
 
-        if(task.status === 'archive') return (
+        if(task.status === 'archived') return (
             <div className={'task__buttons'}>
                 <Link to={'/tasks'}>
                     <Tooltip title={'Publish'}>
