@@ -11,13 +11,9 @@ function HomePage({ history }) {
     !authentication && checkAuth(history, authentication, dispatch, "/home");
   }, []);
 
-
   return (
     <div className="account">
-      <div className="account__header">
-        <h2 className="account__title">RSS React Q3(active)</h2>
-        <p>ХЗ что тут надо</p>
-      </div>
+        <h2 className="account__title">Welcome to our X-check app!</h2>
     </div>
   );
 }

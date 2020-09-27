@@ -11,7 +11,6 @@ import ReviewRequest from './pages/ReviewRequest/ReviewRequest';
 import ReviewRequests from "./pages/ReviewRequests/ReviewRequests";
 import Tasks from './pages/Tasks/Tasks';
 import CheckForm from './pages/CheckForm/CheckForm';
-import Scores from './pages/Scores/Scores';
 import Reviews from './pages/Reviews/Reviews';
 import TaskView from "./pages/TaskView/TaskView";
 import DraftsPage from "./pages/DraftsPage/DraftsPage";
@@ -24,37 +23,27 @@ function App() {
   return (
     <div className="app">
       {authentication && <Header />}
-      <Switch>
-        <Route path="/" component={ HomePage } exact />
-        <Route path="/authentication" component={ Authentication } exact />
-        <Route path="/home" component={ HomePage } exact />
-        <Route path="/create-task" component={ CreateTask } exact />
-        <Route path="/create-task/:id" component={ CreateTask } exact />
-        <Route path="/review-request" component={ ReviewRequest } exact />
-        <Route path="/review-request/:id" component={ ReviewRequest } exact />
-        <Route path="/review-requests" component={ ReviewRequests } exact />
-        <Route path="/tasks" component={ Tasks } exact />
-        <Route path="/tasks/:id" component={ TaskView } exact />
-        {/* <Route path="/check-form" component={ CheckForm } exact />
-        <Route path="/check-form/:id" component={ CheckForm } exact /> */}
-        <Route path="/check-form/:id?/:status?" component={ CheckForm } exact />
-        <Route path="/scores" component={ Scores } exact />
-        <Route path="/reviews" component={ Reviews } exact />
-        <Route path="/drafts" component={ DraftsPage } exact />
-      </Switch>
+      <div className="wrapper">
+        <Switch>
+          <Route path="/" component={ HomePage } exact />
+          <Route path="/authentication" component={ Authentication } exact />
+          <Route path="/home" component={ HomePage } exact />
+          <Route path="/create-task" component={ CreateTask } exact />
+          <Route path="/create-task/:id" component={ CreateTask } exact />
+          <Route path="/review-request" component={ ReviewRequest } exact />
+          <Route path="/review-request/:id" component={ ReviewRequest } exact />
+          <Route path="/review-requests" component={ ReviewRequests } exact />
+          <Route path="/tasks" component={ Tasks } exact />
+          <Route path="/tasks/:id" component={ TaskView } exact />
+          {/* <Route path="/check-form" component={ CheckForm } exact />
+          <Route path="/check-form/:id" component={ CheckForm } exact /> */}
+          <Route path="/check-form/:id?/:status?" component={ CheckForm } exact />
+          <Route path="/reviews" component={ Reviews } exact />
+          <Route path="/drafts" component={ DraftsPage } exact />
+        </Switch>
+      </div>
     </div>
   );
 }
 
 export default withRouter(App);
-
-
-
-
-  // хорошо ли использовать здесь useSelector???
-  // создать компонент кнопки
-  // переписать стили mexin-ами
-  //  стоил ли плитками делать меню стартовое
-  // доделать регистрацию и авторизацию
-  // дописать базовые запросы
-  
