@@ -60,12 +60,8 @@ function DraftsList({ draftsList, type }) {
         }
     ];
 
-    function onChange(pagination, filters, sorter, extra) {
-        console.log('params', pagination, filters, sorter, extra);
-    }
-
     return (
-        <Table columns={columns} dataSource={draftsDataForTable} onChange={onChange} />
+        <Table columns={columns} dataSource={draftsDataForTable} />
     );
 }
 
