@@ -28,17 +28,8 @@
       "tasks": []
     },
     {
-      "id": "Sapranovich",
-      "role": "student",
-      "courses": {
-        "active": [],
-        "completed": []
-      },
-      "tasks": []
-    },
-    {
-      "id": "vorob",
-      "role": "student",
+      "id": "newUser",
+      "role": "admin",
       "courses": {
         "active": [],
         "completed": []
@@ -55,8 +46,8 @@
       "tasks": []
     },
     {
-      "id": "sadman",
-      "role": "student",
+      "id": "IAmMentor",
+      "role": "mentor",
       "courses": {
         "active": [],
         "completed": []
@@ -64,17 +55,8 @@
       "tasks": []
     },
     {
-      "id": "hate",
+      "id": "11-11",
       "role": "student",
-      "courses": {
-        "active": [],
-        "completed": []
-      },
-      "tasks": []
-    },
-    {
-      "id": "los",
-      "role": "admin",
       "courses": {
         "active": [],
         "completed": []
@@ -84,65 +66,281 @@
   ],
   "tasks": [
     {
-      "title": "Task 1",
-      "author": "cardamo",
-      "description": "this is the task 1 description",
-      "editDate": "2020-09-03 22:35",
-      "date": "2020-09-04 10:00",
-      "deadline": "2020-10-03 23:59",
-      "score": 200,
-      "status": "draft",
+      "title": "X Check App",
+      "status": "published",
+      "author": "newUser",
+      "description": "Цели задания\n- Разработать инструмент, который может использоваться тысячами реальных пользователей.\n- Помочь будущим поколениям студентов и менторов школы Rolling Scopes.\n- Получить опыт командной работы близкий к условиям реальных проектов.\n- Украсить CV ссылкой на качественное приложение.\n",
+      "editDate": "2020-08-27 22:35",
+      "deadline": "2020-09-27 23:09",
+      "date": "2020-09-01 00:09",
+      "score": 591,
       "items": [
         {
-          "category": "Вёрстка, дизайн, UI",
+          "category": "Базовая функциональность ",
           "categoryItems": [
             {
-              "description": "минимальная ширина, при которой приложение отображается корректно – 320 рх",
+              "description": "Упрощённая страница/окно авторизации.",
               "minScore": 0,
               "maxScore": 10,
-              "score": 200,
-              "checkByMentorOnly": "true"
+              "checkByMentorOnly": false
             },
             {
-              "description": "внешний вид приложения полностью повторяет демо или является его улучшенной версией",
+              "description": "Страница со списком задач (tasks). ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Форма (на отдельной странице или в окне) создания и редактирования задачи. ",
               "minScore": 0,
               "maxScore": 20,
-              "score": -100
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Страница со списком запросов на проверку (review requests). ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Список запросов на проверку можно сортировать и фильтровать по заданию, выполнившему студенту и статусу.",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Форма создания запроса на проверку.",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Форма проверки и самопроверки задания.",
+              "minScore": 0,
+              "maxScore": 20,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Страница со списком оценок работ (reviews). ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Список оценок можно сортировать по всем полям/колонкам, где сортировка применима. ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Список оценок можно фильтровать по заданию, выполнившему студенту и проверяющему. ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Страница или окно с деталями оценки одного проверяющего. ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Главная страница со ссылками на остальные доступные страницы ИЛИ всегда видимое меню для навигации. ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
             }
           ]
         },
         {
-          "category": "Аудиоплеер",
+          "category": "Дополнительные возможности при создании задания",
           "categoryItems": [
             {
-              "description": "есть аудиоплеер",
+              "description": "Пометить пункт как штраф ИЛИ возможность указать минимальный балл меньше 0.",
               "minScore": 0,
               "maxScore": 10,
-              "score": 200
+              "checkByMentorOnly": false
             },
             {
-              "description": "аудиоплеер кастомный, такой же, как в демо приложения, может отличаться по цвету",
+              "description": "Пометить пункт как проверяемый только ментором (скрывать при кросс-чеке), или более сложная система ролей при проверке. ",
               "minScore": 0,
               "maxScore": 10,
-              "score": -100,
-              "checkByMentorOnly": "true"
+              "checkByMentorOnly": false
             },
             {
-              "description": "у кастомного аудиоплеера есть регулятор громкости звука",
+              "description": "Объединение требований в категории (basic scope, advanced, etc). ",
               "minScore": 0,
               "maxScore": 10,
-              "score": -100
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Импорт пунктов и категорий в формате RSS Checklist;",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Импорт пунктов и категорий в markdown формате, в котором описано большинство задач RSS.",
+              "minScore": 0,
+              "maxScore": 30,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Экспорт и импорт задания в собственном JSON формате. Побочный эффект - задание легко скопировать, оставив оригинальное без изменений. ",
+              "minScore": 0,
+              "maxScore": 20,
+              "checkByMentorOnly": false
             }
           ]
         },
         {
-          "category": "Fines",
+          "category": "Дополнительные возможности при проверке задания",
           "categoryItems": [
             {
-              "description": "любой сбой/поломка приложения, связанная с действиями пользователя. Например, неправильный подсчёт баллов, нет перехода на следующую страницу, выводится неверная информация и т.д. Этот пункт не касается ошибок в консоли",
-              "minScore": -10,
-              "maxScore": 0,
-              "score": 200
+              "description": "Кнопки для быстрой оценки (не выполнено - 0 баллов, выполнено частично - 50%, выполнено полностью - 100%), но остаётся возможность указать любое промежуточное значение.",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Дать возможность проверяющему добавить ещё один пункт со штрафными или поощрительными баллами. Способы реализации могут быть различными, например можно просто дать возможность указывать не только максимальный балл за требование, но и минимальный меньше ноля. ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Сделать поле комментария обязательным, если оценка не совпадает с самопроверкой. ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Промежуточное состояние проверки (и самопроверки тоже) можно сохранить, не публикуя её. ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            }
+          ]
+        },
+        {
+          "category": "Дополнительные возможности после проверки задания ",
+          "categoryItems": [
+            {
+              "description": "Возможность оставить обратную связь проверяющему - поблагодарить или пожаловаться. ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Возможность оспорить оценку по каждому пункту.",
+              "minScore": 0,
+              "maxScore": 30,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Принять решение по оспариваемому пункту может не только проверяющий, но и пользователь со специальной ролью. ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            }
+          ]
+        },
+        {
+          "category": "Кросс-чек ",
+          "categoryItems": [
+            {
+              "description": "Страница со списком кросс-чек сессий. Автор заданий (или другая роль на ваше усмотрение) может создавать и редактировать сессии. ",
+              "minScore": 0,
+              "maxScore": 20,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Студенты могут создавать запросы на проверку в рамках конкретной кросс-чек сессии. ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Автор задания может остановить сбор запросов на проверку в рамках кросс-чек сессии и случайным образом распределить проверяющих. ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Автор задания может завершить кросс-чек сессию, после чего студент может посмотреть свою итоговую оценку.",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            }
+          ]
+        },
+        {
+          "category": "Дополнительная функциональность ",
+          "categoryItems": [
+            {
+              "description": "Каждое действие, меняющее данные, доступно только при наличии у пользователя соответствующей роли. Набор ролей можно взять из примера или придумать свои.",
+              "minScore": 0,
+              "maxScore": 30,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Полноценная авторизация через GitHub OAuth. Для удобства проверки выбор ролей лучше оставить при логине.",
+              "minScore": 0,
+              "maxScore": 20,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "В исходной базе (db.json) есть примеры сущностей каждого типа.",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "В исходной базе (db.json) воспроизведено задание xcheck и создан запрос на его оценку. +10 бонусных очков за стиль",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Дополнительные полезные возможности, не описанные в требованиях к заданию. Для оценки должны обязательно быть описаны в README.",
+              "minScore": 0,
+              "maxScore": 30,
+              "checkByMentorOnly": false
+            }
+          ]
+        },
+        {
+          "category": "Качество кода",
+          "categoryItems": [
+            {
+              "description": "README файл в репозитории с описанием используемых технологий, инструкцией для начала разработки и для деплоя продакшн версии. ",
+              "minScore": 0,
+              "maxScore": 20,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Написаны юнит-тесты, code coverage > 50%. Способ получения coverage report описан в README.",
+              "minScore": 0,
+              "maxScore": 50,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "По названиям юнит тестов понятно, что они тестируют. Тесты не просто вызывают код, но и делают осмысленные ассерты. до +30, если code coverage меньше 50%, максимальная оценка снижается пропорционально (при 25% максимум +15 баллов).",
+              "minScore": 0,
+              "maxScore": 30,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "Использован eslint preset (не обязательно airbnb) и нет предупреждений и ошибок.",
+              "minScore": 0,
+              "maxScore": 20,
+              "checkByMentorOnly": false
+            },
+            {
+              "description": "В репозитории есть \"следы\" активной командной работы - комментарии в пулл реквестах. ",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
             }
           ]
         }
@@ -150,30 +348,29 @@
       "id": 1
     },
     {
-      "title": "Songbird",
-      "author": "irinainina",
-      "status": "archived",
-      "description": "Допускается: -другая тематика приложения (не птицы) -использование вместо изображений видео -замена названий и описаний птиц другими данными",
-      "editDate": "27.09.2020 22:32",
-      "date": "2020-09-23 10:00",
-      "deadline": "2020-10-14 23:59",
-      "score": 200,
+      "title": "songbird",
+      "status": "published",
+      "editDate": "27.09.2020 21:58",
+      "author": "undefined",
+      "description": "Songbird - одностраничное приложение, викторина для распознавания птиц по их голосам.",
+      "deadline": "2020-08-23 23:08",
+      "date": "2020-08-09 21:08",
+      "score": 80,
       "items": [
         {
           "category": "Вёрстка, дизайн, UI",
           "categoryItems": [
             {
-              "description": "минимальная ширина, при которой приложение отображается корректно – 320 рх",
+              "description": "минимальная ширина страницы, при которой приложение отображается корректно – 320 рх",
               "minScore": 0,
-              "maxScore": 10,
-              "score": 200,
-              "checkByMentorOnly": "true"
+              "maxScore": 15,
+              "checkByMentorOnly": false
             },
             {
               "description": "внешний вид приложения полностью повторяет демо или является его улучшенной версией",
               "minScore": 0,
-              "maxScore": 20,
-              "score": -100
+              "maxScore": 15,
+              "checkByMentorOnly": false
             }
           ]
         },
@@ -181,1217 +378,434 @@
           "category": "Аудиоплеер",
           "categoryItems": [
             {
-              "description": "есть аудиоплеер",
+              "description": "стандартный",
               "minScore": 0,
               "maxScore": 10,
-              "score": 200
+              "checkByMentorOnly": false
             },
             {
-              "description": "аудиоплеер кастомный, такой же, как в демо приложения, может отличаться по цвету",
+              "description": "кастомный, такой же, как в демо приложения, может отличаться по цвету:",
               "minScore": 0,
               "maxScore": 10,
-              "score": -100,
-              "checkByMentorOnly": "true"
+              "checkByMentorOnly": false
             },
             {
               "description": "у кастомного аудиоплеера есть регулятор громкости звука",
               "minScore": 0,
               "maxScore": 10,
-              "score": -100
+              "checkByMentorOnly": false
             }
           ]
         },
         {
-          "category": "Fines",
+          "category": "Контент",
           "categoryItems": [
             {
-              "description": "любой сбой/поломка приложения, связанная с действиями пользователя. Например, неправильный подсчёт баллов, нет перехода на следующую страницу, выводится неверная информация и т.д. Этот пункт не касается ошибок в консоли",
-              "minScore": -10,
-              "maxScore": 0,
-              "score": 200
-            }
-          ]
-        }
-      ],
-      "id": 22
-    },
-    {
-      "title": "Task 2",
-      "author": "irinainina",
-      "description": "this is the task 2 description",
-      "editDate": "2020-09-08 12:15",
-      "date": "2020-09-15 12:00",
-      "deadline": "2020-10-25 23:59",
-      "score": 150,
-      "status": "published",
-      "items": [
-        {
-          "category": "Basic scope",
-          "categoryItems": [
-            {
-              "description": "adsasdasd",
+              "description": "создание и использование собственной коллекции данных, либо использование подходящего API",
               "minScore": 0,
-              "maxScore": 20
-            },
-            {
-              "description": "item 2",
-              "minScore": 0,
-              "maxScore": 10
-            }
-          ]
-        },
-        {
-          "category": "Extra scope",
-          "categoryItems": [
-            {
-              "description": "adsasdasd",
-              "minScore": 0,
-              "maxScore": 20
-            }
-          ]
-        },
-        {
-          "category": "Fines",
-          "categoryItems": [
-            {
-              "description": "штраф за ошибки в консоли",
-              "minScore": -20,
-              "maxScore": 0
-            },
-            {
-              "description": "еще один штраф",
-              "minScore": -10,
-              "maxScore": 0
+              "maxScore": 20,
+              "checkByMentorOnly": false
             }
           ]
         }
       ],
       "id": 2
-    },
-    {
-      "title": "Task 3",
-      "author": "cardamo",
-      "description": "this is the task 3 description",
-      "editDate": "2020-07-27 15:46",
-      "date": "2020-07-30 12:00",
-      "deadline": "2020-08-21 23:59",
-      "score": 260,
-      "status": "archived",
-      "items": [
-        {
-          "category": "Category",
-          "categoryItems": [
-            {
-              "description": "category Item",
-              "score": 200
-            },
-            {
-              "description": "category Item",
-              "score": -100
-            }
-          ]
-        }
-      ],
-      "id": 3
-    },
-    {
-      "title": "Task 4",
-      "author": "davojta",
-      "description": "this is the task 4 description",
-      "editDate": "2020-09-07 14:37",
-      "date": "2020-09-08 10:00",
-      "deadline": "2020-09-28 23:59",
-      "score": 50,
-      "status": "published",
-      "items": [
-        {
-          "category": "Basic scope",
-          "categoryItems": [
-            {
-              "description": "adsasdasd",
-              "minScore": 0,
-              "maxScore": 20
-            },
-            {
-              "description": "item 2",
-              "minScore": 0,
-              "maxScore": 10
-            }
-          ]
-        },
-        {
-          "category": "Extra scope",
-          "categoryItems": [
-            {
-              "description": "adsasdasd",
-              "minScore": 0,
-              "maxScore": 20
-            }
-          ]
-        },
-        {
-          "category": "Fines",
-          "categoryItems": [
-            {
-              "description": "штраф за ошибки в консоли",
-              "minScore": -200,
-              "maxScore": 0
-            },
-            {
-              "description": "еще один штраф",
-              "minScore": -10,
-              "maxScore": 0
-            }
-          ]
-        }
-      ],
-      "id": 4
-    },
-    {
-      "title": "Task 5",
-      "author": "cardamo",
-      "description": "this is the task 5 description",
-      "editDate": "2020-09-02 11:11",
-      "date": "2020-09-03 10:00",
-      "deadline": "2020-09-15 23:59",
-      "score": 180,
-      "status": "published",
-      "items": [
-        {
-          "category": "Basic scope",
-          "categoryItems": [
-            {
-              "description": "adsasdasd",
-              "minScore": 0,
-              "maxScore": 20
-            },
-            {
-              "description": "item 2",
-              "minScore": 0,
-              "maxScore": 10
-            }
-          ]
-        },
-        {
-          "category": "Extra scope",
-          "categoryItems": [
-            {
-              "description": "adsasdasd",
-              "minScore": 0,
-              "maxScore": 20
-            }
-          ]
-        },
-        {
-          "category": "Fines",
-          "categoryItems": [
-            {
-              "description": "штраф за ошибки в консоли",
-              "minScore": -20,
-              "maxScore": 0
-            },
-            {
-              "description": "еще один штраф",
-              "minScore": -10,
-              "maxScore": 0
-            }
-          ]
-        }
-      ],
-      "id": 5
-    },
-    {
-      "title": "Task 6",
-      "author": "irinainina",
-      "description": "this is the task 6 description",
-      "editDate": "2020-08-01 16:24",
-      "date": "2020-08-03 10:00",
-      "deadline": "2020-08-30 23:59",
-      "score": 90,
-      "status": "deleted",
-      "items": [
-        {
-          "category": "Category",
-          "categoryItems": []
-        },
-        {
-          "category": "Category",
-          "categoryItems": [
-            {
-              "description": "category Item",
-              "minScore": 0,
-              "maxScore": 0,
-              "score": 200
-            },
-            {
-              "description": "category Item",
-              "minScore": 0,
-              "maxScore": 0,
-              "score": -100
-            }
-          ]
-        }
-      ],
-      "id": 6
-    },
-    {
-      "title": "Task 7",
-      "author": "cardamo",
-      "description": "this is the task 7 description",
-      "editDate": "2020-09-04 09:07",
-      "date": "2020-10-05 09:00",
-      "deadline": "2020-11-08 23:59",
-      "score": 250,
-      "status": "draft",
-      "items": [
-        {
-          "category": "Basic scope",
-          "categoryItems": [
-            {
-              "description": "adsasdasd",
-              "minScore": 0,
-              "maxScore": 20
-            },
-            {
-              "description": "item 2",
-              "minScore": 0,
-              "maxScore": 10
-            }
-          ]
-        },
-        {
-          "category": "Extra scope",
-          "categoryItems": [
-            {
-              "description": "adsasdasd",
-              "minScore": 0,
-              "maxScore": 20
-            }
-          ]
-        },
-        {
-          "category": "Fines",
-          "categoryItems": [
-            {
-              "description": "штраф за ошибки в консоли",
-              "minScore": -20,
-              "maxScore": 0
-            },
-            {
-              "description": "еще один штраф",
-              "minScore": -10,
-              "maxScore": 0
-            }
-          ]
-        }
-      ],
-      "id": 7
-    },
-    {
-      "title": "x-check app",
-      "author": "cardamo",
-      "description": "this is the x-check app description",
-      "editDate": "27.09.2020 22:34",
-      "date": "2020-10-03 09:00",
-      "deadline": "2020-11-01 23:59",
-      "score": 250,
-      "status": "published",
-      "items": [
-        {
-          "category": "Basic scope",
-          "categoryItems": [
-            {
-              "description": "красивые цвета, оттенки, фон",
-              "minScore": 0,
-              "maxScore": 20
-            },
-            {
-              "description": "верстка, адаптив",
-              "minScore": 0,
-              "maxScore": 10
-            }
-          ]
-        },
-        {
-          "category": "Extra scope",
-          "categoryItems": [
-            {
-              "description": "очень очень красивые цвета, удачное сочетание",
-              "minScore": 0,
-              "maxScore": 20
-            }
-          ]
-        },
-        {
-          "category": "Fines",
-          "categoryItems": [
-            {
-              "description": "штраф за ошибки в консоли",
-              "minScore": -20,
-              "maxScore": 0
-            },
-            {
-              "description": "и цвета между собой не сочетаются",
-              "minScore": -10,
-              "maxScore": 0
-            }
-          ]
-        },
-        {
-          "category": "Category",
-          "categoryItems": [
-            {
-              "description": "category Item",
-              "minScore": 0,
-              "maxScore": 0,
-              "checkByMentorOnly": false
-            }
-          ]
-        }
-      ],
-      "id": 8
-    },
-    {
-      "title": "Test task",
-      "status": "draft",
-      "author": "admin",
-      "description": "Task desc",
-      "deadline": "2020-10-10 12:10",
-      "date": "2020-09-29 12:09",
-      "editDate": "2020-09-15 10:08",
-      "score": 11,
-      "items": [
-        {
-          "category": "Category1",
-          "categoryItems": [
-            {
-              "description": "category Item1",
-              "minScore": 0,
-              "maxScore": 10,
-              "checkByMentorOnly": false
-            }
-          ]
-        }
-      ],
-      "id": 10
     }
   ],
   "scores": [
     {
-      "task": "Task 1",
-      "reviewer": "22-22",
-      "student": "Sapranovich",
-      "score": 25,
-      "id": 1601030575848,
-      "sendingDate": "2020-09-25 13:42:55",
+      "task": "X Check App",
+      "reviewer": "IAmMentor",
+      "student": "22-22",
+      "score": 350,
+      "id": 1601234621016,
+      "sendingDate": "2020-09-27 22:23:41",
       "items": {
-        "Вёрстка, дизайн, UI": [
-          {
-            "score": "20",
-            "comment": "It's even better that you think."
-          }
-        ],
-        "Аудиоплеер": [
-          {
-            "score": "0",
-            "comment": "Next time, next time."
-          },
-          {
-            "score": "5"
-          }
-        ],
-        "Fines": [
-          {
-            "score": "0",
-            "comment": "No mistakes."
-          }
-        ]
-      }
-    },
-    {
-      "task": "x-check app",
-      "reviewer": "Sapranovich",
-      "student": "Sapranovich",
-      "score": 44,
-      "checkId": 1601030575849,
-      "sendingDate": "2020-09-26 15:28:25",
-      "items": {
-        "Basic scope": [
-          {
-            "score": "20"
-          },
-          {
-            "comment": "jhjhjhjhjhjhj",
-            "score": "4"
-          }
-        ],
-        "Extra scope": [
-          {
-            "score": "20"
-          }
-        ],
-        "Fines": [
-          {
-            "score": "0"
-          },
-          {
-            "score": "0"
-          }
-        ]
-      },
-      "status": "published",
-      "id": 1601030575850
-    },
-    {
-      "task": "x-check app",
-      "reviewer": "Sapranovich",
-      "student": "Sapranovich",
-      "score": 40,
-      "id": 1601124190123,
-      "sendingDate": "2020-09-26 15:43:10",
-      "items": {
-        "Basic scope": [
-          {
-            "score": "15",
-            "comment": "ррр"
-          },
-          {
-            "score": "5"
-          }
-        ],
-        "Extra scope": [
-          {
-            "score": "20"
-          }
-        ],
-        "Fines": [
-          {
-            "score": "0"
-          },
-          {
-            "score": "0"
-          }
-        ]
-      },
-      "status": "published"
-    },
-    {
-      "task": "x-check app",
-      "reviewer": "Sapranovich",
-      "student": "Sapranovich",
-      "score": 45,
-      "id": 1601124493403,
-      "sendingDate": "2020-09-26 15:48:13",
-      "items": {
-        "Basic scope": [
-          {
-            "score": "20"
-          },
-          {
-            "score": "5"
-          }
-        ],
-        "Extra scope": [
-          {
-            "score": "20"
-          }
-        ],
-        "Fines": [
-          {
-            "score": "0"
-          },
-          {
-            "score": "0"
-          }
-        ]
-      },
-      "status": "published"
-    },
-    {
-      "task": "x-check app",
-      "reviewer": "Sapranovich",
-      "student": "Sapranovich",
-      "score": 45,
-      "id": 1601124587429,
-      "sendingDate": "2020-09-26 15:49:47",
-      "items": {
-        "Basic scope": [
-          {
-            "score": "20"
-          },
-          {
-            "score": "5"
-          }
-        ],
-        "Extra scope": [
-          {
-            "score": "20"
-          }
-        ],
-        "Fines": [
-          {
-            "score": "0"
-          },
-          {
-            "score": "0"
-          }
-        ]
-      },
-      "status": "published"
-    },
-    {
-      "task": "x-check app",
-      "reviewer": "Sapranovich",
-      "student": "Sapranovich",
-      "score": 45,
-      "id": 1601124797080,
-      "sendingDate": "2020-09-26 15:53:17",
-      "items": {
-        "Basic scope": [
-          {
-            "score": "20"
-          },
-          {
-            "score": "5"
-          }
-        ],
-        "Extra scope": [
-          {
-            "score": "20"
-          }
-        ],
-        "Fines": [
-          {
-            "score": "0"
-          },
-          {
-            "score": "0"
-          }
-        ]
-      },
-      "status": "published"
-    },
-    {
-      "status": "published",
-      "revReqId": "rev-req-1601032845865",
-      "id": 1601128334036,
-      "task": "x-check app",
-      "reviewer": "Sapranovich",
-      "student": "Sapranovich",
-      "items": {
-        "Basic scope": [
-          {
-            "score": "0",
-            "comment": "jjj"
-          },
-          {
-            "score": "5"
-          }
-        ],
-        "Extra scope": [
-          {
-            "score": "20"
-          }
-        ],
-        "Fines": [
-          {
-            "score": "0"
-          },
-          {
-            "score": "0"
-          }
-        ]
-      },
-      "sendingDate": "2020-09-26 16:59:59",
-      "score": 25
-    },
-    {
-      "status": "published",
-      "revReqId": "rev-req-1601116568450",
-      "id": 1601128590677,
-      "task": "x-check app",
-      "reviewer": "Sapranovich",
-      "student": "Sapranovich",
-      "items": {
-        "Basic scope": [
+        "Базовая функциональность ": [
           {
             "score": "10"
           },
           {
-            "score": "10",
-            "comment": "everything is fine"
-          }
-        ],
-        "Extra scope": [
-          {
-            "score": "13"
-          }
-        ],
-        "Fines": [
-          {
-            "score": "0"
+            "comment": "",
+            "score": "10"
           },
-          {
-            "score": "-2",
-            "comment": "fine2"
-          }
-        ]
-      },
-      "sendingDate": "2020-09-26 17:02:45",
-      "score": 22
-    },
-    {
-      "status": "checkDraft",
-      "revReqId": "rev-req-1601032845865",
-      "id": 1601128720288,
-      "task": "x-check app",
-      "reviewer": "Sapranovich",
-      "student": "Sapranovich",
-      "items": {
-        "Basic scope": [
-          {
-            "score": "14"
-          }
-        ],
-        "Extra scope": [],
-        "Fines": []
-      },
-      "sendingDate": "2020-09-26 16:58:40"
-    },
-    {
-      "status": "checkDraft",
-      "revReqId": "rev-req-1601032845865",
-      "id": 1601130025628,
-      "task": "x-check app",
-      "reviewer": "22-22",
-      "student": "Sapranovich",
-      "items": {
-        "Basic scope": [
-          {
-            "score": "0"
-          }
-        ],
-        "Extra scope": [],
-        "Fines": []
-      },
-      "sendingDate": "2020-09-26 17:20:25"
-    },
-    {
-      "status": "checkDraft",
-      "revReqId": "rev-req-1601032845865",
-      "id": 1601132006027,
-      "task": "x-check app",
-      "reviewer": "22-22",
-      "student": "Sapranovich",
-      "items": {
-        "Basic scope": [],
-        "Extra scope": [],
-        "Fines": []
-      },
-      "sendingDate": "2020-09-26 17:53:26"
-    },
-    {
-      "status": "checkDraft",
-      "revReqId": "rev-req-1601032845865",
-      "id": 1601132143029,
-      "task": "x-check app",
-      "reviewer": "22-22",
-      "student": "Sapranovich",
-      "items": {
-        "Basic scope": [],
-        "Extra scope": [],
-        "Fines": []
-      },
-      "sendingDate": "2020-09-26 17:55:43"
-    },
-    {
-      "status": "checkDraft",
-      "revReqId": "rev-req-1601032845865",
-      "id": 1601133176794,
-      "task": "x-check app",
-      "reviewer": "22-22",
-      "student": "Sapranovich",
-      "items": {
-        "Basic scope": [],
-        "Extra scope": [
-          {
-            "score": "7"
-          }
-        ],
-        "Fines": []
-      },
-      "sendingDate": "2020-09-26 18:12:56"
-    },
-    {
-      "status": "checkDraft",
-      "revReqId": "rev-req-1601032845865",
-      "id": 1601134348733,
-      "task": "x-check app",
-      "reviewer": "Sapranovich",
-      "student": "Sapranovich",
-      "items": {
-        "Basic scope": [
-          {
-            "score": "9"
-          }
-        ],
-        "Extra scope": [],
-        "Fines": []
-      },
-      "sendingDate": "2020-09-26 18:32:28"
-    },
-    {
-      "status": "checkDraft",
-      "revReqId": "rev-req-1601032845865",
-      "id": 1601134517511,
-      "task": "x-check app",
-      "reviewer": "Sapranovich",
-      "student": "Sapranovich",
-      "items": {
-        "Basic scope": [
-          {
-            "score": "12"
-          }
-        ],
-        "Extra scope": [],
-        "Fines": []
-      },
-      "sendingDate": "2020-09-26 18:35:17"
-    }
-  ],
-  "reviewRequests": [
-    {
-      "id": "rev-req-1",
-      "crossCheckSessionId": "no session",
-      "student": "cardamo",
-      "task": "simple-task-v1",
-      "sendingDate": "2020-09-12 12:12",
-      "status": "completed",
-      "demo": "link_to_demo",
-      "PR": "link_to_PR",
-      "selfGrade": "150",
-      "selfGradeDetails": {}
-    },
-    {
-      "id": "rev-req-2",
-      "crossCheckSessionId": "rss2020Q3react-xcheck",
-      "student": "22-22",
-      "task": "x-check app",
-      "sendingDate": "2020-09-14 14:14",
-      "status": "published",
-      "demo": "link_to_demo",
-      "PR": "link_to_PR",
-      "selfGrade": "600",
-      "selfGradeDetails": {}
-    },
-    {
-      "id": "rev-req-3",
-      "crossCheckSessionId": "rss2020Q3react-xcheck",
-      "student": "arumirinka",
-      "task": "x-check app",
-      "sendingDate": "2020-09-15 15:15",
-      "status": "published",
-      "demo": "link_to_demo",
-      "PR": "link_to_PR",
-      "selfGrade": "600",
-      "selfGradeDetails": {}
-    },
-    {
-      "id": "rev-req-4",
-      "crossCheckSessionId": "rss2020Q3react-xcheck",
-      "student": "IlyaShihutin",
-      "task": "x-check app",
-      "sendingDate": "2020-09-19 19:19",
-      "status": "published",
-      "demo": "link_to_demo",
-      "PR": "link_to_PR",
-      "selfGrade": "600",
-      "selfGradeDetails": {}
-    },
-    {
-      "id": "rev-req-5",
-      "crossCheckSessionId": "rss2020Q3react-xcheck",
-      "student": "NastiaKoval",
-      "task": "x-check app",
-      "sendingDate": "2020-09-17 17:17",
-      "status": "published",
-      "demo": "link_to_demo",
-      "PR": "link_to_PR",
-      "selfGrade": "600",
-      "selfGradeDetails": {}
-    },
-    {
-      "id": "rev-req-6",
-      "crossCheckSessionId": "rss2020Q3react-xcheck",
-      "student": "Sapranovich",
-      "task": "x-check app",
-      "sendingDate": "2020-09-20 18:18",
-      "status": "published",
-      "demo": "link_to_demo",
-      "PR": "link_to_PR",
-      "selfGrade": "600",
-      "selfGradeDetails": {}
-    },
-    {
-      "id": "rev-req-7",
-      "crossCheckSessionId": "rss2020Q3react-xcheck",
-      "student": "vorobeychik",
-      "task": "x-check app",
-      "sendingDate": "2020-09-19 21:20",
-      "status": "published",
-      "demo": "link_to_demo",
-      "PR": "link_to_PR",
-      "selfGrade": "600",
-      "selfGradeDetails": {}
-    },
-    {
-      "id": "rev-req-1601032845865",
-      "crossCheckSessionId": null,
-      "student": "Sapranovich",
-      "task": "x-check app",
-      "state": "published",
-      "demo": "demooo",
-      "PR": "prprprp",
-      "selfGrade": 45,
-      "selfGradeDetails": {
-        "Basic scope": [
           {
             "score": "20"
           },
           {
-            "score": "5",
-            "comment": "адаптив как обычно, эх"
-          }
-        ],
-        "Extra scope": [
+            "score": "10"
+          },
           {
-            "score": "20",
-            "comment": "цвета самые лучше "
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "20"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
           }
         ],
-        "Fines": [
+        "Дополнительные возможности при создании задания": [
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "30"
+          },
+          {
+            "score": "20"
+          }
+        ],
+        "Дополнительные возможности при проверке задания": [
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          }
+        ],
+        "Дополнительные возможности после проверки задания ": [
+          {
+            "score": "10",
+            "comment": "Можно увидеть гитхаб проверяющего, там что, думаю, это считается."
+          },
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          }
+        ],
+        "Кросс-чек ": [
           {
             "score": "0",
             "comment": ""
           },
           {
             "score": "0"
+          },
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
           }
-        ]
-      },
-      "sendingDate": "2020-09-25 14:21:44"
-    },
-    {
-      "id": "rev-req-1601116568450",
-      "crossCheckSessionId": null,
-      "student": "Sapranovich",
-      "task": "x-check app",
-      "status": "published",
-      "demo": "j",
-      "PR": "h",
-      "selfGrade": 13,
-      "selfGradeDetails": {
-        "Basic scope": [
+        ],
+        "Дополнительная функциональность ": [
+          {
+            "score": "30",
+            "comment": "Наверное, можно было придумать еще какие-то роли."
+          },
+          {
+            "score": "0"
+          },
+          {
+            "score": "10",
+            "comment": "Сущности - огонь!"
+          },
           {
             "score": "10"
           },
           {
-            "score": "4"
+            "score": "0"
           }
         ],
-        "Extra scope": [
+        "Качество кода": [
           {
-            "comment": "NOW!!1",
-            "score": "8"
-          }
-        ],
-        "Fines": [
-          {
-            "score": "-7"
+            "score": "10",
+            "comment": "README  можно было бы подробнее."
           },
           {
-            "score": "-2"
+            "score": "0"
+          },
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          },
+          {
+            "score": "10",
+            "comment": ""
           }
         ]
       },
-      "sendingDate": "2020-09-26 13:50:38"
+      "status": "published"
     },
     {
-      "id": "rev-req-1601120512545",
-      "crossCheckSessionId": null,
-      "student": "Sapranovich",
-      "task": "Task 2",
-      "status": "published",
-      "demo": "о",
-      "PR": "о",
-      "selfGrade": 14,
-      "selfGradeDetails": {
-        "Basic scope": [
+      "status": "checkDraft",
+      "revReqId": "rev-req-1601234692397",
+      "id": 1601234807040,
+      "task": "songbird",
+      "reviewer": "22-22",
+      "student": "11-11",
+      "items": {
+        "Вёрстка, дизайн, UI": [
+          {
+            "score": "15",
+            "comment": "Да ладно, отличный адаптив!"
+          },
+          {
+            "score": "15"
+          }
+        ],
+        "Аудиоплеер": [
+          {
+            "score": "10",
+            "comment": "Плеер засчитываю."
+          },
           {
             "score": "10"
           },
           {
-            "score": "7"
-          }
-        ],
-        "Extra scope": [
-          {
             "score": "10"
           }
         ],
-        "Fines": [
-          {
-            "score": "-9"
-          },
-          {
-            "score": "-4"
-          }
-        ]
+        "Контент": []
       },
-      "sendingDate": "2020-09-26 14:42:16"
-    },
+      "sendingDate": "2020-09-27 22:26:47"
+    }
+  ],
+  "reviewRequests": [
     {
-      "id": "rev-req-1601124143130",
-      "crossCheckSessionId": null,
-      "student": "Sapranovich",
-      "task": "Task 2",
-      "status": "published",
-      "demo": "о",
-      "PR": "л",
-      "selfGrade": 14,
-      "selfGradeDetails": {
-        "Basic scope": [
-          {
-            "score": "12"
-          },
-          {
-            "score": "7",
-            "comment": "ррр"
-          }
-        ],
-        "Extra scope": [
-          {
-            "score": "8"
-          }
-        ],
-        "Fines": [
-          {
-            "score": "-9"
-          },
-          {
-            "score": "-4"
-          }
-        ]
-      },
-      "sendingDate": "2020-09-26 15:42:35"
-    },
-    {
-      "id": "rev-req-1601127103140",
-      "crossCheckSessionId": null,
-      "student": "Sapranovich",
-      "task": "x-check app",
-      "status": "published",
-      "demo": "f",
-      "PR": "f",
-      "selfGrade": 11,
-      "selfGradeDetails": {
-        "Basic scope": [
-          {
-            "score": "13"
-          },
-          {
-            "score": "6"
-          }
-        ],
-        "Extra scope": [
-          {
-            "score": "8"
-          }
-        ],
-        "Fines": [
-          {
-            "score": "-11"
-          },
-          {
-            "score": "-5"
-          }
-        ]
-      },
-      "sendingDate": "2020-09-26 16:32:51"
-    },
-    {
-      "id": "rev-req-1601128752751",
-      "crossCheckSessionId": null,
-      "student": "Sapranovich",
-      "task": "Task 2",
-      "status": "selfCheckDraft",
-      "demo": "jj",
-      "PR": "j",
-      "selfGrade": {},
-      "selfGradeDetails": {
-        "Basic scope": [],
-        "Extra scope": [],
-        "Fines": [
-          {
-            "score": "-8"
-          }
-        ]
-      },
-      "sendingDate": "2020-09-26 16:59:22"
-    },
-    {
-      "id": "rev-req-1601129150375",
+      "id": "rev-req-1601233999389",
       "crossCheckSessionId": null,
       "student": "22-22",
-      "task": "x-check app",
+      "task": "X Check App",
       "status": "published",
-      "demo": "о",
-      "PR": "ллллл",
-      "selfGrade": 7,
+      "demo": "https://22-22-songbird.netlify.app/",
+      "PR": "https://github.com/22-22/songbird/pull/1",
+      "selfGrade": 350,
       "selfGradeDetails": {
-        "Basic scope": [
+        "Базовая функциональность ": [
+          {
+            "score": "10",
+            "comment": "Без пароля."
+          },
+          {
+            "score": "10",
+            "comment": "Страница реализована."
+          },
+          {
+            "score": "20"
+          },
           {
             "score": "10"
           },
           {
-            "score": "7"
-          }
-        ],
-        "Extra scope": [
-          {
-            "score": "8"
-          }
-        ],
-        "Fines": [
-          {
-            "score": "-14"
+            "score": "10"
           },
           {
-            "score": "-4"
+            "score": "10"
+          },
+          {
+            "score": "20"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          }
+        ],
+        "Дополнительные возможности при создании задания": [
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "30"
+          },
+          {
+            "score": "20"
+          }
+        ],
+        "Дополнительные возможности при проверке задания": [
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          }
+        ],
+        "Дополнительные возможности после проверки задания ": [
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          }
+        ],
+        "Кросс-чек ": [
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          }
+        ],
+        "Дополнительная функциональность ": [
+          {
+            "score": "30"
+          },
+          {
+            "score": "0"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "0"
+          }
+        ],
+        "Качество кода": [
+          {
+            "score": "20"
+          },
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          },
+          {
+            "score": "0"
+          },
+          {
+            "score": "10",
+            "comment": "Очень активная работа, много комментариев."
           }
         ]
       },
-      "sendingDate": "2020-09-26 17:06:35"
+      "sendingDate": "2020-09-27 22:16:50"
     },
     {
-      "id": "rev-req-1601133779324",
+      "id": "rev-req-1601234264603",
       "crossCheckSessionId": null,
       "student": "22-22",
-      "task": "Task 2",
+      "task": "songbird",
       "status": "selfCheckDraft",
-      "demo": "j",
-      "PR": "j",
-      "selfGrade": {},
-      "selfGradeDetails": {
-        "Basic scope": [
-          {
-            "score": "11"
-          }
-        ],
-        "Extra scope": [],
-        "Fines": []
-      },
-      "sendingDate": "2020-09-26 18:23:03"
-    },
-    {
-      "id": "rev-req-1601134135407",
-      "crossCheckSessionId": null,
-      "student": "Sapranovich",
-      "task": "Task 2",
-      "status": "selfCheckDraft",
-      "demo": "j",
-      "PR": "j",
-      "selfGrade": {},
-      "selfGradeDetails": {
-        "Basic scope": [
-          {
-            "score": "11"
-          }
-        ],
-        "Extra scope": [],
-        "Fines": []
-      },
-      "sendingDate": "2020-09-26 18:29:00"
-    },
-    {
-      "id": "rev-req-1601134371835",
-      "crossCheckSessionId": null,
-      "student": "Sapranovich",
-      "task": "Task 2",
-      "status": "selfCheckDraft",
-      "demo": "j",
-      "PR": "j",
-      "selfGrade": {},
-      "selfGradeDetails": {
-        "Basic scope": [
-          {
-            "score": "5"
-          }
-        ],
-        "Extra scope": [],
-        "Fines": []
-      },
-      "sendingDate": "2020-09-26 18:32:57"
-    },
-    {
-      "id": "rev-req-1601134544252",
-      "crossCheckSessionId": null,
-      "student": "Sapranovich",
-      "task": "Task 2",
-      "status": "selfCheckDraft",
-      "demo": "j",
-      "PR": "j",
-      "selfGrade": {},
-      "selfGradeDetails": {
-        "Basic scope": [
-          {
-            "score": "13"
-          }
-        ],
-        "Extra scope": [],
-        "Fines": []
-      },
-      "sendingDate": "2020-09-26 18:35:50"
-    },
-    {
-      "id": "rev-req-1601135126749",
-      "crossCheckSessionId": null,
-      "student": "Sapranovich",
-      "task": "Task 2",
-      "status": "selfCheckDraft",
-      "demo": "j",
-      "PR": "j",
-      "selfGrade": {},
-      "selfGradeDetails": {
-        "Basic scope": [],
-        "Extra scope": [],
-        "Fines": [
-          {
-            "score": "-10"
-          }
-        ]
-      },
-      "sendingDate": "2020-09-26 18:45:33"
-    },
-    {
-      "id": "rev-req-1601136681015",
-      "crossCheckSessionId": null,
-      "student": "22-22",
-      "task": "Task 1",
-      "status": "selfCheckDraft",
-      "demo": "j",
-      "PR": "j",
+      "demo": "demo",
+      "PR": "prpr",
       "selfGrade": {},
       "selfGradeDetails": {
         "Вёрстка, дизайн, UI": [
           {
-            "score": "6"
+            "score": "7",
+            "comment": ""
+          },
+          {
+            "comment": "Лучшие цвета!",
+            "score": "15"
           }
         ],
         "Аудиоплеер": [],
-        "Fines": []
+        "Контент": []
       },
-      "sendingDate": "2020-09-26 19:11:25"
+      "sendingDate": "2020-09-27 22:18:23"
+    },
+    {
+      "id": "rev-req-1601234692397",
+      "crossCheckSessionId": null,
+      "student": "11-11",
+      "task": "songbird",
+      "status": "published",
+      "demo": " https://22-22-songbird.netlify.app/",
+      "PR": "https://github.com/22-22/songbird/pull/1",
+      "selfGrade": 63,
+      "selfGradeDetails": {
+        "Вёрстка, дизайн, UI": [
+          {
+            "score": "8",
+            "comment": "Эх, адаптив как всегда можно было бы лучше."
+          },
+          {
+            "score": "15"
+          }
+        ],
+        "Аудиоплеер": [
+          {
+            "score": "5"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "5"
+          }
+        ],
+        "Контент": [
+          {
+            "score": "20"
+          }
+        ]
+      },
+      "sendingDate": "2020-09-27 22:25:25"
     }
   ]
 }
