@@ -37,9 +37,9 @@ function ReviewRequests({ history }) {
           selfGrade: reviewRequest.selfGrade ? reviewRequest.selfGrade : "",
           sendingDate: reviewRequest.sendingDate ? reviewRequest.sendingDate : "",
           crossCheckSessionId: reviewRequest.crossCheckSessionId ? reviewRequest.crossCheckSessionId : "",
-          reviewRequestState: reviewRequest.state ? reviewRequest.state : "",
+          reviewRequestState: reviewRequest.status ? reviewRequest.status : "",
           actions: <>
-            { reviewRequest.state && reviewRequest.state === "published" ? (
+            { reviewRequest.status && reviewRequest.status === "published" ? (
               <Link to={`/check-form/${reviewRequest.id}`}>
                 <Tooltip title="Review this work">
                   <Button type="primary" shape="circle" icon={<CheckCircleOutlined />} />
@@ -48,8 +48,8 @@ function ReviewRequests({ history }) {
             ) : null }
           </>
         });
-        statesSet.add(reviewRequest.state ? reviewRequest.state : null);
-      } else if (reviewRequest.state && reviewRequest.state === "published") {
+        statesSet.add(reviewRequest.status ? reviewRequest.status : null);
+      } else if (reviewRequest.status && reviewRequest.status === "published") {
         reviewRequestsData.push({
           key: i+1,
           task: reviewRequest.task ? reviewRequest.task : "",
@@ -57,7 +57,7 @@ function ReviewRequests({ history }) {
           selfGrade: reviewRequest.selfGrade ? reviewRequest.selfGrade : "",
           sendingDate: reviewRequest.sendingDate ? reviewRequest.sendingDate : "",
           crossCheckSessionId: reviewRequest.crossCheckSessionId ? reviewRequest.crossCheckSessionId : "",
-          reviewRequestState: reviewRequest.state ? reviewRequest.state : "",
+          reviewRequestState: reviewRequest.status ? reviewRequest.status : "",
           actions: 
             <Link to={`/check-form/${reviewRequest.id}`}>
               <Tooltip title="Review this work">
@@ -65,7 +65,7 @@ function ReviewRequests({ history }) {
               </Tooltip>
             </Link>
         });
-        statesSet.add(reviewRequest.state ? reviewRequest.state : null);
+        statesSet.add(reviewRequest.status ? reviewRequest.status : null);
       }
         tasksSet.add(reviewRequest.task ? reviewRequest.task : null);
         studentsSet.add(reviewRequest.student ? reviewRequest.student : null);

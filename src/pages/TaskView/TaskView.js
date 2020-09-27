@@ -98,7 +98,7 @@ export default function TaskView({history, match}) {
                 </div>
             </div>
             <div className={'task__buttons'}>
-                { infoUser.role !== 'student' ? buttonBlockOne : buttonBlockTwo }
+                { infoUser.role === 'admin' ? buttonBlockOne : buttonBlockTwo }
             </div>
         </div>
     )

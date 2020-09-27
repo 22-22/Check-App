@@ -85,18 +85,19 @@ function Authentication({ history }) {
             </Form>
           </div>
           <Modal
-            title={`Данный пользователь(${gitHubId}) не зарегистрирован`}
+            title={`Данный пользователь (${gitHubId}) не зарегистрирован`}
             visible={visibleModal}
             onOk={createNewUser}
             onCancel={cancelModal}
           >
-            <p>Выберите статус(роль) аккаунта и зарегистрируйтесь</p>
+            <p>Выберите статус (роль) аккаунта и зарегистрируйтесь</p>
             <Radio.Group
               onChange={(event) => setRoleUser(event.target.value)}
               value={roleUser}
             >
               <Radio value="admin">Admin</Radio>
               <Radio value="student">Student</Radio>
+              <Radio value="mentor">Mentor</Radio>
             </Radio.Group>
           </Modal>
         </div>

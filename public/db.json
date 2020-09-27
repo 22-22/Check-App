@@ -10,6 +10,15 @@
       "tasks": []
     },
     {
+      "id": "mentor",
+      "role": "mentor",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
+    },
+    {
       "id": "admin",
       "role": "admin",
       "courses": {
@@ -63,7 +72,7 @@
       "editDate": "2020-09-03 22:35",
       "date": "2020-09-04 10:00",
       "deadline": "2020-10-03 23:59",
-      "maxScore": 200,
+      "score": 200,
       "status": "published",
       "items": [
         {
@@ -90,7 +99,7 @@
       "editDate": "2020-09-12 22:35",
       "date": "2020-09-23 10:00",
       "deadline": "2020-10-14 23:59",
-      "maxScore": 200,
+      "score": 200,
       "items": [
         {
           "category": "Вёрстка, дизайн, UI",
@@ -155,7 +164,7 @@
       "editDate": "2020-09-08 12:15",
       "date": "2020-09-15 12:00",
       "deadline": "2020-10-25 23:59",
-      "maxScore": 150,
+      "score": 150,
       "status": "published",
       "items": [
         {
@@ -208,7 +217,7 @@
       "editDate": "2020-07-27 15:46",
       "date": "2020-07-30 12:00",
       "deadline": "2020-08-21 23:59",
-      "maxScore": 260,
+      "score": 260,
       "status": "archived",
       "items": [
         {
@@ -234,7 +243,7 @@
       "editDate": "2020-09-07 14:37",
       "date": "2020-09-08 10:00",
       "deadline": "2020-09-28 23:59",
-      "maxScore": 320,
+      "score": 320,
       "status": "published",
       "items": [
         {
@@ -287,7 +296,7 @@
       "editDate": "2020-09-02 11:11",
       "date": "2020-09-03 10:00",
       "deadline": "2020-09-15 23:59",
-      "maxScore": 180,
+      "score": 180,
       "status": "draft",
       "items": [
         {
@@ -340,7 +349,7 @@
       "editDate": "2020-08-01 16:24",
       "date": "2020-08-03 10:00",
       "deadline": "2020-08-30 23:59",
-      "maxScore": 90,
+      "score": 90,
       "status": "deleted",
       "items": [
         {
@@ -374,7 +383,7 @@
       "editDate": "2020-09-04 09:07",
       "date": "2020-10-05 09:00",
       "deadline": "2020-11-08 23:59",
-      "maxScore": 250,
+      "score": 250,
       "status": "draft",
       "items": [
         {
@@ -427,7 +436,7 @@
       "editDate": "2020-09-05 09:07",
       "date": "2020-10-03 09:00",
       "deadline": "2020-11-01 23:59",
-      "maxScore": 250,
+      "score": 250,
       "status": "published",
       "items": [
         {
@@ -472,6 +481,30 @@
         }
       ],
       "id": 8
+    },
+    {
+      "title": "Test task",
+      "status": "draft",
+      "author": "admin",
+      "description": "Task desc",
+      "deadline": "2020-10-10 12:10",
+      "date": "2020-09-29 12:09",
+      "editDate": "2020-09-15 10:08",
+      "score": 11,
+      "items": [
+        {
+          "category": "Category1",
+          "categoryItems": [
+            {
+              "description": "category Item1",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": false
+            }
+          ]
+        }
+      ],
+      "id": 10
     }
   ],
   "scores": [
@@ -607,7 +640,7 @@
       "student": "cardamo",
       "task": "simple-task-v1",
       "sendingDate": "2020-09-12 12:12",
-      "state": "completed",
+      "status": "completed",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
       "selfGrade": "150",
@@ -619,7 +652,7 @@
       "student": "22-22",
       "task": "x-check app",
       "sendingDate": "2020-09-14 14:14",
-      "state": "published",
+      "status": "published",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
       "selfGrade": "600",
@@ -631,7 +664,7 @@
       "student": "arumirinka",
       "task": "x-check app",
       "sendingDate": "2020-09-15 15:15",
-      "state": "published",
+      "status": "published",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
       "selfGrade": "600",
@@ -643,7 +676,7 @@
       "student": "IlyaShihutin",
       "task": "x-check app",
       "sendingDate": "2020-09-19 19:19",
-      "state": "published",
+      "status": "published",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
       "selfGrade": "600",
@@ -655,7 +688,7 @@
       "student": "NastiaKoval",
       "task": "x-check app",
       "sendingDate": "2020-09-17 17:17",
-      "state": "published",
+      "status": "published",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
       "selfGrade": "600",
@@ -667,7 +700,7 @@
       "student": "Sapranovich",
       "task": "x-check app",
       "sendingDate": "2020-09-20 18:18",
-      "state": "published",
+      "status": "published",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
       "selfGrade": "600",
@@ -679,7 +712,7 @@
       "student": "vorobeychik",
       "task": "x-check app",
       "sendingDate": "2020-09-19 21:20",
-      "state": "published",
+      "status": "published",
       "demo": "link_to_demo",
       "PR": "link_to_PR",
       "selfGrade": "600",

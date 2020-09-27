@@ -39,7 +39,7 @@ function Tasks({ history }) {
             key: i+1,
             task: task.title ? <Link to={`/tasks/${task.id}`}>{task.title}</Link> : "",
             author: task.author ? task.author : "",
-            maxScore: task.maxScore ? task.maxScore : "",
+            score: task.score ? task.score : "",
             editDate: task.editDate ? task.editDate : "",
             date: task.date ? task.date : "",
             deadline: task.deadline ? task.deadline : "",
@@ -62,7 +62,7 @@ function Tasks({ history }) {
             key: i+1,
             task: task.title ? <Link to={`/tasks/${task.id}`}>{task.title}</Link> : "",
             author: task.author ? task.author : "",
-            maxScore: task.maxScore ? task.maxScore : "",
+            score: task.score ? task.score : "",
             editDate: task.editDate ? task.editDate : "",
             date: task.date ? task.date : "",
             deadline: task.deadline ? task.deadline : "",
@@ -95,8 +95,8 @@ function Tasks({ history }) {
     },
     {
       title: 'Max score',
-      dataIndex: 'maxScore',
-      sorter: (a, b) => a.maxScore - b.maxScore,
+      dataIndex: 'score',
+      sorter: (a, b) => a.score - b.score,
     },
     {
       title: 'Start date',
