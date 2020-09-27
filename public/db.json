@@ -71,6 +71,15 @@
         "completed": []
       },
       "tasks": []
+    },
+    {
+      "id": "los",
+      "role": "admin",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
     }
   ],
   "tasks": [
@@ -82,7 +91,7 @@
       "date": "2020-09-04 10:00",
       "deadline": "2020-10-03 23:59",
       "score": 200,
-      "status": "published",
+      "status": "draft",
       "items": [
         {
           "category": "Вёрстка, дизайн, UI",
@@ -145,7 +154,7 @@
       "author": "irinainina",
       "status": "archived",
       "description": "Допускается: -другая тематика приложения (не птицы) -использование вместо изображений видео -замена названий и описаний птиц другими данными",
-      "editDate": "2020-09-12 22:35",
+      "editDate": "27.09.2020 22:32",
       "date": "2020-09-23 10:00",
       "deadline": "2020-10-14 23:59",
       "score": 200,
@@ -204,8 +213,7 @@
           ]
         }
       ],
-      "id": 22,
-      "editDate": "27.09.2020 17:42"
+      "id": 22
     },
     {
       "title": "Task 2",
@@ -293,7 +301,7 @@
       "editDate": "2020-09-07 14:37",
       "date": "2020-09-08 10:00",
       "deadline": "2020-09-28 23:59",
-      "score": 320,
+      "score": 50,
       "status": "published",
       "items": [
         {
@@ -337,8 +345,7 @@
           ]
         }
       ],
-      "id": 4,
-      "score": 50
+      "id": 4
     },
     {
       "title": "Task 5",
@@ -348,7 +355,7 @@
       "date": "2020-09-03 10:00",
       "deadline": "2020-09-15 23:59",
       "score": 180,
-      "status": "draft",
+      "status": "published",
       "items": [
         {
           "category": "Basic scope",
@@ -484,7 +491,7 @@
       "title": "x-check app",
       "author": "cardamo",
       "description": "this is the x-check app description",
-      "editDate": "2020-09-05 09:07",
+      "editDate": "27.09.2020 22:34",
       "date": "2020-10-03 09:00",
       "deadline": "2020-11-01 23:59",
       "score": 250,
@@ -527,6 +534,17 @@
               "description": "и цвета между собой не сочетаются",
               "minScore": -10,
               "maxScore": 0
+            }
+          ]
+        },
+        {
+          "category": "Category",
+          "categoryItems": [
+            {
+              "description": "category Item",
+              "minScore": 0,
+              "maxScore": 0,
+              "checkByMentorOnly": false
             }
           ]
         }
@@ -800,7 +818,6 @@
             "score": "10"
           },
           {
-
             "score": "10",
             "comment": "everything is fine"
           }
@@ -941,7 +958,6 @@
       },
       "sendingDate": "2020-09-26 18:35:17"
     }
-    
   ],
   "reviewRequests": [
     {
