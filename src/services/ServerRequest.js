@@ -178,4 +178,4 @@ const updateReviewRequest = (id, task, change) => {
     .catch(err => console.log(err))
 }
 
-export { updateScore, updateReviewRequest, fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchAllScores, fetchReviewRequests, fetchReviewRequestsById, fetchSortAndFilterTasks, fetchUserVerification, sendTask, fetchTaskById, getTaskId, changeTask, sendReviewRequest, fetchTask б,checkId};
+export { updateScore, updateReviewRequest, fetchTaskInfo, addNewScore, getAllUsers, creatNewUser, authentification, getUsersByRole, fetchTasks, fetchScores, fetchAllScores, fetchReviewRequests, fetchReviewRequestsById, fetchSortAndFilterTasks, fetchUserVerification, sendTask, fetchTaskById, getTaskId, changeTask, sendReviewRequest, fetchTask ,checkId};

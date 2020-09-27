@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Divider, Button,Typography } from 'antd';
+import { Divider, Button,Typography ,Spin,Tooltip} from 'antd';
 import 'antd/dist/antd.css';
 import TaskViewCategory from "./TaskViewCategory/TaskViewCategory";
 import './TaskView.scss'
@@ -7,6 +7,7 @@ import {changeTask, fetchTaskById, sendTask} from "../../services/ServerRequest"
 import {useDispatch, useSelector} from "react-redux";
 import checkAuth from "../../utils/checkAuth";
 import { Link } from 'react-router-dom';
+import { SendOutlined,EditOutlined,FileZipOutlined,RollbackOutlined,FolderOpenOutlined,DeleteOutlined  } from '@ant-design/icons';
 
 export default function TaskView({history, match}) {
 
@@ -23,11 +24,12 @@ export default function TaskView({history, match}) {
         score:'',
         items:[]
     });
+    let [loading,SetLoading] = useState(true)
 
     useEffect(() => {console.log(task); console.log(match.params.id)})
 
     useEffect(() => {
-        (async () => match.params.id ? setTaskState( ( (await fetchTaskById( match.params.id ))[0] ) ) : '')();
+        (async () => {if(match.params.id) { setTaskState( ( (await fetchTaskById( match.params.id ))[0] ) ) ;SetLoading(false)} })();
     },[]);
 
     React.useEffect(() => {
@@ -47,38 +49,94 @@ export default function TaskView({history, match}) {
     function archiveHandler() {
         changeTask(task.id,task,{ status:'archive'})
     }
+    function draftHandler() {
+        changeTask(task.id,task,{ status:'draft'})
+    }
+    function deleteHandler() {
+        changeTask(task.id,task,{ status:'delete'})
+    }
 
-    const buttonBlockOne = [
-        <Button onClick={publishHandler}>
-            Publish
-        </Button>,
+    const buttonBlockOne =  () =>  {
+        if(task.status === 'draft') return [
+        <Tooltip title={'Publish'}>
+            <Button type={'primary'} onClick={publishHandler} size={"large"} shape={"circle"} icon={<SendOutlined />}/>
+        </Tooltip>,
         <Link to={`/create-task/${match.params.id}`}>
-            <Button>
-                Edit
-            </Button>
+            <Tooltip title={'Edit'}>
+                <Button type={'primary'}  size={"large"} shape={"circle"} icon={<EditOutlined />}/>
+            </Tooltip>
         </Link>,
-        <Button onClick={archiveHandler}>
-            Archive
-        </Button>,
+        <Tooltip title={'Archive'}>
+            <Button onClick={archiveHandler} type={'primary'}  size={"large"} shape={"circle"} icon={<FileZipOutlined />} />
+        </Tooltip>,
         <Link to='/tasks'>
-            <Button>
-                Back to the tasks
-            </Button>
-        </Link>
-    ];
+            <Tooltip title={'Back to the tasks'}>
+                <Button type={'primary'}  size={"large"} shape={"circle"} icon={<RollbackOutlined />} />
+            </Tooltip>
+        </Link> ];
+        if(task.status === 'published') return (
+            <React.Fragment>
+                <Tooltip title={'Save as Draft'}>
+                    <Button type={'primary'} onClick={draftHandler} size={"large"} shape={"circle"} icon={<FolderOpenOutlined />}  />
+                </Tooltip>
+                <Link to={`/create-task/${match.params.id}`}>
+                    <Tooltip title={'Edit'}>
+                        <Button type={'primary'}  size={"large"} shape={"circle"} icon={<EditOutlined />}/>
+                    </Tooltip>
+                </Link>
+                <Tooltip title={'Delete'}>
+                    <Button onClick={deleteHandler}  type={'primary'}  size={"large"} shape={"circle"} icon={<DeleteOutlined />}/>
+                </Tooltip>
+                <Tooltip title={'Archive'}>
+                    <Button onClick={archiveHandler} type={'primary'}  size={"large"} shape={"circle"} icon={<FileZipOutlined />} />
+                </Tooltip>
+                <Link to='/tasks'>
+                    <Tooltip title={'Back to the tasks'}>
+                        <Button type={'primary'}  size={"large"} shape={"circle"} icon={<RollbackOutlined />} />
+                    </Tooltip>
+                </Link>
+            </React.Fragment>)
+
+        if(task.status === 'archive') return (
+            <React.Fragment>
+                <Tooltip title={'Publish'}>
+                    <Button type={'primary'} onClick={publishHandler} size={"large"} shape={"circle"} icon={<SendOutlined />}/>
+                </Tooltip>
+                <Link to={`/create-task/${match.params.id}`}>
+                    <Tooltip title={'Edit'}>
+                        <Button type={'primary'}  size={"large"} shape={"circle"} icon={<EditOutlined />}/>
+                    </Tooltip>
+                </Link>
+                <Tooltip title={'Save as Draft'}>
+                    <Button type={'primary'} onClick={draftHandler} size={"large"} shape={"circle"} icon={<FolderOpenOutlined />}  />
+                </Tooltip>
+                <Tooltip title={'Delete'}>
+                    <Button onClick={deleteHandler}  type={'primary'}  size={"large"} shape={"circle"} icon={<DeleteOutlined />}/>
+                </Tooltip>
+                <Link to='/tasks'>
+                    <Tooltip title={'Back to the tasks'}>
+                        <Button type={'primary'}  size={"large"} shape={"circle"} icon={<RollbackOutlined />} />
+                    </Tooltip>
+                </Link>
+            </React.Fragment>
+        )
+    };
 
     const buttonBlockTwo = [
         <Button>
             Создать запрос на ревью
         </Button>,
         <Link to='/tasks'>
-            <Button>
-                Вернутся к списку задач
-            </Button>
+            <Link to='/tasks'>
+                <Tooltip title={'Back to the tasks'}>
+                    <Button type={'primary'}  size={"large"} shape={"circle"} icon={<RollbackOutlined />} />
+                </Tooltip>
+            </Link>
         </Link>
     ];
 
     return (
+        <Spin spinning={loading}>
         <div className={'task'}>
             <div className={'main__task'}>
                 <Typography.Title level={'h1'}>
@@ -93,8 +151,10 @@ export default function TaskView({history, match}) {
                 </div>
             </div>
             <div className={'task__buttons'}>
-                { infoUser.role !== 'student' ?  buttonBlockTwo : buttonBlockOne }
+                { infoUser.role !== 'student' ?  buttonBlockTwo : buttonBlockOne() }
             </div>
         </div>
+        </Spin>
+
     )
 }

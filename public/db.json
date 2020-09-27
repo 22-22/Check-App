@@ -35,6 +35,15 @@
         "completed": []
       },
       "tasks": []
+    },
+    {
+      "id": "hate",
+      "role": "student",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
     }
   ],
   "tasks": [
@@ -42,11 +51,11 @@
       "title": "Task 1",
       "author": "cardamo",
       "description": "this is the task 1 description",
-      "editDate": "2020.09.03 22:35",
+      "editDate": "27.09.2020 17:25",
       "date": "2020.09.04 10:00",
       "deadline": "2020.10.03 23:59",
       "maxScore": 200,
-      "status": "published",
+      "status": "archive",
       "items": [
         {
           "category": "Вёрстка, дизайн, UI",
@@ -165,7 +174,8 @@
           ]
         }
       ],
-      "id": 22
+      "id": 22,
+      "editDate": "27.09.2020 17:42"
     },
     {
       "title": "Task 2",
@@ -228,7 +238,7 @@
       "date": "2020.07.30 12:00",
       "deadline": "2020.08.21 23:59",
       "maxScore": 260,
-      "status": "archived",
+      "status": "archive",
       "items": [
         {
           "category": "Category",
@@ -260,7 +270,7 @@
           "categoryItems": [
             {
               "description": "штраф за ошибки в консоли",
-              "minScore": -20,
+              "minScore": -200,
               "maxScore": 0
             },
             {
@@ -271,7 +281,8 @@
           ]
         }
       ],
-      "id": 4
+      "id": 4,
+      "score": 50
     },
     {
       "title": "Task 5",
@@ -849,7 +860,6 @@
       },
       "sendingDate": "2020-09-26 18:35:17"
     }
-
   ],
   "reviewRequests": [
     {

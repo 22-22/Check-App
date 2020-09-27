@@ -16,12 +16,10 @@ export default function TaskViewCategory({
 
     return (
         <div className={'category'}>
-            <Divider>{ `${category.category} +${score}` }</Divider>
-
+            <Divider style={{'fontSize':'2rem'}}>{ `${category.category} +${score}` }</Divider>
             <div className={'category__container'}>
                 { categoryItems }
             </div>
-
         </div>
     )
 }

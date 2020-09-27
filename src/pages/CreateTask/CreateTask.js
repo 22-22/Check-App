@@ -14,13 +14,15 @@ import { DownloadOutlined ,CheckOutlined,SaveOutlined} from '@ant-design/icons';
 export default function CreateTask({history, match}) {
     const dispatch = useDispatch();
     const { authentication, infoUser } = useSelector(({ statesAccount }) => statesAccount);
-    const id = match.params.id
+    const id = match.params.id;
+    const date = new Date()
 
     let [loading,setLoading] = useState(id !== undefined);
     let [canSave,setCanSaveState] = useState(false)
     let [createTaskState, setTaskState] = useState( {
         title: '',
         status:'draft',
+        editDate:`${date.toLocaleDateString()} ${date.toLocaleTimeString().slice(0,5)}`,
         author:`${infoUser.id}`,
         description: '',
         deadline:'',
@@ -77,8 +79,8 @@ export default function CreateTask({history, match}) {
             const [date, deadLine] = value;
             setTaskState( {
                 ...createTaskState,
-                deadline: deadLine.format('YYYY-MM-DD HH:MM'),
-                date: date.format('YYYY-MM-DD HH:MM'),
+                deadline: deadLine.format('YYYY.MM.DD HH:MM'),
+                date: date.format('YYYY.MM.DD HH:MM'),
             })
         }
     }
@@ -111,8 +113,7 @@ export default function CreateTask({history, match}) {
 
     async function saveTaskButtonHandler() {
        let alreadyCreated = await checkId(createTaskState.id)
-        console.log('чекаю',alreadyCreated)
-       alreadyCreated ? changeTask(createTaskState.id,createTaskState,createTaskState)  :  sendTask(createTaskState)
+       alreadyCreated ? changeTask(createTaskState.id,createTaskState,{editDate: `${date.toLocaleDateString()} ${date.toLocaleTimeString().slice(0, 5)}`})  :  sendTask(createTaskState)
     }
 
     const saveButton = canSave ? (
