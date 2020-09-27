@@ -1,4 +1,4 @@
-import { fetchSortAndFilterTasks } from '../../services/ServerRequest';
+import { fetchAllTasks } from '../../services/ServerRequest';
 
 export const setTasks = (array) => ({
   type: "GET_TASKS",
@@ -6,7 +6,7 @@ export const setTasks = (array) => ({
 });
 
 
-export const getTasks = (status, sortBy, sortAs) => (dispatch) => {
-  fetchSortAndFilterTasks(status, sortBy, sortAs)
+export const getTasks = () => (dispatch) => {
+  fetchAllTasks()
       .then(data=>dispatch(setTasks(data)));
 };

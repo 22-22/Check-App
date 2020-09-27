@@ -1,6 +1,24 @@
 {
   "users": [
     {
+      "id": "user",
+      "role": "student",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
+    },
+    {
+      "id": "admin",
+      "role": "admin",
+      "courses": {
+        "active": [],
+        "completed": []
+      },
+      "tasks": []
+    },
+    {
       "id": "Sapranovich",
       "role": "student",
       "courses": {

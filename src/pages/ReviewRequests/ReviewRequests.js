@@ -18,7 +18,7 @@ function ReviewRequests({ history }) {
   React.useEffect(() => {
     !authentication && checkAuth(history, authentication, dispatch, "/reviewRequests");
     dispatch(getReviewRequests());
-  }, []);
+  }, [authentication, dispatch, history]);
   
   let reviewRequestsData = [];
   let tasksSet = new Set();
@@ -28,18 +28,49 @@ function ReviewRequests({ history }) {
   let statesSet = new Set();
   let statesFilter = [];
   if (reviewRequests) {
-    reviewRequests.map((reviewRequest, i) => {reviewRequestsData.push(
-      {key: i+1,
-       task: reviewRequest.task,
-       student: reviewRequest.student,
-       selfGrade: reviewRequest.selfGrade,
-       sendingDate: reviewRequest.sendingDate,
-       crossCheckSessionId: reviewRequest.crossCheckSessionId,
-       reviewRequestState: reviewRequest.state,
-       actions: <Link to={`/check-form/${reviewRequest.id}`}><Tooltip title="Review this work"><Button type="primary" shape="circle" icon={<CheckCircleOutlined />} /></Tooltip></Link>});
-       tasksSet.add(reviewRequest.task);
-       studentsSet.add(reviewRequest.student);
-       statesSet.add(reviewRequest.state)});
+    reviewRequests.map((reviewRequest, i) => {
+      if (infoUser.role === "admin") {
+        reviewRequestsData.push({
+          key: i+1,
+          task: reviewRequest.task ? reviewRequest.task : "",
+          student: reviewRequest.student ? reviewRequest.student : "",
+          selfGrade: reviewRequest.selfGrade ? reviewRequest.selfGrade : "",
+          sendingDate: reviewRequest.sendingDate ? reviewRequest.sendingDate : "",
+          crossCheckSessionId: reviewRequest.crossCheckSessionId ? reviewRequest.crossCheckSessionId : "",
+          reviewRequestState: reviewRequest.state ? reviewRequest.state : "",
+          actions: <>
+            { reviewRequest.state && reviewRequest.state === "published" ? (
+              <Link to={`/check-form/${reviewRequest.id}`}>
+                <Tooltip title="Review this work">
+                  <Button type="primary" shape="circle" icon={<CheckCircleOutlined />} />
+                </Tooltip>
+              </Link>
+            ) : null }
+          </>
+        });
+        statesSet.add(reviewRequest.state ? reviewRequest.state : null);
+      } else if (reviewRequest.state && reviewRequest.state === "published") {
+        reviewRequestsData.push({
+          key: i+1,
+          task: reviewRequest.task ? reviewRequest.task : "",
+          student: reviewRequest.student ? reviewRequest.student : "",
+          selfGrade: reviewRequest.selfGrade ? reviewRequest.selfGrade : "",
+          sendingDate: reviewRequest.sendingDate ? reviewRequest.sendingDate : "",
+          crossCheckSessionId: reviewRequest.crossCheckSessionId ? reviewRequest.crossCheckSessionId : "",
+          reviewRequestState: reviewRequest.state ? reviewRequest.state : "",
+          actions: 
+            <Link to={`/check-form/${reviewRequest.id}`}>
+              <Tooltip title="Review this work">
+                <Button type="primary" shape="circle" icon={<CheckCircleOutlined />} />
+              </Tooltip>
+            </Link>
+        });
+        statesSet.add(reviewRequest.state ? reviewRequest.state : null);
+      }
+        tasksSet.add(reviewRequest.task ? reviewRequest.task : null);
+        studentsSet.add(reviewRequest.student ? reviewRequest.student : null);
+        return null;
+    });
     for (let task of tasksSet) tasksFilter.push({text: task, value: task});
     for (let student of studentsSet) studentsFilter.push({text: student, value: student});
     for (let state of statesSet) statesFilter.push({text: state, value: state});
@@ -79,9 +110,9 @@ function ReviewRequests({ history }) {
     {
       title: 'State',
       dataIndex: 'reviewRequestState',
-      filters: statesFilter,
+      filters: infoUser.role === "admin" ? statesFilter : null,
       onFilter: (value, record) => record.reviewRequestState.indexOf(value) === 0,
-      sorter: (a, b) => a.reviewRequestState.localeCompare(b.reviewRequestState),
+      sorter: infoUser.role === "admin" ? (a, b) => a.reviewRequestState.localeCompare(b.reviewRequestState) : null,
     },
     {
       title: 'Actions',
@@ -89,18 +120,12 @@ function ReviewRequests({ history }) {
     }
   ];
 
-  function onChange(pagination, filters, sorter, extra) {
-    console.log('params', pagination, filters, sorter, extra);
-  }
-
   return (
-    <div className="account">
-      <div className="account__header">
-        <h2 className="account__title">Review requests</h2>
-        <h2>This is the review requests list</h2>
-        <Table columns={columns} dataSource={reviewRequestsData} onChange={onChange} />
-        <Link to='/review-request'><Button type="primary" icon={<FileAddOutlined />} >Request a review</Button></Link>
-      </div>
+    <div>
+      <h2>Review requests</h2>
+      <p>Pick a work you would like to review. You can filter and sort data.</p>
+      <Table columns={columns} dataSource={reviewRequestsData} />
+      <Link to='/review-request'><Button type="primary" icon={<FileAddOutlined />} >Request a review</Button></Link>
     </div>
   );
 }
