@@ -242,6 +242,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
                 <Button className="checkform__btns-submit"
                   type="primary" size="large"
                   icon={<SendOutlined />}
+                  htmlType="submit"
                 >
                   SEND
             </Button>
