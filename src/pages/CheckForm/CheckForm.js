@@ -74,12 +74,13 @@ function CheckForm({ history, match, revReqObj, checkType }) {
               (role === 'mentor') ? item : !item.checkByMentorOnly)
             return { ...item, categoryItems: filtered }
           });
+          const taskItems = checkType === 'self' ? task.items : filteredItems;
           if (checkType === 'self' || !draft) {
-            filteredItems.forEach(item => setScore(prevState => {
+            taskItems.forEach(item => setScore(prevState => {
               return { ...prevState, [item.category]: [] }
             }));
           }
-          setTask({ ...task, items: filteredItems });
+          setTask({ ...task, items: taskItems });
         }
       })
       // eslint-disable-next-line
@@ -129,9 +130,10 @@ function CheckForm({ history, match, revReqObj, checkType }) {
         updateScore(draftScore.id, draftScore, checkWithDraft);
         setSubmitted(true);
       } else if (checkType === 'self') {
-        sendReviewRequest(selfCheckNew)
+        sendReviewRequest(selfCheckNew);
       } else {
-        addNewScore(checkNew)
+        addNewScore(checkNew);
+        setSubmitted(true);
       }
     }
   }
