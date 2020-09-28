@@ -41,6 +41,8 @@ export const CheckFormItem = ({
         <>{
             (!item.checkByMentorOnly
                 || item.checkByMentorOnly && role === 'mentor'
+                || checkType === 'self'
+                || draft === 'selfCheckDraft'
             ) && (
                 <div className="checkform__item">
                     <div>
