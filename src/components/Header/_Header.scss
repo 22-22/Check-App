@@ -8,6 +8,9 @@
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  @media (max-width: 850px){
+    flex-direction: column-reverse;
+  }
 }
 
 .navigation {
@@ -15,13 +18,20 @@
   padding-left: 0;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 0;
+  margin-bottom: 0; 
+  @media (max-width: 850px){
+    justify-content: space-around;
+    margin: 20px 0 0;
+  }
 }
 .navigation__link {
   text-align: center;
   list-style: none;
   cursor: pointer;
   padding: 0 10px;
+  @media (max-width: 850px){
+    margin-bottom: 15px;
+  }
 }
 .navigation__icon {
   width: 40px;

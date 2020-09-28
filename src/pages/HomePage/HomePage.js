@@ -9,7 +9,7 @@ function HomePage({ history }) {
   const { infoUser } = useSelector(({ statesAccount }) => statesAccount);
 
   React.useEffect(() => {
-    !authentication && checkAuth(history, authentication, dispatch, "/home");
+    !authentication && checkAuth(history, authentication, dispatch, "/");
   }, []);
 
   return (

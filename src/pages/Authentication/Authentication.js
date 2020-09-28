@@ -21,7 +21,7 @@ function Authentication({ history }) {
   const { authentication } = useSelector(({ statesAccount }) => statesAccount);
 
   React.useEffect(() => {
-    checkAuth(history, authentication, dispatch, "/home");
+    checkAuth(history, authentication, dispatch, "/");
   }, [authentication]);
 
   const changeInput = (event) => {
@@ -29,10 +29,12 @@ function Authentication({ history }) {
   };
   const authUser = () => {
     localStorage.setItem("gitHubUser", gitHubId);
-    checkAuth(history, authentication, dispatch, "/home");
+    checkAuth(history, authentication, dispatch, "/");
   };
   const createNewUser = () => {
-    creatNewUser(gitHubId, roleUser).then(ok=> checkAuth(history, authentication, dispatch, "/home"));
+    creatNewUser(gitHubId, roleUser).then((ok) =>
+      checkAuth(history, authentication, dispatch, "/")
+    );
   };
   const cancelModal = () => {
     setVisibleModal(!visibleModal);
@@ -70,7 +72,7 @@ function Authentication({ history }) {
                 ]}
               >
                 <Input
-                  placeholder="Ваш GitHub"
+                  placeholder="Your GitHub"
                   value={gitHubId}
                   onChange={changeInput}
                 />
