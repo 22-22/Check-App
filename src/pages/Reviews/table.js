@@ -1,11 +1,9 @@
 // eslint-disable-next-line
-import React, { useState } from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
 import { Table, Button, Input, Space } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
-// eslint-disable-next-line
-import { getScores } from '../../redux/actions/scores';
 
 import ScoreReview from '../../components/ScoreReview/ScoreReview';
 
