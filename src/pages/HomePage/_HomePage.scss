@@ -1,152 +1,20 @@
-.account__wrapper{
-  margin-left: 100px;
-  color: $color-button;
-}
-.account__header{
-  border: solid 1px grey;
-}
-.account__content{
+.account {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 100%;
+  flex-direction: column;
+  align-items: center;
 }
-.account__content-left{
-  width: calc(100% - 400px);
-  min-width: 370px;
-}
-.account__notifications{
-  height: 65vh;
-  overflow: scroll;
-  min-width: 370px;
-}
-.account__stats{
-  min-width: 370px;
-}
-.account__content-right{
-  width: 370px;
-  height: calc(100vh - 15px);
+.account__content {
+  margin-top: 30px;
   padding: 10px;
-  overflow: scroll;
+  font-size: 2rem;
   text-align: center;
+  background-color: rgba(204,215,228,0.4);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
-.account__title{
-  font-size: 2rem;
-  margin: 10px 0;
-  text-transform: capitalize;
-}
-.account__subtitle{
-  font-size: 1.4rem;
-}
-
-
-// стили карт с заданиями 
-.card{
-  border: 1px solid $color-button;
-  background-color: rgba($color-light, 1);
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
-  font-size: 1.6rem;
-  text-align: left;
-}
-.card__title{
-  font-size: 2rem;
-  margin: 0 0 5px ;
-  text-transform: capitalize;
-}
-.card__subtitle{
-  font-size: 1.4rem;
-  a{
-    text-decoration: none;
+.account__content-name,
+.account__content-status {
+  span {
+    color: $background-selected;
+    font-weight: 500;
   }
-}
-.card__description{
-  margin: 10px 0 0;
-}
-.card__date-info{
-
-}
-
-// notification
-
-.notification__item{
-  border: 1px solid $color-button;
-  background-color: rgba($color-light, 1);
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
-  font-size: 1.6rem;
-  text-align: left;
-}
-.notification__title{
-  font-size: 2rem;
-  margin: 0 0 5px ;
-  text-transform: capitalize;
-}
-.notification__subtitle{
-  font-size: 1.4rem;
-  a{
-    text-decoration: none;
-  }
-}
-.notification__description{
-  margin: 10px 0 0;
-}
-.notification__date-info{
-
-}
-
-// stats account 
-
-.stats{
-  border: 1px solid $color-button;
-  background-color: rgba($color-light, 1);
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
-  font-size: 1.6rem;
-  text-align: left;
-  text-align: center;
-}
-.stats__title{
-  font-size: 3rem;
-  margin: 0 0 5px ;
-  text-transform: capitalize;
-}
-.stats__subtitle{
-  font-size: 1.4rem;
-}
-.stats__description{
-  display: flex;
-  justify-content: center;
-}
-
-.score{
-
-}
-.score__value{
-
-}
-
-.progress{
-
-}
-.progress__value{
-
-}
-
-
-
-.site-layout-content {
-  background: #fff;
-  padding: 24px;
-  min-height: 280px;
-}
-#components-layout-demo-top .logo {
-  width: 120px;
-  height: 31px;
-  background: rgba(211, 35, 35, 0.2);
-  margin: 16px 24px 16px 0;
-  float: left;
 }

@@ -22,7 +22,7 @@ function Header({history}) {
         
           <nav className="header__navigation">
             <ul className="navigation">
-              <Link to='/home'><li className="navigation__link">Home</li></Link>
+              <Link to='/'><li className="navigation__link">Home</li></Link>
               <Link to='/tasks'><li className="navigation__link">Tasks</li></Link>
               { infoUser.role === "admin" ? (
                 <Link to='/create-task'><li className="navigation__link">Add new task</li></Link>
