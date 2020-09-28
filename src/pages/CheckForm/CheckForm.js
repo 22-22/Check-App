@@ -210,6 +210,22 @@ function CheckForm({ history, match, revReqObj, checkType }) {
       return <Redirect to="/review-requests" />
     }
   }
+      
+  const renderExtraBtn = () => {
+    if (!checkType && draft !== 'selfCheckDraft') {
+      return (
+        <Tooltip title="You can add one extra positive or negative mark.">
+          <Button className="checkform__btns-extra"
+            onClick={handleExtraCheckPoint}>
+            {task.items &&
+              task.items.find(item => item.category === customCategory) ?
+              'DELETE EXTRA CHECKPOINT' : 'ADD EXTRA CHECKPOINT'
+            }
+          </Button>
+        </Tooltip>
+      )
+    }
+  }
 
   return (
     <div className="account">
@@ -253,15 +269,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
                 >
                   SEND
             </Button>
-                <Tooltip title="You can add one extra positive or negative mark.">
-                  <Button className="checkform__btns-extra"
-                    onClick={handleExtraCheckPoint}>
-                    {task.items &&
-                      task.items.find(item => item.category === customCategory) ?
-                      'DELETE EXTRA CHECKPOINT' : 'ADD EXTRA CHECKPOINT'
-                    }
-                  </Button>
-                </Tooltip>
+                 { renderExtraBtn() }
               </div>
             </Form>
           </main>
