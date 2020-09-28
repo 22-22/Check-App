@@ -72,7 +72,9 @@ export const CheckFormItem = ({
                         )}
                     </div>
                     <div className="checkform__item-description">
-                        <p>{item.description}</p>
+                       {item.checkByMentorOnly && <p className="checkform__comment">
+                            Checked by the mentor only.</p>}
+                        <div>{item.description}</div>
                         <TextArea
                             className="checkform__item-textarea"
                             required={required}
