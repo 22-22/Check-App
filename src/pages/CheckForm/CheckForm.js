@@ -83,7 +83,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
           setTask({ ...task, items: taskItems });
         }
       })
-      // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [selfCheck])
 
   useEffect(() => {
@@ -131,6 +131,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
         setSubmitted(true);
       } else if (checkType === 'self') {
         sendReviewRequest(selfCheckNew);
+        setSubmitted(true);
       } else {
         addNewScore(checkNew);
         setSubmitted(true);
@@ -195,7 +196,8 @@ function CheckForm({ history, match, revReqObj, checkType }) {
     }
 
     if (checkType === 'self' || draft === 'selfCheckDraft') {
-      sendReviewRequest(selfCheckNew)
+      sendReviewRequest(selfCheckNew);
+      setSubmitted(true);
     } else {
       addNewScore(checkNew);
       setSubmitted(true);
