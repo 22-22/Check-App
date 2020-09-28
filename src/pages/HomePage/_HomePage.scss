@@ -1,47 +1,66 @@
-.account__wrapper{
+.account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.account__content {
+  padding: 10px;
+  font-size: 2rem;
+  text-align: center;
+  background-color: rgba(204,215,228,0.4);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+.account__content-name,
+.account__content-status {
+  span {
+    color: $background-selected;
+    font-weight: 500;
+  }
+}
+
+.account__wrapper {
   margin-left: 100px;
   color: $color-button;
 }
-.account__header{
+.account__header {
   border: solid 1px grey;
 }
-.account__content{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.account__content-left{
+// .account__content{
+//   display: flex;
+//   justify-content: space-around;
+//   flex-wrap: wrap;
+//   width: 100%;
+// }
+.account__content-left {
   width: calc(100% - 400px);
   min-width: 370px;
 }
-.account__notifications{
+.account__notifications {
   height: 65vh;
   overflow: scroll;
   min-width: 370px;
 }
-.account__stats{
+.account__stats {
   min-width: 370px;
 }
-.account__content-right{
+.account__content-right {
   width: 370px;
   height: calc(100vh - 15px);
   padding: 10px;
   overflow: scroll;
   text-align: center;
 }
-.account__title{
+.account__title {
   font-size: 2rem;
   margin: 10px 0;
   text-transform: capitalize;
 }
-.account__subtitle{
+.account__subtitle {
   font-size: 1.4rem;
 }
 
-
-// стили карт с заданиями 
-.card{
+// стили карт с заданиями
+.card {
   border: 1px solid $color-button;
   background-color: rgba($color-light, 1);
   padding: 10px;
@@ -50,27 +69,26 @@
   font-size: 1.6rem;
   text-align: left;
 }
-.card__title{
+.card__title {
   font-size: 2rem;
-  margin: 0 0 5px ;
+  margin: 0 0 5px;
   text-transform: capitalize;
 }
-.card__subtitle{
+.card__subtitle {
   font-size: 1.4rem;
-  a{
+  a {
     text-decoration: none;
   }
 }
-.card__description{
+.card__description {
   margin: 10px 0 0;
 }
-.card__date-info{
-
+.card__date-info {
 }
 
 // notification
 
-.notification__item{
+.notification__item {
   border: 1px solid $color-button;
   background-color: rgba($color-light, 1);
   padding: 10px;
@@ -79,27 +97,26 @@
   font-size: 1.6rem;
   text-align: left;
 }
-.notification__title{
+.notification__title {
   font-size: 2rem;
-  margin: 0 0 5px ;
+  margin: 0 0 5px;
   text-transform: capitalize;
 }
-.notification__subtitle{
+.notification__subtitle {
   font-size: 1.4rem;
-  a{
+  a {
     text-decoration: none;
   }
 }
-.notification__description{
+.notification__description {
   margin: 10px 0 0;
 }
-.notification__date-info{
-
+.notification__date-info {
 }
 
-// stats account 
+// stats account
 
-.stats{
+.stats {
   border: 1px solid $color-button;
   background-color: rgba($color-light, 1);
   padding: 10px;
@@ -109,34 +126,28 @@
   text-align: left;
   text-align: center;
 }
-.stats__title{
+.stats__title {
   font-size: 3rem;
-  margin: 0 0 5px ;
+  margin: 0 0 5px;
   text-transform: capitalize;
 }
-.stats__subtitle{
+.stats__subtitle {
   font-size: 1.4rem;
 }
-.stats__description{
+.stats__description {
   display: flex;
   justify-content: center;
 }
 
-.score{
-
+.score {
 }
-.score__value{
-
+.score__value {
 }
 
-.progress{
-
+.progress {
 }
-.progress__value{
-
+.progress__value {
 }
-
-
 
 .site-layout-content {
   background: #fff;

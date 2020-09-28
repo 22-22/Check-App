@@ -51,7 +51,7 @@ function Authentication({ history }) {
       <div className="authentication">
         <div className="wrapper authentication__wrapper">
           <Title> X Check App / RS Assessment Tool</Title>
-          <Title level={4}>Группа 21</Title>
+          <Title level={4}>Group 21</Title>
 
           <div className="authentication__form">
             <Form
@@ -66,7 +66,7 @@ function Authentication({ history }) {
                 rules={[
                   {
                     required: true,
-                    message: "Пожайлуcта, введите свой gitHub!",
+                    message: "Please enter your gitHub!",
                   },
                 ]}
               >
@@ -79,18 +79,18 @@ function Authentication({ history }) {
               <br />
               <Form.Item>
                 <Button type="primary" htmlType="submit">
-                  Авторизироваться
+                  Login
                 </Button>
               </Form.Item>
             </Form>
           </div>
           <Modal
-            title={`Данный пользователь (${gitHubId}) не зарегистрирован`}
+            title={`The given user (${gitHubId}) is not registered`}
             visible={visibleModal}
             onOk={createNewUser}
             onCancel={cancelModal}
           >
-            <p>Выберите статус (роль) аккаунта и зарегистрируйтесь</p>
+            <p>Select the status (role) of the account and register</p>
             <Radio.Group
               onChange={(event) => setRoleUser(event.target.value)}
               value={roleUser}
