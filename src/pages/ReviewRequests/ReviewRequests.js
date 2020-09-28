@@ -29,14 +29,14 @@ function ReviewRequests({ history }) {
   let statesFilter = [];
   if (reviewRequests) {
     reviewRequests.map((reviewRequest, i) => {
-      if (infoUser.role === "admin") {
+      if (infoUser.role === "admin" && reviewRequest.status !== "selfCheckDraft" && reviewRequest.status !== "checkDraft") {
         reviewRequestsData.push({
           key: i+1,
           task: reviewRequest.task ? reviewRequest.task : "",
           student: reviewRequest.student ? reviewRequest.student : "",
           selfGrade: reviewRequest.selfGrade ? reviewRequest.selfGrade : "",
           sendingDate: reviewRequest.sendingDate ? reviewRequest.sendingDate : "",
-          crossCheckSessionId: reviewRequest.crossCheckSessionId ? reviewRequest.crossCheckSessionId : "",
+          crossCheckSessionId: reviewRequest.crossCheckSessionId ? reviewRequest.crossCheckSessionId : "none",
           reviewRequestState: reviewRequest.status ? reviewRequest.status : "",
           actions: <>
             { reviewRequest.status && reviewRequest.status === "published" ? (
@@ -49,21 +49,27 @@ function ReviewRequests({ history }) {
           </>
         });
         statesSet.add(reviewRequest.status ? reviewRequest.status : null);
-      } else if (reviewRequest.status && reviewRequest.status === "published") {
+      } else if ((reviewRequest.status && reviewRequest.status === "published" )
+        || (reviewRequest.student === infoUser.role 
+        && (reviewRequest.status === "checkDraft" || reviewRequest.status === "selfCheckDraft" || reviewRequest.status === "published"))) {
         reviewRequestsData.push({
           key: i+1,
           task: reviewRequest.task ? reviewRequest.task : "",
           student: reviewRequest.student ? reviewRequest.student : "",
           selfGrade: reviewRequest.selfGrade ? reviewRequest.selfGrade : "",
           sendingDate: reviewRequest.sendingDate ? reviewRequest.sendingDate : "",
-          crossCheckSessionId: reviewRequest.crossCheckSessionId ? reviewRequest.crossCheckSessionId : "",
+          crossCheckSessionId: reviewRequest.crossCheckSessionId ? reviewRequest.crossCheckSessionId : "none",
           reviewRequestState: reviewRequest.status ? reviewRequest.status : "",
-          actions: 
-            <Link to={`/check-form/${reviewRequest.id}`}>
-              <Tooltip title="Review this work">
-                <Button type="primary" shape="circle" icon={<CheckCircleOutlined />} />
-              </Tooltip>
-            </Link>
+          actions: <>
+            { reviewRequest.student !== infoUser.id ? (
+                <Link to={`/check-form/${reviewRequest.id}`}>
+                  <Tooltip title="Review this work">
+                    <Button type="primary" shape="circle" icon={<CheckCircleOutlined />} />
+                  </Tooltip>
+                </Link>
+              ) : null
+            }
+          </>
         });
         statesSet.add(reviewRequest.status ? reviewRequest.status : null);
       }

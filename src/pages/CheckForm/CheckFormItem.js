@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-operators */
 import React from 'react';
 import { Slider, InputNumber, Row, Col, Radio, Input } from 'antd';
 const { TextArea } = Input;
@@ -71,7 +72,7 @@ export const CheckFormItem = ({
                         )}
                     </div>
                     <div className="checkform__item-description">
-                        {item.checkByMentorOnly && <p className="checkform__comment">
+                       {item.checkByMentorOnly && <p className="checkform__comment">
                             Checked by the mentor only.</p>}
                         <div>{item.description}</div>
                         <TextArea

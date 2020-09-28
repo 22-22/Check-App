@@ -4,7 +4,7 @@ const BASE_URL = "https://cool-project21.herokuapp.com";
 
 const getAllUsers = () => {
   axios.get(`${BASE_URL}/users`).then(({ data }) => {
-    console.log(data);
+    return data;
   });
 };
 
@@ -17,7 +17,6 @@ const getUsersByRole = ( role ) => {
 const authentification = (gitHubId) => {
   return axios.get(`${BASE_URL}/users?q=${gitHubId}`)
     .then(resp => {
-      console.log(resp.data)
       return resp.data[0];
     }).catch(error => {
       console.log(error);
@@ -140,9 +139,10 @@ const creatNewUser = (gitHubId, role) => {
     },
     "tasks": []
   };
-  axios.post(`${BASE_URL}/users`, startUserObj)
+  return axios.post(`${BASE_URL}/users`, startUserObj)
     .then((resp) => {
       localStorage.setItem("gitHubUser", gitHubId);
+      return true;
     })
     .catch((error) => {
       console.log(error);

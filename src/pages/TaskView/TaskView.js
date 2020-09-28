@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import { Divider, Button,Typography ,Spin,Tooltip} from 'antd';
+import { Divider, Button, Spin, Tooltip } from 'antd';
 import 'antd/dist/antd.css';
 import TaskViewCategory from "./TaskViewCategory/TaskViewCategory";
 import './TaskView.scss'
-import {changeTask, fetchTaskById, sendTask} from "../../services/ServerRequest";
+import { changeTask, fetchTaskById } from "../../services/ServerRequest";
 import {useDispatch, useSelector} from "react-redux";
 import checkAuth from "../../utils/checkAuth";
 import { Link } from 'react-router-dom';
@@ -29,10 +29,12 @@ export default function TaskView({history, match}) {
 
     useEffect(() => {
         (async () => {if(match.params.id) { setTaskState( ( (await fetchTaskById( match.params.id ))[0] ) ) ;SetLoading(false)} })();
+        // eslint-disable-next-line
     },[]);
 
     React.useEffect(() => {
         !authentication && checkAuth(history, authentication, dispatch, "/create-task");
+        // eslint-disable-next-line
     }, []);
 
     const taskCategories = task.items.map((e, i) => (<TaskViewCategory

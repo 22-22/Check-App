@@ -24,10 +24,12 @@ function CheckForm({ history, match, revReqObj, checkType }) {
   const { authentication } = useSelector(({ statesAccount }) => statesAccount);
   const role = useSelector(state => state.statesAccount.infoUser.role);
   const user = useSelector(state => state.statesAccount.infoUser.id);
+  // eslint-disable-next-line
   const draft = match && match.params && match.params.status || '';
 
   React.useEffect(() => {
     !authentication && checkAuth(history, authentication, dispatch, "/check-form");
+    // eslint-disable-next-line
   }, []);
 
   const [itemsNumber, setItemsNumber] = useState(0);
@@ -60,6 +62,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
           setScore(currentScore.items);
         })
     }
+    // eslint-disable-next-line
   }, [])
 
   useEffect(() => {
@@ -80,6 +83,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
           setTask({ ...task, items: taskItems });
         }
       })
+      // eslint-disable-next-line
   }, [selfCheck])
 
   useEffect(() => {

@@ -15,6 +15,7 @@ function DraftsPage({ history }) {
 
   useEffect(() => {
     !authentication && checkAuth(history, authentication, dispatch, '/drafts');
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -38,8 +39,8 @@ function DraftsPage({ history }) {
     <div className="account">
       <div className="drafts">
         <h2 className="drafts__title">DRAFTS</h2>
-        <p className="drafts__info">If you started to review your task or the work other student,
-        you can save it as a draft and go back to your review on this page.</p>
+        <p className="drafts__info">If you started a self-check of your task or a review of other student's 
+        work, you can save it as a draft and finish your review later. Drafts can be found on this page.</p>
         <section>
           <h2>Other students' review drafts</h2>
           {

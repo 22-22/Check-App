@@ -1,8 +1,6 @@
 import React from "react";
 import TaskViewCategoryItem from "./TaskViewCategoryItem/TaskViewCategoryItem";
 import {Divider} from "antd";
-import CreateTaskCategoryItem
-    from "../../CreateTask/CreateTaskCategorie/CreateTaskCategorieItem/CreateTaskCategoryItem";
 
 export default function TaskViewCategory({
     category,
