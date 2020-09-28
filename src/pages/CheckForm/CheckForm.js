@@ -17,7 +17,7 @@ import { Button, Tooltip, Form } from 'antd';
 import { SendOutlined } from '@ant-design/icons';
 import './_CheckForm.scss';
 
-const customCategory = 'Cross-checker extra';
+const customCategory = 'Extra special';
 
 function CheckForm({ history, match, revReqObj, checkType }) {
   const dispatch = useDispatch();
@@ -142,8 +142,8 @@ function CheckForm({ history, match, revReqObj, checkType }) {
               description: `Pick one thing you really like or dislike 
               about this work and add your positive or negative mark. 
               Max or min value is a total score divided by the number of all points to check`,
-              minScore: Math.round(-task.maxScore / (itemsNumber + 1)),
-              maxScore: Math.round(task.maxScore / (itemsNumber + 1)),
+              minScore: Math.round(-task.score / itemsNumber),
+              maxScore: Math.round(task.score / itemsNumber),
               checkByMentorOnly: false
             }]
           }
