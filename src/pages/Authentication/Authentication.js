@@ -22,6 +22,7 @@ function Authentication({ history }) {
 
   React.useEffect(() => {
     checkAuth(history, authentication, dispatch, "/");
+    // eslint-disable-next-line
   }, [authentication]);
 
   const changeInput = (event) => {

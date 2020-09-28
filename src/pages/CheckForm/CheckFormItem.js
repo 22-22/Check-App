@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-operators */
 import React from 'react';
 import { Slider, InputNumber, Row, Col, Radio, Input } from 'antd';
 const { TextArea } = Input;

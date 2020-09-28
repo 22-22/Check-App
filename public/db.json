@@ -348,14 +348,14 @@
       "id": 1
     },
     {
-      "title": "songbird",
+      "title": "Songbird",
       "status": "published",
-      "editDate": "27.09.2020 21:58",
+      "editDate": "29.09.2020 01:01",
       "author": "irinainina",
       "description": "Songbird - одностраничное приложение, викторина для распознавания птиц по их голосам.",
       "deadline": "2020-08-23 23:08",
       "date": "2020-08-09 21:08",
-      "score": 80,
+      "score": 90,
       "items": [
         {
           "category": "Вёрстка, дизайн, UI",
@@ -384,7 +384,7 @@
               "checkByMentorOnly": false
             },
             {
-              "description": "кастомный, такой же, как в демо приложения, может отличаться по цвету:",
+              "description": "кастомный, такой же, как в демо приложения, может отличаться по цвету",
               "minScore": 0,
               "maxScore": 10,
               "checkByMentorOnly": false
@@ -405,6 +405,17 @@
               "minScore": 0,
               "maxScore": 20,
               "checkByMentorOnly": false
+            }
+          ]
+        },
+        {
+          "category": "Header",
+          "categoryItems": [
+            {
+              "description": "правильное отображение текущего счета игры",
+              "minScore": 0,
+              "maxScore": 10,
+              "checkByMentorOnly": true
             }
           ]
         }
@@ -557,6 +568,49 @@
           {
             "score": "10",
             "comment": ""
+          }
+        ]
+      },
+      "status": "published"
+    },
+    {
+      "task": "Songbird",
+      "reviewer": "user",
+      "student": "11-11",
+      "score": 61,
+      "id": 1601322893492,
+      "sendingDate": "2020-09-29 01:54:53",
+      "items": {
+        "Вёрстка, дизайн, UI": [
+          {
+            "score": "8"
+          },
+          {
+            "score": "8",
+            "comment": "внешний вид приложения не полностью повторяет демо"
+          }
+        ],
+        "Аудиоплеер": [
+          {
+            "score": "5"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "5"
+          }
+        ],
+        "Контент": [
+          {
+            "score": "20"
+          }
+        ],
+        "Header": [],
+        "Extra special": [
+          {
+            "score": "5",
+            "comment": "Great design!"
           }
         ]
       },
@@ -715,7 +769,7 @@
       "id": "rev-req-1601234264603",
       "crossCheckSessionId": null,
       "student": "22-22",
-      "task": "songbird",
+      "task": "Songbird",
       "status": "selfCheckDraft",
       "demo": "demo",
       "PR": "prpr",
@@ -740,7 +794,7 @@
       "id": "rev-req-1601234692397",
       "crossCheckSessionId": null,
       "student": "11-11",
-      "task": "songbird",
+      "task": "Songbird",
       "status": "published",
       "demo": " https://22-22-songbird.netlify.app/",
       "PR": "https://github.com/22-22/songbird/pull/1",
@@ -773,6 +827,44 @@
         ]
       },
       "sendingDate": "2020-09-27 22:25:25"
+    },
+    {
+      "id": "rev-req-1601320999557",
+      "crossCheckSessionId": null,
+      "student": "user",
+      "task": "Songbird",
+      "status": "published",
+      "demo": "link_to_demo",
+      "PR": "link_to_pr",
+      "selfGrade": 73,
+      "selfGradeDetails": {
+        "Вёрстка, дизайн, UI": [
+          {
+            "score": "15"
+          },
+          {
+            "score": "8"
+          }
+        ],
+        "Аудиоплеер": [
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          },
+          {
+            "score": "10"
+          }
+        ],
+        "Контент": [
+          {
+            "score": "20"
+          }
+        ],
+        "Header": []
+      },
+      "sendingDate": "2020-09-29 01:38:29"
     }
   ]
 }

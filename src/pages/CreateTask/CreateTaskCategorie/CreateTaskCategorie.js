@@ -1,6 +1,7 @@
+// eslint-disable-next-line
 import React, {useState} from "react";
 import 'antd/dist/antd.css';
-import { Input,Button,Divider,InputNumber} from 'antd';
+import { Divider } from 'antd';
 import CreateTaskCategoryItem from "./CreateTaskCategorieItem/CreateTaskCategoryItem";
 import './CreateTaskCategory.scss'
 

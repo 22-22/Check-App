@@ -38,10 +38,12 @@ export default function CreateTask({history, match}) {
         (async () => id ? setTaskState( ( (await fetchTaskById( id ))[0] ) ) : '')();
         (async () => id ? '' : setTaskState({...createTaskState,id: await getTaskId() + 1}) )();
         setLoading(false)
+        // eslint-disable-next-line
     },[]);
 
     React.useEffect(() => {
       !authentication && checkAuth(history, authentication, dispatch, "/create-task");
+      // eslint-disable-next-line
     }, []);
 
 

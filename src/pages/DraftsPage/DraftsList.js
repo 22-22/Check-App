@@ -29,6 +29,7 @@ function DraftsList({ draftsList, type }) {
             })
         tasksSet.add(draft.task);
         studentsSet.add(draft.student);
+        return null;
     })
     for (let task of tasksSet) tasksFilter.push({ text: task, value: task });
     for (let student of studentsSet) studentsFilter.push({ text: student, value: student });

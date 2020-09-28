@@ -2,7 +2,7 @@ import React from "react";
 import { message,Button,Tooltip} from 'antd';
 import './CreateTaskUpload.scss'
 import { DownloadOutlined } from '@ant-design/icons';
-const md2json = require('md-2-json')
+// const md2json = require('md-2-json')
 
 export default function CreateTaskUpload({setState,state}) {
 

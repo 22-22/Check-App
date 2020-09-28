@@ -10,6 +10,7 @@ function HomePage({ history }) {
 
   React.useEffect(() => {
     !authentication && checkAuth(history, authentication, dispatch, "/");
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -17,11 +18,13 @@ function HomePage({ history }) {
       <h2 className="account__title">Welcome to our X-check app!</h2>
       <div className="account__content">
         <div className="account__content-name">
-          Account: <span>{infoUser.id}</span>
+          Your account: <span>{infoUser.id}</span>
         </div>
         <div className="account__content-status">
-          Status: <span>{infoUser.role}</span>
+          Your role: <span>{infoUser.role}</span>
         </div>
+        <p></p>
+        <p>Good luck!</p>
       </div>
     </div>
   );
