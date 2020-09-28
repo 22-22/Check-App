@@ -195,7 +195,8 @@ function CheckForm({ history, match, revReqObj, checkType }) {
     }
 
     if (checkType === 'self' || draft === 'selfCheckDraft') {
-      sendReviewRequest(selfCheckNew)
+      sendReviewRequest(selfCheckNew);
+      setSubmitted(true);
     } else {
       addNewScore(checkNew);
       setSubmitted(true);
