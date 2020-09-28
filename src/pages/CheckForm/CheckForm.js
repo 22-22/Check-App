@@ -74,7 +74,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
               (role === 'mentor') ? item : !item.checkByMentorOnly)
             return { ...item, categoryItems: filtered }
           });
-          const taskItems = checkType === 'self' ? task.items : filteredItems;
+          const taskItems = checkType === 'self' || draft === 'selfCheckDraft' ? task.items : filteredItems;
           if (checkType === 'self' || !draft) {
             taskItems.forEach(item => setScore(prevState => {
               return { ...prevState, [item.category]: [] }
