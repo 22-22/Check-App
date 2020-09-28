@@ -1,4 +1,3 @@
-// eslint-disable-next-line
 import React from 'react';
 import 'antd/dist/antd.css';
 import { Table, Button, Input, Space } from 'antd';
