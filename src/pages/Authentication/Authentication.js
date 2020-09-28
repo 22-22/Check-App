@@ -32,8 +32,7 @@ function Authentication({ history }) {
     checkAuth(history, authentication, dispatch, "/home");
   };
   const createNewUser = () => {
-    creatNewUser(gitHubId, roleUser);
-    checkAuth(history, authentication, dispatch, "/home");
+    creatNewUser(gitHubId, roleUser).then(ok=> checkAuth(history, authentication, dispatch, "/home"));
   };
   const cancelModal = () => {
     setVisibleModal(!visibleModal);

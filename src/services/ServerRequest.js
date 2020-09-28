@@ -140,9 +140,10 @@ const creatNewUser = (gitHubId, role) => {
     },
     "tasks": []
   };
-  axios.post(`${BASE_URL}/users`, startUserObj)
+  return axios.post(`${BASE_URL}/users`, startUserObj)
     .then((resp) => {
       localStorage.setItem("gitHubUser", gitHubId);
+      return true;
     })
     .catch((error) => {
       console.log(error);
