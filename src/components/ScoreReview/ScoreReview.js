@@ -33,7 +33,7 @@ function ScoreReview( props ) {
           onCancel={() => setVisible(false)}
           width={1000}
           footer={[
-            <Button type="primary" htmlType="button" onClick={() => setVisible(false)}>
+            <Button type="primary" key={props.description.task} htmlType="button" onClick={() => setVisible(false)}>
               OK
             </Button>,
           ]}
