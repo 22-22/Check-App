@@ -9,7 +9,7 @@ function ScoreReviewItem(props) {
                 {props.marks[props.category] ? props.marks[props.category][props.itemI]["comment"] ? <p className="score-review-item-comment">comment: {props.marks[props.category][props.itemI]["comment"]}</p> : "" : ""}
             </div>
             
-            {props.marks[props.category] ? <p className="score-review-marks">{`${props.marks[props.category][props.itemI]["score"]}/${props.itemObj.maxScore}`}</p> : "Проверяется ментором"}
+            {props.marks[props.category] ? <p className="score-review-marks">{`${props.marks[props.category][props.itemI]["score"]}/${props.itemObj.maxScore}`}</p> : "Checked by a mentor only"}
         </div>
     )
 }
