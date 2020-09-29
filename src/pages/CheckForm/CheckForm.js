@@ -131,6 +131,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
         setSubmitted(true);
       } else if (checkType === 'self') {
         sendReviewRequest(selfCheckNew);
+        setSubmitted(true);
       } else {
         addNewScore(checkNew);
         setSubmitted(true);
