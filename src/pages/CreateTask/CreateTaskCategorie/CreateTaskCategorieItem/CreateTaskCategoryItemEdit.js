@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, {useState} from "react";
 import {Button, Input, InputNumber} from "antd";
 import './CreateTaskCategoryItem.scss';
@@ -21,9 +22,9 @@ export default function CreateTaskCategoryItemEdit({
             items[categoryIndex].categoryItems[index].maxScore = 0;
             items[categoryIndex].categoryItems[index].minScore = value;
         }
-        let score = createTaskState.items.
-        reduce((acc,cur) => cur.categoryItems.
-        reduce((acum,item) => item.maxScore + acum,0) + acc,0);
+        let score = createTaskState.items
+        .reduce((acc,cur) => cur.categoryItems
+        .reduce((acum,item) => item.maxScore + acum,0) + acc,0);
 
         setTaskState({
             ...createTaskState,

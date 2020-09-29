@@ -17,17 +17,19 @@ import { Button, Tooltip, Form } from 'antd';
 import { SendOutlined } from '@ant-design/icons';
 import './_CheckForm.scss';
 
-const customCategory = 'Cross-checker extra';
+const customCategory = 'Extra special';
 
 function CheckForm({ history, match, revReqObj, checkType }) {
   const dispatch = useDispatch();
   const { authentication } = useSelector(({ statesAccount }) => statesAccount);
   const role = useSelector(state => state.statesAccount.infoUser.role);
   const user = useSelector(state => state.statesAccount.infoUser.id);
+  // eslint-disable-next-line
   const draft = match && match.params && match.params.status || '';
 
   React.useEffect(() => {
     !authentication && checkAuth(history, authentication, dispatch, "/check-form");
+    // eslint-disable-next-line
   }, []);
 
   const [itemsNumber, setItemsNumber] = useState(0);
@@ -60,6 +62,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
           setScore(currentScore.items);
         })
     }
+    // eslint-disable-next-line
   }, [])
 
   useEffect(() => {
@@ -71,14 +74,16 @@ function CheckForm({ history, match, revReqObj, checkType }) {
               (role === 'mentor') ? item : !item.checkByMentorOnly)
             return { ...item, categoryItems: filtered }
           });
+          const taskItems = checkType === 'self' || draft === 'selfCheckDraft' ? task.items : filteredItems;
           if (checkType === 'self' || !draft) {
-            filteredItems.forEach(item => setScore(prevState => {
+            taskItems.forEach(item => setScore(prevState => {
               return { ...prevState, [item.category]: [] }
             }));
           }
-          setTask({ ...task, items: filteredItems });
+          setTask({ ...task, items: taskItems });
         }
       })
+      // eslint-disable-next-line
   }, [selfCheck])
 
   useEffect(() => {
@@ -125,9 +130,11 @@ function CheckForm({ history, match, revReqObj, checkType }) {
         updateScore(draftScore.id, draftScore, checkWithDraft);
         setSubmitted(true);
       } else if (checkType === 'self') {
-        sendReviewRequest(selfCheckNew)
+        sendReviewRequest(selfCheckNew);
+        setSubmitted(true);
       } else {
-        addNewScore(checkNew)
+        addNewScore(checkNew);
+        setSubmitted(true);
       }
     }
   }
@@ -142,8 +149,8 @@ function CheckForm({ history, match, revReqObj, checkType }) {
               description: `Pick one thing you really like or dislike 
               about this work and add your positive or negative mark. 
               Max or min value is a total score divided by the number of all points to check`,
-              minScore: Math.round(-task.maxScore / (itemsNumber + 1)),
-              maxScore: Math.round(task.maxScore / (itemsNumber + 1)),
+              minScore: Math.round(-task.score / itemsNumber),
+              maxScore: Math.round(task.score / itemsNumber),
               checkByMentorOnly: false
             }]
           }
@@ -189,7 +196,8 @@ function CheckForm({ history, match, revReqObj, checkType }) {
     }
 
     if (checkType === 'self' || draft === 'selfCheckDraft') {
-      sendReviewRequest(selfCheckNew)
+      sendReviewRequest(selfCheckNew);
+      setSubmitted(true);
     } else {
       addNewScore(checkNew);
       setSubmitted(true);
@@ -201,6 +209,22 @@ function CheckForm({ history, match, revReqObj, checkType }) {
       return <Redirect to="/drafts" />
     } else {
       return <Redirect to="/review-requests" />
+    }
+  }
+      
+  const renderExtraBtn = () => {
+    if (!checkType && draft !== 'selfCheckDraft') {
+      return (
+        <Tooltip title="You can add one extra positive or negative mark.">
+          <Button className="checkform__btns-extra"
+            onClick={handleExtraCheckPoint}>
+            {task.items &&
+              task.items.find(item => item.category === customCategory) ?
+              'DELETE EXTRA CHECKPOINT' : 'ADD EXTRA CHECKPOINT'
+            }
+          </Button>
+        </Tooltip>
+      )
     }
   }
 
@@ -246,15 +270,7 @@ function CheckForm({ history, match, revReqObj, checkType }) {
                 >
                   SEND
             </Button>
-                <Tooltip title="You can add one extra positive or negative mark.">
-                  <Button className="checkform__btns-extra"
-                    onClick={handleExtraCheckPoint}>
-                    {task.items &&
-                      task.items.find(item => item.category === customCategory) ?
-                      'DELETE EXTRA CHECKPOINT' : 'ADD EXTRA CHECKPOINT'
-                    }
-                  </Button>
-                </Tooltip>
+                 { renderExtraBtn() }
               </div>
             </Form>
           </main>

@@ -1,12 +1,8 @@
-
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react';
 import 'antd/dist/antd.css';
 import { Table, Button, Input, Space } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
-import { getScores } from '../../redux/actions/scores';
-import Loading from "../Loading/Loading"
 
 import ScoreReview from '../../components/ScoreReview/ScoreReview';
 

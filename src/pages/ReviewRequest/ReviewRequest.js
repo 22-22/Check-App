@@ -26,6 +26,7 @@ const tailLayout = {
 
 
 function ReviewRequest({ history, match }) {
+  /* eslint-disable-next-line no-unused-vars */
     const [status, setStatus] = React.useState("published");
     const dispatch = useDispatch();
 
@@ -36,6 +37,7 @@ function ReviewRequest({ history, match }) {
     React.useEffect(() => {
         !authentication && checkAuth(history, authentication, dispatch, "/review-request");
         dispatch(getActiveTasks(status));
+        // eslint-disable-next-line
     }, [status]);
     const [task, setTask] = React.useState("");
     const [demo, setDemo] = React.useState("");
