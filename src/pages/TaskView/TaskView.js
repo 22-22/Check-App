@@ -22,7 +22,13 @@ export default function TaskView({history, match}) {
         deadline:'',
         date:'',
         score:'',
-        items:[]
+        items:[
+                {category:'category',
+                categoryItems:[
+                    {description:'description',maxScore:0,minScore:0}
+                    ]
+                }
+            ]
     });
     let [loading,SetLoading] = useState(true);
     let taskFile = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(task));

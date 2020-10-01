@@ -241,9 +241,9 @@ function CheckForm({ history, match, revReqObj, checkType }) {
             score={score} itemsNumber={itemsNumber}
           />
           <main className="checkform__main">
-            <p className="checkform__info">
-              {task.description}
-            </p>
+            <p><a href={selfCheck.PR}>Link to PR</a></p>
+            <p><a href={selfCheck.demo}>Link to demo</a></p>
+            <div className="checkform__info">{task.description}</div>
             <Form className="checkform__items"
               onFinish={handleFormSubmit}>
               {task.items &&

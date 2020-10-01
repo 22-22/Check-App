@@ -20,7 +20,11 @@ function ScoreReview( props ) {
     
   }
 
-  
+  const closeModal = () => {
+    setVisible(false);
+    setItems('');
+  }
+
   return (
     <>
         <Button type="primary" onClick={openModal}>
@@ -30,7 +34,7 @@ function ScoreReview( props ) {
           title={props.description.task}
           centered
           visible={visible}
-          onCancel={() => setVisible(false)}
+          onCancel={closeModal}
           width={1000}
           footer={[
             <Button type="primary" key={props.description.task} htmlType="button" onClick={() => setVisible(false)}>

@@ -115,16 +115,14 @@ export default function CreateTask({history, match}) {
 
     async function saveTaskButtonHandler() {
        let alreadyCreated = await checkId(createTaskState.id)
-       alreadyCreated ? changeTask(createTaskState.id,createTaskState,{editDate: `${date.toLocaleDateString()} ${date.toLocaleTimeString().slice(0, 5)}`})  :  sendTask(createTaskState)
+       alreadyCreated ? changeTask(createTaskState.id,createTaskState,{editDate: `${date.toLocaleDateString()} ${date.toLocaleTimeString().slice(0, 5)}`}).then(res  => window.location = `/tasks/${createTaskState.id}`)  :  sendTask(createTaskState).then(res  => window.location = `/tasks/${createTaskState.id}`)
     }
 
     const saveButton = canSave ? (
 
-        <Link to={`/tasks/${createTaskState.id}`}>
             <Tooltip title={'Save your task '}>
                 <Button onClick={saveTaskButtonHandler} shape={'circle'} size={'large'} type={'primary'}  icon = {<SaveOutlined />}/>
             </Tooltip>
-        </Link>
     ):( <Tooltip title={'Check your task'}>
              <Button onClick={check} shape={'circle'} size={'large'} type={'primary'} icon={<CheckOutlined />} />
         </Tooltip>);
