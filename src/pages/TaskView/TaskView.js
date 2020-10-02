@@ -50,27 +50,25 @@ export default function TaskView({history, match}) {
     />));
 
     function publishHandler() {
-        changeTask(task.id,task,{ status:'published'})
+        changeTask(task.id,task,{ status:'published'}).then( () =>  window.location = `/tasks` )
     }
 
     function archiveHandler() {
-        changeTask(task.id,task,{ status:'archived'})
+        changeTask(task.id,task,{ status:'archived'}).then( () =>  window.location = `/tasks` )
     }
     function draftHandler() {
-        changeTask(task.id,task,{ status:'draft'})
+        changeTask(task.id,task,{ status:'draft'}).then( () =>  window.location = `/tasks` )
     }
     function deleteHandler() {
-        changeTask(task.id,task,{ status:'deleted'})
+        changeTask(task.id,task,{ status:'deleted'}).then( () =>  window.location = `/tasks` )
     }
 
     const buttonBlockOne =  () =>  {
         if(task.status === 'draft') return (
         <div className={'task__buttons--draft'}>
-            <Link to={'/tasks'}>
                 <Tooltip title={'Publish'}>
                     <Button type={'primary'} onClick={publishHandler} size={"large"} shape={"circle"} icon={<SendOutlined />}/>
                 </Tooltip>
-            </Link>
             <Link to={`/create-task/${match.params.id}`}>
                 <Tooltip title={'Edit'}>
                     <Button type={'primary'}  size={"large"} shape={"circle"} icon={<EditOutlined />}/>
@@ -120,11 +118,9 @@ export default function TaskView({history, match}) {
 
         if(task.status === 'archived') return (
             <div className={'task__buttons'}>
-                <Link to={'/tasks'}>
                     <Tooltip title={'Publish'}>
                         <Button type={'primary'} onClick={publishHandler} size={"large"} shape={"circle"} icon={<SendOutlined />}/>
                     </Tooltip>
-                </Link>
                 <Link to={`/create-task/${match.params.id}`}>
                     <Tooltip title={'Edit'}>
                         <Button type={'primary'}  size={"large"} shape={"circle"} icon={<EditOutlined />}/>
