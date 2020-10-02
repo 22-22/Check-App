@@ -34,6 +34,8 @@ function ReviewRequests({ history }) {
           key: i+1,
           task: reviewRequest.task ? reviewRequest.task : "",
           student: reviewRequest.student ? reviewRequest.student : "",
+          demo: reviewRequest.demo ? <a href={reviewRequest.demo} target="_blank" rel="noopener noreferrer">link</a> : "",
+          pr: reviewRequest.PR ? <a href={reviewRequest.PR} target="_blank" rel="noopener noreferrer">link</a> : "",
           selfGrade: reviewRequest.selfGrade ? reviewRequest.selfGrade : "",
           sendingDate: reviewRequest.sendingDate ? reviewRequest.sendingDate : "",
           crossCheckSessionId: reviewRequest.crossCheckSessionId ? reviewRequest.crossCheckSessionId : "none",
@@ -56,6 +58,8 @@ function ReviewRequests({ history }) {
           key: i+1,
           task: reviewRequest.task ? reviewRequest.task : "",
           student: reviewRequest.student ? reviewRequest.student : "",
+          demo: reviewRequest.demo ? <a href={reviewRequest.demo} target="_blank" rel="noopener noreferrer">link</a> : "",
+          pr: reviewRequest.PR ? <a href={reviewRequest.PR} target="_blank" rel="noopener noreferrer">link</a> : "",
           selfGrade: reviewRequest.selfGrade ? reviewRequest.selfGrade : "",
           sendingDate: reviewRequest.sendingDate ? reviewRequest.sendingDate : "",
           crossCheckSessionId: reviewRequest.crossCheckSessionId ? reviewRequest.crossCheckSessionId : "none",
@@ -96,6 +100,14 @@ function ReviewRequests({ history }) {
       filters: studentsFilter,
       onFilter: (value, record) => record.student.indexOf(value) === 0,
       sorter: (a, b) => a.student.localeCompare(b.student),
+    },
+    {
+      title: 'Demo',
+      dataIndex: 'demo',
+    },
+    {
+      title: 'PR',
+      dataIndex: 'pr',
     },
     {
       title: 'Self evaluation',
