@@ -5,7 +5,6 @@ import CreateTaskCategoryEdit from "./CreateTaskCategorie/CreateTaskCategoryEdit
 import checkAuth from "../../utils/checkAuth";
 import './_CreateTask.scss'
 import { useDispatch, useSelector } from "react-redux";
-import {Link} from "react-router-dom";
 import 'antd/dist/antd.css';
 import CreateTaskUpload from "./CreateTaskUpload/CreateTaskUpload";
 import {changeTask, checkId, fetchTaskById, getTaskId, sendTask} from "../../services/ServerRequest";
